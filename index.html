@@ -3,21 +3,32 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
+  <h1>Welcome :)</h1>
+  <p>
+    GeoBlacklight is a multi-institutional open-source collaboration building a better way to find and share geospatial data.
+  </p>
+  <p>
+    The <a href="https://github.com/geoblacklight/geoblacklight">GeoBlacklight</a> Ruby on Rails Engine is the primary software project. This application allows you to deploy a discovery application for your own and other institution's geospatial data.
+  </p>
+  <h2>Projects</h2>
+  
+  <ul class="unstyled">
+    {% for project in site.projects %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <a class="" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
       </li>
     {% endfor %}
   </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <h2>Contributors</h2>
+  <ul class="unstyled">
+    <li>
+      MIT Libraries
+    </li>
+    <li>
+      Princeton University Library
+    </li>
+    <li>
+      Stanford University Libraries
+    </li>
+  </ul>
 </div>
