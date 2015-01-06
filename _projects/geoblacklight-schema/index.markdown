@@ -2,6 +2,7 @@
 layout: project
 title: "GeoBlacklight-Schema"
 github: https://github.com/geoblacklight/geoblacklight-schema
+snippet: A schema developped for geospatial discovery
 ---
 GeoBlacklight-Schema focuses on discovery use cases for patrons and analysts in a
 research library setting, although it is likely useful in other settings. Text
