@@ -2,6 +2,7 @@
 layout: project
 title: "GeoBlacklight-Icons"
 github: https://github.com/geoblacklight/geoblacklight-icons
+snippet: Custom icon font for universities and geospatial data
 ---
 GeoBlacklight-Icons is a custom icon font implemented in [GeoBlacklight](https://github.com/geoblacklight/geoblacklight). It provides custom icons for institutions and layer types.
 

@@ -2,6 +2,7 @@
 layout: project
 title: "GeoMonitor"
 github: https://github.com/geoblacklight/geomonitor
+snippet: An easy way to monitor geowebservices
 ---
 GeoMonitor is a [Ruby on Rails](https://github.com/rails/rails) application used to monitor geowebservices. It was built out of the premise that users who are looking for and find data, should actually be able to access and use it.
 
