@@ -3,9 +3,9 @@
 ---
 
 // Import Bourbon, Bitters, and Neat
-@import 'bourbon';
+@import 'bourbon/bourbon';
 @import 'base/base';
-@import 'neat';
+@import 'neat/neat';
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "application";

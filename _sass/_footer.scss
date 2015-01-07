@@ -1,4 +1,6 @@
 footer {
+  padding-bottom: 20px;
+
   .contact-info {
     @include span-columns(4)
   }

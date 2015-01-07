@@ -14,6 +14,5 @@ collections:
 markdown: kramdown
 kramdown:
   input: GFM
-sass:
-  sass_dir: _sass
-gems: [jekyll-sitemap, bourbon, neat, bitters]
+gems:
+  - jekyll-sitemap

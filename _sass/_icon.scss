@@ -10,7 +10,7 @@
     vertical-align: middle;
     
     path {
-      fill: black;
+      fill: desaturate($base-accent-color, 30);
     }
   }
 }
