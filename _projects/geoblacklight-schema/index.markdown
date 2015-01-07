@@ -4,16 +4,9 @@ title: "GeoBlacklight-Schema"
 github: https://github.com/geoblacklight/geoblacklight-schema
 snippet: A schema developped for geospatial discovery
 ---
-GeoBlacklight-Schema focuses on discovery use cases for patrons and analysts in a
-research library setting, although it is likely useful in other settings. Text
-search, faceted search and refinement, and spatial search and relevancy are
-among the primary features that the schema enables. The schema design supports
-a variety of discovery applications and GIS data types. We especially wanted to
-provide for contextual collection-oriented discovery applications as well as
-traditional portal applications.
+GeoBlacklight-Schema focuses on discovery use cases for patrons and analysts in a research library setting, although it is likely useful in other settings. Text search, faceted search and refinement, and spatial search and relevancy are among the primary features that the schema enables. The schema design supports a variety of discovery applications and GIS data types. We especially wanted to provide for contextual collection-oriented discovery applications as well as traditional portal applications.
 
-The source code for the Solr implementation and the design document are on
-Github:
+The source code for the Solr implementation and the design document are on Github:
 
   [http://github.com/geoblacklight/geoblacklight-schema](http://github.com/geoblacklight/geoblacklight-schema)
 
