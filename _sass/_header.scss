@@ -265,15 +265,15 @@ header.navigation {
     }
   }
   
-  .sign-up {
-    @extend button;
-    margin-top: 1.1em;
-    float: right;
-    display: inline;
-    font-size: .8em;
-    text-transform: uppercase;
-    padding: .75em 1em;
-  }
+  // .sign-up {
+  //   @extend button;
+  //   margin-top: 1.1em;
+  //   float: right;
+  //   display: inline;
+  //   font-size: .8em;
+  //   text-transform: uppercase;
+  //   padding: .75em 1em;
+  // }
   
   // Search bar
   
@@ -304,22 +304,22 @@ header.navigation {
         }
       }
       
-      button[type=submit] {
-        @include button(flat, $navigation-search-background);
-        position: absolute;
-        top: 0.3em;
-        right: 0.3em;
-        bottom: 0.3em;
-        left: auto;
-        outline: none;
-        padding: 0 9px;
-        
-        img {
-          height: 12px;
-          opacity: .7;
-          padding: 1px;
-        }
-      }
+      // button[type=submit] {
+      //   @include button(flat, $navigation-search-background);
+      //   position: absolute;
+      //   top: 0.3em;
+      //   right: 0.3em;
+      //   bottom: 0.3em;
+      //   left: auto;
+      //   outline: none;
+      //   padding: 0 9px;
+      //   
+      //   img {
+      //     height: 12px;
+      //     opacity: .7;
+      //     padding: 1px;
+      //   }
+      // }
     }
     
     @include media($horizontal-bar-mode) {
