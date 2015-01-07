@@ -2,6 +2,7 @@
 layout: project
 title: "GeoBlacklight"
 github: https://github.com/geoblacklight/geoblacklight
+snippet: A discovery application for geospatial data, built on Blacklight and Ruby on Rails
 ---
 GeoBlacklight is the main discovery interface for geospatial data. It is developed as a Ruby on Rails engine and built on top of the popular open-source discovery interface [Blacklight](http://www.projectblacklight.org).
 
