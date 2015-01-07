@@ -1,0 +1,13 @@
+footer {
+  .contact-info {
+    @include span-columns(4)
+  }
+  
+  .social-media {
+    @include span-columns(4)
+  }
+  
+  .site-description {
+    @include span-columns(4)
+  }
+}
