@@ -19,6 +19,3 @@ gems:
   - bourbon
   - neat
   - bitters
-assets:
-  sources:
-    - _assets/fonts
