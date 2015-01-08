@@ -17,6 +17,10 @@ $browser-content-background-3: #F0F0F0;
   @include media($large-screen) {
     padding-top: 2em;
   }
+  
+  &.index {
+    margin-bottom: 40px;
+  }
 }
 
 .browser-top-bar {
