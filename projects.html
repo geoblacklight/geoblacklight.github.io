@@ -10,7 +10,8 @@ title: "Projects"
     The GeoBlacklight software stack consists of several open source software projects which work together to enable a better discovery experience. The main discovery application, <a href="https://github.com/geoblacklight/geoblacklight">GeoBlacklight</a>, is developped as a Ruby on Rails engine using Blacklight. 
   </p>
   <div class="grid-items-lines">
-    {% for project in site.projects %}
+    {% assign projects = site.projects | sort: 'title' %}
+    {% for project in projects %}
       {% if project.title %}
       <a href="{{ project.url | prepend: site.baseurl }}" class='grid-item'>
         <h1>{{ project.title }}</h1>
