@@ -1,0 +1,29 @@
+---
+layout: default
+title: "Blog"
+---
+<div class='intro-text'>
+  <h1>Blog</h1>
+  
+  <hr>
+  <ul class='unstyled'>
+    {% for post in site.posts %}
+      <li>
+        <h4>
+          <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h4>
+        <p class='post-snippet'>{{ post.snippet }}</p>
+        <p class='post-metadata'>
+          {% if post.author %}
+            {% if post.author_link %}
+              <a href="{{post.author_link}}">{{ post.author }}</a>
+            {% else %}
+              {{ post.author }}
+            {% endif %}
+          {% endif %} – <span class='post-date'>{{ post.date | date: "%B %-d, %Y" }}</span>
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
