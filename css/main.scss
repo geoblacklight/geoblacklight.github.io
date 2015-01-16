@@ -9,6 +9,7 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "application";
+@import 'article';
 @import 'bullet';
 @import 'browser';
 @import 'footer';
@@ -17,6 +18,8 @@
 @import 'icon';
 @import 'intro_text';
 @import 'layout';
+@import 'posts';
+@import 'syntax_highlighting';
 
 
 html {
