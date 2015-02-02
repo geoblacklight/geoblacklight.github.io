@@ -5,7 +5,7 @@ date:   2015-01-15 12:00:00
 categories: blog
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: 'A quick introduction to GeoBlacklight project and this blog.'
+snippet: 'A quick introduction to the GeoBlacklight project and this blog.'
 ---
 This blog serves as an announcement and engineering blog for developers and the larger [GeoBlacklight][geoblacklight] and geospatial communities. We aim to share our experience with creating the GeoBlacklight project, preserving geospatial data, engineering challenges overcome, and other related topics.
 
