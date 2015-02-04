@@ -1,4 +1,4 @@
-# Site settings
+  # Site settings
 title: GeoBlacklight
 email: geoblacklight-working-group@googlegroups.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -11,8 +11,8 @@ collections:
   projects:
     output: true
 # Build settings
-markdown: kramdown
-kramdown:
-  input: GFM
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 gems:
   - jekyll-sitemap

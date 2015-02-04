@@ -1,0 +1,73 @@
+---
+layout: tutorial-c4l
+title:  Index Solr documents - Part 4 - Code4Lib 2015 Workshop"
+date:   2015-02-09 14:56:00
+categories: tutorial
+author: 'Jack Reed'
+author_link: 'https://twitter.com/mejackreed'
+snippet: Index Solr documents into your GeoBlacklight application. Created as part of a tutorial series for a 2015 Code4Lib Preconference Workshop'
+---
+
+
+
+## Index Solr documents
+  1. [Overview](#overview)
+  1. [Download fixture documents](#download-fixture-documents)
+  1. [Index documents](#index-documents)
+
+### Overview
+
+GeoBlacklight uses GeoBlacklight-Schema as a template for documents stored in Solr.
+
+GeoBlacklight provides a rake task to index documents as fixtures for tests. We will use this rake task to index several documents as an example.
+
+### Download fixture documents
+
+  1. Create and move to a directory for your documents
+
+    ```sh
+    $ mkdir -p spec/fixtures/solr_documents && cd spec/fixtures/solr_documents
+    ```
+
+  1. Download some JSON documents to the directory
+
+    ```sh
+    $ curl -O https://gist.githubusercontent.com/mejackreed/84abc598927c43af665b/raw/geoblacklight-documents.json
+    ```
+
+  1. Move back to app root directory
+
+    ```sh
+    $ cd - # Or cd ../../../
+    ```
+
+### Index fixture documents
+
+  1. Run the GeoBlacklight fixture indexer
+
+    ```sh
+    $ rake geoblacklight:solr:seed
+    ```
+    
+The GeoBlacklight Solr seed task, indexes json documents stored in the `spec/fixtures/solr_documents` directory.
+
+  1. Start the Rails server again
+
+    ```sh
+    $ rails s -b 0.0.0.0
+    ```
+
+  1. *Optional* Commit your work
+
+    ```sh
+    $ git add .
+    $ git commit -m 'Adds in JSON fixtures'
+    ```
+
+<div class='flash-alert'>
+  As stated above, this rake task is useful for quickly indexing a small  number documents in Solr (built specifically for populating Solr for testing). I would caution though in using this task for large scale indexing and commiting .
+</div>
+
+<div class='flash-success'>
+  Now you should see <a href="http://127.0.0.1:3000">facets listed</a> on the lower left hand part of the page. Try a search! You can <a href="http://127.0.0.1:3000/?q=*">search for *</a> to search for everything.
+</div>

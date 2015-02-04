@@ -1,0 +1,29 @@
+---
+layout: default
+title: "Tutorials"
+---
+<div class='intro-text'>
+  <h1>Tutorials</h1>
+  
+  <hr>
+  <ul class='unstyled'>
+    {% for tutorial in site.categories.tutorial %}
+      <li>
+        <h4>
+          <a class="" href="{{ tutorial.url | prepend: site.baseurl }}">{{ tutorial.title }}</a>
+        </h4>
+        <p class='post-snippet'>{{ tutorial.snippet }}</p>
+        <p class='post-metadata'>
+          {% if post.author %}
+            {% if post.author_link %}
+              <a href="{{tutorial.author_link}}">{{ tutorial.author }}</a>
+            {% else %}
+              {{ post.author }}
+            {% endif %}
+          {% endif %} – <span class='post-date'>{{ tutorial.date | date: "%B %-d, %Y" }}</span>
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
