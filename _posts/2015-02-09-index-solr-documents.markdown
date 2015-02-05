@@ -17,11 +17,11 @@ snippet: Index Solr documents into your GeoBlacklight application. Created as pa
 
 ### Overview
 
-GeoBlacklight uses GeoBlacklight-Schema as a template for documents stored in Solr.
+GeoBlacklight uses GeoBlacklight-Schema as a template for metadata documents indexed by Solr.
 
 GeoBlacklight provides a rake task to index documents as fixtures for tests. We will use this rake task to index several documents as an example.
 
-### Download fixture documents
+### Download fixture metadata documents
 
   1. Create and move to a directory for your documents
 
@@ -29,7 +29,7 @@ GeoBlacklight provides a rake task to index documents as fixtures for tests. We 
     $ mkdir -p spec/fixtures/solr_documents && cd spec/fixtures/solr_documents
     ```
 
-  1. Download some JSON documents to the directory
+  1. Download some metadata documents (in JSON format) to the directory
 
     ```sh
     $ curl -O https://gist.githubusercontent.com/mejackreed/84abc598927c43af665b/raw/geoblacklight-documents.json
@@ -41,7 +41,7 @@ GeoBlacklight provides a rake task to index documents as fixtures for tests. We 
     $ cd - # Or cd ../../../
     ```
 
-### Index fixture documents
+### Index fixture metadata documents
 
   1. Run the GeoBlacklight fixture indexer
 
@@ -49,7 +49,7 @@ GeoBlacklight provides a rake task to index documents as fixtures for tests. We 
     $ rake geoblacklight:solr:seed
     ```
     
-The GeoBlacklight Solr seed task, indexes json documents stored in the `spec/fixtures/solr_documents` directory.
+The GeoBlacklight Solr seed task, indexes metadata documents (in JSON format) stored in the `spec/fixtures/solr_documents` directory.
 
   1. Start the Rails server again
 
@@ -65,7 +65,7 @@ The GeoBlacklight Solr seed task, indexes json documents stored in the `spec/fix
     ```
 
 <div class='flash-alert'>
-  As stated above, this rake task is useful for quickly indexing a small  number documents in Solr (built specifically for populating Solr for testing). I would caution though in using this task for large scale indexing and commiting .
+  As stated above, this rake task is useful for quickly indexing a small number documents in Solr (built specifically for populating Solr for testing). I would caution though in using this task for large scale indexing and commiting, as we've developed other best practices for production-scale indexing.
 </div>
 
 <div class='flash-success'>
