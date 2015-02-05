@@ -1,0 +1,87 @@
+---
+layout: tutorial
+title:  "Using GeoCombine to harvest and index OpenGeoMetadata"
+date:   2015-02-05 11:00:00
+categories: tutorial
+author: 'Jack Reed'
+author_link: 'https://twitter.com/mejackreed'
+snippet: 'A quick tutorial on how to harvest and index OpenGeoMetadata for your GeoBlacklight installation'
+---
+
+Sharing, collaborating, and harvesting geospatial metadata is not really easy. A recent development in the world of geospatial metadata sharing is the new project [OpenGeoMetadata](https://github.com/OpenGeoMetadata). OpenGeoMetadata aims to be a shared repository for institutions looking to share, collaborate, and harvest geospatial metadata. For more details on how the project is structured and why we think this is really cool, [see this readme](https://github.com/OpenGeoMetadata/metadatarepository/blob/master/README.md).
+
+We started work on software built around harvesting, converting, and indexing this metadata called [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine).
+
+## GeoCombine - A ruby toolkit for geospatial metadata
+
+GeoCombine is envisioned as an easy to use toolkit for metadata conversions with integration into things like [GeoBlacklight](https://github.com/geoblacklight/geoblacklight), [GeoMonitor](https://github.com/geoblacklight/geomonitor), and OpenGeoMetadata.
+
+Currently (as of 2015-02-05), GeoCombine really just does three things:
+
+ - Clones OpenGeoMetadata repositories
+ - Updates the clone repositories
+ - Will index into Solr `geoblacklight.xml` files from the cloned repositories
+
+### Getting started
+
+This guide assumes a few things already.
+
+ - You have [Git](https://gorails.com/setup/#git) installed
+ - You have [Ruby](https://gorails.com/setup/#ruby) installed
+ - You have Solr running locally on port 8983 (default Solr port) and it is configured with [GeoBlacklight-Schema](https://github.com/geoblacklight/geoblacklight-schema/tree/master/conf) configuration
+
+<div class='flash-alert'>
+  If you are confused about these prerequisites, it is probably best that you start by running through the workshop <a href="{% post_url 2015-02-09-a-hands-on-introduction-to-geoblacklight %}">"A hands on introduction to GeoBlacklight"</a>.
+</div>
+
+### Install GeoCombine
+
+<div class='flash-notice'>
+  If you have already have a GeoBlacklight application, skip steps 1 and 2. You can just add <code>gem 'geo_combine'</code> to your GeoBlacklight application's <code>Gemfile</code>
+</div>
+
+  1. To get started, first clone the GeoCombine repository
+
+    ```sh
+    $ git clone https://github.com/OpenGeoMetadata/GeoCombine.git
+    ```
+
+  1. Switch to its folder
+
+    ```sh
+    $ cd GeoCombine
+    ```
+
+  1. Install GeoCombine's dependencies
+
+    ```sh
+    $ bundle install
+    ```
+
+  1. Create a `tmp` directory (if it doesn't already exist)
+
+    ```sh
+    $ mkdir tmp
+    ```
+
+  1. Clone all of the 'edu.*' repositories to tmp.
+
+    ```sh
+    $ rake geocombine:clone
+    ```
+  <div class='flash-notice'>
+    Since other software projects live in OpenGeoMetadata we only want to clone the metadata repositories. All of these are currently namespaced with "edu.institution.subdomain".
+  </div>
+
+  1. Index all of the `geoblacklight.xml` documents located in cloned repositories.
+
+    ```sh
+    $ rake geocombine:index
+    ```
+
+  <div class='flash-success'>
+    Go grab a coffee or lunch, because this might take a while! But afterwards your index should have +30,000 new records in it.
+  </div>
+
+
+
