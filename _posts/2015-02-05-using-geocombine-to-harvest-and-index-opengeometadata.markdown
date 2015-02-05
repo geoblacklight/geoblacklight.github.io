@@ -10,17 +10,17 @@ snippet: 'A quick tutorial on how to harvest and index OpenGeoMetadata for your 
 
 Sharing, collaborating, and harvesting geospatial metadata is not really easy. A recent development in the world of geospatial metadata sharing is the new project [OpenGeoMetadata](https://github.com/OpenGeoMetadata). OpenGeoMetadata aims to be a shared repository for institutions looking to share, collaborate, and harvest geospatial metadata. For more details on how the project is structured and why we think this is really cool, [see this readme](https://github.com/OpenGeoMetadata/metadatarepository/blob/master/README.md).
 
-We started work on software built around harvesting, converting, and indexing this metadata called [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine).
+We started work on software focused on harvesting, converting, and indexing this metadata called [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine).
 
 ## GeoCombine - A ruby toolkit for geospatial metadata
 
-GeoCombine is envisioned as an easy to use toolkit for metadata conversions with integration into things like [GeoBlacklight](https://github.com/geoblacklight/geoblacklight), [GeoMonitor](https://github.com/geoblacklight/geomonitor), and OpenGeoMetadata.
+GeoCombine is envisioned as an easy to use toolkit for metadata conversions with integration into applications and projects like [GeoBlacklight](https://github.com/geoblacklight/geoblacklight), [GeoMonitor](https://github.com/geoblacklight/geomonitor), and OpenGeoMetadata.
 
 Currently (as of 2015-02-05), GeoCombine really just does three things:
 
  - Clones OpenGeoMetadata repositories
- - Updates the clone repositories
- - Will index into Solr `geoblacklight.xml` files from the cloned repositories
+ - Updates the local cloned repositories (using `git pull`)
+ - Indexes into Solr `geoblacklight.xml` files from the cloned repositories
 
 ### Getting started
 
