@@ -71,19 +71,19 @@ For more information about generating a Rails application see the [Getting Start
     gem 'jettywrapper'
     ```
 
-  1. Install gem and dependencies
+  1. Install required gems and their dependencies
 
     ```sh
     $ bundle install
     ```
 
-  1. Run Blacklight generator
+  1. Run Blacklight generator (with devise authentication)
 
     ```sh
     $ rails g blacklight:install --devise
     ```
 
-  1. Run GeoBlacklight generator
+  1. Run GeoBlacklight generator (with a jetty instance for Solr)
 
     ```sh
     $ rails g geoblacklight:install --jettywrapper
@@ -95,7 +95,7 @@ For more information about generating a Rails application see the [Getting Start
     $ rake db:migrate
     ```
 
-  1. Download and install Jetty (Solr server for development)
+  1. Download and install Jetty (Solr server for development, in production you'd have a dedicated Solr instance)
 
     ```sh
     $ rake jetty:download
@@ -107,18 +107,18 @@ For more information about generating a Rails application see the [Getting Start
     $ rake jetty:unzip
     ```
 
-  1. Configure Solr to use GeoBlacklight-Schema
+  1. Configure Solr to use [GeoBlacklight-Schema](https://github.com/geoblacklight/geoblacklight-schema)
 
     ```sh
     $ rake geoblacklight:configure_jetty
     ```
 
-  1. Start the Solr server
+  1. Start the jetty Solr server
 
     ```sh
     $ rake jetty:start
     ```
-  *Note:* this will start the Solr server and keep it running until you stop it. Other Jetty commands  available to control Solr include:
+  *Note:* this will start the jetty [Solr server](http://127.0.0.1:8983/solr) and keep it running until you stop it. Other Jetty commands  available to control Solr include:
 
     ```sh
     $ rake jetty:stop # Stops Jetty
@@ -182,6 +182,8 @@ For more information about generating a Rails application see the [Getting Start
     $ git add .
     $ git commit -m 'Installed RSpec'
     ```
+
+### Next Steps
 
 So far you have a working GeoBlacklight application with a test framework installed. One thing missing is an index to have your application search against. The next section focuses on indexing Solr documents.
 
