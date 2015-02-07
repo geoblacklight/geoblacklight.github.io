@@ -71,3 +71,5 @@ The GeoBlacklight Solr seed task, indexes metadata documents (in JSON format) st
 <div class='flash-success'>
   Now you should see <a href="http://127.0.0.1:3000">facets listed</a> on the lower left hand part of the page. Try a search! You can <a href="http://127.0.0.1:3000/?q=*">search for *</a> to search for everything.
 </div>
+
+Want to index some more documents? Check out [this tutorial]({% post_url 2015-02-05-using-geocombine-to-harvest-and-index-opengeometadata %}) on how to easily index metadata from OpenGeoMetadata.

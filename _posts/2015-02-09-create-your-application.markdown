@@ -95,6 +95,14 @@ For more information about generating a Rails application see the [Getting Start
     $ rake db:migrate
     ```
 
+    <div class='flash-notice'>
+      Quick tip: All of these tasks (1 - 5) are included as part of template to generate a new GeoBlacklight application. To run that generator just run:
+      
+
+      ```sh
+      $ rails new your_app_name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/master/template.rb
+      ```
+
   1. Download and install Jetty (Solr server for development, in production you'd have a dedicated Solr instance)
 
     ```sh
@@ -118,7 +126,9 @@ For more information about generating a Rails application see the [Getting Start
     ```sh
     $ rake jetty:start
     ```
-  *Note:* this will start the jetty [Solr server](http://127.0.0.1:8983/solr) and keep it running until you stop it. Other Jetty commands  available to control Solr include:
+  <div class='flash-notice'>
+    Running this command will start the jetty [Solr server](http://127.0.0.1:8983/solr) and keep it running until you stop it. Other Jetty commands  available to control Solr include:
+    
 
     ```sh
     $ rake jetty:stop # Stops Jetty
