@@ -1,6 +1,6 @@
 ---
 layout: tutorial-c4l
-title:  Setting up your environment - Part 2 - Code4Lib 2015 Workshop"
+title:  "Setting up your environment - Part 2 - Code4Lib 2015 Workshop"
 date:   2015-02-09 14:58:00
 categories: tutorial
 author: 'Jack Reed'

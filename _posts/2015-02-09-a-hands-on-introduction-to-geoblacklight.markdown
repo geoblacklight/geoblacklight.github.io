@@ -32,6 +32,7 @@ This workshop will focus primarily on getting a working development version of G
   1. [Setting up your environment]({% post_url 2015-02-09-setting-up-your-environment %}) (45 minutes)
   1. [Create your GeoBlacklight application]({% post_url 2015-02-09-create-your-application %}) (45 minutes)
   1. [Index Solr Documents]({% post_url 2015-02-09-index-solr-documents %}) (20 minutes)
+  1. [Customize your application]({% post_url 2015-02-09-customize-your-application %}) (extra credit)
 
 <div class='flash-notice'>
   First up, a <a href="{% post_url 2015-02-09-geoblacklight-overview %}">GeoBlacklight Overview</a>
