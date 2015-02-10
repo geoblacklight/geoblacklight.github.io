@@ -121,7 +121,7 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
     ```
 
     ```scss
-    // in app/assets/stylesheets/application.scss
+    // in app/assets/stylesheets/blacklight.scss
     @import 'bootstrap-variables';
 
     @import 'bootstrap-sprockets';
