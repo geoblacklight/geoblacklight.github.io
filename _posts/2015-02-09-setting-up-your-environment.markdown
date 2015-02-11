@@ -31,9 +31,11 @@ Good news for local workshop participants, this is already done for you using Vi
 
 For those interested in what was installed on this machine and how it was created checkout [this gist](https://gist.github.com/mejackreed/727e9cd2e971ca3949a2).
 
+ - [Vagrant for OS X and Linux](#vagrant-for-os-x-and-linux)
+ - [Vagrant for Windows](#vagrant-for-windows)
 
-#### Vagrant
-  1. Install either the Windows (.exe) or Mac (.dmg) version of VirtualBox on your machine along with Vagrant.
+#### Vagrant for OS X and Linux
+  1. Install the Mac (.dmg) version of VirtualBox and Vagrant on your machine. If you are using Linux, please download and install appropriately. [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads), [Vagrant Downloads](https://www.vagrantup.com/downloads.html)
   1. Make a new directory for your work
 
     ```sh
@@ -59,6 +61,50 @@ For those interested in what was installed on this machine and how it was create
     ```sh
     $ vagrant ssh # This will SSH into a running Vagrant machine and give you access to a shell.
     ```
+
+#### Vagrant for Windows
+
+Note: this tutorial uses the [Cygwin](https://www.cygwin.com/) tool so please make sure that is installed first, but it should be applicable to users who don't use Cygwin but have a Windows ssh client installed [download PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+
+  1. Install the Windows (.exe) version of VirtualBox and Vagrant on your machine.
+
+  1. Open a Cygwin terminal and cd to your home directory
+
+    ```sh
+    $ /cygdrive/c/Users/[username]/
+    ```
+  
+    <div class='flash-alert'>
+    [cygdrive/ being a Cygwin convention for getting to the root of your computer's file system.]
+    </div>
+
+  1. Make a new directory for your work
+
+    ```sh
+    $ mkdir scratch
+    ```
+
+  1. Copy the `geoblacklight_workshop` directory to your `~/scratch` directory
+
+  1. Move to the `geoblacklight_workshop` directory
+
+    ```sh
+    $ cd scratch/geoblacklight_workshop
+    ```
+
+  1. Start Vagrant
+
+    ```sh
+    $ vagrant up # This command creates and configures guest machines according to your Vagrantfile.
+    ```
+
+  1. Minimize the Cygwin terminal, and then open up PuTTY
+
+  1. SSH into the Vagrant box by entering the following parameters into the "Basic Options for Your PuTTY session" window:
+    - Host Name (or IP address): 127.0.0.1
+    - Port: 2222
+
+  1. When PuTTY shell prompts for a username and password, enter "vagrant" for both. You should now see a command prompt.
 
 <div class='flash-notice'>
   <a href="{% post_url 2015-02-09-create-your-application %}">Next → Part 3 - Create your application</a>
