@@ -108,6 +108,12 @@ Note: this tutorial uses the [Cygwin](https://www.cygwin.com/) tool so please ma
 
   1. When PuTTY shell prompts for a username and password, enter "vagrant" for both. You should now see a command prompt.
 
+  1. SSH to the VM
+
+    ```sh
+    $ vagrant ssh # This will SSH into a running Vagrant machine and give you access to a shell.
+    ```
+
 <div class='flash-notice'>
   <a href="{% post_url 2015-02-09-create-your-application %}">Next → Part 3 - Create your application</a>
 </div>
