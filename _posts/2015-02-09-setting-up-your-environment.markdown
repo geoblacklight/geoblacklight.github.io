@@ -64,6 +64,8 @@ For those interested in what was installed on this machine and how it was create
 
 #### Vagrant for Windows
 
+Thanks to Zach Vowell who contributed this guide for Windows.
+
 Note: this tutorial uses the [Cygwin](https://www.cygwin.com/) tool so please make sure that is installed first, but it should be applicable to users who don't use Cygwin but have a Windows ssh client installed [download PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
   1. Install the Windows (.exe) version of VirtualBox and Vagrant on your machine.
