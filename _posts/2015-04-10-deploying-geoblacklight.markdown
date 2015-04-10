@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Deploying GeoBlacklight"
-date:   2015-04-01 12:00:00
+date:   2015-04-10 12:00:00
 categories: blog
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
