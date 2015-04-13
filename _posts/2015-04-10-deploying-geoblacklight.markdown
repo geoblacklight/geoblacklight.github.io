@@ -43,7 +43,7 @@ GeoBlacklight uses [Solr][solr] for as an index for advanced querying and faceti
 
 
 #### Solr version
-GeoBlacklight requires a Solr version > 4.7. This hard version rule is due to new [advanced spatial support](https://issues.apache.org/jira/browse/LUCENE-5395) introduced in this release.
+GeoBlacklight requires a Solr version 4.7 or later. This hard version rule is due to new [advanced spatial support](https://issues.apache.org/jira/browse/LUCENE-5395) introduced in this release.
 
 #### Solr security
 The GeoBlacklight software accesses Solr only from the server. This means that you can deploy your Solr server behind a firewall. The front end of the application should never query Solr directly.
