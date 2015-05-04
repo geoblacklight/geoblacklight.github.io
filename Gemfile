@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
-gem 'github-pages', '33'
+gem 'github-pages', '34'
 gem 'redcarpet'
