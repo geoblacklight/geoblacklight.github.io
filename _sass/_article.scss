@@ -10,6 +10,11 @@ article.type-system-rounded {
   $medium-screen: em(640) !default;
   $base-font-color: $dark-gray !default;
   
+  @include media($large-screen) {
+    margin: auto;
+    width: 70%;
+  }
+  
   h1, h2, h3, p {
     margin: 0;
   }
