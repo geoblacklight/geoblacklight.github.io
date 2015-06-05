@@ -1,14 +1,23 @@
 ---
-layout: tutorial
-title:  "A hands on introduction to GeoBlacklight - Code4Lib 2015 Workshop"
+layout: tutorial-c4l
+title:  "A hands on introduction to GeoBlacklight - GeoBlacklight Workshop"
 date:   2015-02-09 15:00:00
 categories: tutorial
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: 'Created as part of a tutorial series for a 2015 Code4Lib Preconference Workshop'
+snippet: 'Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 ## Welcome
 Welcome to the workshop, "A hands on introduction to GeoBlacklight"!
+
+This workshop has been given at several conferences and is meant to be kept up to date. Previous versions of the workshop can be viewed on [GitHub](https://github.com/geoblacklight/geoblacklight.github.io/tree/master/_posts).
+
+Workshop Dates:
+
+ - [Code4Lib 2015](http://wiki.code4lib.org/2015_Preconference_Proposals#A_hands-on_introduction_to_GeoBlacklight)  - February 9, 2015
+ - [Open Repositories 2015](https://www.conftool.com/or2015/index.php?page=browseSessions&form_session=20&metadata=show&presentations=show) - June 8, 2015
+
+
 
 <hr>
 
