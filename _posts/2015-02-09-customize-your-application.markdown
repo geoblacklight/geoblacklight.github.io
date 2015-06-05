@@ -198,7 +198,7 @@ Blacklight and GeoBlacklight use [i18n](http://guides.rubyonrails.org/i18n.html)
     ```yaml
     en:
       blacklight:
-        application_name: 'You Geo App'
+        application_name: 'Your Geo App'
         search:
           form:
             submit: 'Search this'
