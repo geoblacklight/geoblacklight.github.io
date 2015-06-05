@@ -1,11 +1,11 @@
 ---
 layout: tutorial-c4l
-title:  GeoBlacklight Overview - Part 1 - Code4Lib 2015 Workshop"
+title:  GeoBlacklight Overview - Part 1 - GeoBlacklight Workshop"
 date:   2015-02-09 14:59:00
 categories: tutorial
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: 'An overview of GeoBlacklight, its uses, and the technology stack. Created as part of a tutorial series for a 2015 Code4Lib Preconference Workshop'
+snippet: 'An overview of GeoBlacklight, its uses, and the technology stack. Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 
 ## GeoBlacklight Overview

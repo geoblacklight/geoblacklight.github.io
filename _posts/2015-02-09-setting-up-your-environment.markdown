@@ -1,11 +1,11 @@
 ---
 layout: tutorial-c4l
-title:  "Setting up your environment - Part 2 - Code4Lib 2015 Workshop"
+title:  "Setting up your environment - Part 2 - GeoBlacklight Workshop"
 date:   2015-02-09 14:58:00
 categories: tutorial
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: 'Setting up your development environment for GeoBlacklight. Created as part of a tutorial series for a 2015 Code4Lib Preconference Workshop'
+snippet: 'Setting up your development environment for GeoBlacklight. Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 
 ## Setting up your environment

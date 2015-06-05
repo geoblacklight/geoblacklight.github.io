@@ -1,14 +1,14 @@
 ---
 layout: tutorial-c4l
-title:  Create your application - Part 3 - Code4Lib 2015 Workshop"
+title:  Create your application - Part 3 - GeoBlacklight Workshop"
 date:   2015-02-09 14:57:00
 categories: tutorial
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: 'Create your GeoBlacklight application. Created as part of a tutorial series for a 2015 Code4Lib Preconference Workshop'
+snippet: 'Create your GeoBlacklight application. Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 
-Note: If you have issues with any of these steps, a prebuilt version of this application is available via the `geoblacklight_workshop` directory located on the provided thumb-drive. This application is located under `geoblacklight_workshop/geo_app` and can also be access after SSHing into the vagrant box at `/vagrant/geo_app`.
+Note: If you have issues with any of these steps, a prebuilt version of this application is available via the `geoblacklight_workshop` directory located on the provided thumb-drive. This application is located under `geoblacklight_workshop/geo_app` and can also be access after SSHing into the vagrant box at `/vagrant/demo_geoblacklight_app`.
 
 ## Create your application
 

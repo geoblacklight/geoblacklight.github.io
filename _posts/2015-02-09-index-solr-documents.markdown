@@ -1,11 +1,11 @@
 ---
 layout: tutorial-c4l
-title:  Index Solr documents - Part 4 - Code4Lib 2015 Workshop"
+title:  Index Solr documents - Part 4 - GeoBlacklight Workshop"
 date:   2015-02-09 14:56:00
 categories: tutorial
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: Index Solr documents into your GeoBlacklight application. Created as part of a tutorial series for a 2015 Code4Lib Preconference Workshop'
+snippet: Index Solr documents into your GeoBlacklight application. Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 
 

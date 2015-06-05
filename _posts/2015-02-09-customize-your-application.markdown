@@ -1,11 +1,11 @@
 ---
 layout: tutorial-c4l
-title:  Customize your application - Part 5 - Code4Lib 2015 Workshop"
+title:  Customize your application - Part 5 - GeoBlacklight Workshop"
 date:   2015-02-09 14:55:00
 categories: tutorial
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: Customize your GeoBlacklight application. Created as part of a tutorial series for a 2015 Code4Lib Preconference Workshop'
+snippet: Customize your GeoBlacklight application. Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 
 There are many ways to customize your GeoBlacklight application, and unfortunately we can't cover them all with this tutorial. GeoBlacklight tries to stick to similar patterns as Blacklight, so most of the Blacklight customization techniques should hold true.
@@ -198,7 +198,7 @@ Blacklight and GeoBlacklight use [i18n](http://guides.rubyonrails.org/i18n.html)
     ```yaml
     en:
       blacklight:
-        application_name: 'You Geo App'
+        application_name: 'Your Geo App'
         search:
           form:
             submit: 'Search this'
