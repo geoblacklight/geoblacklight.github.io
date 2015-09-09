@@ -21,3 +21,5 @@ jekyll serve --drafts
 ```
 
 Serve draft posts located in the `_drafts` directory
+
+Blog posts and tutorials should be added to the `_posts` directory.
