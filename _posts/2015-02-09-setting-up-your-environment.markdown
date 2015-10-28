@@ -44,10 +44,10 @@ For those interested in what was installed on this machine and how it was create
 
   1. Copy the `geoblacklight_workshop` directory to your `~/scratch` directory
 
-  1. Move to your `~/scratch` directory
+  1. Move to your `~/scratch/geoblacklight_workshop` directory
 
     ```sh
-    $ cd ~/scratch
+    $ cd ~/scratch/geoblacklight_workshop
     ```
 
   1. Start vagrant
