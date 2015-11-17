@@ -16,6 +16,6 @@ Integrating with CartoDB was quite painless. One of the best parts of working on
 
 <img src="/images/cartodb-github.jpg">
 
-You can checkout "Open in CartoDB" now in [EarthWorks](https://earthworks.stanford.edu/catalog/stanford-hq627gh2501) by viewing this Natural Earth dataset. We are interested in [hearing your feedback](https://groups.google.com/forum/#!forum/geoblacklight-working-group) about this. We've added this feature for all of the public datasets in EarthWorks.
+You can checkout "Open in CartoDB" now in [EarthWorks](https://earthworks.stanford.edu/catalog/stanford-hq627gh2501) by viewing this Natural Earth dataset. We are interested in [hearing your feedback](https://groups.google.com/forum/#!forum/geoblacklight-working-group) about this. The "Open in CartoDB" feature is enabled for all of the public datasets in EarthWorks.
 
 <img src="/images/open-in-cartodb-button.jpg">
