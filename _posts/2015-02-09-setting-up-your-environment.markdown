@@ -23,7 +23,7 @@ GeoBlacklight has similar prerequisites to [Blacklight][blacklight]. It diverges
   - [Git][installgit]
   - Java (for local Solr server)
 
-Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive.
+Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive. If you are not at the workshop, you can create the virtual machine for the workshop, by following [this guide]({% post_url 2016-01-23-using-packer-to-create-a-development-virtual-machine %}).
 
 ### Local attendees setup VirtualBox/Vagrant
   
