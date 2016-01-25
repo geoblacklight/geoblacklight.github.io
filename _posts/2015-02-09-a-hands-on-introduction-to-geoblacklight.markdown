@@ -16,6 +16,8 @@ Workshop Dates:
 
  - [Code4Lib 2015](http://wiki.code4lib.org/2015_Preconference_Proposals#A_hands-on_introduction_to_GeoBlacklight)  - February 9, 2015
  - [Open Repositories 2015](https://www.conftool.com/or2015/index.php?page=browseSessions&form_session=20&metadata=show&presentations=show) - June 8, 2015
+ - [DLF Forum](https://dlfforum2015.sched.org/event/4ALf/a-hands-on-introduction-to-geoblacklight) - October 28, 2015
+ - [Geo4Lib Camp](https://wiki.duraspace.org/display/hydra/Geo4LibCamp+2016) - January 25, 2016
 
 
 
