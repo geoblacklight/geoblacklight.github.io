@@ -8,7 +8,7 @@ author_link: 'https://twitter.com/mejackreed'
 snippet: 'Create your GeoBlacklight application. Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 
-Note: If you have issues with any of these steps, a prebuilt version of this application is available via the `geoblacklight_workshop` directory located on the provided thumb-drive. This application is located under `geoblacklight_workshop/geo_app` and can also be access after SSHing into the vagrant box at `/vagrant/demo_geoblacklight_app`.
+Note: If you have issues with any of these steps, a prebuilt version of this application is available within the provided virtual machine. The application can be accessed by SSHing into the virtual maching and then changing directory to `pregenerated/demo_geoblacklight_app`.
 
 ## Create your application
 
