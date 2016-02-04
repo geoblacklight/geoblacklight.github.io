@@ -217,3 +217,15 @@ Blacklight and GeoBlacklight use [i18n](http://guides.rubyonrails.org/i18n.html)
         <a href='https://github.com/geoblacklight/geoblacklight/blob/master/config/locales/geoblacklight.en.yml'>GeoBlacklight Configurable Keys</a>
       </div>
     </div>
+
+## Wrapping Up
+
+Thanks for attending this workshop. You can contribute feedback about this workshop by filling out a [quick survey](https://docs.google.com/a/stanford.edu/forms/d/1odzYIFFJjBL7-0Y1ZlWPS-pBzW1EbyFaStA9VD3r_Zg/viewform).
+
+This workshop is open source, and you can [contribute back to it](https://github.com/geoblacklight/geoblacklight.github.io).
+
+Don't forget to stop your virtual machine.
+
+```sh
+$ vagrant halt # stops the virtual machine
+```
