@@ -16,7 +16,7 @@ Blog Posts:
 
  - [January 20 – GeoBlacklight at NYU: A Project Overview](http://www.curationculture.org/archives/2213)
  - [January 25 – DSpace and the Institutional Repository: Preservation and the Spatial Data Infrastructure](http://www.curationculture.org/archives/2215)
- - February 5 – [Creating GeoBlacklight Metadata Records](http://www.curationculture.org/archives/2218)
+ - [February 5 – Creating GeoBlacklight Metadata Records](http://www.curationculture.org/archives/2218)
  - _February 3 – The Technology Stack: Amazon Web Services Products & Open Source GIS_
  - _February 10 – Revisiting: The Collection Workflow in a Nutshell_
  - _February 17 – Institutional Context and Collaboration_
