@@ -34,20 +34,23 @@ For those interested in what was installed on this machine and how it was create
  - [Vagrant for OS X and Linux](#vagrant-for-os-x-and-linux)
  - [Vagrant for Windows](#vagrant-for-windows)
 
+#### Vagrant Quick Tips
+After you have your virtual machine up and going, you will want to stop it. Here are a few commands that will help out.
+
+```sh
+$ vagrant halt # stops the virtual machine
+$ vagrant destroy # stops and deletes the virtual machine
+```
+
 #### Vagrant for OS X and Linux
   1. Install the Mac (.dmg) version of VirtualBox and Vagrant on your machine. If you are using Linux, please download and install appropriately. [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads), [Vagrant Downloads](https://www.vagrantup.com/downloads.html)
-  1. Make a new directory for your work
+
+  1. If not already on your Desktop, copy the `geoblacklight_workshop` directory to your `~/Desktop` directory
+
+  1. Move to your `~/Desktop/geoblacklight_workshop` directory
 
     ```sh
-    $ mkdir ~/scratch
-    ```
-
-  1. Copy the `geoblacklight_workshop` directory to your `~/scratch` directory
-
-  1. Move to your `~/scratch/geoblacklight_workshop` directory
-
-    ```sh
-    $ cd ~/scratch/geoblacklight_workshop
+    $ cd ~/Desktop/geoblacklight_workshop
     ```
 
   1. Start vagrant
@@ -66,41 +69,28 @@ For those interested in what was installed on this machine and how it was create
 
 Thanks to Zach Vowell who contributed this guide for Windows.
 
-Note: this tutorial uses the [Cygwin](https://www.cygwin.com/) tool so please make sure that is installed first, but it should be applicable to users who don't use Cygwin but have a Windows ssh client installed [download PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+Note: Please install a Windows ssh client installed such as [ PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
   1. Install the Windows (.exe) version of VirtualBox and Vagrant on your machine.
 
-  1. Open a Cygwin terminal and cd to your home directory
+  1. If not already on your Desktop, copy the `geoblacklight_workshop` directory to your Desktop `C:\Users\[username]\Desktop` (for Windows 7)
 
-    ```sh
-    $ /cygdrive/c/Users/[username]/
+  1. Open a [Windows Command Prompt (cmd)](http://www.digitalcitizen.life/7-ways-launch-command-prompt-windows-7-windows-8)
+
+  1. Move to the `geoblacklight_workshop` directory on the Desktop
+
     ```
-  
-    <div class='flash-alert'>
-    [cygdrive/ being a Cygwin convention for getting to the root of your computer's file system.]
-    </div>
-
-  1. Make a new directory for your work
-
-    ```sh
-    $ mkdir scratch
-    ```
-
-  1. Copy the `geoblacklight_workshop` directory to your `~/scratch` directory
-
-  1. Move to the `geoblacklight_workshop` directory
-
-    ```sh
-    $ cd scratch/geoblacklight_workshop
+    C:\Users\[username]> cd Desktop\geoblacklight_workshop
     ```
 
   1. Start Vagrant
 
-    ```sh
-    $ vagrant up # This command creates and configures guest machines according to your Vagrantfile.
+    ```
+    C:\Users\[username]\Desktop\geoblacklight_workshop> vagrant up
+    # This command creates and configures guest machines according to your Vagrantfile.
     ```
 
-  1. Minimize the Cygwin terminal, and then open up PuTTY
+  1. Open up PuTTY
 
   1. SSH into the Vagrant box by entering the following parameters into the "Basic Options for Your PuTTY session" window:
     - Host Name (or IP address): 127.0.0.1
