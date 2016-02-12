@@ -29,7 +29,7 @@ The search interface wasn't spatial, had some usability issues, and needed some 
 
 ---
 # Drawing board
-With broad changes in mind, rough designs were pencilled up or debated around the office whiteboard.  Hopefully the designer in you enjoys these as much as we did.
+With broad changes in mind, rough designs were pencilled up and debated around the office whiteboard.  Hopefully the designer in you enjoys these as much as we did.
 
 ##### Map and fancy notch thing
 
@@ -38,7 +38,7 @@ The notch made it into the final design, the floating panel and vignette shading
 
 ##### Simple facet design
 
-Moving the facet selection into a single column with the results was an early decision.
+We decided early to move the facet selection into a single column with the results.
 
 ![filters]({{site.baseurl}}/images/sketches/facets@small.png)
 
@@ -50,7 +50,7 @@ The single search/results column let us plan a nice clean map display.
 
 ---
 # Look at that
-After the early work of original thought, we checked out related works. It turns out the original VecNET search bore a striking resemblance to the old AirBnB search!  They had recently done a resign to fix what they have concluded were large design and usability issues.
+After the early work of original thought, we checked out related works. It turns out the original VecNET search bore a striking resemblance to the old AirBnB search!  AirBnB had recently done a redesign to fix what they have concluded were large design and usability issues.
 
 ![airbnb-old@small.png]({{site.baseurl}}/images/airbnb-old@small.png)
 
@@ -60,11 +60,11 @@ We could learn from their experience and benefit from work done by a talented te
 Our final proposal was iteratively formed with feedback from VecNET librarians based around simple UX principles:
 
  - Big searchable map
-  - A well designed map could easily display information about where papers were from.  Any user could easily find data from a location.
+    - A well designed map can clearly display information about where papers were from; users can easily find data from a specific location
  - Intuitive top to bottom page flow
-  - Natural progression means less 'pogosticking'
+    - Natural progression means less 'pogosticking'
  - Simple search filters
-  - Use ordinary words instead of obscure terms
+    - Use ordinary words instead of obscure terms
 
 
 
@@ -73,28 +73,28 @@ Our final proposal was iteratively formed with feedback from VecNET librarians b
 ---
 
 # Enter GeoBlacklight
-However the stack at VecNET was inherited from a prototype Ruby on Rails app with an old Solr and Fedora backend.  For a spatial search we would need to integrate spatial values of records with the existing dataset.  On the front end we wanted to use Leaflet and GeoJSON and uses Rail's API ability to serve  a modern Javascript powered frontend with the UI goodness that users enjoy.
+The stack at VecNET was inherited from a prototype Ruby on Rails app with an old Solr and Fedora backend.  For a spatial search we would need to integrate spatial values of records with the existing dataset.  On the front end we wanted to use Leaflet and GeoJSON and uses Rail's API ability to serve data to a modern Javascript powered frontend with the UI goodness that users enjoy.
 
 Just as the Backbone.js structure was being laid down, we noticed a new project with strong ideas about user friendly geospatial discovery.
 
 ![geoblacklight@small.png]({{site.baseurl}}/images/geoblacklight@small.png)
 
 The GeoBlacklight project was being developed in the open and was based on the [Blacklight project](http://projectblacklight.org/) which was a basis of the legacy app.  In addition backwards compatibility was emphasised which is a high virtue when choosing an upstream.
-Normally you don't get excited about Rails apps at version 0.4 but with institutions like Stanford, MIT and Princeton contributing to an active development community that was encouraging new users - it was as close as software gets to alluring.
+Normally you don't get excited about Rails apps at version 0.4 but with institutions like Stanford, MIT and Princeton contributing to an active development community that was encouraging new users – it was as close as software gets to alluring.
 
 
 # Customising GeoBlacklight
-Adding VecNET specfic functionality to the existing GeoBlacklight platform was learning curve but thankfully was [well documented](http://geoblacklight.org/tutorials.html) with an [active Google groups community](https://groups.google.com/forum/#!forum/geoblacklight-working-group).
-Our VecNET specific additions included :
+Adding VecNET-specific functionality to the existing GeoBlacklight platform can with a bit of a learning curve but thankfully was [well documented](http://geoblacklight.org/tutorials.html) with an [active Google groups community](https://groups.google.com/forum/#!forum/geoblacklight-working-group).
+Our VecNET specific additions included:
 
-  - displaying the significant locations associated with a single 'record' on a map.
+  - displaying several locations associated with a single 'record' on a map
   - search by map area and bounding box
   - point clustering for when density was too high
 
-Other customisations to fit our design idea included :
+Other customisations to fit our design idea included:
 
-  - Single search page with AJAX search and results
-  - Shiny rounded CSS3 corners (because Steve Jobs amiright...)
+  - Unified search page with AJAX search form and results
+  - Shiny rounded CSS3 corners (because [Steve Jobs amiright](http://www.folklore.org/StoryView.py?story=Round_Rects_Are_Everywhere.txt)...)
   - Friendly animation and transitions between results and map marker
   - Enhanced metadata on the results page for better selection
   - [Progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) with fallback to rendered HTML for SEO.
