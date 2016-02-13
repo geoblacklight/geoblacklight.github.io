@@ -1,7 +1,6 @@
 ---
 layout: post
 category: blog
-splash: "https://raw.githubusercontent.com/stevevandervalk/starter/gh-pages/media/dl-new-map-fiddled%40splash%401600.png"
 tags:
   - "geoblacklight, vecnet"
 published: true
@@ -9,9 +8,9 @@ title: VecNET Digital Library redesign and geospatial search using GeoBlacklight
 date: 2016-02-09
 author: 'Steve Vandervalk'
 author_link: 'https://github.com/stevenvandervalk'
-snippet: 'Adding geospatial search to VecNET digital library application with GeoBlacklight.'
+snippet: 'Adding geospatial search to the VecNET digital library using GeoBlacklight.'
 ---
-![dl-now.png](https://raw.githubusercontent.com/stevevandervalk/starter/gh-pages/media/dl-new-map-fiddled%40splash%401600.png)
+![dl-now.png]({{site.baseurl}}/images/dl-new-map-fiddled@splash@1600.png)
 
 We got on the GeoBlacklight bus when we joined the VecNET project.  VecNET was a Gates Foundation initiative to simulate malaria vectors, transmission and interventions using parameters from current literature.  To provide the latest and greatest parameters, VecNET used a curated digital library with a web based search interface.
 
@@ -104,7 +103,7 @@ We implemented the changes with vanilla Javascript and Rails templates to minimi
 
 # Enhancing metadata with Micro Standards
 
-Geoblacklight uses an geospatial schema extended from prior standards, [documented here](https://github.com/geoblacklight/geoblacklight-schema), and [explained best here](http://journal.code4lib.org/articles/9710)(imho).  It encodes the both the metadata and geospatial characteristics of the stored records.  The Ruby on Rails server in GeoBlacklight will embed the data into rendered HTML with a [schema.org](http://schema.org/) style which looks the 'div' element in the HTML below:
+Geoblacklight uses an geospatial schema extended from prior standards, [documented here](https://github.com/geoblacklight/geoblacklight-schema), and [explained best here](http://journal.code4lib.org/articles/9710)(imho).  It encodes the metadata and geospatial characteristics of the stored records.  The Ruby on Rails server in GeoBlacklight will embed the data into rendered HTML with a [schema.org](http://schema.org/) style which looks the 'div' element in the HTML below:
 
 {% highlight html %}
 <div class="document " itemscope="" itemtype="http://schema.org/Dataset">
@@ -113,7 +112,7 @@ Geoblacklight uses an geospatial schema extended from prior standards, [document
 
 The value, `data-bbox`, for instance, will be be used by [Leaflet.js](http://leafletjs.com/) to manipulate the map or generate a marker.  It is a simplified explanation but you get the idea.
 
-We want users searching the VecNET digital library to have the relevant data visible to make searching easy and efficient. Using the mechanism above, we can extend our digital library to show users important details such as journal, date, author.  The image below is an example of those micro schema values turned into nice UI elements for users.
+We want to make searching easy and efficient by displaying the most relevant data. Using the mechanism above, we can extend our digital library to show users important details such as journal, date, author.  The image below is an example of those micro schema values turned into nice UI elements for users.
 
 ![schema-example.png]({{site.baseurl}}/images/schema-example.png)
 
