@@ -30,58 +30,53 @@ This guide assumes a few things already.
  - You have [Ruby](https://gorails.com/setup/#ruby) installed
  - You have Solr running locally on port 8983 (default Solr port) and it is configured with [GeoBlacklight-Schema](https://github.com/geoblacklight/geoblacklight-schema/tree/master/conf) configuration
 
-<div class='flash-alert'>
-  If you are confused about these prerequisites, it is probably best that you start by running through the workshop <a href="{% post_url 2015-02-09-a-hands-on-introduction-to-geoblacklight %}">"A hands on introduction to GeoBlacklight"</a>.
-</div>
+
+If you are confused about these prerequisites, it is probably best that you start by running through the workshop <a href="{% post_url 2015-02-09-a-hands-on-introduction-to-geoblacklight %}">"A hands on introduction to GeoBlacklight"</a>.
+{: .flash-alert}
 
 ### Install GeoCombine
 
-<div class='flash-notice'>
-  If you have already have a GeoBlacklight application, skip steps 1 and 2. You can just add <code>gem 'geo_combine'</code> to your GeoBlacklight application's <code>Gemfile</code>
-</div>
+If you have already have a GeoBlacklight application, skip steps 1 and 2. You can just add <code>gem 'geo_combine'</code> to your GeoBlacklight application's <code>Gemfile</code>
+{: .flash-notice}
 
   1. To get started, first clone the GeoCombine repository
 
-    ```sh
-    $ git clone https://github.com/OpenGeoMetadata/GeoCombine.git
-    ```
+     ```sh
+     $ git clone https://github.com/OpenGeoMetadata/GeoCombine.git
+     ```
 
   1. Switch to its folder
 
-    ```sh
-    $ cd GeoCombine
-    ```
+     ```sh
+     $ cd GeoCombine
+     ```
 
   1. Install GeoCombine's dependencies
 
-    ```sh
-    $ bundle install
-    ```
+     ```sh
+     $ bundle install
+     ```
 
   1. Create a `tmp` directory (if it doesn't already exist)
 
-    ```sh
-    $ mkdir tmp
-    ```
+     ```sh
+     $ mkdir tmp
+     ```
 
   1. Clone all of the 'edu.*' repositories to tmp.
 
-    ```sh
-    $ rake geocombine:clone
-    ```
-  <div class='flash-notice'>
-    Since other software projects live in OpenGeoMetadata we only want to clone the metadata repositories. All of these are currently namespaced with "edu.institution.subdomain".
-  </div>
+     ```sh
+     $ rake geocombine:clone
+     ```
+
+     Since other software projects live in OpenGeoMetadata we only want to clone the metadata repositories. All of these are currently namespaced with "edu.institution.subdomain".
+     {: .flash-notice}
 
   1. Index all of the `geoblacklight.xml` documents located in cloned repositories.
 
-    ```sh
-    $ rake geocombine:index
-    ```
+     ```sh
+     $ rake geocombine:index
+     ```
 
-  <div class='flash-success'>
-    Go grab a coffee or lunch, because this might take a while! But afterwards your index should have +30,000 new records in it.
-  </div>
-
-
-
+     Go grab a coffee or lunch, because this might take a while! But afterwards your index should have +30,000 new records in it.
+     {: .flash-success}

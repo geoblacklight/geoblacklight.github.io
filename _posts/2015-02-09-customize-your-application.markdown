@@ -26,13 +26,13 @@ When it comes to customizing your GeoBlacklight application there are some basic
 
   1. The less you override the easier it is to upgrade.
     
-    Blacklight and GeoBlacklight adhere to some basic principles which all adopters to override helper methods, view partials, and even classes. A lot of things are configurable out of the box. However, there are some best practices around what to override and where to do it to make sure your application can take advantage to improvements to both Blacklight and GeoBlacklight.  Both projects use [semantic versioning](http://semver.org/) to make this upgrade path easier for adopters.
+     Blacklight and GeoBlacklight adhere to some basic principles which all adopters to override helper methods, view partials, and even classes. A lot of things are configurable out of the box. However, there are some best practices around what to override and where to do it to make sure your application can take advantage to improvements to both Blacklight and GeoBlacklight.  Both projects use [semantic versioning](http://semver.org/) to make this upgrade path easier for adopters.
     
-    [Providing your own view templates](https://github.com/projectblacklight/blacklight/wiki/Providing-your-own-view-templates) - Blacklight Wiki (Customizing the User Interface)
+     [Providing your own view templates](https://github.com/projectblacklight/blacklight/wiki/Providing-your-own-view-templates) - Blacklight Wiki (Customizing the User Interface)
 
   1. Reach out and ask for help on the [Blacklight Developers](https://groups.google.com/forum/#!forum/blacklight-development) or [GeoBlacklight](https://groups.google.com/forum/#!forum/geoblacklight-working-group) Google Groups
 
-    Asking questions, reaching out to others, and getting feedback from experienced developpers is a great practice in general. In this particular case its helps foster the community and start conversations that might help others.
+     Asking questions, reaching out to others, and getting feedback from experienced developpers is a great practice in general. In this particular case its helps foster the community and start conversations that might help others.
 
 ### Customize metadata shown
 
@@ -40,54 +40,53 @@ In this example we are going to change the way the GeoBlacklight is configured t
 
   1. Make sure your Jetty server and Rails application are started.
 
-    ```sh
-    $ rake jetty:start
-    $ rails s -b 0.0.0.0
-    ```
+     ```sh
+     $ rake jetty:start
+     $ rails s -b 0.0.0.0
+     ```
 
   1. Open the `catalog_controller.rb` file in your text editor.
   
-    <div class='flash-notice'>
-      Hint: `catalog_controller.rb` is located at "app/controllers/catalog_controller.rb" in your application
-    </div>
+    
+     Hint: `catalog_controller.rb` is located at "app/controllers/catalog_controller.rb" in your application
+     {: .flash-notice}
 
   1. Scroll down to lines 119 - 126.
 
-    ```ruby
-    ...
-    config.add_show_field 'dc_creator_sm', label: 'Author(s)', itemprop: 'author'
-    config.add_show_field 'dc_description_s', label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
-    config.add_show_field 'dc_publisher_s', label: 'Publisher', itemprop: 'publisher'
-    config.add_show_field 'dct_isPartOf_sm', label: 'Collection', itemprop: 'isPartOf'
-    config.add_show_field 'dct_spatial_sm', label: 'Place(s)', itemprop: 'spatial', link_to_search: true
-    config.add_show_field 'dc_subject_sm', label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
-    config.add_show_field 'dct_temporal_sm', label: 'Year', itemprop: 'temporal'
-    config.add_show_field 'dct_provenance_s', label: 'Held by', link_to_search: true
-    ...
-    ```
-    These configuration options relate to fields that are indexed in Solr. You can disable a metadata field being shown on an items show page. If you navigate to an [items page](http://127.0.0.1:3000/catalog/stanford-cg357zz0321), it will currently show field called publisher. Maybe you would like to rename that field to "Data publisher".
+     ```ruby
+     ...
+     config.add_show_field 'dc_creator_sm', label: 'Author(s)', itemprop: 'author'
+     config.add_show_field 'dc_description_s', label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
+     config.add_show_field 'dc_publisher_s', label: 'Publisher', itemprop: 'publisher'
+     config.add_show_field 'dct_isPartOf_sm', label: 'Collection', itemprop: 'isPartOf'
+     config.add_show_field 'dct_spatial_sm', label: 'Place(s)', itemprop: 'spatial', link_to_search: true
+     config.add_show_field 'dc_subject_sm', label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
+     config.add_show_field 'dct_temporal_sm', label: 'Year', itemprop: 'temporal'
+     config.add_show_field 'dct_provenance_s', label: 'Held by', link_to_search: true
+     ...
+     ```
+     These configuration options relate to fields that are indexed in Solr. You can disable a metadata field being shown on an items show page. If you navigate to an [items page](http://127.0.0.1:3000/catalog/stanford-cg357zz0321), it will currently show field called publisher. Maybe you would like to rename that field to "Data publisher".
 
   1. Modify the label in line 121
 
-    ```ruby
-    # change this
-    config.add_show_field 'dc_publisher_s', label: 'Publisher', itemprop: 'publisher'
-    # to this
-    config.add_show_field 'dc_publisher_s', label: 'Data publisher', itemprop: 'publisher'
-    ```
+     ```ruby
+     # change this
+     config.add_show_field 'dc_publisher_s', label: 'Publisher', itemprop: 'publisher'
+     # to this
+     config.add_show_field 'dc_publisher_s', label: 'Data publisher', itemprop: 'publisher'
+     ```
 
-    Save the file and reload the page. You should see the label change.
+     Save the file and reload the page. You should see the label change.
 
   1. Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the `dc_creator_sm` line (119).
 
-    ```ruby
-    # config.add_show_field 'dc_creator_sm', label: 'Author(s)', itemprop: 'author'
-    ```
-    Save the file and reload the page. You should no longer see the "Author(s)" field.
+     ```ruby
+     # config.add_show_field 'dc_creator_sm', label: 'Author(s)', itemprop: 'author'
+     ```
+     Save the file and reload the page. You should no longer see the "Author(s)" field.
     
-    <div class='flash-success'>
-      You have now customized a layer's show page!
-    </div>
+     You have now customized a layer's show page!
+     {: .flash-success}
     
 ### Changing the style of your application
 
@@ -95,63 +94,63 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
 
   1. Rename `application.css` to `application.scss`
 
-    ```sh
-    $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
-    ```
+     ```sh
+     $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
+     ```
 
   1. Delete everything from application.scss and manually import `blacklight.scss` and `geoblacklight.scss` rather than require tree.
 
-    ```scss
-    // in app/assets/stylesheets/application.scss
-    @import 'blacklight';
-    @import 'geoblacklight';
-    ```
+     ```scss
+     // in app/assets/stylesheets/application.scss
+     @import 'blacklight';
+     @import 'geoblacklight';
+     ```
   1. Similarly in `geoblacklight.scss`, remove requires and import them instead.
 
-    ```scss
-    // in app/assets/stylesheets/geoblacklight.scss
-    @import 'geoblacklight/application';
-    @import 'blacklight_range_limit';
-    ```
+     ```scss
+     // in app/assets/stylesheets/geoblacklight.scss
+     @import 'geoblacklight/application';
+     @import 'blacklight_range_limit';
+     ```
 
   1. Create file `app/assets/stylesheets/bootstrap-variables.scss` and import it from `blacklight.scss`
 
-    ```sh
-    $ touch app/assets/stylesheets/bootstrap-variables.scss
-    ```
+     ```sh
+     $ touch app/assets/stylesheets/bootstrap-variables.scss
+     ```
 
-    ```scss
-    // in app/assets/stylesheets/blacklight.scss
-    @import 'bootstrap-variables';
+     ```scss
+     // in app/assets/stylesheets/blacklight.scss
+     @import 'bootstrap-variables';
 
-    @import 'bootstrap-sprockets';
+     @import 'bootstrap-sprockets';
 
-    @import 'bootstrap';
+     @import 'bootstrap';
 
-    @import 'blacklight/blacklight';
-    ```
+     @import 'blacklight/blacklight';
+     ```
 
   1. Now you can easily update Bootstrap variables in your `bootstrap-variables.scss`!
     
-    Change the navbar height
+     Change the navbar height
 
-    ```scss
-    // in app/assets/stylesheets/bootstrap-variables.scss
-    // Navbar
-    $navbar-height: 80px;
-    ```
+     ```scss
+     // in app/assets/stylesheets/bootstrap-variables.scss
+     // Navbar
+     $navbar-height: 80px;
+     ```
 
-    Change the primary brand color
+     Change the primary brand color
 
-    ```scss
-    // in app/assets/stylesheets/bootstrap-variables.scss
-    // Colors
-    $brand-primary: #32cd32;
-    ```
+     ```scss
+     // in app/assets/stylesheets/bootstrap-variables.scss
+     // Colors
+     $brand-primary: #32cd32;
+     ```
 
-    <div class='flash-success'>
-      Great job! You can configure a whole host of options using this Bootstrap customization technique. Once again, here is the list of Bootstrap variables you can customize http://getbootstrap.com/customize/ .
-    </div>
+
+     Great job! You can configure a whole host of options using this Bootstrap customization technique. Once again, here is the list of Bootstrap variables you can customize http://getbootstrap.com/customize/ .
+     {: .flash-success}
 
 ### Overriding a partial
 
@@ -163,23 +162,22 @@ Lets say you want to override the homepage that is shown in GeoBlacklight that c
 
   1. Create a file with the same name and path in your application.
 
-    ```sh
-    $ mkdir -p app/views/catalog
-    $ touch app/views/catalog/_home_text.html.erb
-    ```
+     ```sh
+     $ mkdir -p app/views/catalog
+     $ touch app/views/catalog/_home_text.html.erb
+     ```
 
   1. Edit this file and add some custom text
 
-    ```erb
-    This is the home page.
-    
-    Search bar:
-    <%= render_search_form_no_navbar %>
-    ```
+     ```erb
+     This is the home page.
 
-    <div class='flash-success'>
-      See how easy that was? You even included another partial!
-    </div>
+     Search bar:
+     <%= render_search_form_no_navbar %>
+     ```
+
+     See how easy that was? You even included another partial!
+     {: .flash-success}
 
 ### Customize i18n keys
 
@@ -187,36 +185,30 @@ Blacklight and GeoBlacklight use [i18n](http://guides.rubyonrails.org/i18n.html)
 
   1. Open up file `config/locales/blacklight.en.yml`
 
-    ```yaml
-    en:
-      blacklight:
-        application_name: 'Blacklight'
-    ```
+     ```yaml
+     en:
+       blacklight:
+         application_name: 'Blacklight'
+     ```
 
   1. Edit the file, adding a customization to the search form label
 
-    ```yaml
-    en:
-      blacklight:
-        application_name: 'Your Geo App'
-        search:
-          form:
-            submit: 'Search this'
-    ```
+     ```yaml
+     en:
+       blacklight:
+         application_name: 'Your Geo App'
+         search:
+           form:
+             submit: 'Search this'
+     ```
 
-    <div class='flash-success'>
-      Refresh your home page and you should see the submit button text changed. If you inspect the html you will notice the HTML title attribute changed.
-    </div>
+     Refresh your home page and you should see the submit button text changed. If you inspect the html you will notice the HTML title attribute changed.
+     {: .flash-success}
 
-    <div class='flash-notice'>
-      More configurable keys are available, check out what you can customize using this easy approach
-      <div>
-        <a href='https://github.com/projectblacklight/blacklight/blob/master/config/locales/blacklight.en.yml'>Blacklight Configurable Keys</a>
-      </div>
-      <div>
-        <a href='https://github.com/geoblacklight/geoblacklight/blob/master/config/locales/geoblacklight.en.yml'>GeoBlacklight Configurable Keys</a>
-      </div>
-    </div>
+     More configurable keys are available, check out what you can customize using this approach:
+      - <a href='https://github.com/projectblacklight/blacklight/blob/master/config/locales/blacklight.en.yml'>Blacklight Configurable Keys</a>
+      - <a href='https://github.com/geoblacklight/geoblacklight/blob/master/config/locales/geoblacklight.en.yml'>GeoBlacklight Configurable Keys</a>
+     {: .flash-notice}
 
 ## Wrapping Up
 
