@@ -78,17 +78,15 @@ article.type-system-rounded {
     }
   }
   
-  // code {
-  //   background: #F7F7F7;
-  //   border-radius: $base-border-radius * 1.5;
-  //   border: 1px solid #E0E0E0;
-  //   font-family: monaco;
-  //   font-size: 0.7em;
-  //   font-style: normal;
-  //   padding: 0.1em 0.4em;
-  //   white-space: nowrap;
-  // }
-  
+  pre {
+    overflow-x: auto;
+  }
+
+  pre code {
+    overflow-wrap: normal;
+    word-wrap: normal;
+    white-space: pre;
+  }
   
   h3 {
     font-family: $sans-serif-2;
