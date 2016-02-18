@@ -48,22 +48,22 @@ $ vagrant destroy # stops and deletes the virtual machine
   1. If not already on your Desktop, copy the `geoblacklight_workshop` directory to your `~/Desktop` directory
 
   1. Move to your `~/Desktop/geoblacklight_workshop` directory
-
-    ```sh
-    $ cd ~/Desktop/geoblacklight_workshop
-    ```
+ 
+     ```sh
+     $ cd ~/Desktop/geoblacklight_workshop
+     ```
 
   1. Start vagrant
 
-    ```sh
-    $ vagrant up # This command creates and configures guest machines according to your Vagrantfile.
-    ```
+     ```sh
+     $ vagrant up # This command creates and configures guest machines according to your Vagrantfile.
+     ```
 
   1. SSH to the VM
 
-    ```sh
-    $ vagrant ssh # This will SSH into a running Vagrant machine and give you access to a shell.
-    ```
+     ```sh
+     $ vagrant ssh # This will SSH into a running Vagrant machine and give you access to a shell.
+     ```
 
 #### Vagrant for Windows
 
@@ -79,16 +79,16 @@ Note: Please install a Windows ssh client installed such as [ PuTTY](http://www.
 
   1. Move to the `geoblacklight_workshop` directory on the Desktop
 
-    ```
-    C:\Users\[username]> cd Desktop\geoblacklight_workshop
-    ```
+     ```
+     C:\Users\[username]> cd Desktop\geoblacklight_workshop
+     ```
 
   1. Start Vagrant
 
-    ```
-    C:\Users\[username]\Desktop\geoblacklight_workshop> vagrant up
-    # This command creates and configures guest machines according to your Vagrantfile.
-    ```
+     ```
+     C:\Users\[username]\Desktop\geoblacklight_workshop> vagrant up
+     # This command creates and configures guest machines according to your Vagrantfile.
+     ```
 
   1. Open up PuTTY
 
