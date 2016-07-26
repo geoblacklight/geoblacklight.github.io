@@ -118,7 +118,7 @@ For more information about generating a Rails application see the [Getting Start
   1. Configure Solr to use [GeoBlacklight-Schema](https://github.com/geoblacklight/geoblacklight-schema)
 
      ```sh
-     $ rake geoblacklight:configure_jetty
+     $ rake geoblacklight:configure_solr
      ```
 
   1. Start the jetty Solr server
