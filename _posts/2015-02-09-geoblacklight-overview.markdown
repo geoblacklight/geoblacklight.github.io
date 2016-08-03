@@ -56,6 +56,7 @@ Web Mapping Service (WMS) | http://www.opengis.net/def/serviceType/ogc/wms | Lay
 Web Feature Service (WFS) | http://www.opengis.net/def/serviceType/ogc/wfs | Vector downloads in GeoJSON and Shapefile
 International Image Interoperability Framework (IIIF) Image API | http://iiif.io/api/image | Image viewer using [Leaflet-IIIF](https://github.com/mejackreed/Leaflet-IIIF)
 Direct download file | http://schema.org/downloadUrl | Direct file download feature
+Data dictionary / documentation download | http://lccn.loc.gov/sh85035852 | Direct documentation download link
 Full layer description | http://schema.org/url | Further descriptive information about layer
 Metadata in ISO 19139 | http://www.isotc211.org/schemas/2005/gmd/ | Structured metadata in ISO format
 Metadata in MODS | http://www.loc.gov/mods/v3 | Structured metadata in MODS format
