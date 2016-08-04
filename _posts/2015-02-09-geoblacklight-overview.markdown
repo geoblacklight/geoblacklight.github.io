@@ -30,41 +30,7 @@ GeoBlacklight is flexible enough, however, to act as a discovery service for a v
 
 That's ok. GIS data indexed into GeoBlacklight becomes progressively more useful based on the services that back them. For example, the minimum required metadata for GeoBlacklight is a bounding box and description, and no references to services that will actually provide that data are required. GeoBlacklight can also help with serving static files available through a URL. Moreover, GeoBlacklight also natively supports [IIIF](http://iiif.io/) objects so organizations who have IIIF servers for scanned maps can start using GeoBlacklight today.
 
-[GeoBlacklight-Schema][geoblacklightschema] uses a field `dct_references_s` to define external services and references using the [CatInterOp](https://github.com/OSGeo/Cat-Interop) approach. `dct_references_s` contains a  serialized JSON array of key/value pairs, with keys representing XML namespace URI's and values the URL.
-
-A GeoBlacklight-Schema example for `dct_references_s`:
-
-```xml
-<field name="dct_references_s">
-  {
-    "http://schema.org/url":"http://purl.stanford.edu/bb509gh7292",
-    "http://schema.org/downloadUrl":"http://stacks.stanford.edu/file/druid:bb509gh7292/data.zip",
-    "http://www.loc.gov/mods/v3":"http://purl.stanford.edu/bb509gh7292.mods",
-    "http://www.isotc211.org/schemas/2005/gmd/":"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:bb509gh7292/iso19139.xml",
-    "http://www.w3.org/1999/xhtml":"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:bb509gh7292/default.html",
-    "http://www.opengis.net/def/serviceType/ogc/wfs":"https://geowebservices-restricted.stanford.edu/geoserver/wfs",
-    "http://www.opengis.net/def/serviceType/ogc/wms":"https://geowebservices-restricted.stanford.edu/geoserver/wms"
-  }
-</field>
-```
-
-#### Types of external references and features they enable in GeoBlacklight
-
-Type | Reference URI | Enables in GeoBlacklight
----- | ------------- | ------------------------
-Web Mapping Service (WMS) | http://www.opengis.net/def/serviceType/ogc/wms | Layer preview, layer preview feature inspection, downloads (vector: KMZ, raster: GeoTIFF)
-Web Feature Service (WFS) | http://www.opengis.net/def/serviceType/ogc/wfs | Vector downloads in GeoJSON and Shapefile
-International Image Interoperability Framework (IIIF) Image API | http://iiif.io/api/image | Image viewer using [Leaflet-IIIF](https://github.com/mejackreed/Leaflet-IIIF)
-Direct download file | http://schema.org/downloadUrl | Direct file download feature
-Data dictionary / documentation download | http://lccn.loc.gov/sh85035852 | Direct documentation download link
-Full layer description | http://schema.org/url | Further descriptive information about layer
-Metadata in ISO 19139 | http://www.isotc211.org/schemas/2005/gmd/ | Structured metadata in ISO format
-Metadata in MODS | http://www.loc.gov/mods/v3 | Structured metadata in MODS format
-Metadata in HTML | http://www.w3.org/1999/xhtml | Structured metadata in HTML format
-ArcGIS FeatureLayer | urn:x-esri:serviceType:ArcGIS#FeatureLayer| Previewing of ArcGIS FeatureLayer Service
-ArcGIS TiledMapLayer | urn:x-esri:serviceType:ArcGIS#TiledMapLayer | Previewing of ArcGIS TiledMapLayer Service
-ArcGIS DynamicMapLayer | urn:x-esri:serviceType:ArcGIS#DynamicMapLayer | Previewing of ArcGIS DynamicMapLayer Service
-ArcGIS ImageMapLayer | urn:x-esri:serviceType:ArcGIS#ImageMapLayer | Previewing of ArcGIS ImageMapLayer Service
+[GeoBlacklight-Schema][geoblacklightschema] uses a field `dct_references_s` to define external services and references. See the GeoBlacklight Wiki for a [detailed description of external services](https://github.com/geoblacklight/geoblacklight/wiki/Schema#external-services) and how to use the schema to define them.
 
 ### Software projects
 
