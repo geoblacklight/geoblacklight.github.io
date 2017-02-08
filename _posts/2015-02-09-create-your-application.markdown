@@ -67,7 +67,6 @@ For more information about generating a Rails application see the [Getting Start
      # In ./Gemfile
      gem 'blacklight'
      gem 'geoblacklight'
-     gem 'jettywrapper'
      ```
 
   1. Install required gems and their dependencies
@@ -81,12 +80,8 @@ For more information about generating a Rails application see the [Getting Start
      ```sh
      $ rails g blacklight:install --devise
      ```
-
-  1. Run GeoBlacklight generator (with a jetty instance for Solr)
-
-     ```sh
-     $ rails g geoblacklight:install --jettywrapper
-     ```
+     Depending on how your machine is setup you may need to prepend the rails or rake command with [bundle exec](http://bundler.io/man/bundle-exec.1.html).
+     {: .flash-alert}
 
   1. Run database migrations
 
@@ -103,44 +98,25 @@ For more information about generating a Rails application see the [Getting Start
      ```
 
 
-  1. Download and install Jetty (Solr server for development, in production you'd have a dedicated Solr instance)
+  1. Start the Solr and Rails server.
 
      ```sh
-     $ rake jetty:download
-     ```
-
-  1. Unzip Jetty
-  
-     ```sh
-     $ rake jetty:unzip
-     ```
-
-  1. Configure Solr to use [GeoBlacklight-Schema](https://github.com/geoblacklight/geoblacklight-schema)
-
-     ```sh
-     $ rake geoblacklight:configure_solr
-     ```
-
-  1. Start the jetty Solr server
-
-     ```sh
-     $ rake jetty:start
+     $ rake geoblacklight:server
      ```
   
-     Running this command will start the jetty [Solr server](http://127.0.0.1:8983/solr) and keep it running until you stop it. Other Jetty commands  available to control Solr include:
+     Running this command will download and start the [Solr server](http://127.0.0.1:8983/solr). Other commands available to control Solr include:
      {: .flash-notice}
 
 
      ```sh
-     $ rake jetty:stop # Stops Jetty
-     $ rake jetty:restart # Restarts Jetty
+     $ rake solr:clean # Useful when seeing a "core already exists" error.
+     $ rake solr:start # Starts Solr independently of the Rails server in the background
+     $ rake solr:stop # Stops Solr
+     $ rake solr:restart # Stops and restarts an already running background Solr server
      ```
 
-  1. Now start your Rails application again and navigate to [http://127.0.0.1:3000](http://127.0.0.1:3000). You should see the GeoBlacklight homepage.
+  1. Navigate to [http://127.0.0.1:3000](http://127.0.0.1:3000). You should see the GeoBlacklight homepage. CTRL + c will stop both the Solr and Rails server.
 
-     ```sh
-     $ rails s -b 0.0.0.0
-     ```
 
   1. *Optional* Commit your work
 
