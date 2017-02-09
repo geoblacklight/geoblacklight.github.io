@@ -38,11 +38,10 @@ When it comes to customizing your GeoBlacklight application there are some basic
 
 In this example we are going to change the way the GeoBlacklight is configured to show certain metadata fields on an items page. This is the same way a Blacklight application would configure these fields.
 
-  1. Make sure your Jetty server and Rails application are started.
+  1. Make sure your Solr server and Rails application are started.
 
      ```sh
-     $ rake jetty:start
-     $ rails s -b 0.0.0.0
+     $ rake geoblacklight:server
      ```
 
   1. Open the `catalog_controller.rb` file in your text editor.
@@ -51,37 +50,37 @@ In this example we are going to change the way the GeoBlacklight is configured t
      Hint: `catalog_controller.rb` is located at "app/controllers/catalog_controller.rb" in your application
      {: .flash-notice}
 
-  1. Scroll down to lines 119 - 126.
+  1. Scroll down to lines 121 - 128.
 
      ```ruby
      ...
-     config.add_show_field 'dc_creator_sm', label: 'Author(s)', itemprop: 'author'
-     config.add_show_field 'dc_description_s', label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
-     config.add_show_field 'dc_publisher_s', label: 'Publisher', itemprop: 'publisher'
-     config.add_show_field 'dct_isPartOf_sm', label: 'Collection', itemprop: 'isPartOf'
-     config.add_show_field 'dct_spatial_sm', label: 'Place(s)', itemprop: 'spatial', link_to_search: true
-     config.add_show_field 'dc_subject_sm', label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
-     config.add_show_field 'dct_temporal_sm', label: 'Year', itemprop: 'temporal'
-     config.add_show_field 'dct_provenance_s', label: 'Held by', link_to_search: true
+     config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'
+     config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
+     config.add_show_field Settings.FIELDS.PUBLISHER, label: 'Publisher', itemprop: 'publisher'
+     config.add_show_field Settings.FIELDS.PART_OF, label: 'Collection', itemprop: 'isPartOf'
+     config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_search: true
+     config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
+     config.add_show_field Settings.FIELDS.TEMPORAL, label: 'Year', itemprop: 'temporal'
+     config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_search: true
      ...
      ```
      These configuration options relate to fields that are indexed in Solr. You can disable a metadata field being shown on an items show page. If you navigate to an [items page](http://127.0.0.1:3000/catalog/stanford-cg357zz0321), it will currently show field called publisher. Maybe you would like to rename that field to "Data publisher".
 
-  1. Modify the label in line 121
+  1. Modify the label in line 123
 
      ```ruby
      # change this
-     config.add_show_field 'dc_publisher_s', label: 'Publisher', itemprop: 'publisher'
+     config.add_show_field Settings.FIELDS.PUBLISHER, label: 'Publisher', itemprop: 'publisher'
      # to this
-     config.add_show_field 'dc_publisher_s', label: 'Data publisher', itemprop: 'publisher'
+     config.add_show_field Settings.FIELDS.PUBLISHER, label: 'Data publisher', itemprop: 'publisher'
      ```
 
      Save the file and reload the page. You should see the label change.
 
-  1. Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the `dc_creator_sm` line (119).
+  1. Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the `Settings.FIELDS.CREATOR` line (121).
 
      ```ruby
-     # config.add_show_field 'dc_creator_sm', label: 'Author(s)', itemprop: 'author'
+     # config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'
      ```
      Save the file and reload the page. You should no longer see the "Author(s)" field.
     
@@ -110,7 +109,6 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
      ```scss
      // in app/assets/stylesheets/geoblacklight.scss
      @import 'geoblacklight/application';
-     @import 'blacklight_range_limit';
      ```
 
   1. Create file `app/assets/stylesheets/bootstrap-variables.scss` and import it from `blacklight.scss`
