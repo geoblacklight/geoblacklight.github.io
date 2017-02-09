@@ -41,6 +41,12 @@ GeoBlacklight provides a rake task to index documents as fixtures for tests. We 
      $ cd - # Or cd ../../../
      ```
 
+  1. Make sure your Solr server and Rails application are started.
+
+     ```sh
+     $ rake geoblacklight:server
+     ```
+
 ### Index fixture metadata documents
 
   1. Run the GeoBlacklight fixture indexer
@@ -50,12 +56,6 @@ GeoBlacklight provides a rake task to index documents as fixtures for tests. We 
      ```
     
 The GeoBlacklight Solr seed task, indexes metadata documents (in JSON format) stored in the `spec/fixtures/solr_documents` directory.
-
-  1. Start the Rails server again
-
-     ```sh
-     $ rails s -b 0.0.0.0
-     ```
 
   1. *Optional* Commit your work
 
