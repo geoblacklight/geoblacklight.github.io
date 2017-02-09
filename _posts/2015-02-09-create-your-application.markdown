@@ -110,7 +110,7 @@ For more information about generating a Rails application see the [Getting Start
 
      ```sh
      $ rake solr:clean # Useful when seeing a "core already exists" error.
-     $ rake solr:start # Starts Solr independently of the Rails server in the background
+     $ rake solr:start # Starts Solr independently of the Rails server in the background (without loading core)
      $ rake solr:stop # Stops Solr
      $ rake solr:restart # Stops and restarts an already running background Solr server
      ```
