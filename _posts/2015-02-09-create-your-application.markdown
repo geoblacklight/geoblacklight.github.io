@@ -80,6 +80,13 @@ For more information about generating a Rails application see the [Getting Start
      ```sh
      $ rails g blacklight:install --devise
      ```
+
+  1. Run GeoBlacklight generator (overrides Blacklight default Solr config)
+
+     ```sh
+     $ rails g geoblacklight:install -f
+     ```
+
      Depending on how your machine is setup you may need to prepend the rails or rake command with [bundle exec](http://bundler.io/man/bundle-exec.1.html).
      {: .flash-alert}
 
