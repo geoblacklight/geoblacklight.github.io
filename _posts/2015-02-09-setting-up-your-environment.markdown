@@ -14,14 +14,14 @@ snippet: 'Setting up your development environment for GeoBlacklight. Created as 
 
 ### Development requirements
 
-GeoBlacklight has similar prerequisites to [Blacklight][blacklight]. It diverges from Blacklight requirements by using a customized Solr schema and configuration, [Geoblacklight-Schema][geoblacklightschema].
+GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It diverges from Blacklight requirements by using a customized Solr schema and configuration, [Geoblacklight-Schema][geoblacklightschema].
 
 #### Software you should have installed on your development computer
 
   - [Ruby > 1.9.3][installruby]
   - [Rails > 4][installrails]
   - [Git][installgit]
-  - Java (for local Solr server)
+  - [Java > 1.8][installjava] (Download JDK for local Solr server)
 
 Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive. If you are not at the workshop, you can create the virtual machine for the workshop, by following [this guide]({% post_url 2016-01-23-using-packer-to-create-a-development-virtual-machine %}).
 
@@ -108,5 +108,6 @@ Note: Please install a Windows ssh client installed such as [ PuTTY](http://www.
 [installruby]:          https://gorails.com/setup#ruby
 [installrails]:         https://gorails.com/setup#rails
 [installgit]:           https://gorails.com/setup#git
+[installjava]:          http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [rubyonrails]:          http://rubyonrails.org/
-[blacklight]:           http://projectblacklight.org/
+[bldependencies]:           https://github.com/projectblacklight/blacklight/wiki/Quickstart
