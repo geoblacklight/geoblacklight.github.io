@@ -51,37 +51,37 @@ And checkout the `geoblacklight` branch.
 $ git checkout geoblacklight
 ```
 
-Finally, change directory (`cd`) into the `ubuntu-14.04.3` directory. This is the image I based the GeoBlacklight Workshop image on.
+Finally, change directory (`cd`) into the `ubuntu-16.04.3` directory. This is the image I based the GeoBlacklight Workshop image on.
 
 ```sh
-$ cd ubuntu-14.04.3
+$ cd ubuntu-16.04.3
 ```
 
 <div class='flash-alert'>
-  It should be noted that I opted for the 32-bit version of this release of Ubuntu for maximum compatibility. You may want to change the <a href="https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-14.04.3/template.json#L84">version of Ubuntu</a> used and thus you must also update <a href="https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-14.04.3/template.json#L82">the checksum</a>.
+  It should be noted that I opted for the 32-bit version of this release of Ubuntu for maximum compatibility. You may want to change the <a href="https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/template.json#L84">version of Ubuntu</a> used and thus you must also update <a href="https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/template.json#L82">the checksum</a>.
 </div>
 
 ### Exploring the Packer template
 
-The [`template.json`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-14.04.3/template.json) file is where Packer takes its directions from. I won't go through everything in this file, but I will point out some of the customizations I made for the GeoBlacklight workshop.
+The [`template.json`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/template.json) file is where Packer takes its directions from. I won't go through everything in this file, but I will point out some of the customizations I made for the GeoBlacklight workshop.
 
 The major customizations added, were the addition of four scripts that run during creation.
 
-#### [`ruby.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-14.04.3/scripts/ruby.sh)
+#### [`ruby.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/ruby.sh)
 Installs rbenv, Ruby, bundler, and specifies no rdoc documentation.
 
-#### [`rails.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-14.04.3/scripts/rails.sh)
+#### [`rails.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/rails.sh)
 Installs nodejs and Ruby on Rails.
 
-#### [`geoblacklight.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-14.04.3/scripts/geoblacklight.sh)
+#### [`geoblacklight.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/geoblacklight.sh)
 Creates a GeoBlacklight application and downloads and configures jetty/solr.
 
-#### [`opengeosuite.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-14.04.3/scripts/opengeosuite.sh)
+#### [`opengeosuite.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/opengeosuite.sh)
 Installs OpenGeoSuite.
 
 ### Creating the Vagrant box
 
-You can modify any of these scripts to meet your customization needs. After doing so, you will want to create your VirtualBox vm. To do so run the following command from the `ubuntu-14.04.3` directory:
+You can modify any of these scripts to meet your customization needs. After doing so, you will want to create your VirtualBox vm. To do so run the following command from the `ubuntu-16.04.3` directory:
 
 ```sh
 $ packer build template.json
