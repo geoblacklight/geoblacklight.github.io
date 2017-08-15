@@ -18,8 +18,8 @@ GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It dive
 
 #### Software you should have installed on your development computer
 
-  - [Ruby > 1.9.3][installruby]
-  - [Rails > 4][installrails]
+  - [Ruby > 2.2.7][installruby]
+  - [Rails > 5][installrails]
   - [Git][installgit]
   - [Java > 1.8][installjava] (Download JDK for local Solr server)
 
