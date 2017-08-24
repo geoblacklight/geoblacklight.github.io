@@ -1,4 +1,15 @@
-**Summarizing the GeoBlacklight Community Sprint: Summer 2017**
+---
+layout: post
+category: blog
+tags:
+  - "geoblacklight, metadata"
+title: VecNET Digital Library redesign and geospatial search using GeoBlacklight
+date: 2017-08-25
+author: 'Steve Vandervalk'
+snippet: 'The GeoBlacklight Community Code Sprint: Summer 2017 concludes and Version 1.6.0 has been released.'
+---
+
+**Summarizing the GeoBlacklight Community Code Sprint: Summer 2017**
 
 Developers and metadata specialists from New York University, Princeton University, and the Big Ten Academic Alliance participated in the second GeoBlacklight Summer Code Sprint from July 24 - August 4, 2017. With input from developers at Stanford University, Lewis & Clark College, VecNet, and Cornell University, the sprinters [selected a number of goals to work on](https://github.com/geoblacklight/geoblacklight/labels/2017%20Summer%20Community%20Sprint), including bug fixes, upgrading dependent libraries, improving the user interface, and exploring changes to the metadata schema. As of August 23, [GeoBlacklight version 1.6.0 has been released](https://github.com/geoblacklight/geoblacklight/releases/tag/v1.6.0). Major thanks to Eliot Jordan, Stephen Balogh, James Griffin, Eric Larson, and Jack Reed for contributing code actively during the summer sprint.
 
