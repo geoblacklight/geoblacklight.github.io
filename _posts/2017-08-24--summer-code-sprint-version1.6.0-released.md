@@ -3,12 +3,12 @@ layout: post
 category: blog
 tags:
   - "geoblacklight, metadata"
-title: VecNET Digital Library redesign and geospatial search using GeoBlacklight
+title: Summer Code Sprint concludes and GeoBlacklight version 1.6.0 released
 date: 2017-08-25
 author:
 - Karen Majewicz
 - Andrew Battista
-snippet: 'The GeoBlacklight Community Code Sprint: Summer 2017 concludes and Version 1.6.0 has been released.'
+snippet: 'The second annual GeoBlacklight Community Code Sprint has concluded and a new version (1.6.0) has been released with improved views for standards-based metadata files along with several bug fixes.'
 ---
 
 **Summarizing the GeoBlacklight Community Code Sprint: Summer 2017**
