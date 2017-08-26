@@ -15,11 +15,7 @@ title: "Blog"
         <p class='post-snippet'>{{ post.snippet }}</p>
         <p class='post-metadata'>
           {% if post.author %}
-            {% if post.author_link %}
-              <a href="{{post.author_link}}">{{ post.author }}</a>
-            {% else %}
-              {{ post.author }}
-            {% endif %}
+              {{ post.author | join: ' and ' }}
           {% endif %} – <span class='post-date'>{{ post.date | date: "%B %-d, %Y" }}</span>
         </p>
       </li>

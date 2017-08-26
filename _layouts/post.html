@@ -13,10 +13,6 @@ layout: default
   <p class='author'>
     {% if page.author %}
       Author: 
-      {% if page.author_link %}
-        <a href="{{page.author_link}}" itemprop="author">{{ page.author }}</a>
-      {% else %}
-        {{ page.author }}
-      {% endif %}
+        {{ page.author | join: ' and ' }}
     {% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 </article>
