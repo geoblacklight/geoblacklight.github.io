@@ -4,6 +4,13 @@
   link:
     text: Check out the Big Ten Academic Alliance Geoportal
     url: https://geo.btaa.org
+- name: University of California - Dash
+  image: dash.jpg
+  copy: Dash is an open source, community driven project that takes a unique approach to data publication and digital preservation. Dash focuses on search, presentation, and discovery and delegates the responsibility for the data preservation function to the underlying repository with which it is integrated. The service is based at the University of California Curation Center (UC3), a CDL program that aims to develop interdisciplinary research data infrastructure.
+  link:
+    text: Check out Dash
+    url: https://dash.ucop.edu
+
 - name: Lewis & Clark GeoBlacklight Repository
   image: lc.jpg
   copy: Lewis & Clark now offers access to its GIS data through a GeoBlacklight portal. This project is part of the <a href="http://library.lclark.edu/lib/digitalinitiatives.html">Watzek Digital Initiatives</a> program and offers access to environmental, demographic, and other types of datasets.
