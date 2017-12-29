@@ -4,6 +4,7 @@
   link:
     text: Check out the Big Ten Academic Alliance Geoportal
     url: https://geo.btaa.org
+
 - name: University of California - Dash
   image: dash.jpg
   copy: Dash is an open source, community driven project that takes a unique approach to data publication and digital preservation. Dash focuses on search, presentation, and discovery and delegates the responsibility for the data preservation function to the underlying repository with which it is integrated. The service is based at the University of California Curation Center (UC3), a CDL program that aims to develop interdisciplinary research data infrastructure.
@@ -17,36 +18,48 @@
   link:
     text: Check out the Lewis & Clark GeoBlacklight
     url: http://geo.lclark.edu
+
 - name: Norman B. Leventhal Map Center - Collections
   image: bpl.jpg
   copy: The Norman B. Leventhal Map Center at the Boston Public Library offers a customized discovery experience for its map collection. This unique application combines GeoBlacklight with the ability to georeference maps and create custom map sets for instruction.
   link:
     text: Check out the Norman B. Leventhal Map Center
     url: https://collections.leventhalmap.org/search?utf8=%E2%9C%93&q=
+
 - name: NYU  - Spatial Data Repository
   image: nyu.jpg
   copy: The NYU Spatial Data Repository is a search and discovery platform for geospatial data created by NYU's Data Services. The application is the entry point for discovering and accessing NYU's spatial data collections.
   link:
     text: Check out GeoBlacklight@NYU
     url: https://geo.nyu.edu
+
 - name: Stanford University - EarthWorks
   image: earthworks.jpg
   copy: EarthWorks is Stanford University Libraries discovery tool for Geographic Information Systems (GIS) data. It combines data sources from many institutions allowing users to search through tens of thousands of geospatial datasets.
   link:
     text: Check out EarthWorks
     url: https://earthworks.stanford.edu
+
 - name: VecNet
   image: vecnet.jpg
   copy: The Vector-Bourne Disease Network (VecNet) uses GeoBlacklight for spatial discovery of data, tagged citations, articles, and reports that support malaria eradication.
   link:
     text: Check out VecNet
     url: https://dl.vecnet.org/?q=&showmap=on
+
 - name: Virgo GIS
   image: uva.jpg
   copy: Virgo GIS is the discovery application for GIS datasets from the U.Va Library collections.
   link:
     text: Check out Virgo GIS 
     url: http://gis.lib.virginia.edu/
+
+- name: CUGIR - Cornell University Geospatial Information Repository
+  image: cugir.jpg
+  copy: CUGIR provides free and open access to geospatial data for New York State, as well as worldwide geospatial data created by Cornell researchers.
+  link:
+    text: Check out CUGIR
+    url: https://cugir.library.cornell.edu/
 
 # - name: 
 #   image: 
