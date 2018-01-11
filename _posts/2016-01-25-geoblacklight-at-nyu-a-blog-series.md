@@ -5,21 +5,19 @@ date:   2016-01-25 12:00:00
 categories: blog
 author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
-snippet: 'NYU GIS Librarian, Andrew Battista, releases a 7-part blog post series on implementing GeoBlacklight at NYU.'
+snippet: 'NYU GIS Librarian, Andrew Battista, releases a blog post series on implementing GeoBlacklight at NYU.'
 ---
 
-NYU's GIS Librarian [Andrew Battista](https://twitter.com/rawdeal85) created a 7-part blog post series on his experience with implementing GeoBlacklight, spatial data services, and integrating with an existing repository at NYU. This series is a great read and provides a great deal of context and information not only about GeoBlacklight, but offers fresh perspectives about repositories and GIS in libraries.
+NYU's GIS Librarian [Andrew Battista](https://twitter.com/rawdeal85) created blog post series on his experience with implementing GeoBlacklight, spatial data services, and integrating with an existing repository at NYU. This series is a great read and provides a great deal of context and information not only about GeoBlacklight, but offers fresh perspectives about repositories and GIS in libraries.
 
-You can read the series at Andrew's blog [Curation Culture](http://www.curationculture.org/archives/2213).
+You can read the series at on [Andrew's GitHub pages account](https://andrewbattista.github.io/).
 
 Blog Posts:
 
- - [January 20 – GeoBlacklight at NYU: A Project Overview](http://www.curationculture.org/archives/2213)
- - [January 25 – DSpace and the Institutional Repository: Preservation and the Spatial Data Infrastructure](http://www.curationculture.org/archives/2215)
- - [February 5 – Creating GeoBlacklight Metadata Records](http://www.curationculture.org/archives/2218)
- - [The Technology Stack: Amazon Web Services Products & Open Source GIS](http://www.curationculture.org/archives/2221)
- - _Revisiting: The Collection Workflow in a Nutshell_
- - _Institutional Context and Collaboration_
- - _Wrapping Up: Expostulations and Replies_
+ - [Post 1 - GeoBlacklight at NYU: A Project Overview](https://andrewbattista.github.io/geoblacklight/2018/01/09/geoblacklight-overview.html)
+ - [Post 2 – DSpace and the Institutional Repository: Preservation and the Spatial Data Infrastructure](https://andrewbattista.github.io/geoblacklight/2018/01/10/preservation.html)
+ - [Post 3 – Creating GeoBlacklight Metadata Records](https://andrewbattista.github.io/geoblacklight/2018/01/11/creating-geoblacklight-metadata.html)
+ - [Post 4 - The Technology Stack: Amazon Web Services Products & Open Source GIS](https://andrewbattista.github.io/geoblacklight/2018/01/12/technology-stack-sdr.html)
+ 
  
  
