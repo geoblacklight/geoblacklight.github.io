@@ -14,4 +14,4 @@ Developers from Stanford, Princeton, NYU, Cornell, and the University of Minneso
 
 ![indexMap](/images/indexMap.png)
 
-[Index map in Stanford’s Earthworks](https://earthworks.stanford.edu/catalog/stanford-ts545zc6250)
+*[Index map in Stanford’s Earthworks](https://earthworks.stanford.edu/catalog/stanford-ts545zc6250)*
