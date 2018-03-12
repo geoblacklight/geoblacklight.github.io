@@ -7,7 +7,7 @@ author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
 snippet: 'A tutorial on how we use Packer to create a working virtual machine for the GeoBlacklight workshop'
 ---
-
+ANOTHER PRETEND CHANGE
 When we run the GeoBlacklight workshop, we provide attendees with a VirtualBox virtual machine so that they can participate without having download software. Having attendees connect to the internet to download large files doesn't always work in conference environments. To keep up to date with software dependencies we have rebuilt this virtual machine several times. Recently, the process for creating and updating the virtual machine has been automated using [Packer](https://www.packer.io/). From Packer's website:
 
 > Packer is a tool for creating machine and container images for multiple platforms from a single source configuration.
@@ -23,7 +23,7 @@ Required software:
  - Packer [installation](https://www.packer.io/intro/getting-started/setup.html)
  - VirtualBox [download](https://www.virtualbox.org/wiki/Downloads)
  - Vagrant [download](https://www.vagrantup.com/downloads.html)
- 
+
 Once you have installed all of the software, make sure that you have packer available on your path.
 
 ```sh
