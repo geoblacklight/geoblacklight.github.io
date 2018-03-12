@@ -7,6 +7,7 @@ author: 'Jack Reed'
 author_link: 'https://twitter.com/mejackreed'
 snippet: 'Congratulations to the Big Ten Academic Alliance that just launched their new GeoBlacklight instance.'
 ---
+BIG SAMPLE CHANGE
 
 Congratulations to the [Big Ten Academic Alliance team](https://sites.google.com/a/umn.edu/cic-geospatial-data-discovery-project/home) that just launched their new [GeoBlacklight instance](https://geo.btaa.org/)! This project entailed over 20 team members from ten different institutions working together to create metadata, build policies, publish papers, and develop software. Make sure to checkout the new site here: [https://geo.btaa.org/](https://geo.btaa.org/).
 
