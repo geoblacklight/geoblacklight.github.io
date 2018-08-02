@@ -33,6 +33,13 @@
     text: Check out GeoBlacklight@NYU
     url: https://geo.nyu.edu
 
+- name: Princeton University - Digital Maps and Geospatial Data
+  image: princeton.jpg
+  copy: The Digital Maps and Geospatial Data tool allows users to search for datasets and scanned historical maps from within the Princeton University Library's own collections, as well as the collections of other institutions.
+  link:
+    text: Check out Digital Maps and Geospatial Data
+    url: https://maps.princeton.edu
+
 - name: Stanford University - EarthWorks
   image: earthworks.jpg
   copy: EarthWorks is Stanford University Libraries discovery tool for Geographic Information Systems (GIS) data. It combines data sources from many institutions allowing users to search through tens of thousands of geospatial datasets.
