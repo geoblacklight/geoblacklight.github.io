@@ -14,7 +14,7 @@
 
 - name: Lewis & Clark GeoBlacklight Repository
   image: lc.jpg
-  copy: Lewis & Clark now offers access to its GIS data through a GeoBlacklight portal. This project is part of the <a href="http://library.lclark.edu/lib/digitalinitiatives.html">Watzek Digital Initiatives</a> program and offers access to environmental, demographic, and other types of datasets.
+  copy: Lewis & Clark now offers access to its GIS data through a GeoBlacklight portal. This project is part of the <a href="https://library.lclark.edu/digital-initiatives">Watzek Digital Initiatives</a> program and offers access to environmental, demographic, and other types of datasets.
   link:
     text: Check out the Lewis & Clark GeoBlacklight
     url: http://geo.lclark.edu
