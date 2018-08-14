@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GeoBlacklight 2018 Summer Sprint Wrap-up
-date: 2018-08-10
+date: 2018-08-10 12:00:00
 categories: blog
 author:
 - Karen Majewicz
