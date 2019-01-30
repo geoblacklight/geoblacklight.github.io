@@ -46,7 +46,7 @@ Current features include:
   - Download in multiple formats
     - Shapefile
     - KMZ
-    - Geotiff
+    - GeoTIFF
   - Inspection of data before download
     - View a dataset's attribute table before downloading it
   - Responsive design

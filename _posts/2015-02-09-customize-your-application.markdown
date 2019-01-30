@@ -32,7 +32,7 @@ When it comes to customizing your GeoBlacklight application there are some basic
 
   1. Reach out and ask for help on the [Blacklight Developers](https://groups.google.com/forum/#!forum/blacklight-development) or [GeoBlacklight](https://groups.google.com/forum/#!forum/geoblacklight-working-group) Google Groups
 
-     Asking questions, reaching out to others, and getting feedback from experienced developpers is a great practice in general. In this particular case its helps foster the community and start conversations that might help others.
+     Asking questions, reaching out to others, and getting feedback from experienced developers is a great practice in general. In this particular case its helps foster the community and start conversations that might help others.
 
 ### Customize metadata shown
 
