@@ -8,7 +8,7 @@ author_link: 'https://twitter.com/mejackreed'
 snippet: 'A tutorial on how we use Packer to create a working virtual machine for the GeoBlacklight workshop'
 ---
 
-When we run the GeoBlacklight workshop, we provide attendees with a VirtualBox virtual machine so that they can participate without having download software. Having attendees connect to the internet to download large files doesn't always work in conference environments. To keep up to date with software dependencies we have rebuilt this virtual machine several times. Recently, the process for creating and updating the virtual machine has been automated using [Packer](https://www.packer.io/). From Packer's website:
+When we run the GeoBlacklight workshop, we provide attendees with a VirtualBox virtual machine (vm) so that they can participate without having download software. Having attendees connect to the internet to download large files doesn't always work in conference environments. To keep up to date with software dependencies we have rebuilt this virtual machine several times. Recently, the process for creating and updating the virtual machine has been automated using [Packer](https://www.packer.io/downloads.html). From Packer's website:
 
 > Packer is a tool for creating machine and container images for multiple platforms from a single source configuration.
 
@@ -20,11 +20,11 @@ To get started, you will need to install several pieces of software that our Pac
 
 Required software:
 
- - Packer [installation](https://www.packer.io/intro/getting-started/setup.html)
+ - Packer [installation](https://www.packer.io/downloads.html)
  - VirtualBox [download](https://www.virtualbox.org/wiki/Downloads)
  - Vagrant [download](https://www.vagrantup.com/downloads.html)
  
-Once you have installed all of the software, make sure that you have packer available on your path.
+Once you have installed all of the software, make sure that you have Packer available on your path.
 
 ```sh
 $ packer -v
@@ -117,4 +117,3 @@ $ vagrant ssh
 ### Conclusion
 
 I hope this tutorial is useful to others who run technical workshops. It can sometimes be painful in trying to support workshops on multiple platforms with limited network connectivity. This workflow of using Packer, Vagrant, and VirtualBox has been successful for us.
-

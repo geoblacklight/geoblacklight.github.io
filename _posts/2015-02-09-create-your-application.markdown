@@ -12,7 +12,9 @@ Note: If you have issues with any of these steps, a prebuilt version of this app
 
 ## Create your application
 
-Prerequisite: Make sure your [environment is setup]({% post_url 2015-02-09-setting-up-your-environment %}).
+Before beginning this section, make sure your [environment is setup]({% post_url 2015-02-09-setting-up-your-environment %}).
+
+In this section of the tutorial, we will cover the following steps:
 
   1. [Generate your Rails application](#generating-your-rails-application)
   1. [Install GeoBlacklight](#install-geoblacklight)
@@ -22,14 +24,23 @@ Prerequisite: Make sure your [environment is setup]({% post_url 2015-02-09-setti
 
 ### Generating your Rails application
 
-For more information about generating a Rails application see the [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) guide.
+For more information about generating a Rails application see the [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html) guide. Before, make sure you have Rails installed by running the following:
+```sh
+$ rails -v
+```
+If you get an error run:
 
-  1. Create a new Rails application using the GeoBlacklight template
+```sh
+$ gem install rails
+```
+Now you should have Rails installed on your machine and are ready to proceed.
+
+  1. Create a new Rails application using the GeoBlacklight template, in which **"your_app_name"** can be anything you want to name your app.
 
      ```sh
      $ rails new your_app_name
+     ## For example, you could also use `rails new mockup_geoblacklight`
      ```
-
   1. Switch to its folder
 
      ```sh
@@ -45,9 +56,11 @@ For more information about generating a Rails application see the [Getting Start
      We are running the Rails server with the "-b" option which is binding the server to the 0.0.0.0 IP address. This is only necessary if your are running the application on your Vagrant virtual machine.
      {: .flash-alert}
 
-     Now you can visit the Rails application at [http://127.0.0.1:3000](http://127.0.0.1:3000). You should see "Welcome aboard You’re riding Ruby on Rails!" CTRL + c will stop server.
+     Now you can visit the Rails application at [http://127.0.0.1:3000](http://127.0.0.1:3000). You should see "Yay! You're on Rails" CTRL + c will stop server.
 
      ![rails_welcome](http://guides.rubyonrails.org/images/getting_started/rails_welcome.png "Welcome aboard!")
+
+**Note** You will need to leave the Terminal window open while the Rails server is running.
 
   1. *Optional* Initialize your git repository and commit your changes
 
@@ -61,7 +74,9 @@ For more information about generating a Rails application see the [Getting Start
 
 ### Install GeoBlacklight
 
-  1. Add GeoBlacklight to your `Gemfile`
+Now that we have started our Rails application, we need to install GeoBlacklight.
+
+  1. Add GeoBlacklight to your `Gemfile`. To do this, navigate to the Gemfile in your application, open it with a text editor, and paste the following in to add it to the list of gems:
 
      ```ruby
      # In ./Gemfile
@@ -97,7 +112,9 @@ For more information about generating a Rails application see the [Getting Start
      ```
 
 
-     Quick tip: All of these tasks (1 - 5) are included as part of template to generate a new GeoBlacklight application. To run that generator just run:
+     Quick tip: All of these tasks (1 - 5) are included as part of template to generate a new GeoBlacklight application.
+     
+     To run that generator just run:
      {: .flash-notice}
 
      ```sh
@@ -139,13 +156,13 @@ For more information about generating a Rails application see the [Getting Start
 ### Install RSpec
 [RSpec](http://rspec.info/) is a behavior-driven development framework for Ruby. It is the recommended way to test your application and is used by both the Blacklight and GeoBlacklight projects.
 
-  1. Add `rspec-rails` to both the `:development` and `:test` groups in the `Gemfile`
+  1. Add `rspec-rails` to both the `:development` and `:test` groups in the `Gemfile`. Again, open the `Gemfile` with a text editor and paste the line below into the respective groups.
 
      ```sh
      # In ./Gemfile
      group :development, :test do
        gem 'rspec-rails', '~> 3.0'
-     end 
+     end
      ```
 
   1. Download and install RSpec

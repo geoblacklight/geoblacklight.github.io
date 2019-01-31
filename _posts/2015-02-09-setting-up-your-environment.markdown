@@ -14,7 +14,7 @@ snippet: 'Setting up your development environment for GeoBlacklight. Created as 
 
 ### Development requirements
 
-GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It diverges from Blacklight requirements by using a customized Solr schema and configuration, [Geoblacklight-Schema][geoblacklightschema].
+GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It diverges from Blacklight requirements by using a customized Solr schema and configuration, [Geoblacklight Schema, Version 1.0](https://github.com/geoblacklight/geoblacklight/blob/master/schema/geoblacklight-schema.md).
 
 #### Software you should have installed on your development computer
 
@@ -23,11 +23,13 @@ GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It dive
   - [Git][installgit]
   - [Java > 1.8][installjava] (Download JDK for local Solr server)
 
-Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive. If you are not at the workshop, you can create the virtual machine for the workshop, by following [this guide]({% post_url 2016-01-23-using-packer-to-create-a-development-virtual-machine %}).
+Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive. **Note:** You can complete this tutorial without Vagrant as long as you already have the above mentioned software on your machine. If you do, you may skip ahead to <a href="{% post_url 2015-02-09-create-your-application %}">Part 3 - Create your application</a>
 
-### Local attendees setup VirtualBox/Vagrant
+Also, if you are not at the workshop (or perhaps if you want to prepare your own environment for a workshop you are facilitating), you can create the virtual machine for the workshop, by following [this guide]({% post_url 2016-01-23-using-packer-to-create-a-development-virtual-machine %}).
+
+### In-person attendees setup VirtualBox/Vagrant
   
-Good news for local workshop participants, this is already done for you using VirtualBox and Vagrant. On the thumb-drive underneath a directory titled 'geoblacklight_workshop'. Thanks to Justin Coyne and [Data Curation Experts](http://curationexperts.com/) for this approach that is used at HydraCamps.
+Good news for in-person workshop participants: the process of setting up your environment has already done for you using VirtualBox and Vagrant. On the thumb-drive underneath a directory titled 'geoblacklight_workshop'. Thanks to Justin Coyne and [Data Curation Experts](http://curationexperts.com/) for this approach that is used at HydraCamps.
 
 For those interested in what was installed on this machine and how it was created checkout [this gist](https://gist.github.com/mejackreed/727e9cd2e971ca3949a2).
 
@@ -104,10 +106,9 @@ Note: Please install a Windows ssh client installed such as [ PuTTY](http://www.
 
 [geoblacklight]:        http://geoblacklight.org
 [geoblacklightproject]: /projects/geoblacklight
-[geoblacklightschema]:  https://github.com/geoblacklight/geoblacklight-schema
 [installruby]:          https://gorails.com/setup#ruby
 [installrails]:         https://gorails.com/setup#rails
 [installgit]:           https://gorails.com/setup#git
 [installjava]:          http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [rubyonrails]:          http://rubyonrails.org/
-[bldependencies]:           https://github.com/projectblacklight/blacklight/wiki/Quickstart
+[bldependencies]:       https://github.com/projectblacklight/blacklight/wiki/Quickstart

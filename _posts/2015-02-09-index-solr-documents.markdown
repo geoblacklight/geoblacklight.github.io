@@ -17,13 +17,13 @@ snippet: Index Solr documents into your GeoBlacklight application. Created as pa
 
 ### Overview
 
-GeoBlacklight uses GeoBlacklight-Schema as a template for metadata documents indexed by Solr.
+GeoBlacklight uses the GeoBlacklight Schema, Version 1.0 as a template for metadata documents indexed by Solr.
 
 GeoBlacklight provides a rake task to index documents as fixtures for tests. We will use this rake task to index several documents as an example.
 
 ### Download fixture metadata documents
 
-  1. Create and move to a directory for your documents
+  1. Assuming that you have already navigated to the directory of your GeoBlacklight app, create a directory for some Solr documents and then move to it:
 
      ```sh
      $ mkdir -p spec/fixtures/solr_documents && cd spec/fixtures/solr_documents
