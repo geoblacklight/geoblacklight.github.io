@@ -11,3 +11,4 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 sudo: false
+exclude: [vendor]
