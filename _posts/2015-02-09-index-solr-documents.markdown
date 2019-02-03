@@ -47,16 +47,6 @@ GeoBlacklight provides a rake task to index documents as fixtures for tests. We 
      $ rake geoblacklight:server
      ```
 
-### Index fixture metadata documents
-
-  1. Run the GeoBlacklight fixture indexer
-
-     ```sh
-     $ rake geoblacklight:solr:seed
-     ```
-    
-The GeoBlacklight Solr seed task, indexes metadata documents (in JSON format) stored in the `spec/fixtures/solr_documents` directory.
-
   1. *Optional* Commit your work
 
      ```sh
@@ -64,7 +54,7 @@ The GeoBlacklight Solr seed task, indexes metadata documents (in JSON format) st
      $ git commit -m 'Adds in JSON fixtures'
      ```
 
-As stated above, this rake task is useful for quickly indexing a small number documents in Solr (built specifically for populating Solr for testing). I would caution though in using this task for large scale indexing and commiting, as we've developed other best practices for production-scale indexing.
+The fixtures directory is useful for quickly indexing a small number documents in Solr (built specifically for populating Solr for testing). I would caution though in using this task for large scale indexing and committing, as we've developed other best practices for production-scale indexing.
 {: .flash-alert}
 
 
