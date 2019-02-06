@@ -22,6 +22,8 @@ GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It dive
   - [Rails > 5][installrails]
   - [Git][installgit]
   - [Java > 1.8][installjava] (Download JDK for local Solr server)
+  - [Node.js > 10.15 LTS][installnode]
+  - [Yarn > 1.13][installyarn]
 
 Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive. **Note:** You can complete this tutorial without Vagrant as long as you already have the above mentioned software on your machine. If you do, you may skip ahead to <a href="{% post_url 2015-02-09-create-your-application %}">Part 3 - Create your application</a>
 
@@ -112,3 +114,6 @@ Note: Please install a Windows ssh client installed such as [ PuTTY](http://www.
 [installjava]:          http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [rubyonrails]:          http://rubyonrails.org/
 [bldependencies]:       https://github.com/projectblacklight/blacklight/wiki/Quickstart
+[installnode]:          https://nodejs.org/en/download/package-manager/
+[installyarn]:          https://yarnpkg.com/lang/en/docs/install/
+
