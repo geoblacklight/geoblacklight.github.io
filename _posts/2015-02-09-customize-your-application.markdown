@@ -44,13 +44,13 @@ In this example we are going to change the way the GeoBlacklight is configured t
      $ rake geoblacklight:server
      ```
 
-  1. Open the `catalog_controller.rb` file in your text editor.
+  1. Open the `app/controllers/catalog_controller.rb` file in your text editor.
   
     
      Hint: `catalog_controller.rb` is located at "app/controllers/catalog_controller.rb" in your application
      {: .flash-notice}
 
-  1. Scroll down to lines 121 - 128.
+  1. Scroll down to lines 136 - 143
 
      ```ruby
      ...
@@ -66,7 +66,7 @@ In this example we are going to change the way the GeoBlacklight is configured t
      ```
      These configuration options relate to fields that are indexed in Solr. You can disable a metadata field being shown on an items show page. If you navigate to an [items page](http://127.0.0.1:3000/catalog/stanford-cg357zz0321), it will currently show field called publisher. Maybe you would like to rename that field to "Data publisher".
 
-  1. Modify the label in line 123
+  1. Modify the label in line 138
 
      ```ruby
      # change this
@@ -77,7 +77,7 @@ In this example we are going to change the way the GeoBlacklight is configured t
 
      Save the file and reload the page. You should see the label change.
 
-  1. Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the `Settings.FIELDS.CREATOR` line (121).
+  1. Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the `Settings.FIELDS.CREATOR` line (136).
 
      ```ruby
      # config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'
@@ -121,8 +121,6 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
      // in app/assets/stylesheets/blacklight.scss
      @import 'bootstrap-variables';
 
-     @import 'bootstrap-sprockets';
-
      @import 'bootstrap';
 
      @import 'blacklight/blacklight';
@@ -130,20 +128,21 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
 
   1. Now you can easily update Bootstrap variables in your `bootstrap-variables.scss`!
     
-     Change the navbar height
+     Change link color
 
      ```scss
      // in app/assets/stylesheets/bootstrap-variables.scss
-     // Navbar
-     $navbar-height: 80px;
+     // Links
+     $link-color: green;
      ```
 
-     Change the primary brand color
+     Change default border style 
 
      ```scss
      // in app/assets/stylesheets/bootstrap-variables.scss
-     // Colors
-     $brand-primary: #32cd32;
+     // Borders
+     $border-width: 2px;
+     $border-radius: .4rem;
      ```
 
 
@@ -171,7 +170,7 @@ Lets say you want to override the homepage that is shown in GeoBlacklight that c
      This is the home page.
 
      Search bar:
-     <%= render_search_form_no_navbar %>
+     <%= render_search_bar %>
      ```
 
      See how easy that was? You even included another partial!
