@@ -68,6 +68,13 @@
     text: Check out CUGIR
     url: https://cugir.library.cornell.edu/
 
+- name: GeoData@Wisconsin
+  image: uwgeodata.png
+  copy: GeoData@Wisconsin is an online geoportal that provides discovery and access to Wisconsin geospatial data, imagery, and scanned maps.
+  link:
+    text: Check out GeoData@Wisconsin
+    url: https://geodata.wisc.edu
+
 # - name:
 #   image:
 #   copy:
