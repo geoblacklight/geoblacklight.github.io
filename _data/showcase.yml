@@ -54,6 +54,13 @@
     text: Check out GeoData
     url: https://geodata.lib.vt.edu/
 
+- name: GeoData@Wisconsin
+  image: uwgeodata.png
+  copy: GeoData@Wisconsin is an online geoportal that provides discovery and access to Wisconsin geospatial data, imagery, and scanned maps.  GeoData@WI represents the holdings of the University of Wisconsin Robinson Map Library archives, plus all known open data portals maintained by Wisconsin geospatial data producers.
+  link:
+    text: Check out GeoData@Wisconsin
+    url: https://geodata.wisc.edu
+    
 - name: Virgo GIS
   image: uva.jpg
   copy: Virgo GIS is the discovery application for GIS datasets from the U.Va Library collections.
@@ -67,13 +74,6 @@
   link:
     text: Check out CUGIR
     url: https://cugir.library.cornell.edu/
-
-- name: GeoData@Wisconsin
-  image: uwgeodata.png
-  copy: GeoData@Wisconsin is an online geoportal that provides discovery and access to Wisconsin geospatial data, imagery, and scanned maps.
-  link:
-    text: Check out GeoData@Wisconsin
-    url: https://geodata.wisc.edu
 
 # - name:
 #   image:
