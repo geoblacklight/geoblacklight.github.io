@@ -74,6 +74,13 @@
   link:
     text: Check out CUGIR
     url: https://cugir.library.cornell.edu/
+    
+- name: Colorado GeoLibrary
+  image: Colorado.png
+  copy: The Colorado GeoLibrary is a venture of the University of Colorado Boulder Libraries. The GeoLibrary provides geospatial data access to the University of Colorado and beyond. The purpose of the GeoLibrary is to collect and provide access to data from across the State of Colorado in service of our students and researchers, as well as the general public.
+  link:
+    text: Check out the Colorado GeoLibrary
+    url: https://geo.colorado.edu/
 
 # - name:
 #   image:
