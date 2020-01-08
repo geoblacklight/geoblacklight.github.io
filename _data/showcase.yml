@@ -39,6 +39,13 @@
   link:
     text: Check out EarthWorks
     url: https://earthworks.stanford.edu
+    
+- name: University of Texas at Austin - Texas GeoData Portal
+  image: texas_geodata_portal.png
+  copy: The Texas GeoData portal makes it easy for users to discover geospatial data from the collections of the UT Libraries at the University of Texas at Austin and from the collections of other institutions. 
+  link:
+    text: Check out the Texas GeoData portal
+    url: https://geodata.lib.utexas.edu/
 
 - name: VecNet
   image: vecnet.jpg
