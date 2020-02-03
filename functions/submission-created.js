@@ -9,6 +9,7 @@ export async function handler(event, context, callback){
   await axios.get(`${SLACK_INVITE_ENDPOINT}?${toSlack}`)
   .then((response) => {
     console.log(`Successfully invited ${email}`);
+    console.log(response);
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({
