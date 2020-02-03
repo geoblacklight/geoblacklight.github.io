@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/geoblacklight/geoblacklight.github.io#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "netlify-lambda": "^1.6.3"
   }
 }
