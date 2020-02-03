@@ -1,0 +1,23 @@
+{
+  "name": "geoblacklight.github.io",
+  "version": "1.0.0",
+  "description": "This repo consists of the Jekyll static site generator for the [GeoBlacklight web site](http://geoblacklight.org)",
+  "main": "index.js",
+  "scripts": {
+    "build": "netlify-lambda build functions",
+    "serve": "netlify-lambda serve functions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geoblacklight/geoblacklight.github.io.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/geoblacklight/geoblacklight.github.io/issues"
+  },
+  "homepage": "https://github.com/geoblacklight/geoblacklight.github.io#readme",
+  "dependencies": {
+    "netlify-lambda": "^1.6.3"
+  }
+}
