@@ -1,0 +1,4 @@
+[build]
+  command = "jekyll build && npm run build"
+  functions = ".functions" #  netlify-lambda reads this
+  publish = "_site"
