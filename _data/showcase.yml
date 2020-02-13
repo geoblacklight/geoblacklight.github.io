@@ -5,12 +5,12 @@
     text: Check out the Big Ten Academic Alliance Geoportal
     url: https://geo.btaa.org
 
-- name: University of California - Dash
-  image: dash.jpg
-  copy: Dash is an open source, community driven project that takes a unique approach to data publication and digital preservation. Dash focuses on search, presentation, and discovery and delegates the responsibility for the data preservation function to the underlying repository with which it is integrated. The service is based at the University of California Curation Center (UC3), a CDL program that aims to develop interdisciplinary research data infrastructure.
+- name: Dryad
+  image: dryad.jpg
+  copy: The Dryad Digital Repository is a curated resource that makes research data discoverable, freely reusable, and citable. Dryad provides a general-purpose home for a wide diversity of data types, and it participates in the Data Curation Network.
   link:
-    text: Check out Dash
-    url: https://dash.ucop.edu
+    text: Check out Dryad
+    url: https://datadryad.org/search
 
 - name: Norman B. Leventhal Map Center - Collections
   image: bpl.jpg
@@ -42,7 +42,7 @@
     
 - name: University of Texas at Austin - Texas GeoData Portal
   image: texas_geodata_portal.png
-  copy: The Texas GeoData portal is an online interface designed to make it easy for users to search and browse for geospatial data from the collections of the UT Libraries at the University of Texas at Austin and from the collections of other institutions. 
+  copy: The Texas GeoData portal is an online interface designed to make it easy for users to search and browse for geospatial data from the collections of the UT Libraries at the University of Texas at Austin and from the collections of other institutions.
   link:
     text: Check out the Texas GeoData portal
     url: https://geodata.lib.utexas.edu/
