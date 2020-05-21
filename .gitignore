@@ -3,3 +3,4 @@ _site
 tmp
 node_modules
 .functions/*.js
+.DS_Store
