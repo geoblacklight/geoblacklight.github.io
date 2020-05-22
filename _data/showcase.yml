@@ -88,6 +88,13 @@
   link:
     text: Check out the Colorado GeoLibrary
     url: https://geo.colorado.edu/
+    
+- name: University of California Berkeley – GeoData Portal
+  image: ucberkeley.png
+  copy: The UC Berkeley Library developed GeoData@UC Berkeley to help users find geospatial data and maps. Much of the content is freely available, but some datasets are restricted to UC Berkeley affiliated users.
+  link:
+    text: Check out GeoData@UC Berkeley
+    url: https://geodata.lib.berkeley.edu/
 
 # - name:
 #   image:
