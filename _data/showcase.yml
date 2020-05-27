@@ -39,20 +39,13 @@
   link:
     text: Check out EarthWorks
     url: https://earthworks.stanford.edu
-    
+
 - name: University of Texas at Austin - Texas GeoData Portal
   image: texas_geodata_portal.png
   copy: The Texas GeoData portal is an online interface designed to make it easy for users to search and browse for geospatial data from the collections of the UT Libraries at the University of Texas at Austin and from the collections of other institutions.
   link:
     text: Check out the Texas GeoData portal
     url: https://geodata.lib.utexas.edu/
-
-- name: VecNet
-  image: vecnet.jpg
-  copy: The Vector-Bourne Disease Network (VecNet) uses GeoBlacklight for spatial discovery of data, tagged citations, articles, and reports that support malaria eradication.
-  link:
-    text: Check out VecNet
-    url: https://dl.vecnet.org/?q=&showmap=on
 
 - name: VirginiaTech - GeoData
   image: vt.png
@@ -67,7 +60,7 @@
   link:
     text: Check out GeoData@Wisconsin
     url: https://geodata.wisc.edu
-    
+
 - name: Virgo GIS
   image: uva.jpg
   copy: Virgo GIS is the discovery application for GIS datasets from the U.Va Library collections.
@@ -81,7 +74,7 @@
   link:
     text: Check out CUGIR
     url: https://cugir.library.cornell.edu/
-    
+
 - name: Colorado GeoLibrary
   image: Colorado.png
   copy: The Colorado GeoLibrary is a venture of the University of Colorado Boulder Libraries. The GeoLibrary provides geospatial data access to the University of Colorado and beyond. The purpose of the GeoLibrary is to collect and provide access to data from across the State of Colorado in service of our students and researchers, as well as the general public.
@@ -96,6 +89,7 @@
     text: Check out GeoData@UC Berkeley
     url: https://geodata.lib.berkeley.edu/
 
+# To add an instance or project, follow this template
 # - name:
 #   image:
 #   copy:
