@@ -12,20 +12,20 @@ GeoBlacklight is a multi-institutional, open source geospatial data discovery so
 
 ### Community Structure
 
-**Community Coordinator:** Karen Majewicz, University of Minnesota
+**Community Coordinator:** TBA
 
 * Provides oversight for community processes
 * Facilitates community meetings and sets agendas
 * Proposes priorities for biannual community software development sprint cycles
 * Stages project boards for community development sprints and coordinates stand-up meetings
 
-**Software Advisory Committee:** Jack Reed, Stanford University, Eliot Jordan, Princeton University, Eric Larson, Big Ten Academic Alliance, Huda Khan, Cornell University
+**Software Advisory Committee:** TBA
 
 * Vets software codebase and pull requests to ensure contributions align with the GeoBlacklight project Technical Values
 * Reviews contributions, approve pull requests, or request edits to requests when appropriate
 * Ensures that contributions are accompanied with tests and align with the direction of ancillary development projects and trends
 
-**Communications and Outreach Coordinator:**
+**Communications and Outreach Coordinator:** TBA
 
 * Provides front-facing content to inform a broader community of development, news, and announcements
 * Maintains and organizes GeoBlacklight's network of projects
