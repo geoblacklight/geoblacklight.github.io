@@ -7,7 +7,8 @@ If you have an instance of GeoBlacklight and would like to showcase it on the ho
 - Fork the `geoblacklight.github.io` repository into your local GitHub profile
 - Clone the repository onto your hard drive
 ```
-git clone https://github.com/geoblacklight/geoblacklight.github.io.git```
+git clone https://github.com/geoblacklight/geoblacklight.github.io.git
+```
 - Open and edit the `_data/showcase.yml` file and add your GeoBlacklight info in the template at the bottom of the file (also see others as an example)
 - Create a screenshot of your GeoBlacklight homepage, save it as a `.png` or `.jpg` file and add it to the `images` folder
 - Save your files and then commit your changes to your local branch
@@ -21,7 +22,8 @@ Making changes to a Jekyll static site is relatively easy. See this [tutorial fr
 
 - Clone the repository
 ```
-git clone https://github.com/geoblacklight/geoblacklight.github.io.git```
+git clone https://github.com/geoblacklight/geoblacklight.github.io.git
+```
 - Install dependencies
 ```
 bundle install
