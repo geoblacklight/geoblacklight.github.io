@@ -14,7 +14,7 @@ GeoBlacklight is a multi-institutional, open source geospatial data discovery so
 
 **Community Coordinator: [Karen Majewicz (majew030@umn.edu)](mailto:majew030@umn.edu)**
 
-Karen Majewicz is the Geospatial Project Metadata Coordinator at the University of Minnesota Libraries and Big Ten Academic Alliance Geospatial Data Project. The GeoBlacklight Community Coordinator holds the following roles:
+The GeoBlacklight Community Coordinator holds the following roles:
 
 * Provides oversight for community processes
 * Facilitates community meetings and sets agendas
