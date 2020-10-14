@@ -32,7 +32,7 @@ Workgroup members:
 * Mara Blake
 * Michelle Janowiecki
 * Margaret Mering
-* Steven Appel
+* Stephen Appel
 * Susan Powell
 * Tom Brittnacher
 
