@@ -10,8 +10,10 @@ The schema is documented on the [GeoBlacklight Github Wiki.](https://github.com/
 
 The schema is also discussed in detail in a *code4lib* journal article here: [A Metadata Schema for Geospatial Resource Discovery Use Cases](http://journal.code4lib.org/articles/9710)
   
--------------------------------------------
-### GeoBlacklight Metadata Schema Workgroup
+____
+
+#### GeoBlacklight Metadata Schema Workgroup
+
 The GeoBlacklight Metadata Schema Workgroup convened during the Summer Community Sprint in 2020. The goals of the workgroup include:
 
 1. Systematically assessing and evaluating the GeoBlacklight Schema 1.0
@@ -21,6 +23,7 @@ The GeoBlacklight Metadata Schema Workgroup convened during the Summer Community
     * new fields for item relations
 
 Workgroup members:
+
 * Andrew Battista
 * Abigail Pennington
 * Amy Work
