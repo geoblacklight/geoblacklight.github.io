@@ -84,7 +84,7 @@ GeoBlacklight Technical Values
 
 - Our core focus is **geospatial discovery**. This focus initially was limited to discretely catalogued data objects, but has expanded over time to include a wider range of information sources.
 
-- We emphasize **end-user experience**, including inclusivity and accessibility in design features whenever possible.
+- We emphasize **end-user experience**, including inclusivity and accessibility in design features.
 
 - We prioritize **stability** by semantically versioning our application releases and metadata schemas.
 
