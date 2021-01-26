@@ -8,6 +8,7 @@ permalink: /about/
 
 GeoBlacklight is a multi-institutional, open source discovery software application for geospatial content, including GIS data and maps. Based on the open source software project [Blacklight](https://projectblacklight.org/), GeoBlacklight began in 2014 as a collaboration by MIT, Princeton, and Stanford. As of 2020, over 25 academic libraries and cultural heritage institutions have adopted GeoBlacklight.
 
+
 - [Our Community](#our-community)
 - [Our Development Practices](#our-development-practices)
 - [Application Features](#application-features)
