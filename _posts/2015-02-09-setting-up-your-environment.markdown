@@ -18,12 +18,15 @@ GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It dive
 
 #### Software you should have installed on your development computer
 
-  - [Ruby > 2.2.7][installruby]
-  - [Rails > 5][installrails]
+  - [Ruby > 2.6.6][installruby]
+  - [Rails > 6.0][installrails]
   - [Git][installgit]
   - [Java > 1.8][installjava] (Download JDK for local Solr server)
-  - [Node.js > 10.15 LTS][installnode]
+  - [Node.js > 14.15 LTS][installnode]
   - [Yarn > 1.13][installyarn]
+
+It is recommended to install the latest versions of Ruby, Rails, and Node.js. We strive to keep GeoBlacklight updated with these versions. A great, almost always up-to-date, tutorial on getting a Ruby on Rails development environment is available here: [https://gorails.com/setup](https://gorails.com/setup). If you are not following this tutorial as part of an in person workshop, you can skip to the next section once you have these dependencies installed.
+{: .flash-alert}
 
 Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive. **Note:** You can complete this tutorial without Vagrant as long as you already have the above mentioned software on your machine. If you do, you may skip ahead to <a href="{% post_url 2015-02-09-create-your-application %}">Part 3 - Create your application</a>
 
@@ -116,4 +119,3 @@ Note: Please install a Windows ssh client installed such as [ PuTTY](http://www.
 [bldependencies]:       https://github.com/projectblacklight/blacklight/wiki/Quickstart
 [installnode]:          https://nodejs.org/en/download/package-manager/
 [installyarn]:          https://yarnpkg.com/lang/en/docs/install/
-

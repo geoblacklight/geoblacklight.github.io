@@ -50,7 +50,7 @@ In this example we are going to change the way the GeoBlacklight is configured t
      Hint: `catalog_controller.rb` is located at "app/controllers/catalog_controller.rb" in your application
      {: .flash-notice}
 
-  1. Scroll down to lines 136 - 143
+  1. Scroll down to lines 137 - 144
 
      ```ruby
      ...
@@ -58,15 +58,15 @@ In this example we are going to change the way the GeoBlacklight is configured t
      config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
      config.add_show_field Settings.FIELDS.PUBLISHER, label: 'Publisher', itemprop: 'publisher'
      config.add_show_field Settings.FIELDS.PART_OF, label: 'Collection', itemprop: 'isPartOf'
-     config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_search: true
-     config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
+     config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_facet: true
+     config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_facet: true
      config.add_show_field Settings.FIELDS.TEMPORAL, label: 'Year', itemprop: 'temporal'
-     config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_search: true
+     config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_facet: true
      ...
      ```
      These configuration options relate to fields that are indexed in Solr. You can disable a metadata field being shown on an items show page. If you navigate to an [items page](http://127.0.0.1:3000/catalog/stanford-cg357zz0321), it will currently show field called publisher. Maybe you would like to rename that field to "Data publisher".
 
-  1. Modify the label in line 138
+  1. Modify the label in line 139
 
      ```ruby
      # change this
@@ -77,7 +77,7 @@ In this example we are going to change the way the GeoBlacklight is configured t
 
      Save the file and reload the page. You should see the label change.
 
-  1. Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the `Settings.FIELDS.CREATOR` line (136).
+  1. Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the `Settings.FIELDS.CREATOR` line (137).
 
      ```ruby
      # config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'
@@ -89,49 +89,14 @@ In this example we are going to change the way the GeoBlacklight is configured t
     
 ### Changing the style of your application
 
-GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for UI components and is implemented using the [bootstrap-sass](https://github.com/twbs/bootstrap-sass) gem. This approach should make things easier for adopters wanting to customize the look and feel of their application. [Bootstrap variables](http://getbootstrap.com/customize/) can easily be modified which will change how the application looks.
+GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for UI components and is implemented using the [bootstrap-sass](https://github.com/twbs/bootstrap) gem. This approach should make things easier for adopters wanting to customize the look and feel of their application. [Bootstrap variables](https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss) can easily be modified which will change how the application looks.
 
-  1. Rename `application.css` to `application.scss`
-
-     ```sh
-     $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
-     ```
-
-  1. Delete everything from application.scss and manually import `blacklight.scss` and `geoblacklight.scss` rather than require tree.
-
-     ```scss
-     // in app/assets/stylesheets/application.scss
-     @import 'blacklight';
-     @import 'geoblacklight';
-     ```
-  1. Similarly in `geoblacklight.scss`, remove requires and import them instead.
-
-     ```scss
-     // in app/assets/stylesheets/geoblacklight.scss
-     @import 'geoblacklight/application';
-     ```
-
-  1. Create file `app/assets/stylesheets/bootstrap-variables.scss` and import it from `blacklight.scss`
-
-     ```sh
-     $ touch app/assets/stylesheets/bootstrap-variables.scss
-     ```
-
-     ```scss
-     // in app/assets/stylesheets/blacklight.scss
-     @import 'bootstrap-variables';
-
-     @import 'bootstrap';
-
-     @import 'blacklight/blacklight';
-     ```
-
-  1. Now you can easily update Bootstrap variables in your `bootstrap-variables.scss`!
+  1. You can update Bootstrap variables in your `_customizations.scss`!
     
      Change link color
 
      ```scss
-     // in app/assets/stylesheets/bootstrap-variables.scss
+     // in app/assets/stylesheets/_customizations.scss
      // Links
      $link-color: green;
      ```
@@ -146,7 +111,7 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
      ```
 
 
-     Great job! You can configure a whole host of options using this Bootstrap customization technique. Once again, here is the list of Bootstrap variables you can customize http://getbootstrap.com/customize/ .
+     Great job! You can configure a whole host of options using this Bootstrap customization technique. Once again, here is the list of Bootstrap variables you can customize https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss .
      {: .flash-success}
 
 ### Overriding a partial
