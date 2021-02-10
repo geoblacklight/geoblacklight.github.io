@@ -11,8 +11,8 @@ The GeoBlacklight Community collaborates on a 2-week sprint every Winter and Sum
 Each sprint starts with a kickoff meeting where we will review our goals and volunteer to contribute towards various issues. This will be followed by short standup meetings every day to check-in and plan our next activities.
 
 ## Event Dates
-February 16-26, 2021
 
+- The sprint will take place from **February 16-26, 2021**
 - Kickoff Meeting: Tuesday, February 16 @ 11am Central Time
 - Daily standup meetings: Weekdays, February 17-26 @ 1-1:30 pm Central Time
 
