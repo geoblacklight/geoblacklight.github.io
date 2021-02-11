@@ -30,7 +30,7 @@ GeoBlacklight is flexible enough, however, to act as a discovery service for a v
 
 That's ok. GIS data indexed into GeoBlacklight becomes progressively more useful based on the services that back them. For example, the minimum required metadata for GeoBlacklight is a bounding box, title, and description, and no references to services that will actually provide that data are required. GeoBlacklight can also help with serving static files available through a URL. Moreover, GeoBlacklight also natively supports [IIIF](http://iiif.io/) objects, so organizations who have IIIF servers for scanned maps can start using GeoBlacklight today.
 
-[The GeoBlacklight Schema, Version 1.0](https://github.com/geoblacklight/geoblacklight/blob/master/schema/geoblacklight-schema.md) uses a field `dct_references_s` to define external services and references. See the [references.md](https://github.com/geoblacklight/geoblacklight/blob/master/schema/references.md) portion of the repository for a list of possible key:value pairs and instructions on how to apply them.
+[The GeoBlacklight Schema, Version 1.0](https://github.com/geoblacklight/geoblacklight/wiki/GeoBlacklight-Metadata) uses a field `dct_references_s` to define external services and references. See the [External references](https://github.com/geoblacklight/geoblacklight/wiki/External-references) portion of the repository for a list of possible key:value pairs and instructions on how to apply them.
 
 ### Software projects and communities
 
