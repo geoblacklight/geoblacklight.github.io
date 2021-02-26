@@ -41,7 +41,7 @@ Participants in the GeoBlacklight community come from a variety of professional 
 
 Anyone interested in spatial data infrastructures, libraries, GIS, maps, data curation, open source software, and related topics, is welcome to join us. Depending on their skills and interests, participants contribute to the community in any number of ways (for instance, by attending meetings, writing documentation, developing metadata best practices, engaging in outreach, and writing code). Participating in the community is especially beneficial to those who are implementing or maintaining GeoBlacklight as a spatial data discovery interface within their own home institutions.
 
-Visit the Connect page to join our online community.
+Visit the [Connect](https://geoblacklight.org/connect.html) page to join our online community.
 
 #### Events
 
