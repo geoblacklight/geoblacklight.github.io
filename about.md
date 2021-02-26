@@ -36,7 +36,6 @@ Our Community
 -------------
 
 ` `
-
 Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.
 
 Anyone interested in spatial data infrastructures, libraries, GIS, maps, data curation, open source software, and related topics, is welcome to join us. Depending on their skills and interests, participants contribute to the community in any number of ways (for instance, by attending meetings, writing documentation, developing metadata best practices, engaging in outreach, and writing code). Participating in the community is especially beneficial to those who are implementing or maintaining GeoBlacklight as a spatial data discovery interface within their own home institutions.
@@ -59,7 +58,6 @@ Visit the [Connect](https://geoblacklight.org/connect.html) page to join our onl
 	- stages project boards for community sprints and coordinates stand-up meetings
 
 ` `
-
 - **Code of Conduct team**
 
 	- responsible for responding to [Code of Conduct](https://github.com/geoblacklight/geoblacklight/blob/main/CODE_OF_CONDUCT.md) reports.
