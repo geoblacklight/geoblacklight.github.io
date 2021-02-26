@@ -15,7 +15,7 @@ snippet: 'An overview of GeoBlacklight, its uses, and the technology stack. Crea
   
 ### Why and what is GeoBlacklight?
 
-GeoBlacklight is a [Ruby on Rails](http://rubyonrails.org) engine, based on the popular open-source project [Blacklight](http://projectblacklight.org/). The aim of the project is to provide a simple, effective open-source application for discovery of geospatial data. Many institutions (including [Stanford](https://earthworks.stanford.edu)) are using GeoBlacklight to provide a search engine across a federated catalog of geospatial data.
+GeoBlacklight is a [Ruby on Rails](http://rubyonrails.org) engine, based on the popular open-source project [Blacklight](http://projectblacklight.org/). The aim of the project is to provide a simple, effective open-source application for discovery of geospatial data. [Many institutions](/#showcase) are using GeoBlacklight to provide a search engine across a federated catalog of geospatial data.
 
 Discovery services and metadata have been key challenges for many organizations who provide geospatial data. GeoBlacklight hopes to build on the successes of projects like [OpenGeoPortal](http://opengeoportal.org) and [Blacklight](http://projectblacklight.org/) by integrating with an ecosystem of plugins and an already active developer community. Bridging the gap between the digital library and geospatial communities, GeoBlacklight aims to bring expertise from both fields to provide a better experience for finding geospatial data.
 
@@ -30,19 +30,21 @@ GeoBlacklight is flexible enough, however, to act as a discovery service for a v
 
 That's ok. GIS data indexed into GeoBlacklight becomes progressively more useful based on the services that back them. For example, the minimum required metadata for GeoBlacklight is a bounding box, title, and description, and no references to services that will actually provide that data are required. GeoBlacklight can also help with serving static files available through a URL. Moreover, GeoBlacklight also natively supports [IIIF](http://iiif.io/) objects, so organizations who have IIIF servers for scanned maps can start using GeoBlacklight today.
 
-[The GeoBlacklight Schema, Version 1.0](https://github.com/geoblacklight/geoblacklight/blob/master/schema/geoblacklight-schema.md) uses a field `dct_references_s` to define external services and references. See the [references.md](https://github.com/geoblacklight/geoblacklight/blob/master/schema/references.md) portion of the repository for a list of possible key:value pairs and instructions on how to apply them.
+[The GeoBlacklight Schema, Version 1.0](https://github.com/geoblacklight/geoblacklight/wiki/GeoBlacklight-Metadata) uses a field `dct_references_s` to define external services and references. See the [External references](https://github.com/geoblacklight/geoblacklight/wiki/External-references) portion of the repository for a list of possible key:value pairs and instructions on how to apply them.
 
-### Software projects
+### Software projects and communities
 
 GeoBlacklight (the Ruby on Rails, Blacklight based application) is part of a larger effort to provide library services to geospatial data users. Several additional software augment GeoBlacklight and discovery capabilities.
 
  - [GeoBlacklight-Schema](https://github.com/geoblacklight/geoblacklight/blob/master/schema/geoblacklight-schema.md) - the metadata schema used in GeoBlacklight
  - [GeoMonitor](https://github.com/geoblacklight/geo_monitor) - a WMS service monitor that provides atomic updates to Solr
- - [GeoBlacklight-Docker](https://github.com/geoblacklight/geoblacklight-docker) - Docker images for GeoBlacklight
+ - [GeoBlacklight Sidecar Images](https://github.com/geoblacklight/geoblacklight_sidecar_images) -  Store local copies of remote imagery in GeoBlacklight
+ - [OpenIndexMaps](https://openindexmaps.org/) - a community and format for sharing index maps
+ 
 
 #### Metadata Sharing
 
-Worth mentioning is a new effort, [OpenGeoMetadata](https://github.com/OpenGeoMetadata), which aims to share geospatial metadata in an open and collaborative way. Instead of focusing on building an application that must be deployed at multiple institutions, OpenGeoMetadata uses Github as a common, highly available repository. Using Github as a platform allows for software development to focus on conversion tools and harvesting tools.
+Worth mentioning is a collaborative effort, [OpenGeoMetadata](https://github.com/OpenGeoMetadata), which aims to share geospatial metadata in an open way. Instead of focusing on building an application that must be deployed at multiple institutions, OpenGeoMetadata uses GitHub as a common, highly available repository. Using GitHub as a platform allows for software development to focus on conversion tools and harvesting tools.
 
 OpenGeoMetadata builds on the groundwork laid by the [OpenGeoPortal Metadata Working group](http://opengeoportal.org/working-groups/metadata/).
 

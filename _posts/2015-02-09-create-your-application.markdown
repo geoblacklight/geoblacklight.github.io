@@ -8,8 +8,6 @@ author_link: 'https://twitter.com/mejackreed'
 snippet: 'Create your GeoBlacklight application. Created as part of a tutorial series given in a GeoBlacklight Workshop'
 ---
 
-Note: If you have issues with any of these steps, a prebuilt version of this application is available within the provided virtual machine. The application can be accessed by SSHing into the virtual maching and then changing directory to `pregenerated/demo_geoblacklight_app`.
-
 ## Create your application
 
 Before beginning this section, make sure your [environment is setup]({% post_url 2015-02-09-setting-up-your-environment %}).
@@ -118,8 +116,11 @@ Now that we have started our Rails application, we need to install GeoBlacklight
      {: .flash-notice}
 
      ```sh
-     $ rails new your_app_name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/master/template.rb
+     $ DISABLE_SPRING=1 rails new your_app_name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb
      ```
+
+     Remember to `cd your_app_name` into the directory before starting the server if you are using the template generator.
+     {: .flash-notice}
 
 
   1. Start the Solr and Rails server.
