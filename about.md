@@ -6,23 +6,23 @@ permalink: /about/
 
 ` `
 
-GeoBlacklight is a multi-institutional, open source discovery software application for geospatial content, including GIS datasets, web services, and digitized paper maps. Based on the open source software project Blacklight, GeoBlacklight began in 2014 as a collaboration by MIT, Princeton, and Stanford. As of 2021, over 25 academic libraries and cultural heritage institutions have adopted GeoBlacklight.
+GeoBlacklight is an open-source [Ruby on Rails](https://rubyonrails.org/) software application for discovering geospatial content, including GIS datasets, web services, and digitized paper maps. Based on the open source software project [Blacklight](https://projectblacklight.org/), GeoBlacklight began in 2014 as a collaboration by MIT, Princeton, and Stanford. As of 2021, over 25 academic libraries and cultural heritage institutions have adopted GeoBlacklight. To learn more about it and how it works, visit our [GeoBlacklight Introduction Tutorial](https://geoblacklight.org/tutorial/2015/02/09/geoblacklight-overview.html).
 
 Discovery services and metadata are key challenges for organizations who provide geospatial data. GeoBlacklight connects expertise from the digital library and geospatial communities to provide a better experience for users to find geospatial data.
 
-The GeoBlacklight community helps participating institutions by:
-Providing a customizable platform for delivering geospatial information seamlessly to end users
-Recommending best practices for ___
-Providing access to collaborative, standardized metadata through OpenGeoMetadata
-Connecting them to other contributors through our active communication channels
-Preserving a robust knowledge base on our GitHub repository
+The GeoBlacklight community helps *participating institutions* by:
+* Providing a customizable platform for delivering geospatial information seamlessly to end users
+* Recommending best practices for software and metadata implementation and updates
+* Providing access to collaborative, standardized metadata through [OpenGeoMetadata](https://github.com/OpenGeoMetadata)
+* Connecting them to other contributors through our active [communication channels](https://geoblacklight.org/connect.html)
+* Preserving a robust knowledge base on our [GitHub repository](https://github.com/geoblacklight/geoblacklight/wiki)
 
-The GeoBlacklight community helps end users by:
-Creating a central repository for digital geospatial resources of all kinds
-Making geospatial resources accessible to all users regardless of expertise
-Enabling user-friendly searches through a map interface, keyword search, or a combination of the two
-Ensuring consistent and high-quality metadata that can be federated across institutions
-Providing easy download and export options, along with clear rights and licensing information, for reusing geospatial resources in a wide variety of academic ventures
+The GeoBlacklight community helps *end users* by:
+* Creating a central repository for digital geospatial resources of all kinds
+* Making geospatial resources accessible to all users regardless of expertise
+* Enabling user-friendly searches through a map interface, keyword search, or a combination of the two
+* Ensuring consistent and high-quality metadata that can be federated across institutions
+* Providing easy download and export options, along with clear rights and licensing information, for reusing geospatial resources in a wide variety of academic ventures
 
 
 
