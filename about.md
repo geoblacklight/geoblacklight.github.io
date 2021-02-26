@@ -55,7 +55,7 @@ Visit the [Connect](https://geoblacklight.org/connect.html) page to join our onl
 
 	- facilitates community monthly meetings and sets agendas
 	- stages project boards for community sprints and coordinates stand-up meetings
-` `
+
 - **Code of Conduct team**
 
 	- responsible for responding to [Code of Conduct](https://github.com/geoblacklight/geoblacklight/blob/main/CODE_OF_CONDUCT.md) reports.
