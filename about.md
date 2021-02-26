@@ -34,7 +34,6 @@ Providing easy download and export options, along with clear rights and licensin
 
 Our Community
 -------------
-
 ` `
 Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.
 
@@ -56,7 +55,6 @@ Visit the [Connect](https://geoblacklight.org/connect.html) page to join our onl
 
 	- facilitates community monthly meetings and sets agendas
 	- stages project boards for community sprints and coordinates stand-up meetings
-
 ` `
 - **Code of Conduct team**
 
