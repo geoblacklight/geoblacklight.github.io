@@ -24,13 +24,7 @@ The GeoBlacklight community helps *end users* by:
 * Ensuring consistent and high-quality metadata that can be federated across institutions
 * Providing easy download and export options, along with clear rights and licensing information, for reusing geospatial resources in a wide variety of academic ventures
 
-
-
-- [Our Community](#our-community)
-- [Our Development Practices](#our-development-practices)
-- [Application Features](#application-features)
-- [GeoBlacklight Technical Values](#geoblacklight-technical-values)
-
+**************************
 
 Our Community
 -------------
