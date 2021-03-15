@@ -24,17 +24,11 @@ The GeoBlacklight community helps *end users* by:
 * Ensuring consistent and high-quality metadata that can be federated across institutions
 * Providing easy download and export options, along with clear rights and licensing information, for reusing geospatial resources in a wide variety of academic ventures
 
-
-
-- [Our Community](#our-community)
-- [Our Development Practices](#our-development-practices)
-- [Application Features](#application-features)
-- [GeoBlacklight Technical Values](#geoblacklight-technical-values)
-
-
+` `
+**************************
 Our Community
 -------------
-` `
+
 Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.
 
 Anyone interested in spatial data infrastructures, libraries, GIS, maps, data curation, open source software, and related topics, is welcome to join us. Depending on their skills and interests, participants contribute to the community in any number of ways (for instance, by attending meetings, writing documentation, developing metadata best practices, engaging in outreach, and writing code). Participating in the community is especially beneficial to those who are implementing or maintaining GeoBlacklight as a spatial data discovery interface within their own home institutions.
