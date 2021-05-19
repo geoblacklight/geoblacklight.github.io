@@ -56,7 +56,7 @@ Now you should have Rails installed on your machine and are ready to proceed.
 
      Now you can visit the Rails application at [http://127.0.0.1:3000](http://127.0.0.1:3000). You should see "Yay! You're on Rails" CTRL + c will stop server.
 
-     ![rails_welcome](http://guides.rubyonrails.org/images/getting_started/rails_welcome.png "Welcome aboard!")
+     ![rails_welcome](https://guides.rubyonrails.org/images/getting_started/rails_welcome.png "Welcome aboard!")
 
 **Note** You will need to leave the Terminal window open while the Rails server is running.
 
