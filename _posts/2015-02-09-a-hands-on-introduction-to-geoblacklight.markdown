@@ -10,7 +10,7 @@ snippet: 'Created as part of a tutorial series given in a GeoBlacklight Workshop
 ## Welcome
 Welcome to the workshop, "A hands on introduction to GeoBlacklight"!
 
-This workshop has been given at several conferences and is meant to be kept up to date. Previous versions of the workshop can be viewed on [GitHub](https://github.com/geoblacklight/geoblacklight.github.io/tree/master/_posts).
+This workshop has been given at several conferences and is meant to be kept up to date. Previous versions of the workshop can be viewed on [GitHub](https://github.com/geoblacklight/geoblacklight.github.io/tree/main/_posts).
 
 Workshop Dates:
 
@@ -29,7 +29,7 @@ Workshop Dates:
 
  - Jack Reed
  - Darren Hardy
- 
+
 #### Princeton University
 
  - Eliot Jordan

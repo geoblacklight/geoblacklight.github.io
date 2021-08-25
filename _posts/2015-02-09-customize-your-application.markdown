@@ -25,9 +25,9 @@ There are many ways to customize your GeoBlacklight application, and unfortunate
 When it comes to customizing your GeoBlacklight application there are some basic principles to keep in mind.
 
   1. The less you override the easier it is to upgrade.
-    
+
      Blacklight and GeoBlacklight adhere to some basic principles which all adopters to override helper methods, view partials, and even classes. A lot of things are configurable out of the box. However, there are some best practices around what to override and where to do it to make sure your application can take advantage to improvements to both Blacklight and GeoBlacklight.  Both projects use [semantic versioning](http://semver.org/) to make this upgrade path easier for adopters.
-    
+
      [Providing your own view templates](https://github.com/projectblacklight/blacklight/wiki/Providing-your-own-view-templates) - Blacklight Wiki (Customizing the User Interface)
 
   1. Reach out and ask for help on the [Blacklight Developers](https://groups.google.com/forum/#!forum/blacklight-development) or [GeoBlacklight](https://groups.google.com/forum/#!forum/geoblacklight-working-group) Google Groups
@@ -45,8 +45,8 @@ In this example we are going to change the way the GeoBlacklight is configured t
      ```
 
   1. Open the `app/controllers/catalog_controller.rb` file in your text editor.
-  
-    
+
+
      Hint: `catalog_controller.rb` is located at "app/controllers/catalog_controller.rb" in your application
      {: .flash-notice}
 
@@ -83,16 +83,16 @@ In this example we are going to change the way the GeoBlacklight is configured t
      # config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'
      ```
      Save the file and reload the page. You should no longer see the "Author(s)" field.
-    
+
      You have now customized a layer's show page!
      {: .flash-success}
-    
+
 ### Changing the style of your application
 
 GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for UI components and is implemented using the [bootstrap-sass](https://github.com/twbs/bootstrap) gem. This approach should make things easier for adopters wanting to customize the look and feel of their application. [Bootstrap variables](https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss) can easily be modified which will change how the application looks.
 
   1. You can update Bootstrap variables in your `_customizations.scss`!
-    
+
      Change link color
 
      ```scss
@@ -101,7 +101,7 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
      $link-color: green;
      ```
 
-     Change default border style 
+     Change default border style
 
      ```scss
      // in app/assets/stylesheets/bootstrap-variables.scss
@@ -118,8 +118,8 @@ GeoBlacklight uses [Twitter Bootstrap](http://getbootstrap.com/) as a base for U
 
 Lets say you want to override the homepage that is shown in GeoBlacklight that can easily be done by just creating same-named a partial at the same path in your GeoBlacklight application.
 
-  1. Check out home page partial on Github. [https://github.com/geoblacklight/geoblacklight/blob/master/app/views/catalog/_home_text.html.erb](https://github.com/geoblacklight/geoblacklight/blob/master/app/views/catalog/_home_text.html.erb)
-  
+  1. Check out home page partial on Github. [https://github.com/geoblacklight/geoblacklight/blob/main/app/views/catalog/_home_text.html.erb](https://github.com/geoblacklight/geoblacklight/blob/main/app/views/catalog/_home_text.html.erb)
+
   1. This same partial is being overriden from Blacklight [https://github.com/projectblacklight/blacklight/blob/master/app/views/catalog/_home_text.html.erb](https://github.com/projectblacklight/blacklight/blob/master/app/views/catalog/_home_text.html.erb)
 
   1. Create a file with the same name and path in your application.
@@ -169,7 +169,7 @@ Blacklight and GeoBlacklight use [i18n](http://guides.rubyonrails.org/i18n.html)
 
      More configurable keys are available, check out what you can customize using this approach:
       - <a href='https://github.com/projectblacklight/blacklight/blob/master/config/locales/blacklight.en.yml'>Blacklight Configurable Keys</a>
-      - <a href='https://github.com/geoblacklight/geoblacklight/blob/master/config/locales/geoblacklight.en.yml'>GeoBlacklight Configurable Keys</a>
+      - <a href='https://github.com/geoblacklight/geoblacklight/blob/main/config/locales/geoblacklight.en.yml'>GeoBlacklight Configurable Keys</a>
      {: .flash-notice}
 
 ## Wrapping Up
