@@ -1,0 +1,38 @@
+---
+layout: default
+title: 'GeoBlacklight Community Sprints'
+---
+<div>
+  <h1>Geoblacklight Commmunity Sprints
+  </h1>
+  <br>
+  <p>
+  The GeoBlacklight Community collaborates on a 2-week sprint every Winter and Summer. Participation in the sprint is open to anyone interested in working on GeoBlacklight. While similar to a traditional code sprint, the GeoBlacklight Community Sprints also include tackling issues around documentation, metadata, community governance, and more.
+  </p>
+  <p>
+    Each sprint starts with a kickoff meeting where we review our goals and volunteer to contribute towards various issues. This is then followed by short standup meetings every day to check-in and plan our next activities. The exact dates of a sprint are determined the season prior to the sprint. If you are interested in participating, visit the <a href="/connect.html">Connect page</a> to join our community.
+  </p>
+</div>
+<div class='posts'>
+  <hr>
+  <br>
+  <h3>Prior Sprints</h3>
+  <br>
+  <ul class='unstyled'>
+    {% for post in site.categories.sprint %}
+      <li>
+        <h4>
+          <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h4>
+        <p class='post-snippet'>{{ post.snippet }}</p>
+        <p class='post-metadata'>
+          {% if post.author %}
+              {{ post.author | join: ' and ' }}
+          {% endif %} – <span class='post-date'>{{ post.date | date: "%B %-d, %Y" }}</span>
+        </p>
+      </li>
+      <hr>
+    {% endfor %}
+  </ul>
+
+</div>

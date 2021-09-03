@@ -2,7 +2,7 @@
 layout: post
 title: Summer Code Sprint concludes and GeoBlacklight version 1.6.0 released
 date: 2017-08-25
-categories: blog
+categories: blog | sprint
 author:
 - Karen Majewicz
 - Andrew Battista
@@ -15,7 +15,7 @@ Developers and metadata specialists from New York University, Princeton Universi
 
 ### Changes and Implementations
 
-The code sprint and release of version 1.6.0 resulted in a significant new feature, an amazing [tabbed viewer](https://github.com/geoblacklight/geoblacklight/pull/555) that displays standards based XML metadata as HTML in the interface. This was primarily developed by James Griffin, and represents an enhancement that has long been requested by many GeoBlacklight users. Now, users can see a cleaner rendering of ISO or FGDC XML documents in context and download them. 
+The code sprint and release of version 1.6.0 resulted in a significant new feature, an amazing [tabbed viewer](https://github.com/geoblacklight/geoblacklight/pull/555) that displays standards based XML metadata as HTML in the interface. This was primarily developed by James Griffin, and represents an enhancement that has long been requested by many GeoBlacklight users. Now, users can see a cleaner rendering of ISO or FGDC XML documents in context and download them.
 
 ![ISO19139](/images/geoblacklight_metadata_view_ISO19139.png)
 
@@ -28,4 +28,3 @@ Exploration of a larger development was initiated during the sprint, which led t
 For now, the team has created a development branch of GeoBlacklight for the new schema that includes example [fixture documents](https://github.com/geoblacklight/geoblacklight/tree/json-ld-schema/spec/fixtures/jsonld) of DCAT-compliant records. There are implications for moving toward the DCAT standard, the most significant of which is the need to "flatten" fully realized .JSON-LD metadata into .JSON files that comply with the Solr cores behind GeoBlacklight. [GeoCompile](https://github.com/geoblacklight/geo_compile), developed by Eliot and Stephen, is an initial step at making sure this happens seamlessly. Major thanks to Karen Majewicz, Andrew Battista, Stephen Balogh, and Eliot Jordan for doing some thinking and mocking-up during the sprint.
 
 These projects are still in progress and will be completed in the coming months. When we finish mocking up the proposed changes, which are gestured in the fixture record, we will follow up with a more complete post that explains the rationale for choices made and solicits further feedback from the community before any adoptions take place. Thanks to everyone who contributed to the sprint. In the meantime, we welcome comments and questions; [follow or contribute to the GeoBlacklight development work on GitHub!](https://github.com/geoblacklight/geoblacklight)
-

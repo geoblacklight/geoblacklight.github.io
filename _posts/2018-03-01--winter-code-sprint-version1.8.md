@@ -2,7 +2,7 @@
 layout: post
 title: GeoBlacklight Winter Code Sprint 2018 & New Release 1.8
 date: 2018-03-01
-categories: blog
+categories: blog | sprint
 author: Karen Majewicz
 snippet: 'The GeoBlacklight Community Winter Code Sprint has resulted in a new release (1.8.0) that includes a new feature for index maps, bug fixes, and improved metadata documentation.'
 ---
@@ -14,5 +14,3 @@ Developers from Stanford, Princeton, NYU, Cornell, and the University of Minneso
 
 #### [Check out this index map in EarthWorks from Stanford Libraries:](https://earthworks.stanford.edu/catalog/stanford-ts545zc6250)
 [![indexMap](/images/indexMap.png)](https://earthworks.stanford.edu/catalog/stanford-ts545zc6250)
-
-
