@@ -2,7 +2,7 @@
 layout: post
 title: Announcing the GeoBlacklight Community Winter 2021 Sprint
 date: 2021-02-10 12:00:00
-categories: blog
+categories: blog | sprint
 author: Karen Majewicz
 snippet: 'Join us for the next GeoBlacklight Community Winter Sprint!'
 ---

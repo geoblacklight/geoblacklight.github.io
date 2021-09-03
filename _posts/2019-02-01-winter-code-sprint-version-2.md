@@ -2,7 +2,7 @@
 layout: post
 title: GeoBlacklight 2.0 is Here!
 date: 2019-02-01 12:00:00
-categories: blog
+categories: blog | sprint
 author: Karen Majewicz
 snippet: 'The GeoBlacklight Community Winter Codesprint results in Version 2.0'
 ---
