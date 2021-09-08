@@ -39,7 +39,7 @@ Visit the [Connect](https://geoblacklight.org/connect.html) page to join our onl
 
 - **Every month:** [Zoom meetings](https://z.umn.edu/gbl-meetings) to share project updates and to discuss topical issues.
 
-- **2x per year:** [Community Sprints](/communitysprint.html) are similar to a traditional code sprint but also incorporate activities around documentation, metadata, governance, and more.
+- **2x per year:** [Community Sprints](/community-sprints.html) are similar to a traditional code sprint but also incorporate activities around documentation, metadata, governance, and more.
 
 - **Annually:** [Geo4LibCamp](https://geo4libcamp.org/) is a hands-on meeting to bring together those building repository services for geospatial data. The main focus is to share best-practices, solve common problems, and address technical issues with integrating geospatial data into a repository and associated services.
 
