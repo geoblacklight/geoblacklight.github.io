@@ -16,19 +16,32 @@ git clone https://github.com/geoblacklight/geoblacklight.github.io.git
 
 If you aren't familiar with GitHub, see [this guide](https://help.github.com/en/enterprise/2.16/user/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) for help with the process. See the general guide to contributions below, and reach out to [geoblacklight-working-group@googlegroups.com](mailto:geoblacklight-working-group@googlegroups.com) with questions.
 
-## General Contribution Instructions
+## How to make changes to the GeoBlacklight website
 
-Making changes to a Jekyll static site is relatively easy. See this [tutorial from the Programming Historian](https://programminghistorian.org/en/lessons/building-static-sites-with-jekyll-github-pages) for a comprehensive overview of working with Jekyll. Here's a few tips:
+As you make changes to your local files, you will want to see what they'll look like on the site before making a pull request. Making changes to a Jekyll static site is relatively easy. See this [tutorial from the Programming Historian](https://programminghistorian.org/en/lessons/building-static-sites-with-jekyll-github-pages) for a comprehensive overview of working with Jekyll.
+
+*Running Jekyll requires Ruby 2.4.0 or higher, but lower than Ruby 3.0.0.*
+
+Here are a few more tips:
 
 - Clone the repository
 ```
 git clone https://github.com/geoblacklight/geoblacklight.github.io.git
+cd geoblacklight.github.io
 ```
-- Install dependencies
+- Install OpenSSL
+If you don't have openssl you can install it via Homebrew (Mac users):
+```
+brew install openssl@3
+```
+
+- Install other dependencies:
 ```
 bundle install
 ```
-- As you make changes to your local files, you will want to see what they'll look like on the site before making a pull request. To view the site locally, run
+Note: Some mac users will get an error about an `eventmachine` dependency and will have to use flags to point to their openssl directory: `gem install eventmachine -v '1.2.7' -- --with-cppflags=-I/usr/local/opt/openssl/include`
+
+- To view the site locally, run
 ```
 jekyll serve
 ```
