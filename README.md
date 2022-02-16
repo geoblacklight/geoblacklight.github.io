@@ -20,7 +20,7 @@ If you aren't familiar with GitHub, see [this guide](https://help.github.com/en/
 
 As you make changes to your local files, you will want to see what they'll look like on the site before making a pull request. Making changes to a Jekyll static site is relatively easy. See this [tutorial from the Programming Historian](https://programminghistorian.org/en/lessons/building-static-sites-with-jekyll-github-pages) for a comprehensive overview of working with Jekyll.
 
-*Running Jekyll requires Ruby 2.4.0 or higher, but lower than Ruby 3.0.0.*
+*Running Jekyll requires Ruby 2.4.0 or higher.*
 
 Here are a few more tips:
 
