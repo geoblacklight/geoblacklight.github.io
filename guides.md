@@ -5,12 +5,12 @@ title: "Guides"
 <h1>GeoBlacklight Guides</h1>
 <hr>
 <div class="row content-container">
-<div markdown="1" class="col-md-4">
+<nav markdown="1" class="col-md-4">
 * table of contents
 {:toc}
-</div>
+</nav>
 
-<div markdown="1" class="col-md-8">
+<main markdown="1" class="col-md-8">
 # What is GeoBlacklight?
 
 GeoBlacklight is a world-class discovery platform for geospatial (GIS) holdings. It
@@ -1148,4 +1148,4 @@ Framework and dependency support goals for GeoBlacklight. We will do our best to
 *   Accessibility
     *   Fulfill WCAG 2.0 (A/AA/AAA), Section 508, and similar accessibility standards and requirements.
     *   VPAT document
-</div>
+</main>

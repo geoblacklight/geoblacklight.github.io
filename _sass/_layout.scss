@@ -15,12 +15,15 @@ footer {
 }
 
 .col-md-4 {
+  height: 100vh;
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
   padding-right: 25px;
 }
 
 .col-md-8 {
+  height: 100vh;
+  overflow: scroll;
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
 }
