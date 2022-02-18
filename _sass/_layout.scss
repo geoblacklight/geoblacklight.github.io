@@ -7,22 +7,20 @@ footer {
 }
 
 
-content-container {
+.content-container {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
 
-col-md-4 {
-  -webkit-box-flex: 0;
+.col-md-4 {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
   padding-right: 25px;
 }
 
-col-md-8 {
-  -webkit-box-flex: 0;
+.col-md-8 {
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
 }
