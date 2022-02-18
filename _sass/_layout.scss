@@ -6,7 +6,6 @@ footer {
   @include outer-container;
 }
 
-
 .content-container {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +22,8 @@ footer {
 
 .col-md-8 {
   height: 100vh;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   flex: 0 0 66.6666666667%;
   max-width: 66.6666666667%;
 }
