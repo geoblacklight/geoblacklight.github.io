@@ -2,10 +2,12 @@
 layout: default
 title: "Guides"
 ---
-<h1>GeoBlacklight Guides</h1>
-<hr>
-<div class="row content-container">
-<nav markdown="1" class="col-md-4">
+<div class="sticky-title">
+  <h1>GeoBlacklight Guides</h1>
+  <hr>
+</div>
+<div class="content-container">
+<nav markdown="1" class="sidebar">
 * table of contents
 {:toc}
 </nav>
@@ -19,3 +21,4 @@ title: "Guides"
 {% include_relative guides/contributing.md %}
 {% include_relative guides/roadmap.md %}
 </main>
+</div>

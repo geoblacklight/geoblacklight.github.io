@@ -8,14 +8,14 @@ After reading this guide, you will know:
 ## Installation
 
   To bootstrap a new GeoBlacklight Rails application using the template:
-
-      $ DISABLE_SPRING=1 rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb
-
+```
+$ DISABLE_SPRING=1 rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb
+```
   Then:
-
-      $ cd app-name
-      $ rake geoblacklight:server
-
+```
+$ cd app-name
+$ rake geoblacklight:server
+```
 ## Configuration
 
   To configure your own instances of GeoBlacklight, follow these steps:

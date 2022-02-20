@@ -1,3 +1,4 @@
+
 header.navigation {
   $navigation-padding: 1em;
   $navigation-background: white;
@@ -14,12 +15,20 @@ header.navigation {
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
 
+  position: fixed;
+  top: 0px;
   background-color: $navigation-background;
-  border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
+
+  .pad {
+    height: 20px;
+    background-color: $navigation-background;
+    border-top: 1px solid darken($navigation-background, 10);
+    width: 100%;
+  }
 
   .navigation-wrapper {
     @include clearfix;
@@ -102,7 +111,7 @@ header.navigation {
     display: block;
     line-height: $navigation-height;
     overflow: hidden;
-    padding-right: .8em;
+    padding-right: 1.8em;
     text-align: right;
     width: 100%;
     z-index: 9999;
@@ -192,7 +201,7 @@ header.navigation {
     }
 
     @include media($horizontal-bar-mode) {
-      padding-right: .8em;
+      padding-right: 1.8em;
       position: relative;
     }
   }

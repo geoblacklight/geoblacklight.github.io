@@ -4,7 +4,7 @@ GeoBlacklight is a world-class discovery platform for geospatial (GIS) holdings.
 is an open collaborative project aiming to build off of the successes
 of the Blacklight Solr-powered discovery interface and the
 multi-institutional OpenGeoportal federated metadata sharing
-communities. We're actively looking for [community input and development partners](/connect.html).
+communities. We're actively looking for [community input and development partners](/guides.html#contributing-to-the-project).
 
 ## Features
 
@@ -24,5 +24,5 @@ communities. We're actively looking for [community input and development partner
   * Share link via email
   * Sort by relevance, year, title
   * Customizable skin and facets
-  
+
 ---
