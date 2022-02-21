@@ -11,7 +11,7 @@ For a more in-depth guide to development, see the [series of tutorials on the Ge
 ## Dependencies
 
 Software you should have installed on your development computer
-* Ruby > 2.6.6
+* Ruby > 2.6.6 (Note: There is a known issue with Ruby 3.0.0, please avoid for now.)
 * Rails > 6.0
 * Git
 * Java > 1.8 (Download JDK for local Solr server)
@@ -30,6 +30,9 @@ Once the files are downloaded, run
 ```
 $ bundle exec rake geoblacklight:server
 ```
+
+If you run into issues running this rake task, try removing your `Gemfile.lock` file and removing the test app with `rm -R .internal_test_app`. Then run `bundle install` before running the above command again.
+
 This command executes everything needed to run a local version of GeoBlacklight. In order to see the version you have running, open a web browser and go to [http://localhost:3000/](http://localhost:3000/). You should be able to navigate around the site. Remember that your Rails server is running locally, so to stop it, run ^C (ctrl + c).
 
 Refer to the Customization pages of the wiki for instructions on making look and feel changes. Refer to the Metadata section of the wiki for instructions on testing new records.
