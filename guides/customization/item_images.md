@@ -13,7 +13,7 @@ GBL Sidecar Images requires:
 A background job processor like [Sidekiq](https://github.com/mperham/sidekiq) is optional, but highly recommended.
 
 #### Example Screenshot
-![Screenshot](https://github.com/geoblacklight/geoblacklight_sidecar_images/blob/develop/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/geoblacklight/geoblacklight_sidecar_images/develop/screenshot.png)
 
 #### Installation and Use
 
