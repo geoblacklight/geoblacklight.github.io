@@ -33,7 +33,7 @@ You should do something similar for vendor css files and images. GeoBlacklight u
 
 ### Configure your settings
 
-Next, you need to configure your settings to tell the viewers to load your control. Your application's `settings.yml` should look something like this:
+Next, you need to configure your settings to tell the viewers to load your control. Your application's `lib/generators/geoblacklight/templates/settings.yml` should look something like this:
 
 ```yml
 ...
@@ -75,7 +75,7 @@ Let's say you want to add the fullscreen control for just your WMS viewer. You w
 Finally you need to initialize your controls like this. You can initialize the plugin with additional options.
 
 ```javascript
-// In your applications's app/assets/javascripts/geoblacklight.js
+// In your applications's app/assets/javascripts/geoblacklight/geoblacklight.js
 ...
 //= require Leaflet.fullscreen.js
 

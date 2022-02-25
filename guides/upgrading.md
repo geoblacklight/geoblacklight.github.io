@@ -4,43 +4,69 @@ This guide provides steps to be followed when you upgrade your applications to a
 
 ## Upgrading to GeoBlacklight 4.0
 
-### Gemfile
-  Upgrade your GeoBlacklight dependency to `4.0.0.pre.alpha.3`
+**Please note: GeoBlacklight v4.0.0 is currently a pre-production, alpha release.** A final v4.0.0 release will be released in the future.
 
-### Data Migration
-  Migrate your Solr documents from the GBLv1 metadata standard to Aardvark. Contact the GeoBlacklight community for assistance and access to migration tools still under development.
+### Aardvark Metadata Schema by Default
+This release is the first to feature GeoBlacklight's new Aardvark metadata schema by default. Find additional information and details about Aardvark at [OpenGeoMetadata](https://opengeometadata.github.io/docs/aboutAardvark/).
 
-### Apache Solr
-  GeoBlacklight's Solr configuration files are updated to support the Aardvark's metadata element list. See the default versions of schema.xml and solrconfig.xml and update your local files as necessary.
+#### Upgrade Notes
 
-### Application Configuration
-  Review the configuration files for your GBL instance. You will need to update your `settings.yml` file and `catalog_controller.rb` file to use the new Aardvark field mappings. See the default versions of these files in GeoBlacklight v4 and alter your files as necessary:
+##### Gemfile
+Upgrade your GeoBlacklight dependency to `4.0.0.pre.alpha.3`
 
-  You will also need to search your local application code for any old `Settings.FIELDS.X` mappings and update them as necessary.
+##### Data Migration
 
-### settings.yml
-  List of GBL v4 [settings.yml](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/settings.yml) changes:
+Migrate your Solr documents from the GBLv1 metadata standard to Aardvark. Contact the GeoBlacklight community for assistance and access to migration tools still under development.
 
-  * Solr field mappings: Settings.FIELDS
-  * Relationships to display: Settings.RELATIONSHIPS_SHOWN
-  * Parent/Child SVG Icon titles (https://github.com/geoblacklight/geoblacklight/pull/1166/files)
+##### Apache Solr
+GeoBlacklight's Solr configuration files are updated to support the Aardvark's metadata element list. See the default versions of schema.xml and solrconfig.xml and update your local files as necessary.
 
-### catalog_controller.rb
+Geoblacklight now requires Solr 8.3 or higher.
 
-  List of GBL v4 [catalog_controller.rb](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/catalog_controller.rb) changes:
+##### Application Configuration
+Review the configuration files for your GBL instance. You will need to update your `settings.yml` file and `catalog_controller.rb` file to use the new Aardvark field mappings. See the default versions of these files in GeoBlacklight v4 and alter your files as necessary:
 
-  * config.default_document_solr_params / Using Settings.FIELDS.ID now
-  * config.view defaults / Adds the "map" split view for catalog#index
-  * config.add_facet_field(s) / Mapped to Aardvark fields
-  * config.add_index_field(s) / Mapped to Aardvark fields
-  * config.add_show_field(s) / Mapped to Aardvark fields, many non-activated optional fields added too
-  * config.add_sort_field(s) / Mapped to Aardvark fields
+You will also need to search your local application code for any old `Settings.FIELDS.X` mappings and update them as necessary.
 
-#### locales
+###### settings.yml
+List of GBL v4 [settings.yml](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/settings.yml) changes:
 
-  List of GBL v4 [config/locales/geoblacklight.en.yml](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/catalog_controller.rb) changes:
+* Solr field mappings: Settings.FIELDS
+* Relationships to display: Settings.RELATIONSHIPS_SHOWN
+* Parent/Child SVG Icon titles (https://github.com/geoblacklight/geoblacklight/pull/1166/files)
+* Viewer Controls: Settings.LEAFLET.VIEWERS.*.CONTROLS
 
-  * additional relations entries
+###### catalog_controller.rb
+
+List of GBL v4 [catalog_controller.rb](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/catalog_controller.rb) changes:
+
+* config.default_document_solr_params / Using Settings.FIELDS.ID now
+* config.view defaults / Adds the "map" split view for catalog#index
+* config.add_facet_field(s) / Mapped to Aardvark fields
+* config.add_index_field(s) / Mapped to Aardvark fields
+* config.add_show_field(s) / Mapped to Aardvark fields, many non-activated optional fields added too
+* config.add_sort_field(s) / Mapped to Aardvark fields
+
+Migrating from GBL v3 to v4, you'll need to remove your `config.add_show_tools_partial :web_services...` line and add the new `def web_services` method, too.
+
+###### locales
+
+List of GBL v4 [config/locales/geoblacklight.en.yml](https://github.com/geoblacklight/geoblacklight/blob/main/config/locales/geoblacklight.en.yml) changes:
+
+* additional relations entries
+
+###### stylesheets
+
+GBL v4 no longer vendorizes the `leaflet-label` stylesheet. Check your local stylesheet files and remove any `*= require leaflet-label` or `@import 'leaflet-label';` lines.
+
+###### javascripts
+
+GBL v4 adds a new Leaflet control: [Leaflet.fullzoom](https://github.com/Leaflet/Leaflet.fullscreen). If you previously added this feature to your local GBL instance, you'll want to remove your custom implementation. This control can be added to your maps via the `settings.yml` file.
+
+##### Homepage
+The `_homepage_text.html.erb` view partial has been updated to use a view component for rendering the featured facets feature. You should update any local customizations to this file to use the components.
+
+---
 
 ## Upgrading to GeoBlacklight 2.0
 
