@@ -1,20 +1,27 @@
 ---
 layout: project
-title: "GeoBlacklight Metadata Schema"
-github: https://github.com/geoblacklight/geoblacklight/wiki/Metadata
+title: "OpenGeoMetadata"
+github: https://opengeometadata.org
 snippet: A schema developed for geospatial discovery
 ---
-GeoBlacklight-Schema focuses on discovery use cases for patrons and analysts in a research library setting, although it is likely useful in other settings. Text search, faceted search and refinement, and spatial search and relevancy are among the primary features that the schema enables. The schema design supports a variety of discovery applications and GIS data types. We especially wanted to provide for contextual collection-oriented discovery applications as well as traditional portal applications.
+GeoBlacklight is built to use the OpenGeoMetadata schema, which is designed for GIS resource discovery and focuses mainly on discovery use cases. Text search, faceted search and refinement, and spatial search and relevancy are among the primary features that the schema enables.
 
-The schema is documented on the [GeoBlacklight Github Wiki.](https://github.com/geoblacklight/geoblacklight/wiki/Metadata)
+The schema is documented on the [OpenGeoMetadata website.](https://opengeometadata.org)
 
 The schema is also discussed in detail in a *code4lib* journal article here: [A Metadata Schema for Geospatial Resource Discovery Use Cases](http://journal.code4lib.org/articles/9710)
 
 ____
+### GeoBlacklight Metadata Interest Group (2021-ongoing)
+The GeoBlacklight Metadata Interest Group meets monthly on Slack to discuss ongoing metadata issues and refinements.
 
-#### GeoBlacklight Metadata Schema Workgroup
+[Follow the workgroup's progress on GitHub.](https://github.com/OpenGeoMetadata/metadata-issues/issues)
 
-The GeoBlacklight Metadata Schema Workgroup convened during the Summer Community Sprint in 2020. The goals of the workgroup include:
+
+____
+
+**GeoBlacklight Metadata Schema Workgroup (2020-2021)**
+
+The GeoBlacklight Metadata Schema Workgroup convened during the Summer Community Sprint in 2020. The initial goals of the workgroup included:
 
 1. Systematically assessing and evaluating the GeoBlacklight Schema 1.0
 2. Developing a new GeoBlacklight Metadata Schema that features:
@@ -37,8 +44,9 @@ Workgroup members:
 * Marc McGee (Harvard University)
 * Margaret Mering (University of Nebraska-Lincoln)
 * Michelle Janowiecki (Johns Hopkins University)
+* Rebecca Seifried (University of Massachussetts Amherst)
 * Stephen Appel (University of Wisconsin-Milwaukee)
 * Susan Powell (UC Berkeley)
 * Tom Brittnacher (UC Santa Barbara)
 
-Follow the workgroup's progress on GitHub here: [https://github.com/geoblacklight/geoblacklight/projects/9](https://github.com/geoblacklight/geoblacklight/projects/9)
+[Follow the workgroup's progress on GitHub.](https://github.com/OpenGeoMetadata/metadata-issues/issues)
