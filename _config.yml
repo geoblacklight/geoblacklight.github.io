@@ -15,6 +15,9 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  parse_block_html: true
+  auto_ids: true
+  toc_levels: 1..2
 gems:
   - jekyll-sitemap
 exclude: [vendor]
