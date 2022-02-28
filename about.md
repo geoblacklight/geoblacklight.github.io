@@ -13,7 +13,7 @@ Discovery services and metadata are key challenges for organizations who provide
 The GeoBlacklight community helps *participating institutions* by:
 * Providing a customizable platform for delivering geospatial information seamlessly to end users
 * Recommending best practices for software and metadata implementation and updates
-* Providing access to collaborative, standardized metadata through [OpenGeoMetadata](https://github.com/OpenGeoMetadata)
+* Providing access to collaborative, standardized metadata through [OpenGeoMetadata](https://opengeometadata.org)
 * Connecting them to other contributors through our active [communication channels](https://geoblacklight.org/connect.html)
 * Preserving a robust knowledge base on our [GitHub repository](https://github.com/geoblacklight/geoblacklight/wiki)
 
@@ -80,7 +80,7 @@ Application Features
 
 - **External service integration**: GeoBlacklight provides a discovery layer for content that is oftentimes hosted elsewhere. Rather than try to provide a repository to the data itself and navigate the complexities of different adopters existing systems, GeoBlacklight relies on providing integration for existing datastores and web services. GeoBlacklight does this through providing useful preview, download, and exports of open standards-based services, including Web Mapping Services (WMS), Web Feature Services (WFS), ArcGIS Rest API, and International Image Interoperability Framework (IIIF). There is also support for externally referenced metadata viewing and file download support.
 
-- **Metadata**: The GeoBlacklight Metadata Schema has been designed to privilege discovery use cases. Text search, faceted search & refinement, and spatial search & relevancy are among the primary features that the schema enables. [Visit the Metadata Wiki for more information and full documentation.](https://github.com/geoblacklight/geoblacklight/wiki/GeoBlacklight-Metadata) Metadata schema features:
+- **Metadata**: The GeoBlacklight Metadata Schema has been designed to privilege discovery use cases. Text search, faceted search & refinement, and spatial search & relevancy are among the primary features that the schema enables. [Visit OpenGeoMetadata for more information and full documentation.](https://opengeometadata.org) Metadata schema features:
 
 	- based on Dublin Core, with custom elements added for spatial values
 
