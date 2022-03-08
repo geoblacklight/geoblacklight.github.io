@@ -23,6 +23,8 @@ Here are links to five tangible outcomes that we developed during the two-week s
 ## Highlights
 Our sprinters worked on numerous activities during the production of these outcomes, both individually and in subgroups. Here are a few highlights:
 
+### New locations for documentation
+All documentation for the GeoBlacklight application has been moved from the GitHub Wiki. Information about GeoBlacklight, development, and customization can now be found on the [Guides section of this website](https://geoblacklight.org/guides.html). All metadata documentation (both early schemas and the newer Aardvark) has been migrated to [opengeometadata.org](https://opengeometadata.org).
 
 ### New metadata website & tools
 Last year, our community developed a new metadata schema for GeoBlacklight, lovingly called Aardvark. This new schema is a significant change:  it takes into account interoperability and the unique characteristics of geodata & maps, so we decided to begin promoting it as an all-purpose discovery schema for geospatial resources. To that end, we launched a new website, [opengeometadata.org](https://opengeometadata.org) that includes detailed schema documentation, guides, and examples. 
@@ -37,8 +39,6 @@ We finally cracked a long-standing problem while enabling a long-desired enhance
 * **Our solution:** We were able to incorporate a new set of metadata fields that can use any kind of WKT POLYGON or MULTIPOLYGON for display and searches. This enhancement was built with Geo3D for Solr and opens up the possibilities for what kind of geometries the metadata can feature. This also solves the antimeridian problem, as the metadata can now have two adjacent bounding boxes that will display correctly. 
 ![multiple-bounding-boxes](/images/multiple-bbox.png)
 
-### New locations for documentation
-All documentation for the GeoBlacklight application has been moved from the GitHub Wiki. Information about GeoBlacklight, development, and customization can now be found on the [Guides section of this website](https://geoblacklight.org/guides.html). All metadata documentation (both early schemas and the newer Aardvark) has been migrated to [opengeometadata.org](https://opengeometadata.org).
 
 ### Accessibility & user interface (UI) improvements
 We improved the layout of the item pages in the default GeoBlacklight user interface in a few ways:
@@ -61,4 +61,4 @@ We also decided on a future plan to remove JQUERY dependencies to be consistent 
 - We plan to schedule a **dedicated documentation sprint** that will include a broad cross-section of skills within our community.
 
 ---
-For even more details, view our running notes from the daily standups and the GitHub projects boards here and here.
+For even more details, view our [running notes](https://docs.google.com/document/d/11WH53ZQma51AbkYmBPEJkZAsX9sIj5dl-_cSlbTDE3Q/edit?usp=sharing) from the daily standups and the GitHub projects boards for [development](https://github.com/geoblacklight/geoblacklight/projects/19) and [metadata](https://github.com/orgs/OpenGeoMetadata/projects/1).
