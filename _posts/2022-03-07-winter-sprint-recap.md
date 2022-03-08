@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GeoBlacklight Community Sprint Recap, Winter 2022
-date: 2022-03-08 12:00:00
+date: 2022-03-07 12:00:00
 categories: blog | sprint
 author: 
 - Karen Majewicz
@@ -10,7 +10,7 @@ snippet: 'The 2022 GeoBlacklight Community Winter Codesprint Outcomes'
 ---
 ## Overview and outcomes
 
-The latest GeoBlacklight Community Sprint took place from February 14-25, 2022. Long time GeoBlacklight sprinters have noted that this was likely our most productive event and undoubtedly featured the most participants.
+The latest GeoBlacklight Community Sprint took place from February 14-25, 2022. Long time GeoBlacklight sprinters have noted that this was likely our most productive event and undoubtedly featured the most active participants. We had over a dozen participants representing Cornell, Harvard, Johns Hopkins University, Princeton, Stanford, UMASS Amherst, and the University of Minnesota / Big Ten Academic Alliance. Moreover, five contributors made their very first code commits to GeoBlacklight during this event. 
 
 Here are links to five tangible outcomes that we developed during the two-week sprint:
 
@@ -21,40 +21,46 @@ Here are links to five tangible outcomes that we developed during the two-week s
 1. New version of [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine/releases/tag/v0.6.0)
 
 ## Highlights
-Our sprinters worked on numerous activities during the production of these outcomes, both individually and in subgroups. Here are a few highlights:
 
 ### New locations for documentation
-All documentation for the GeoBlacklight application has been moved from the GitHub Wiki. Information about GeoBlacklight, development, and customization can now be found on the [Guides section of this website](https://geoblacklight.org/guides.html). All metadata documentation (both early schemas and the newer Aardvark) has been migrated to [opengeometadata.org](https://opengeometadata.org).
+All documentation for the GeoBlacklight community has been moved **away from** the GitHub Wiki. Information about GeoBlacklight, development, and customization can now be found on the [Guides section of this website](https://geoblacklight.org/guides.html). All metadata documentation has been migrated to [opengeometadata.org](https://opengeometadata.org).
 
 ### New metadata website & tools
-Last year, our community developed a new metadata schema for GeoBlacklight, lovingly called Aardvark. This new schema is a significant change:  it takes into account interoperability and the unique characteristics of geodata & maps, so we decided to begin promoting it as an all-purpose discovery schema for geospatial resources. To that end, we launched a new website, [opengeometadata.org](https://opengeometadata.org) that includes detailed schema documentation, guides, and examples. 
+Last year, our community developed a new metadata schema for GeoBlacklight, lovingly called *Aardvark*. This new schema is a significant change:  it considers interoperability and the unique characteristics of geodata & maps, so we decided to begin promoting it as an all-purpose discovery schema for geospatial resources. To that end, we launched a new website, [opengeometadata.org](https://opengeometadata.org) that includes detailed schema documentation, guides, and examples. 
 
-We also released a new update of [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine), a tool within OpenGeoMetadata for updating and converting metadata. This update includes improvements in (1) how it harvests from OpenGeoMetadata repositories and (2) the transformation template for FGDC to HTML. 
+We also released a new update of [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine), a tool within OpenGeoMetadata for programmatically ingesting and converting metadata. This update includes improvements in (1) how it harvests from OpenGeoMetadata repositories and (2) the transformation template for FGDC to HTML. 
 
 ### Spatial geometry for search and display
-We finally cracked a long-standing problem while enabling a long-desired enhancement at the same time. 
+We finally cracked a long-standing spatial problem while simultaneously enabling a long-desired enhancement. 
 
-* **Problem:** bounding boxes that crossed the antimeridian would appear flipped or backward in search previews. 
-* **Desired enhancement:** to be able to display complex or multiple geometries in search previews instead of just a single bounding box.
-* **Our solution:** We were able to incorporate a new set of metadata fields that can use any kind of WKT POLYGON or MULTIPOLYGON for display and searches. This enhancement was built with Geo3D for Solr and opens up the possibilities for what kind of geometries the metadata can feature. This also solves the antimeridian problem, as the metadata can now have two adjacent bounding boxes that will display correctly. 
+* **A Problem:** bounding boxes that crossed the antimeridian would appear flipped or backward in search previews. 
+* **A related desired enhancement:** to be able to display complex or multiple geometries in search previews instead of just a single bounding box.
+* **Our solution:** We incorporated a new option for a spatial metadata field that can use any WKT POLYGON or MULTIPOLYGON for display and searches. This enhancement was built with Geo3D for Solr and opened up the possibilities for what kind of geometries the metadata can feature. This also solves the antimeridian problem, as the metadata can now have two adjacent bounding boxes that will display correctly. [Read more about how to format the Geometry field in OpenGeoMetadata to take advantage of this new feature](https://opengeometadata.org/docs/ogm-aardvark/geometry).
+
+
 ![multiple-bounding-boxes](/images/multiple-bbox.png)
+*Image Caption - Two bounding boxes*
 
 
-### Accessibility & user interface (UI) improvements
+### Accessibility & user interface improvements
 We improved the layout of the item pages in the default GeoBlacklight user interface in a few ways:
 
 1. The map preview is now above the metadata
+2. Added a full-screen option to the map preview
 2. Web services and downloads were converted from text links to "Call-to-Action" type buttons
-3. Updated the index map to use a more accessible color palette and adds an index.
-
+3. Updated the index map to use a more accessible color palette and added a legend
 
 ![web0services-button](/images/web-services-button.png)
+*Image Caption - The map is now directly below the title and has a full-screen option. There is also a new button for web services and an adjusted dropdown button for Downloads*
+
+
 ![index-map-color](/images/index-map-color.png)
+*Image Caption - Shows improved colors and a legend above the index map*
 
 ### Blacklight + future alignment plans
-We have made a more dedicated effort to align with our framework application, Blacklight. During the sprint, we collaborated with Blacklight developers to clear up deprecation warnings and to remove an override customization used for bounding boxes. 
+Whenever possible, we make a concentrated effort to align with the development practices of our underlying framework application, [Blacklight](https://projectblacklight.org). During the sprint, we collaborated with Blacklight developers to clear up deprecation warnings and remove an override customization used for bounding boxes. 
 
-We also decided on a future plan to remove JQUERY dependencies to be consistent with Blacklight and allow us to eventually upgrade to Bootstrap 5. This will also involve rewriting our JavaScript code using the more modern version, known as 'ES6'.
+For the future, we decided to eventually **remove JQUERY** dependencies. This will help us stay consistent with Blacklight and eventually upgrade to **Bootstrap 5**. We also plan to rewrite our JavaScript code using the more modern version, **ES6**.
 
 ## Future plans
 - Over the next six months, selected institutions will **test the release candidate 4.0**, which includes full Aardvark metadata support and all of the new features developed during the sprint. 
