@@ -10,7 +10,7 @@ snippet: 'The 2022 GeoBlacklight Community Winter Codesprint Outcomes'
 ---
 ## Overview and outcomes
 
-The latest GeoBlacklight Community Sprint took place from February 14-25, 2022. Long time GeoBlacklight sprinters have noted that this was likely our most productive event and undoubtedly featured the most active participants. We had over a dozen participants representing Cornell, Harvard, Johns Hopkins University, Princeton, Stanford, UMASS Amherst, and the University of Minnesota / Big Ten Academic Alliance. Moreover, five contributors made their very first code commits to GeoBlacklight during this event. 
+The latest GeoBlacklight Community Sprint took place from February 14-25, 2022. Long time GeoBlacklight sprinters have noted that this was likely our most productive event and undoubtedly featured the most active participants. We had over a dozen participants representing Cornell, Harvard, Johns Hopkins University, Princeton, Stanford, UMass Amherst, and the University of Minnesota / Big Ten Academic Alliance. Moreover, five contributors made their very first code commits to GeoBlacklight during this event. 
 
 Here are links to five tangible outcomes that we developed during the two-week sprint:
 
@@ -60,7 +60,7 @@ We improved the layout of the item pages in the default GeoBlacklight user inter
 ### Blacklight + future alignment plans
 Whenever possible, we make a concentrated effort to align with the development practices of our underlying framework application, [Blacklight](https://projectblacklight.org). During the sprint, we collaborated with Blacklight developers to clear up deprecation warnings and remove an override customization used for bounding boxes. 
 
-For the future, we decided to eventually **remove JQUERY** dependencies. This will help us stay consistent with Blacklight and eventually upgrade to **Bootstrap 5**. We also plan to rewrite our JavaScript code using the more modern version, **ES6**.
+For the future, we decided to eventually **remove jQuery** dependencies. This will help us stay consistent with Blacklight and eventually upgrade to **Bootstrap 5**. We also plan to rewrite our JavaScript code using the more modern version, **ES6**.
 
 ## Future plans
 - Over the next six months, selected institutions will **test the release candidate 4.0**, which includes full Aardvark metadata support and all of the new features developed during the sprint. 
