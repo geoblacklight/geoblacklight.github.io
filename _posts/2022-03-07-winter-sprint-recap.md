@@ -26,7 +26,7 @@ Here are links to five tangible outcomes that we developed during the two-week s
 All documentation for the GeoBlacklight community has been moved **away from** the GitHub Wiki. Information about GeoBlacklight, development, and customization can now be found on the [Guides section of this website](https://geoblacklight.org/guides.html). All metadata documentation has been migrated to [opengeometadata.org](https://opengeometadata.org).
 
 ### New metadata website & tools
-Last year, our community developed a new metadata schema for GeoBlacklight, lovingly called *Aardvark*. This new schema is a significant change:  it considers interoperability and the unique characteristics of geodata & maps, so we decided to begin promoting it as an all-purpose discovery schema for geospatial resources. To that end, we launched a new website, [opengeometadata.org](https://opengeometadata.org) that includes detailed schema documentation, guides, and examples. 
+Last year, our community developed a new metadata schema for GeoBlacklight, lovingly called *Aardvark*. This new schema is a significant change:  it emphasizes interoperability and the unique characteristics of geodata & maps, so we decided to begin promoting it as an all-purpose discovery schema for geospatial resources. To that end, we launched a new website, [opengeometadata.org](https://opengeometadata.org) that includes detailed schema documentation, guides, and examples. 
 
 We also released a new update of [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine), a tool within OpenGeoMetadata for programmatically ingesting and converting metadata. This update includes improvements in (1) how it harvests from OpenGeoMetadata repositories and (2) the transformation template for FGDC to HTML. 
 
