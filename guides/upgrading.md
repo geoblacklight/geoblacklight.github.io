@@ -4,7 +4,7 @@ This guide provides steps to be followed when you upgrade your applications to a
 
 ## Upgrading to GeoBlacklight 4.0
 
-**Please note: GeoBlacklight v4.0.0 is currently a pre-production, alpha release.** A final v4.0.0 release will be released in the future.
+**Please note: GeoBlacklight v4.0.0 is currently a pre-production, release candidate.** The B1G/BTAA Geoportal has been running GBLv4 in production for many months, so the codebase is quite stable. A final v4.0.0 release will be released in the near future (~August/September 2022).
 
 ### Aardvark Metadata Schema by Default
 This release is the first to feature GeoBlacklight's new Aardvark metadata schema by default. Find additional information and details about Aardvark at [OpenGeoMetadata](https://opengeometadata.github.io/docs/aboutAardvark/).
@@ -12,7 +12,7 @@ This release is the first to feature GeoBlacklight's new Aardvark metadata schem
 #### Upgrade Notes
 
 ##### Gemfile
-Upgrade your GeoBlacklight dependency to `4.0.0.pre.alpha.3`
+Upgrade your GeoBlacklight dependency to `4.0.0.pre.rc3`
 
 ##### Data Migration
 
@@ -21,7 +21,7 @@ Migrate your Solr documents from the GBLv1 metadata standard to Aardvark. Contac
 ##### Apache Solr
 GeoBlacklight's Solr configuration files are updated to support the Aardvark's metadata element list. See the default versions of schema.xml and solrconfig.xml and update your local files as necessary.
 
-Geoblacklight now requires Solr 8.3 or higher.
+**Geoblacklight now requires Solr 8.3 or higher.**
 
 ##### Application Configuration
 Review the configuration files for your GBL instance. You will need to update your `settings.yml` file and `catalog_controller.rb` file to use the new Aardvark field mappings. See the default versions of these files in GeoBlacklight v4 and alter your files as necessary:
@@ -31,10 +31,21 @@ You will also need to search your local application code for any old `Settings.F
 ###### settings.yml
 List of GBL v4 [settings.yml](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/settings.yml) changes:
 
+* Solr field mappings: Settings.Settings.GBL_PARAMS
 * Solr field mappings: Settings.FIELDS
 * Relationships to display: Settings.RELATIONSHIPS_SHOWN
 * Parent/Child SVG Icon titles (https://github.com/geoblacklight/geoblacklight/pull/1166/files)
 * Viewer Controls: Settings.LEAFLET.VIEWERS.*.CONTROLS
+
+###### application_controller.rb
+GBL installer now includes a `before_action` method to permit GBL application params. You'll need to add this code to your application_controller.rb file:
+
+```ruby
+  def allow_geoblacklight_params
+    # Blacklight::Parameters will pass these to params.permit
+    blacklight_config.search_state_fields.append(Settings.GBL_PARAMS)
+  end
+```
 
 ###### catalog_controller.rb
 
