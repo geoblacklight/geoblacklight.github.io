@@ -41,6 +41,8 @@ List of GBL v4 [settings.yml](https://github.com/geoblacklight/geoblacklight/blo
 GBL installer now includes a `before_action` method to permit GBL application params. You'll need to add this code to your application_controller.rb file:
 
 ```ruby
+  before_action :allow_geoblacklight_params
+
   def allow_geoblacklight_params
     # Blacklight::Parameters will pass these to params.permit
     blacklight_config.search_state_fields.append(Settings.GBL_PARAMS)
