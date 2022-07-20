@@ -15,7 +15,7 @@ The GeoBlacklight community helps *participating institutions* by:
 * Recommending best practices for software and metadata implementation and updates
 * Providing access to collaborative, standardized metadata through [OpenGeoMetadata](https://opengeometadata.org)
 * Connecting them to other contributors through our active [communication channels](https://geoblacklight.org/connect.html)
-* Preserving a robust knowledge base on our [GitHub repository](https://github.com/geoblacklight/geoblacklight/wiki)
+* Preserving a robust knowledge base on this website, and in our [GitHub repository](https://github.com/geoblacklight/geoblacklight)
 
 The GeoBlacklight community helps *end users* by:
 * Creating a central repository for digital geospatial resources of all kinds
@@ -69,7 +69,7 @@ Our Development Practices
 
 - **Funding**: There is no funding model for GeoBlacklight, and most development comes through volunteered or assigned time from contributing organizations. Some projects have received grants or dedicated funds to build their GeoBlacklight applications. Our community also includes private vendors and independent freelancers that have contributed to the project through contracted work.
 
-- **Documentation**: The technical documentation for the project resides in the [project wiki](https://github.com/geoblacklight/geoblacklight/wiki) and within our [tutorials](https://geoblacklight.org/tutorials.html).
+- **Documentation**: The technical documentation for the project resides in our [guides](https://geoblacklight.org/guides.html) and [tutorials](https://geoblacklight.org/tutorials.html).
 
 **************************
 
