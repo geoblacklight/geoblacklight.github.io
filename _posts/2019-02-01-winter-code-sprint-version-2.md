@@ -10,7 +10,7 @@ snippet: 'The GeoBlacklight Community Winter Codesprint results in Version 2.0'
 ## 2019 Winter Codesprint
 
 
-Developers from Princeton, NYU, Cornell, and the University of Minnesota participated in a two-week [GeoBlacklight Winter Codesprint](https://github.com/geoblacklight/geoblacklight/projects/3) that resulted in a major new version, [GeoBlacklight 2.0](https://github.com/geoblacklight/geoblacklight/releases/tag/v2.0.0). This version is compatible with the latest release of the underlying framework, Blacklight 7, which itself includes several significant component upgrades for [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) and [Rails 5.2](https://guides.rubyonrails.org/5_2_release_notes.html) support. [Visit the GeoBlacklight 2.0 Upgrade Guide](https://github.com/geoblacklight/geoblacklight/wiki/GeoBlacklight-2.0-Upgrade-Guide) for more information.
+Developers from Princeton, NYU, Cornell, and the University of Minnesota participated in a two-week [GeoBlacklight Winter Codesprint](https://github.com/geoblacklight/geoblacklight/projects/3) that resulted in a major new version, [GeoBlacklight 2.0](https://github.com/geoblacklight/geoblacklight/releases/tag/v2.0.0). This version is compatible with the latest release of the underlying framework, Blacklight 7, which itself includes several significant component upgrades for [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) and [Rails 5.2](https://guides.rubyonrails.org/5_2_release_notes.html) support. [Visit the GeoBlacklight 2.0 Upgrade Guide](https://geoblacklight.org/guides.html#upgrading-to-geoblacklight-20) for more information.
 
 
 ### Notable enhancements for GeoBlacklight 2.0
