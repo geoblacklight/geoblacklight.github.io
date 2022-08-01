@@ -15,7 +15,7 @@ Each sprint starts with a kickoff meeting where we will review our goals and vol
 This sprint is taking place over two non-consecutive weeks:
 
 - **August 8-12, 2022** and **September 12-16, 2022**
-- Daily standup meetings: Weekdays @ 1:00pm Central Time
+- Daily standup meetings: Weekdays @ 1:05pm Central Time
 
 ## How to Join
 [Send us your name and email using this Google form](https://forms.gle/gA1Pe1f5tKa3udkF6).  The GeoBlacklight Community Coordinator will then send you the Zoom links with instructions on how to join.
