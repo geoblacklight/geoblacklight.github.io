@@ -122,7 +122,7 @@ The `_homepage_text.html.erb` view partial has been updated to use a view compon
   ```
 
 #### Update CatalogController
-  Release 2.0 provides the ability to request JSON representations of Solr Documents by using the  path `/catalog/:id/raw` In other words, append `/raw` to the end of a catalog URL stem. Note that this is different from previous versions of GeoBlacklight and is a result of Blacklight 7 incorporating a [JSON:API compliant](https://jsonapi.org) specification. Appending `.json` to the end of a catalog URL stem will now return a JSON:API compliant record, which is nested and not Solr compatible. For more information, see the [metadata documentation on this wiki](https://web.archive.org/web/20201027101651/https://github.com/geoblacklight/geoblacklight/wiki/GeoBlacklight-Metadata#viewing-metadata).
+  Release 2.0 provides the ability to request JSON representations of Solr Documents by using the  path `/catalog/:id/raw` In other words, append `/raw` to the end of a catalog URL stem. Note that this is different from previous versions of GeoBlacklight and is a result of Blacklight 7 incorporating a [JSON:API compliant](https://jsonapi.org) specification. Appending `.json` to the end of a catalog URL stem will now return a JSON:API compliant record, which is nested and not Solr compatible. For more information, see the [metadata documentation](https://opengeometadata.org/docs/publishing-in-solr#view-solr-metadata-within-geoblacklight).
 
   The JSON record return is enabled within the `CatalogController` by setting `config.raw_endpoint.enabled` to `true`:
   ```ruby
