@@ -274,7 +274,7 @@ Adds the "map" split view for catalog#index
 ```
 ###### Facet Fields / config.add_facet_field(s)
 
-These are all now mapped to Aardvark fields.
+These are all now mapped to Aardvark fields. Note: 'icon_facet' partials are now replaced by the `item_component: Geoblacklight::IconFacetItemComponent` 
 
 ```ruby
     # FACETS
