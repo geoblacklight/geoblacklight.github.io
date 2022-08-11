@@ -1,4 +1,0 @@
-[build]
-  command = "gem install bundler:2.2.5 && bundle && bundle exec jekyll build && npm run build"
-  functions = ".functions" #  netlify-lambda reads this
-  publish = "_site"
