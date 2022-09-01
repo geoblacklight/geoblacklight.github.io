@@ -4,35 +4,23 @@
 
 Adding new SVGs to GeoBlacklight or your local GBL application:
 
-1. Add your new or replacement SVG icon into the app/assets/images/blacklight directory
-1. Write the :en I18n translation entry for the SVG aria label via:
+1. Add your new or replacement SVG icon into the `/app/assets/images/blacklight` directory
+2. Add an :en I18n translation entry for the SVG icon in `/config/locales/geoblacklight.en.yml`, following this pattern:
 
 ```yaml
     ...
       blacklight:
         icon:
-          arrow-circle-down: Arrow within a circle, pointing down (icon)
-          baruch-cuny: Baruch College (logo)
-          new-icon-filename: New icon descriptive text
+          arrow-circle-down: Arrow within a circle, pointing down
+          baruch-cuny: Baruch College
+          berkeley: University of California, Berkeley
+          [new-icon-filename-without-the-extension]: [New icon descriptive text]
 ```
 
 Render your new SVG icon using the blacklight_icon helper like so:
 
 ```erb
 <%= blacklight_icon('icon-filename') %>
-```
-
-
-### Accessibility
-
-Each SVG in GeoBlacklight has an aria-labelledby value, example:
-
-```xml
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 32" aria-label="University of California, Berkeley">
-  <title>
-    University of California, Berkeley
-  </title>
-...
 ```
 
 ### SVG Icon Maintenance
