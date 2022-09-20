@@ -17,6 +17,8 @@ snippet: 'The GeoBlacklight Community is pleased to announce GeoBlacklight 4.0. 
 
 The GeoBlacklight Community is excited to announce the release of our next major version:  [GeoBlacklight 4.0](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0). This version features official support for OGM Aardvark, and we have enriched the documentation for GeoBlacklight and OpenGeoMetadata.
 
+![](https://media.giphy.com/media/gSDb851REn92leXb8R/giphy.gif?cid=ecf05e47p24gugw68aabqhjw9rb2f9lggv1hky2iwbrypg6l&rid=giphy.gif&ct=g)
+
 
 ## 1. Official support for the latest OpenGeoMetadata schema, **OGM Aardvark**.
 
@@ -97,3 +99,6 @@ Visit our improved metadata documentation site at [https://opengeometadata.org](
 This release represents substantial and concerted efforts from many in our community: over the past one to two years, [fourteen community members](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0) committed code to our GitHub repository for this release, while nearly [twenty individuals](https://opengeometadata.org/docs/about-ogm-aardvark#who-came-up-with-the-schema) contributed to creating our related project, the OGM Aardvark metadata schema.
 
 **Thank you to everyone for participating in this evolution!**
+
+
+![](https://media.giphy.com/media/sR4uKrapHivOF4h7SY/giphy.gif?cid=ecf05e47p24gugw68aabqhjw9rb2f9lggv1hky2iwbrypg6l&rid=giphy.gif&ct=g)
