@@ -8,10 +8,10 @@ snippet: 'The GeoBlacklight Community is pleased to announce GeoBlacklight 4.0. 
 ---
 -------
 > **KEY LINKS**
-* > The official 4.0 release pages: **([RubyGems](https://rubygems.org/gems/geoblacklight/versions/4.0.0) / [GitHub](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0))**
+* > **[The RubyGems GeoBlacklight v4.0.0 Release](https://rubygems.org/gems/geoblacklight/versions/4.0.0) ([GitHub](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0))**
 * > **[Guide for Upgrading to GeoBlacklight Version 4](https://geoblacklight.org/docs/upgrading/Upgrading_to_version_4_0/)**
-* > **[Guide for upgrading metadata to the OpenGeoMetadata (OGM) Aardvark schema](https://opengeometadata.org/docs/upgrading)**
-* > **[gbl2aardvark](https://kgjenkins.github.io/gbl2aardvark/)**: a new web-hosted application to automatically convert GeoBlacklight 1.0 JSON files to the OGM Aardvark schema
+* > **[Guide for Upgrading Metadata to the OpenGeoMetadata (OGM) Aardvark Schema](https://opengeometadata.org/docs/upgrading)**
+* > **[gbl2aardvark](https://kgjenkins.github.io/gbl2aardvark/)**: A new web-hosted application to automatically convert GeoBlacklight 1.0 JSON files to the OGM Aardvark schema
 
 ------
 
@@ -26,7 +26,7 @@ By default, GeoBlacklight 4.0 displays all human-readable OGM Aardvark metadata 
 
 * specifying rights and licenses *(see figure 1)*
 * categorizing records by class and type *(see figure 2)*
-* interactive widgets connecting records via seven different types of relationships 
+* interactive widgets connecting records via seven different types of relationships
 
 
 
@@ -94,6 +94,6 @@ Visit our improved metadata documentation site at [https://opengeometadata.org](
 
 ## 3. Credits
 
-This release represents substantial and concerted efforts from many in our community: over the past one to two years, [fourteen community members](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0) committed code to our GitHub repository for this release, while nearly [twenty individuals](https://opengeometadata.org/docs/about-ogm-aardvark#who-came-up-with-the-schema) contributed to creating our related project, the OGM Aardvark metadata schema. 
+This release represents substantial and concerted efforts from many in our community: over the past one to two years, [fourteen community members](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0) committed code to our GitHub repository for this release, while nearly [twenty individuals](https://opengeometadata.org/docs/about-ogm-aardvark#who-came-up-with-the-schema) contributed to creating our related project, the OGM Aardvark metadata schema.
 
 **Thank you to everyone for participating in this evolution!**
