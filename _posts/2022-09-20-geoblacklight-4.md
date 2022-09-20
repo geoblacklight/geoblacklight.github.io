@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The wait is over - GeoBlacklight 4.0 is here!
-date: 2022-09-19 12:00:00
+date: 2022-09-20 12:00:00
 categories: blog | sprint
 author: Karen Majewicz
 snippet: 'The GeoBlacklight Community is pleased to announce GeoBlacklight 4.0. This latest community release includes several new features, including full support for the OpenGeoMetadata schema, OGM Aardvark, and enriched documentation.'
