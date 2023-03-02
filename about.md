@@ -6,7 +6,7 @@ permalink: /about/
 
 ` `
 
-GeoBlacklight is an open-source [Ruby on Rails](https://rubyonrails.org/) software application for discovering geospatial content, including GIS datasets, web services, and digitized paper maps. Based on the open source software project [Blacklight](https://projectblacklight.org/), GeoBlacklight began in 2014 as a collaboration by MIT, Princeton, and Stanford. As of 2021, over 25 academic libraries and cultural heritage institutions have adopted GeoBlacklight. To learn more about it and how it works, visit our [GeoBlacklight Introduction Tutorial](https://geoblacklight.org/tutorial/2015/02/09/geoblacklight-overview.html).
+GeoBlacklight is an open-source [Ruby on Rails](https://rubyonrails.org/) software application for discovering geospatial content, including GIS datasets, web services, and digitized paper maps. Based on the open source software project [Blacklight](https://projectblacklight.org/), GeoBlacklight began in 2014 as a collaboration by MIT, Princeton, and Stanford. As of 2021, over 25 academic libraries and cultural heritage institutions have adopted GeoBlacklight.
 
 Discovery services and metadata are key challenges for organizations who provide geospatial data. GeoBlacklight connects expertise from the digital library and geospatial communities to provide a better experience for users to find geospatial data.
 
@@ -69,7 +69,6 @@ Our Development Practices
 
 - **Funding**: There is no funding model for GeoBlacklight, and most development comes through volunteered or assigned time from contributing organizations. Some projects have received grants or dedicated funds to build their GeoBlacklight applications. Our community also includes private vendors and independent freelancers that have contributed to the project through contracted work.
 
-- **Documentation**: The technical documentation for the project resides in our [guides](https://geoblacklight.org/guides.html) and [tutorials](https://geoblacklight.org/tutorials.html).
 
 **************************
 
