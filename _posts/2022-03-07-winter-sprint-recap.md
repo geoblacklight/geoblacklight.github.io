@@ -35,7 +35,7 @@ We finally cracked a long-standing spatial problem while simultaneously enabling
 
 * **A Problem:** bounding boxes that crossed the antimeridian would appear flipped or backward in search previews. 
 * **A related desired enhancement:** to be able to display complex or multiple geometries in search previews instead of just a single bounding box.
-* **Our solution:** We incorporated a new option for a spatial metadata field that can use any WKT POLYGON or MULTIPOLYGON for display and searches. This enhancement was built with Geo3D for Solr and opened up the possibilities for what kind of geometries the metadata can feature. This also solves the antimeridian problem, as the metadata can now have two adjacent bounding boxes that will display correctly. [Read more about how to format the Geometry field in OpenGeoMetadata to take advantage of this new feature](https://opengeometadata.org/docs/ogm-aardvark/geometry).
+* **Our solution:** We incorporated a new option for a spatial metadata field that can use any WKT POLYGON or MULTIPOLYGON for display and searches. This enhancement was built with Geo3D for Solr and opened up the possibilities for what kind of geometries the metadata can feature. This also solves the antimeridian problem, as the metadata can now have two adjacent bounding boxes that will display correctly. [Read more about how to format the Geometry field in OpenGeoMetadata to take advantage of this new feature](https://opengeometadata.org/ogm-aardvark#geometry).
 
 
 ![multiple-bounding-boxes](/images/multiple-bbox.png)

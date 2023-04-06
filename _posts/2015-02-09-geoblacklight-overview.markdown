@@ -30,7 +30,7 @@ GeoBlacklight is flexible enough, however, to act as a discovery service for a v
 
 That's ok. GIS data indexed into GeoBlacklight becomes progressively more useful based on the services that back them. For example, the minimum required metadata for GeoBlacklight is a bounding box, title, and description, and no references to services that will actually provide that data are required. GeoBlacklight can also help with serving static files available through a URL. Moreover, GeoBlacklight also natively supports [IIIF](http://iiif.io/) objects, so organizations who have IIIF servers for scanned maps can start using GeoBlacklight today.
 
-[The GeoBlacklight Schema, Version 1.0](https://opengeometadata.org/docs/gbl-1.0) uses a field `dct_references_s` to define external services and references. See the [External references](https://opengeometadata.org/docs/gbl-1.0#references) section for a list of possible key:value pairs and instructions on how to apply them.
+[The GeoBlacklight Schema, Version 1.0](https://opengeometadata.org/gbl-1.0) uses a field `dct_references_s` to define external services and references. See the [External references](https://opengeometadata.org/gbl-1.0#references) section for a list of possible key:value pairs and instructions on how to apply them.
 
 ### Software projects and communities
 
