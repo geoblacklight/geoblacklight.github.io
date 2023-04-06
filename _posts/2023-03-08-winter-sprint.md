@@ -10,7 +10,7 @@ snippet: 'GeoBlacklight Winter Community Sprint Recap - 2023.'
 -------
 > **KEY LINKS**
 > 
-* [Documentation for new Aardvark field, **Display Note**](https://opengeometadata.org/docs/ogm-aardvark/display-note)
+* [Documentation for new Aardvark field, **Display Note**](https://opengeometadata.org/ogm-aardvark/#display-note)
 * [GeoBlacklight release and technology dependency matrix.](https://geoblacklight.org/docs/overview/releases/)
 * [Sidecar Images Plugin](https://github.com/geoblacklight/geoblacklight_sidecar_images)
 * [Dockerized GeoBlacklight](https://github.com/harvard-lts/GeoBlacklightDockerized)
@@ -28,7 +28,7 @@ Many institutions using GeoBlacklight have implemented custom fields to display 
 
 The main downside of custom fields is that they are not interoperable; when we share metadata across institutions, this information is lost. Another drawback is that custom fields require local development time to implement as opposed to functionality that comes with GeoBlacklight out-of-the-box.
 
-During the sprint, [we devised a single field to capture this information, called "Display Note"](https://opengeometadata.org/docs/ogm-aardvark/display-note). This versatile field is inspired by website widgets known variably as *callouts* (general usage), [admonitions](https://python-markdown.github.io/extensions/admonition/) (Python Markdown), or [alerts](https://getbootstrap.com/docs/4.0/components/alerts/) (Bootstrap). Callouts are generally highlighted in colors and/or icons that indicate the type of information being offered, such as a red background for a Warning.  
+During the sprint, [we devised a single field to capture this information, called "Display Note"](https://opengeometadata.org/ogm-aardvark/#display-note). This versatile field is inspired by website widgets known variably as *callouts* (general usage), [admonitions](https://python-markdown.github.io/extensions/admonition/) (Python Markdown), or [alerts](https://getbootstrap.com/docs/4.0/components/alerts/) (Bootstrap). Callouts are generally highlighted in colors and/or icons that indicate the type of information being offered, such as a red background for a Warning.  
 
 Details about the new field:
 
