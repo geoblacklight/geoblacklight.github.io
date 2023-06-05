@@ -47,12 +47,6 @@
     text: Check out the Texas GeoData portal
     url: https://geodata.lib.utexas.edu/
 
-- name: VirginiaTech - GeoData
-  image: vt.png
-  copy: GeoData provides information about geospatial data that Virginia Tech Libraries has pledged to serve on behalf of local government organizations and data that has been acquired through research.
-  link:
-    text: Check out GeoData
-    url: https://geodata.lib.vt.edu/
 
 - name: GeoData@Wisconsin
   image: uwgeodata.png
@@ -60,13 +54,6 @@
   link:
     text: Check out GeoData@Wisconsin
     url: https://geodata.wisc.edu
-
-- name: Virgo GIS
-  image: uva.jpg
-  copy: Virgo GIS is the discovery application for GIS datasets from the U.Va Library collections.
-  link:
-    text: Check out Virgo GIS
-    url: http://gis.lib.virginia.edu/
 
 - name: CUGIR - Cornell University Geospatial Information Repository
   image: cugir.jpg
