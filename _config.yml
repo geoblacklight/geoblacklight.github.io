@@ -5,7 +5,6 @@ description: > # this means to ignore newlines until "baseurl:"
   An easier way to find geospatial data
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://geoblacklight.org" # the base hostname & protocol for your site
-twitter_username: geoblacklight
 github_username:  geoblacklight
 collections:
   projects:
