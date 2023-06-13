@@ -1,0 +1,107 @@
+site_name: GeoBlacklight
+site_url: https://geoblacklight.org
+theme:
+  name: material
+  custom_dir: overrides
+  logo: images/geoblacklight-logo.png
+  favicon: images/favicon.png
+  palette:
+    primary: white
+        
+  features:
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - toc.follow
+#     - toc.integrate
+    - tags: {}
+      index_page: tags.md
+          
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/neoteroi-cards.css
+  
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - def_list
+  - admonition
+  - meta
+  - pymdownx.details
+  - pymdownx.superfences
+  - neoteroi.cards
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  
+ 
+plugins:
+  - tags: 
+      tags_file: tags.md
+
+#   - blogging:
+#       theme:
+#         name: card
+#       dirs: # The directories to be included
+#         - blog
+#       template: overrides/custom-blog.html
+#       features:
+#             tags:
+#                   index_page: tags.md
+#                   insert: top
+#       categories:
+#         - name: '2023'
+#           dirs:
+#             - blog/2023
+#         - name: '2022'
+#           dirs:
+#              - blog/2022
+
+
+nav:
+- Home: 'index.md'
+- About: 'about.md'
+- Showcase: 
+      - showcase/index.md
+- Connect: 'connect.md'
+- Blog:
+      - blog/index.md
+- Documentation:
+      - Overview:
+           - 'What is GeoBlacklight': 'docs/overview/what_is_geoblacklight.md'
+           - 'Contributing to GeoBlacklight': 'docs/overview/contributing.md'
+           - 'Metadata': 'docs/overview/metadata.md'
+           - 'Releases': 'docs/overview/releases.md'
+      - Installation:
+           - 'Quick Start': 'docs/installation/geoblacklight_quick_start.md'
+           - 'Getting Started - Developers Guide': 'docs/installation/getting_started_developers.md'
+      - Customization:
+           - 'Adding Leaflet Controls': 'docs/customization/adding_leaflet_controls.md'
+           - 'Configuring Leaflet for Retina Displays': 'docs/customization/leaflet_retina_configuration.md'
+           - 'Using the Data Relations Widget': 'docs/customization/data_relations_widget.md'
+           - 'Configuring Index Maps': 'docs/customization/index_maps.md'
+           - 'Switching Default Basemap': 'docs/customization/default_basemap.md'
+           - 'Dynamic Basemap Switching': 'docs/customization/dynamic_basemap_switching.md'
+           - 'Adding Support for Item Images': 'docs/customization/item_images.md'
+           - 'Adding Mirador IIIF Manifest Viewer': 'docs/customization/adding_mirador_viewer.md'
+           - 'Accessing Raster and Vector Layers in GeoPackages': 'docs/customization/accessing_geopackages.md'
+           - 'Adding SVG Icons': 'docs/customization/adding_svg_icons.md'
+           - 'Rendering Line Breaks or HTML from the Description Field': 'docs/customization/rendering_html_from_description.md'
+           - 'Homepage Map Centroid Clusters': 'docs/customization/homepage_map_centroid_clusters.md'
+      - Running in Production:
+           - 'Hardware Recommendations': 'docs/production/hardware_recommendations.md'
+           - 'Implementation Recommendations': 'docs/production/implementation_recommendations.md'
+           - 'Periodic Maintenance': 'docs/production/periodic_maintenance.md'
+      - Upgrading:
+           - 'Upgrading to Version 4.0': 'docs/upgrading/Upgrading_to_version_4_0.md'
+           - 'Upgrading to Version 2.0': 'docs/upgrading/Upgrading_to_version_2_0.md'
+
+      #- Tutorials:
+      #     - 'Tutorials': 'tutorials/tutorials.md'
+
+
+

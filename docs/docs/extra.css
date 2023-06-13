@@ -1,0 +1,58 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  font-size: 2.25em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.75em; }
+
+h4 {
+  font-size: 1.5em; }
+
+h5 {
+  font-size: 1.25em; }
+
+h6 {
+  font-size: 1em; }
+
+p {
+  margin: 0 0 0.75em; }
+
+/* 
+a:active {
+background-color:#D3D3D3;
+}
+ */
+
+.wy-side-nav-search, .wy-nav-side, .wy-menu wy-menu-vertical, .wy-menu-vertical header, .wy-menu-vertical p.caption {
+    background-color: #ffffff;
+    color:#000;
+}
+
+.wy-menu-vertical a {
+color: #000;
+}
+
+.wy-menu-vertical a:hover {
+    color:#fff
+}
+
+.wy-menu-vertical a:active {
+   background-color: #D3D3D3;
+   color: #000
+}
+
+.wy-menu-vertical li.current>a, .wy-menu-vertical li.on a {
+    background-color: #D3D3D3;
+}
