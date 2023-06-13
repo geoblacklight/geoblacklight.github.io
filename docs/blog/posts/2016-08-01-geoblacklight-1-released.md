@@ -1,5 +1,7 @@
 ---
 date:  2016-08-03
+categories:
+- releases
 authors:
   - Jack Reed
 ---

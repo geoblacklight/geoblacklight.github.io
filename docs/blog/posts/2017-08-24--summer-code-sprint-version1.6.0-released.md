@@ -3,6 +3,9 @@ date: 2017-08-25
 authors:
 - Karen Majewicz
 - Andrew Battista
+categories:
+- sprints
+- releases
 ---
 
 # Summer Code concludes and GeoBlacklight version 1.6.0 released

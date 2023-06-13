@@ -1,5 +1,8 @@
 ---
 date: 2022-03-07
+categories:
+- sprints
+- releases
 authors: 
   - Karen Majewicz
   - Eric Larson

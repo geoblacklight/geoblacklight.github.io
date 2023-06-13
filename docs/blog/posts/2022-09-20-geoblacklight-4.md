@@ -2,9 +2,9 @@
 date: 2022-09-20
 authors:
   - Karen Majewicz
-tags:
-  - sprint
-  - metadata
+categories:
+- sprints
+- releases
 ---
 
 

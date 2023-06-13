@@ -1,12 +1,20 @@
 ---
-layout: tutorial
-title:  "Using Packer to create a development virtual machine for GeoBlacklight"
-date:   2016-01-23 11:00:00
-categories: tutorial
-author: 'Jack Reed'
-author_link: 'https://twitter.com/mejackreed'
-snippet: 'A tutorial on how we use Packer to create a working virtual machine for the GeoBlacklight workshop'
+date:   2016-01-23
+categories: 
+- tutorials
+authors: 
+- Jack Reed
 ---
+
+# Using Packer to create a development virtual machine for GeoBlacklight
+
+A tutorial on how we use Packer to create a working virtual machine for the GeoBlacklight workshop
+
+<!-- more -->
+
+!!! warning
+
+	This tutorial may be outdated. Please refer to the [Documentation pages](https://geoblacklight.org/docs) for up to date instructions.
 
 When we run the GeoBlacklight workshop, we provide attendees with a VirtualBox virtual machine (vm) so that they can participate without having download software. Having attendees connect to the internet to download large files doesn't always work in conference environments. To keep up to date with software dependencies we have rebuilt this virtual machine several times. Recently, the process for creating and updating the virtual machine has been automated using [Packer](https://www.packer.io/downloads.html). From Packer's website:
 

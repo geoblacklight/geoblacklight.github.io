@@ -1,5 +1,7 @@
 ---
 date: 2021-02-10
+categories:
+- sprints
 authors:
   - Karen Majewicz
 ---

@@ -3,7 +3,7 @@ date: 2022-08-01
 authors: 
   - Karen Majewicz
 categories:
-  - sprint
+  - sprints
 ---
 
 # Announcing the GeoBlacklight Community Summer 2022 Sprint

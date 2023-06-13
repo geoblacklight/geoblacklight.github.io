@@ -1,5 +1,8 @@
 ---
 date: 2018-03-01
+categories:
+  - sprints
+  - releases
 authors:
   - Karen Majewicz
 ---

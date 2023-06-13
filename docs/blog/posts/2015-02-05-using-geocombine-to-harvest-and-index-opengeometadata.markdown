@@ -1,12 +1,22 @@
 ---
-layout: tutorial
-title:  "Using GeoCombine to harvest and index OpenGeoMetadata"
-date:   2015-02-05 11:00:00
-categories: tutorial
-author: 'Jack Reed'
-author_link: 'https://twitter.com/mejackreed'
-snippet: 'A quick tutorial on how to harvest and index OpenGeoMetadata for your GeoBlacklight installation'
+date:   2015-02-05
+categories: 
+- tutorials
+authors:
+- Jack Reed
 ---
+
+# Using GeoCombine to harvest and index OpenGeoMetadata
+
+A quick tutorial on how to harvest and index OpenGeoMetadata for your GeoBlacklight installation.
+
+<!-- more -->
+
+!!! warning
+
+	This tutorial from **2015** may be outdated. Please refer to the [GeoCombine repo](https://github.com/OpenGeoMetadata/GeoCombine) for up to date instructions.
+
+
 
 Sharing, collaborating, and harvesting geospatial metadata is not really easy. A recent development in the world of geospatial metadata sharing is the new project [OpenGeoMetadata](https://github.com/OpenGeoMetadata). OpenGeoMetadata aims to be a shared repository for institutions looking to share, collaborate, and harvest geospatial metadata. For more details on how the project is structured and why we think this is really cool, [see this readme](https://github.com/OpenGeoMetadata/metadatarepository/blob/master/README.md).
 
@@ -30,9 +40,6 @@ This guide assumes a few things already.
  - You have [Ruby](https://gorails.com/setup/#ruby) installed
  - You have Solr running locally on port 8983 (default Solr port) and it is configured with [GeoBlacklight-Schema](https://github.com/geoblacklight/geoblacklight-schema/tree/master/conf) configuration
 
-
-If you are confused about these prerequisites, it is probably best that you start by running through the workshop <a href="{% post_url 2015-02-09-a-hands-on-introduction-to-geoblacklight %}">"A hands on introduction to GeoBlacklight"</a>.
-{: .flash-alert}
 
 ### Install GeoCombine
 
@@ -79,4 +86,3 @@ If you have already have a GeoBlacklight application, skip steps 1 and 2. You ca
      ```
 
      Go grab a coffee or lunch, because this might take a while! But afterwards your index should have +30,000 new records in it.
-     {: .flash-success}

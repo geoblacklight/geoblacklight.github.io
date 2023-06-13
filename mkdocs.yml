@@ -29,6 +29,13 @@ markdown_extensions:
   - def_list
   - admonition
   - meta
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - toc:
+      toc_depth: 3
   - pymdownx.details
   - pymdownx.superfences
   - neoteroi.cards
