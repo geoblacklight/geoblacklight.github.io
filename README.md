@@ -8,7 +8,6 @@ This site provides the public facing website for the GeoBlacklight community.
 ### Written in: [Markdown language](https://daringfireball.net/projects/markdown/)
 
 [Markdown](https://daringfireball.net/projects/markdown/) is a lightweight and easy-to-use language for text documents.
-Most text editors support it and translates easily to other formats, such as HTML or PDF or EPUB.
 
 ### Generated with: [MkDocs framework ](https://www.mkdocs.org)
 
@@ -21,7 +20,7 @@ Most text editors support it and translates easily to other formats, such as HTM
 
 ### Published with: [GitHub Pages](https://pages.github.com)
 
-[GitHub Pages](https://pages.github.com) is a free static site hosting service offered by GitHub. It is often used to host documentation sites, personal portfolios, and project websites.
+[GitHub Pages](https://pages.github.com) is a free static site hosting service offered by GitHub. 
 
 
 ## GitHub Repository organization:
@@ -32,9 +31,9 @@ This is the working branch containing the content for the site using Markdown.
 
 * **readme.md**: the file you are reading right now
 * **mkdocs.yml**: the configuration file that identifies the theme, the extensions, and the navigation
-* **mkdocs.insidersyml**: a configuration file for the blog
+* **mkdocs.insiders.yml**: a configuration file for the blog
 * **docs** folder
-	*  Markdown documents: The content for the site. These can all live in the same directory and are organized in the public navigation menu in the nav section of **mkdocs.yml**.
+	*  various markdown (*.md) documents: The content for the site. These are organized for the public navigation menu in the nav section of **mkdocs.yml**.
 	*  	`/blog`: 
 	          *  `.authors.yml`: a list of blog authors and their GitHub usernames
 	          *  `index.md`: a mostly blank page used by the blog plugin
@@ -63,8 +62,7 @@ This is the published branch containing the HTML code for the site. (We do **not
 
 ## Updating the GeoBlacklight website
 
-Since this site is written with Markdown files, the minimum requirement to contribute is to just edit or submit new Markdown files.  However, MkDocs is relatively simple to install and run locally. This allows you to preview changes locally before submitting them.  
-
+Since this site is edited with Markdown, the minimum requirement to contribute is to just edit or submit new Markdown files.  However, MkDocs is relatively simple to install and run locally. This allows you to preview changes locally before submitting them.  
 
 To get started, follow the steps below.  It may also be helpful to visit the Material for[ MkDocs Getting Started page](https://squidfunk.github.io/mkdocs-material/getting-started/) and for reference.
 
@@ -91,19 +89,19 @@ This plugin groups text and images into grids or boxes based on simplified input
 
 3. Change into the geoblacklight.github.io directory and type:
 
-`mkdocs serve`
+    `mkdocs serve`
 
-This will start a local server so you can preview the site as you build it. You will see text in the Terminal that looks something like this:
+    This will start a local server so you can preview the site as you build it. You will see text in the Terminal that looks something like this:
 
-```
-INFO     -  Documentation built in 4.15 seconds
-
-INFO     -  [14:43:24] Watching paths for changes: 'docs', 'mkdocs.yml'
-
-INFO     -  [14:43:24] Serving on http://127.0.0.1:8000/
-
-INFO     -  [14:43:31] Browser connected: http://127.0.0.1:8000/
-```
+	```
+	INFO     -  Documentation built in 4.15 seconds
+	
+	INFO     -  [14:43:24] Watching paths for changes: 'docs', 'mkdocs.yml'
+	
+	INFO     -  [14:43:24] Serving on http://127.0.0.1:8000/
+	
+	INFO     -  [14:43:31] Browser connected: http://127.0.0.1:8000/
+	```
 4. In a browser, open the locally hosted site at http://127.0.0.1:8000/ (or whatever your Terminal shows)
 
 5. Edit the markdown files and preview them in your browser.
@@ -115,7 +113,7 @@ INFO     -  [14:43:31] Browser connected: http://127.0.0.1:8000/
 
 ### Workflow steps overview
 
-Contributor:
+**Contributor:**
 
 1. Clone or update your local instance of the geoblacklight.github.io repository
 2. Make a new branch and switch to it
@@ -125,7 +123,7 @@ Contributor:
 6. Publish your branch
 7. Open a Pull Request to the main branch
 
-Publisher:
+**Publisher:**
 
 1. Accept Pull Request and merge changes to the main branch
 2. GitHub Actions will automatically push the changes to the gh-pages branch
@@ -135,7 +133,7 @@ Publisher:
 
 As of June 2023, the geoblacklight.github.io site is being published via the sponsored version of Material for MkDocs, known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This enables us to use the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/).  
 
-Contributers will not see the blog when serving and previewing the site locally. However, the posts will show up online when they are pushed to GitHub.
+Contributors will not see the blog when serving and previewing the site locally. However, the posts will show up online when they are pushed to GitHub.
 
 We will reassess this in a few months to determine if it is a viable model going forward.  In the meantime, if you would like to contribute a blog post, please contact the Community Coordinator (@majew030) on Slack or make a new GitHub issue.
 
