@@ -1,6 +1,6 @@
 ---
 hide:
-  - navigation
+
 ---
 
 GeoBlacklight is an open-source [Ruby on Rails](https://rubyonrails.org/) software application for discovering geospatial content, including GIS datasets, web services, and digitized paper maps. Based on the open source software project [Blacklight](https://projectblacklight.org/), GeoBlacklight began in 2014 as a collaboration by MIT, Princeton, and Stanford. As of 2021, over 25 academic libraries and cultural heritage institutions have adopted GeoBlacklight.
