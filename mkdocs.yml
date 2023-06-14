@@ -1,0 +1,75 @@
+site_name: GeoBlacklight
+site_url: https://geoblacklight.org
+copyright: GeoBlacklight Community &copy; 2015 - 2023
+theme:
+  name: material
+  logo: images/geoblacklight-logo.png
+  favicon: images/gbl-favicon.png
+  
+        
+  palette:
+    primary: white
+    
+  features:
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
+    - tags: {}
+      index_page: tags.md
+
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/neoteroi-cards.css
+  
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - def_list
+  - admonition
+  - meta
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - toc:
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - neoteroi.cards
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  
+plugins:
+  - search
+  
+extra:
+      social:
+          - icon: fontawesome/brands/github 
+            link: https://github.com/GeoBlacklight
+          - icon: fontawesome/brands/slack
+            link: https://geoblacklight.slack.com
+          - icon: fontawesome/solid/paper-plane
+            link: https://groups.google.com/g/geoblacklight-working-group
+
+nav:
+- Home: 'index.md'
+- About: 'about.md'
+- Showcase: 
+      - showcase/index.md
+- Connect: 'connect.md'
+- Blog:
+      - blog/index.md
+- Documentation: 'https://geoblacklight.org/docs'
+
+
+

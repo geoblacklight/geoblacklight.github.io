@@ -1,6 +1,11 @@
-_site
-.sass-cache
-tmp
-node_modules
-.functions/*.js
+site/
+*.gem
+.bundle
 .DS_Store
+.ruby-version
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+_site
+Gemfile.lock
+node_modules
