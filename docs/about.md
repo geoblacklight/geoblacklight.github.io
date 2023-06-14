@@ -119,20 +119,27 @@ The GeoBlacklight software stack consists of several open source software projec
   
 ::/cards::
 
-
 ## GeoBlacklight Contributors
 
+GeoBlacklight has been collaboratively developed by affiliates of the following institutions:
+
+* Auraria Library
 * Big Ten Academic Alliance
-* Cornell University Library
+* Cornell University
 * MIT Libraries
 * Harvard University Library
 * Johns Hopkins University
 * New York University Libraries
 * Princeton University Library
 * Stanford University Libraries
+* University of California San Diego
+* University of California Berkeley
+* University of California Santa Barbara
+* University of Illinois at Urbana-Champaign
 * University of Massachusetts Amherst
 * University of Minnesota Libraries
 * University of Pennsylvania Libraries
 * The University of Texas at Austin
+* University of Wisconsin-Milwaukee
 
-*This is a living document that is frequently updated. Have a suggestion? Create an issue on the [GeoBlacklight Website Github page here](https://github.com/geoblacklight/geoblacklight.github.io/issues).*
+*Did we miss your institution? Have a suggestion for this website? Create an issue on the [GeoBlacklight Website Github page here](https://github.com/geoblacklight/geoblacklight.github.io/issues).*
