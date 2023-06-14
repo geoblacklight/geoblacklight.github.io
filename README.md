@@ -16,7 +16,7 @@ Most text editors support it and translates easily to other formats, such as HTM
 
 ### Styled with: [Material for MkDocs theme](https://squidfunk.github.io/mkdocs-material/)
 
-[Material](https://squidfunk.github.io/mkdocs-material/) is the most actively developed theme available for MkDocs (as of 2023) and features flexible navigation and many plugins to extend what we can do with Markdown. It is called "Material" because it is based on Google's Material Design guidelines, a web accessibility and screen responsiveness.
+[Material](https://squidfunk.github.io/mkdocs-material/) is the most actively developed theme available for MkDocs (as of 2023) and features flexible navigation and many plugins to extend what we can do with Markdown. It is called "Material" because it is based on Google's Material Design guidelines.
 
 
 ### Published with: [GitHub Pages](https://pages.github.com)
@@ -135,7 +135,7 @@ Publisher:
 
 As of June 2023, the geoblacklight.github.io site is being published via the sponsored version of Material for MkDocs, known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This enables us to use the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/).  
 
-Users will not see the blog when previewing the site locally. However, the posts will show up online when they are published to GitHub.
+Contributers will not see the blog when serving and previewing the site locally. However, the posts will show up online when they are pushed to GitHub.
 
 We will reassess this in a few months to determine if it is a viable model going forward.  In the meantime, if you would like to contribute a blog post, please contact the Community Coordinator (@majew030) on Slack or make a new GitHub issue.
 
