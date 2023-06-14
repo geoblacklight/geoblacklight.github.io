@@ -2,7 +2,6 @@ site_name: GeoBlacklight
 site_url: https://geoblacklight.org
 theme:
   name: material
-  custom_dir: overrides
   logo: images/geoblacklight-logo.png
   favicon: images/favicon.png
   palette:
@@ -50,24 +49,6 @@ plugins:
   - search
   - tags: 
       tags_file: tags.md
-
-#   - blogging:
-#       theme:
-#         name: card
-#       dirs: # The directories to be included
-#         - blog
-#       template: overrides/custom-blog.html
-#       features:
-#             tags:
-#                   index_page: tags.md
-#                   insert: top
-#       categories:
-#         - name: '2023'
-#           dirs:
-#             - blog/2023
-#         - name: '2022'
-#           dirs:
-#              - blog/2022
 
 nav:
 - Home: 'index.md'

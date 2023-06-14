@@ -72,5 +72,8 @@ hide:
 
 ::/cards::
 
+## Add to the Showcase
+
+If your institution or organization has adopted GeoBlacklight and you would like to add your instance to the project page, [see the instructions to contribute](submit.md).
 
 
