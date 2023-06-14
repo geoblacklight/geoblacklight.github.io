@@ -4,7 +4,7 @@ copyright: GeoBlacklight Community &copy; 2015 - 2023
 theme:
   name: material
   logo: images/geoblacklight-logo.png
-  favicon: images/favicon.png
+  favicon: images/gbl-favicon.png
   
         
   palette:
