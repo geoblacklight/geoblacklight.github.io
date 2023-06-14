@@ -34,10 +34,10 @@ This is the working branch containing the content for the site using Markdown.
 * **mkdocs.insiders.yml**: a configuration file for the blog
 * **docs** folder
 	*  various markdown (*.md) documents: The content for the site. These are organized for the public navigation menu in the nav section of **mkdocs.yml**.
-	*  	`/blog`: 
-	          *  `.authors.yml`: a list of blog authors and their GitHub usernames
-	          *  `index.md`: a mostly blank page used by the blog plugin
-	          *  `/posts/`: collection of blog posts in markdown  
+	*  	`/blog`
+          *  `.authors.yml`: a list of blog authors and their GitHub usernames
+          *  `index.md`: a mostly blank page used by the blog plugin
+          *  `/posts/`: collection of blog posts in markdown  
 	*  	`/images` : image files for general pages
 	*   `/pdfs`: PDF files
 	*   `/showcase`
