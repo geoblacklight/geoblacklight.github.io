@@ -17,12 +17,12 @@ The GeoBlacklight Community is excited to announce the release of our next major
 
 <img src="https://media.giphy.com/media/gSDb851REn92leXb8R/giphy.gif?cid=ecf05e47p24gugw68aabqhjw9rb2f9lggv1hky2iwbrypg6l&rid=giphy.gif&ct=g" alt="Baby Aardvark Walking" style="display: block; margin-left: auto; margin-right: auto; width: 50%; padding: 1rem; border: 1px double gray;"/>
 
-> **KEY LINKS**
+!!! info "KEY LINKS"
 
-* > **[The RubyGems GeoBlacklight v4.0.0 Release](https://rubygems.org/gems/geoblacklight/versions/4.0.0) ([GitHub](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0))**
-* > **[Guide for Upgrading to GeoBlacklight Version 4](https://geoblacklight.org/docs/upgrading/Upgrading_to_version_4_0/)**
-* > **[Guide for Upgrading Metadata to the OpenGeoMetadata (OGM) Aardvark Schema](https://opengeometadata.org/upgrade-metadata/)**
-* > **[gbl2aardvark](https://kgjenkins.github.io/gbl2aardvark/)**: A new web-hosted application to automatically convert GeoBlacklight 1.0 JSON files to the OGM Aardvark schema
+	* > **[The RubyGems GeoBlacklight v4.0.0 Release](https://rubygems.org/gems/geoblacklight/versions/4.0.0) ([GitHub](https://github.com/geoblacklight/geoblacklight/releases/tag/v4.0.0))**
+	* > **[Guide for Upgrading to GeoBlacklight Version 4](https://geoblacklight.org/docs/upgrading/Upgrading_to_version_4_0/)**
+	* > **[Guide for Upgrading Metadata to the OpenGeoMetadata (OGM) Aardvark Schema](https://opengeometadata.org/upgrade-metadata/)**
+	* > **[gbl2aardvark](https://kgjenkins.github.io/gbl2aardvark/)**: A new web-hosted application to automatically convert GeoBlacklight 1.0 JSON files to the OGM Aardvark schema
 
 ## 1. Official support for the latest OpenGeoMetadata schema, **OGM Aardvark**.
 
@@ -38,7 +38,7 @@ By default, GeoBlacklight 4.0 displays all human-readable OGM Aardvark metadata 
 
 ---------
 
-![item view page](../images/rightsItemPage.png)
+![item view page](blog-images/rightsItemPage.png)
 
 **Figure 1**
 
@@ -48,7 +48,7 @@ By default, GeoBlacklight 4.0 displays all human-readable OGM Aardvark metadata 
 
 
 ---------
-![resource class](../images/resourceClass.png)
+![resource class](blog-images/resourceClass.png)
 
 **Figure 2**
 
@@ -88,7 +88,7 @@ Visit our improved metadata documentation site at [https://opengeometadata.org](
  for converting FGDC metadata to OGM Aardvark
 	*  [gbl2aardvark](https://kgjenkins.github.io/gbl2aardvark/): a new web hosted tool to automatically convert GeoBlacklight 1.0 JSON files to OGM Aardvark
 
-![resource class](../images/gbl2aardvark.png)
+![resource class](blog-images/gbl2aardvark.png)
 
 **Figure 3**
 

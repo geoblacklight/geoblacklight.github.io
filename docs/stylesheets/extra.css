@@ -1,71 +1,81 @@
-/* set height of top menu */
 
-  .md-header .md-grid {
-    padding-left: 4.8rem;
-  }
-  
-  .md-header__button.md-logo img {
-    height: 2rem  !important; <-- see comment below    display: block;
-    padding-right: .75em;
-  }
-  
-/* increase header size and fonts */
-
- .md-header__topic  {
-  font-size: 1.5em; 
-  line-height: 2em;
-  }
-  
-  .md-header__topic {
-  display: none;  
-}
-
- . md-tabs {
- display: block;
-  float: right;
- }
- 
- .md-tabs__link  {
-      font-size: 1.75em; 
-  }
-
-/* set width of site */
-/* 
+/* set overall width of site */
 .md-grid {
   max-width: 90%; 
 }
- */
+
+/* LOGO */
+
+   /* increase default size of logo */
+  .md-header__button.md-logo img {
+    height: 2.5rem  !important; <-- see comment below    display: block;
+    padding-right: .75em;
+  }
+  
+/* hide site title */  
+  .md-header__topic {
+  display: none;  
+}
+  
+/* TOP MENU */
+  
+ /* top menu font */
+ .md-tabs__link  {
+      font-size: 1.7em; 
+  }
+  
+
+/* SIDE MENU  */
+
+.md-nav--primary {
+      border-right: .1em  solid #24574F;
+      }
 
 .md-nav__item--section > .md-nav__link[for] {
     color: inherit;
 }
 
-.md-typeset h2{
-      color: inherit;
-      font-weight: bold;
-      font-size: 1.3em;
-}
-
-.md-typeset h3{
-      color: #24574F;
-      font-size: 1.3em;
-}
-
+.md-nav__item{
+      font-size: 1em;
+      }
 
 /* Hide main nav title */
 label[for="__drawer"] {
     display: none;
 }
 
+/* HEADERS */
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*     font-size: 16px; */
+    line-height: 1.5;
+  }
 
-/* style the left hand nav  */
+.md-typeset h1{
+      color: #000;
+      font-weight: 600;
+      font-size: 2.1em;
+}
 
-.md-nav--primary {
-      border-right: .1em  solid #24574F;
+.md-typeset h2{
+      color:  #818589;
+      font-size: 1.75em;
+}
 
-      }
+.md-typeset h3{
+      color: inherit;
+      font-size: 1.3em;
+}
 
- 
+/* BLOG TITLES */
+a.toclink{
+      font-size: .85em;
+      font-weight: 500;
+      color: #24574F;      }
+
+
+
+
 /* (C) RESPONSIVE - 1 COLUMN ON SMALL SCREENS */
 @media screen and (max-width: 640px) {
   #grid-col { grid-template-columns: 100%; }

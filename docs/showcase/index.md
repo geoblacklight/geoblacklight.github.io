@@ -4,6 +4,8 @@ hide:
   - navigation
 ---
 
+# GeoBlacklight Project Showcase
+
 ::cards:: image-bg cols=3
 
 - title: Big Ten Academic Alliance Geoportal

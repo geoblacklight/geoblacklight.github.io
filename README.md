@@ -44,7 +44,9 @@ This is the working branch containing the content for the site using Markdown.
 	*   `/showcase`
 	      *    image files (generally screenshots of GeoBlacklight instances) just for the showcase page
 	      *    `index.md`: all the GeoBlacklight instances listed on the showpage
-	*   `/stylesheets/extra.css` : a CSS file that can define colors, fonts, and other customizations for the site
+	*   `/stylesheets`
+		*   `extra.css` : a CSS file that can define colors, fonts, and other customizations for the site
+		*   `neoteroi.css`: a CSS file just for the content displayed in grids (boxes)
 
 
 
@@ -79,7 +81,7 @@ This command will install all the necessary modules for the mkdocs platform and 
 
 `pip install neoteroi-mkdocs`
 
-This plugin groups text and images into boxes based on simplified input files. We use this to create the Showcase page. 
+This plugin groups text and images into grids or boxes based on simplified input files. We use this plugin to create the Showcase page and to make it easy for community members to contribute new instances. [See the Submit page for more instructions on adding to the Showcase page.](https://geoblacklight.org/showcase/submit)
 
 ### Edit the website
 
@@ -131,7 +133,9 @@ Publisher:
 
 ### Differences from local server previews and public view
 
-As of April 2023, the geoblacklight.github.io site is being published via the sponsored version of Material for MkDocs, known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This enables us to use the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/).
+As of June 2023, the geoblacklight.github.io site is being published via the sponsored version of Material for MkDocs, known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This enables us to use the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/).  
+
+Users will not see the blog when previewing the site locally. However, the posts will show up online when they are published to GitHub.
 
 We will reassess this in a few months to determine if it is a viable model going forward.  In the meantime, if you would like to contribute a blog post, please contact the Community Coordinator (@majew030) on Slack or make a new GitHub issue.
 

@@ -22,7 +22,7 @@ Developers and metadata specialists from New York University, Princeton Universi
 
 The code and release of version 1.6.0 resulted in a significant new feature, an amazing [tabbed viewer](https://github.com/geoblacklight/geoblacklight/pull/555) that displays standards based XML metadata as HTML in the interface. This was primarily developed by James Griffin, and represents an enhancement that has long been requested by many GeoBlacklight users. Now, users can see a cleaner rendering of ISO or FGDC XML documents in context and download them.
 
-![ISO19139](/images/geoblacklight_metadata_view_ISO19139.png)
+![ISO19139](blog-images/geoblacklight_metadata_view_ISO19139.png)
 
 The were also a number of behind the scenes minor code changes, including updates to fixture records, validation of bounding boxes, and a webkit deprecation. To simplify organizational structure, the separate GeoBlacklight Schema repository was deprecated and instead [placed as a folder](https://github.com/geoblacklight/geoblacklight/tree/master/schema) within the main repository.  
 

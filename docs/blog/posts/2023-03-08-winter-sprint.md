@@ -12,12 +12,12 @@ The latest sprint resulted in several new outcomes: a metadata field, multiple d
 
 <!-- more -->
 
-> **KEY LINKS**
-> 
-* [Documentation for new Aardvark field, **Display Note**](https://opengeometadata.org/ogm-aardvark/#display-note)
-* [GeoBlacklight release and technology dependency matrix.](https://geoblacklight.org/docs/overview/releases/)
-* [Sidecar Images Plugin](https://github.com/geoblacklight/geoblacklight_sidecar_images)
-* [Dockerized GeoBlacklight](https://github.com/harvard-lts/GeoBlacklightDockerized)
+!!! info "KEY LINKS"
+
+	* [Documentation for new Aardvark field, **Display Note**](https://opengeometadata.org/ogm-aardvark/#display-note)
+	* [GeoBlacklight release and technology dependency matrix.](https://geoblacklight.org/docs/overview/releases/)
+	* [Sidecar Images Plugin](https://github.com/geoblacklight/geoblacklight_sidecar_images)
+	* [Dockerized GeoBlacklight](https://github.com/harvard-lts/GeoBlacklightDockerized)
 
 ------
 
@@ -56,7 +56,7 @@ Right now, the field can be added to your GeoBlacklight Solr instance as a simpl
 
 [We have a new Technology Matrix that maps out our GeoBlacklight release plans and technology dependencies.](https://geoblacklight.org/docs/overview/releases/) This matrix takes into account compatiblity with the Blacklight Project, which recently [pre-released a beta version 8.0.](https://github.com/projectblacklight/blacklight/releases/tag/v8.0.0.beta1).
 
-![tech-matrix](../images/matrix.png)
+![tech-matrix](blog-images/matrix.png)
 
 ## New Release of GeoBlacklight Sidecar Images Plugin
 
@@ -64,7 +64,7 @@ We [upgraded the GeoBlacklight Sidecar Images Plugin](https://github.com/geoblac
 
 ## New Dockerized version of GeoBlacklight
 
-![docker](../images/docker.png)
+![docker](blog-images/docker.png)
 
 [Developers from Harvard University have created a built instance of GeoBlacklight in a Docker context.](https://github.com/harvard-lts/GeoBlacklightDockerized) This will allow new and existing users to test and develop an instance of GeoBlacklight within the Docker environment.
 

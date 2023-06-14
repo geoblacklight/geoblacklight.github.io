@@ -4,9 +4,9 @@ hide:
   - navigation
 ---
 
-## Connect with the GeoBlacklight Community
+# Connect with the GeoBlacklight Community
 
-### GeoBlacklight is more than just software. It's a community. There are lots of different ways to connect and get involved.
+## GeoBlacklight is more than just software. It's a community. There are lots of different ways to connect and get involved.
 
 
 ::cards::

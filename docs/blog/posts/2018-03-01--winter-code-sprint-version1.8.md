@@ -19,4 +19,4 @@ Developers from Stanford, Princeton, NYU, Cornell, and the University of Minneso
 [GeoBlacklight’s latest release](https://github.com/geoblacklight/geoblacklight/releases/tag/v1.8.0) includes a major new feature that enables [OpenIndexMaps](https://openindexmaps.github.io/) based on the GeoJSON format. This feature will display a spatial index in the map preview box that allows users to select an overlay object, such as a grid section. This will bring up a preview of the item’s basic metadata, a thumbnail image, and access links. See [Configuring Index Maps for Use in GeoBlacklight](https://geoblacklight.org/guides.html#configuring-index-maps-for-use-in-geoblacklight) for more information on how to add index maps to metadata records.
 
 #### [Check out this index map in EarthWorks from Stanford Libraries:](https://earthworks.stanford.edu/catalog/stanford-ts545zc6250)
-[![indexMap](/images/indexMap.png)](https://earthworks.stanford.edu/catalog/stanford-ts545zc6250)
+[![indexMap](blog-images/indexMap.png)](https://earthworks.stanford.edu/catalog/stanford-ts545zc6250)

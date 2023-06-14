@@ -24,7 +24,7 @@ Here's a summary of some upgrades and changes:
 
 * DOWNLOAD PANEL: The work to stay current with Bootstrap resulted a redesign of the Download tool to display a link to a direct download of the original dataset in one panel, with generated exports from a geospatial web server available underneath. This new Export Formats panel also features more semantically accurate text with the inclusion of the coordinate reference system (EPSG:4326) for generated exports. Here is a screenshot of the new layout:
 
-![downloadPanel](/images/downloadPanel.png)
+![downloadPanel](blog-images/downloadPanel.png)
 
 * METADATA BUGS: A few long standing bugs or omissions involving metadata interactions were addressed. The latest release allows certain characters, such as colons, in the record slugs, and handles empty values for the Geometry Type field. A new key was also added for the `dct_references` element to display native HTML records in the metadata viewer.
 

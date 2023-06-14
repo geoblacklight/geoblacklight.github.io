@@ -41,7 +41,7 @@ We finally cracked a long-standing spatial problem while simultaneously enabling
 * **Our solution:** We incorporated a new option for a spatial metadata field that can use any WKT POLYGON or MULTIPOLYGON for display and searches. This enhancement was built with Geo3D for Solr and opened up the possibilities for what kind of geometries the metadata can feature. This also solves the antimeridian problem, as the metadata can now have two adjacent bounding boxes that will display correctly. [Read more about how to format the Geometry field in OpenGeoMetadata to take advantage of this new feature](https://opengeometadata.org/ogm-aardvark#geometry).
 
 
-![multiple-bounding-boxes](../images/multiple-bbox.png)
+![multiple-bounding-boxes](blog-images/multiple-bbox.png)
 *Image Caption - Two bounding boxes*
 
 
@@ -53,11 +53,11 @@ We improved the layout of the item pages in the default GeoBlacklight user inter
 2. Web services and downloads were converted from text links to "Call-to-Action" type buttons
 3. Updated the index map to use a more accessible color palette and added a legend
 
-![web0services-button](../images/web-services-button.png)
+![web0services-button](blog-images/web-services-button.png)
 *Image Caption - The map is now directly below the title and has a full-screen option. There is also a new button for web services and an adjusted dropdown button for Downloads*
 
 
-![index-map-color](../images/index-map-color.png)
+![index-map-color](blog-images/index-map-color.png)
 *Image Caption - Shows improved colors and a legend above the index map*
 
 ### Blacklight + future alignment plans

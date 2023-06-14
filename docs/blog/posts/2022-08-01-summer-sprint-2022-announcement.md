@@ -28,7 +28,9 @@ This sprint is taking place over two non-consecutive weeks:
 Here is the proposed sprint work broken up into sections:
 
 ### 1. Coding
+
 #### Primary Goal: Upgrade GeoBlacklight, Version 4 from pre-release status to stable version
+
 * Description: Creating code updates, fixes, and enhancements to commit to the GeoBlacklight code base
 * Useful experience: application development, Ruby, Ruby on Rails
 * Example tasks:
@@ -38,7 +40,9 @@ Here is the proposed sprint work broken up into sections:
 
 -------------
 ### 2. Documentation
+
 #### Primary Goal: Improve documentation for getting started
+
 * Description: Improving the public website, tutorials, and guides
 * Useful experience: writing, design, website editing
 * Example tasks:
@@ -48,7 +52,9 @@ Here is the proposed sprint work broken up into sections:
  
 --------------
 ### 3. Metadata
+
 #### Primary Goal: Improve documentation for migrating to OpenGeoMetadata schema, version Aardvark
+
 * Description: Assessing and documenting the metadata schema for GeoBlacklight
 * Useful experience: metadata, documentation
 * Example tasks:
@@ -59,4 +65,5 @@ Here is the proposed sprint work broken up into sections:
 --------------
 
 ### Other Work
+
 * Description: Other GeoBlacklight-related work is welcome at this sprint!
