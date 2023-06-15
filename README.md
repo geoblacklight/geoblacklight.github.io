@@ -75,7 +75,7 @@ To get started, follow the steps below.  It may also be helpful to visit the Mat
 This command will install all the necessary modules for the mkdocs platform and the Material theme together.
 
 
-2. Next, install the Neoteroi Cards plugin:
+2. Next, install the [Neoteroi Cards](https://www.neoteroi.dev/mkdocs-plugins/cards/) plugin:
 
 `pip install neoteroi-mkdocs`
 

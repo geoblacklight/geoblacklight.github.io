@@ -1,32 +1,16 @@
+/* 
+This is custom CSS for geoblacklight.org.  The default text in the Material Theme is a little small, so many of these values increase the size slightly.
+- created: @karenmajewicz, 2023-06-14
+- updated: 
+ */
 
-/* set overall width of site */
-.md-grid {
-  max-width: 90%; 
-}
 
-/* LOGO */
-
-   /* increase default size of logo */
-  .md-header__button.md-logo img {
-    height: 2.5rem  !important; <-- see comment below    display: block;
-    padding-right: .75em;
-  }
-  
-/* hide site title */  
-  .md-header__topic {
-  display: none;  
-}
-  
 /* TOP MENU */
-  
- /* top menu font */
  .md-tabs__link  {
       font-size: 1.7em; 
   }
   
-
 /* SIDE MENU  */
-
 .md-nav--primary {
       border-right: .1em  solid #24574F;
       }
@@ -39,16 +23,9 @@
       font-size: 1em;
       }
 
-/* Hide main nav title */
-label[for="__drawer"] {
-    display: none;
-}
-
-/* HEADERS */
+/* FONT SIZES */
 * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-/*     font-size: 16px; */
-    line-height: 1.5;
   }
 
 .md-typeset h1{
@@ -67,36 +44,44 @@ label[for="__drawer"] {
       font-size: 1.3em;
 }
 
+
 /* BLOG TITLES */
 a.toclink{
       font-size: .85em;
       font-weight: 500;
    }
 
+/* CENTER IMAGES  */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
 
-
-
-/* (C) RESPONSIVE - 1 COLUMN ON SMALL SCREENS */
+/* OTHER GRIDS */
+/* RESPONSIVE - 1 COLUMN ON SMALL SCREENS */
 @media screen and (max-width: 640px) {
   #grid-col { grid-template-columns: 100%; }
 }
 
-/* (A) GRID CONTAINER */
+/* GRID CONTAINER */
 #grid-line {
   display: grid;
   grid-template-columns: auto auto ;
   grid-gap: 20px;
 }
  
-/* (B) GRID CELL */
+/* GRID CELL */
 div.cell {
 /*   border: .5px solid #e0e0e0; */
   padding: 5px;
 }
 
-/* (C) SPAN MULTIPLE COLUMNS */
+/* SPAN MULTIPLE COLUMNS */
 .spancol {
   grid-column-start: 1;
   grid-column-end: 2;
 }
+
 

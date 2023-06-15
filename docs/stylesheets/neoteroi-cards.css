@@ -25,11 +25,18 @@
   grid-template-columns: repeat(6, 1fr);
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 900px) {
+  .nt-cards.nt-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   .nt-cards.nt-grid {
     grid-template-columns: repeat(1, 1fr) !important;
   }
 }
+
 .nt-card {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
