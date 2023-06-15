@@ -3,7 +3,7 @@ site_url: https://geoblacklight.org
 copyright: GeoBlacklight Community &copy; 2015 - 2023
 theme:
   name: material
-  logo: images/geoblacklight-logo.png
+  logo: images/gbl-favicon.png
   favicon: images/gbl-favicon.png
   
         

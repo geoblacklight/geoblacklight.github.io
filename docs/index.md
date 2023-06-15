@@ -3,9 +3,17 @@ hide:
   - toc
   - navigation
 ---
+<style>
+.md-typeset h1 {
+    visibility: hidden;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+</style>
 
+<img src="./images/geoblacklight-logo@2x.png" alt="GeoBlacklight Logo" class="center">
 
-<h1 style="text-align: center;">GeoBlacklight</h1>
 
 <h2 style="text-align: center;">A multi-institutional open-source collaboration building a </br>better way to find and share geospatial data</h2>
 
