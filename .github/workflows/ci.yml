@@ -13,13 +13,10 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - uses: actions/cache@v3
+      - uses: actions/cache@v2
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: ${{ github.ref }}
           path: .cache
-          restore-keys: |
-            mkdocs-material-
       - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
       - run: pip install neoteroi-mkdocs
       - run: mkdocs gh-deploy --force --config-file mkdocs.insiders.yml
