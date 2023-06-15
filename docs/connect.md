@@ -9,7 +9,7 @@ hide:
 ## GeoBlacklight is more than just software. It's a community. There are lots of different ways to connect and get involved.
 
 
-::cards::
+::cards:: cols=3
 
 - title: Join the Google Group
   content:     Follow general project discussions and feature announcements.
