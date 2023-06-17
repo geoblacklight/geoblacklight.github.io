@@ -19,7 +19,7 @@ hide:
 
 1. [Create a new issue on GitHub here.](https://github.com/geoblacklight/geoblacklight.github.io/issues)
 1. Include the title, description and GeoBlacklight site link in the body of the issue
-1. Upload an image to the issue that show your homepage 
+1. Upload an image to the issue that shows your homepage 
 1. Include the label "showcase" 
 1. Someone from the community will pick up the issue and add your instance to this site. It may be helpful to make a comment in Slack to make sure we are aware of the request.
 
