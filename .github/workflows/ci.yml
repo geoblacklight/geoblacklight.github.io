@@ -17,8 +17,6 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
+      - run: pip install mkdocs-material
       - run: pip install neoteroi-mkdocs
-      - run: mkdocs gh-deploy --force --config-file mkdocs.insiders.yml
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }} 
+      - run: mkdocs gh-deploy --force
