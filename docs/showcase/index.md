@@ -12,7 +12,7 @@ hide:
   image: btaa-geoportal.png
   content: The Big Ten Academic Alliance Geoportal aggregates metadata from 12 different institutions providing a single place to find and use aerial imagery, geospatial data, and scanned maps from multiple GIS data clearinghouses and library catalogs.
   url: https://geo.btaa.org
-  
+
 - title: Colorado GeoLibrary
   image: Colorado.png
   content: The Colorado GeoLibrary is a venture of the University of Colorado Boulder Libraries. The GeoLibrary provides geospatial data access to the University of Colorado and beyond. The purpose of the GeoLibrary is to collect and provide access to data from across the State of Colorado in service of our students and researchers, as well as the general public.
@@ -28,12 +28,12 @@ hide:
   image: dryad.jpg
   content: The Dryad Digital Repository is a curated resource that makes research data discoverable, freely reusable, and citable. Dryad provides a general-purpose home for a wide diversity of data types, and it participates in the Data Curation Network.
   url: https://datadryad.org/search
-  
+
 - title: GeoData@Wisconsin
   image: uwgeodata.png
   content: GeoData@Wisconsin is an online geoportal that provides discovery and access to Wisconsin geospatial data, imagery, and scanned maps.  GeoData@WI represents the holdings of the University of Wisconsin Robinson Map Library archives, plus all known open data portals maintained by Wisconsin geospatial data producers.
   url: https://geodata.wisc.edu
-  
+
 
 - title: Harvard Geospatial Library
   image: HarvardGeospatialLibrary.png
@@ -59,12 +59,17 @@ hide:
   image: earthworks.jpg
   content: EarthWorks is Stanford University Libraries discovery tool for Geographic Information Systems (GIS) data. It combines data sources from many institutions allowing users to search through tens of thousands of geospatial datasets.
   url: https://earthworks.stanford.edu
-  
+
 
 - title: University of California Berkeley – GeoData Portal
   image: ucberkeley.png
   content: The UC Berkeley Library developed GeoData@UC Berkeley to help users find geospatial data and maps. Much of the content is freely available, but some datasets are restricted to UC Berkeley affiliated users.
   url: https://geodata.lib.berkeley.edu/
+
+- title: University of Massachusetts Amherst – Portal for Geospatial Data
+  image: umass.png
+  content: UMAP GeoData is the UMass Amherst Libraries' discovery platform for finding geospatial content, including datasets, aerial photos, and scanned maps. All content is publicly available.
+  url: https://geodata.library.umass.edu/
 
 - title: University of Texas at Austin - Texas GeoData Portal
   image: texas_geodata_portal.png
@@ -77,5 +82,3 @@ hide:
 ## Add to the Showcase
 
 If your institution or organization has adopted GeoBlacklight and you would like to add your instance to the project page, [see the instructions to contribute](submit.md).
-
-
