@@ -3,7 +3,7 @@
 
 ## About
 
-This site provides the public facing website for the GeoBlacklight community.
+This site provides the public-facing website for the GeoBlacklight community.
 
 ### Written in: [Markdown language](https://daringfireball.net/projects/markdown/)
 
@@ -31,7 +31,6 @@ This is the working branch containing the content for the site using Markdown.
 
 * **readme.md**: the file you are reading right now
 * **mkdocs.yml**: the configuration file that identifies the theme, the extensions, and the navigation
-* **mkdocs.insiders.yml**: a configuration file for the blog
 * **docs** folder
 	*  various markdown (*.md) documents: The content for the site. These are organized for the public navigation menu in the nav section of **mkdocs.yml**.
 	*  	`/blog`
@@ -131,13 +130,8 @@ This plugin groups text and images into grids or boxes based on simplified input
 
 ### Differences from local server previews and public view
 
-As of June 2023, the geoblacklight.github.io site is being published via the sponsored version of Material for MkDocs, known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This enables us to use the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/).  
+As of September 2023, the geoblacklight.github.io site is being published via the free version of Material for MkDocs. This is a change from the first iteration, which used a sponsored version known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This change happened because the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/) is now included in the free version.  
 
-Contributors will not see the blog when serving and previewing the site locally. However, the posts will show up online when they are pushed to GitHub.
-
-We will reassess this in a few months to determine if it is a viable model going forward.  In the meantime, if you would like to contribute a blog post, please contact the Community Coordinator (@majew030) on Slack or make a new GitHub issue.
-
-------
 
 Questions about this repository or other elements of GeoBlacklight?
 
