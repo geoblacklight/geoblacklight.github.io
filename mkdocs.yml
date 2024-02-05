@@ -1,6 +1,6 @@
 site_name: GeoBlacklight
 site_url: https://geoblacklight.org
-copyright: GeoBlacklight Community &copy; 2015 - 2023
+copyright: GeoBlacklight Community &copy; 2015 - 2024
 theme:
   name: material
   logo: images/gbl-favicon.png
@@ -11,6 +11,7 @@ theme:
     primary: white
     
   features:
+    - content.code.copy
     - navigation.expand
     - navigation.indexes
     - navigation.tabs
@@ -44,6 +45,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg

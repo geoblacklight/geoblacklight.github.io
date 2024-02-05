@@ -74,12 +74,6 @@ To get started, follow the steps below.  It may also be helpful to visit the Mat
 This command will install all the necessary modules for the mkdocs platform and the Material theme together.
 
 
-2. Next, install the [Neoteroi Cards](https://www.neoteroi.dev/mkdocs-plugins/cards/) plugin:
-
-`pip install neoteroi-mkdocs`
-
-This plugin groups text and images into grids or boxes based on simplified input files. We use this plugin to create the Showcase page and to make it easy for community members to contribute new instances. [See the Submit page for more instructions on adding to the Showcase page.](https://geoblacklight.org/showcase/submit)
-
 ### Edit the website
 
 1. Clone or fork the geoblacklight.github.io repository
