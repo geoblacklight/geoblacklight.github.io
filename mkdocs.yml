@@ -25,7 +25,6 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/neoteroi-cards.css
   
 markdown_extensions:
   - attr_list
