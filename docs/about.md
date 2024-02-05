@@ -92,32 +92,43 @@ Visit the [Connect](https://geoblacklight.org/connect.html) page to join our onl
 
 The GeoBlacklight software stack consists of several open source software projects which work together to enable a better discovery experience. 
 
-::cards::
+<div class="grid cards" markdown>
 
-- title: GeoBlacklight 
-  content: GeoBlacklight is the main discovery interface for geospatial data. It is developed as a Ruby on Rails engine and built on top of the popular open-source discovery interface Blacklight.
+- ### GeoBlacklight 
+	  
+	GeoBlacklight is the main discovery interface for geospatial data. It is developed as a Ruby on Rails engine and built on top of the popular open-source discovery interface Blacklight.
   
-- title: Dockerized GeoBlacklight  
-  content: Developers from Harvard University have created a built instance of GeoBlacklight in a Docker context. This will allow new and existing users to test and develop an instance of GeoBlacklight within the Docker environment.
-  url: https://github.com/harvard-lts/GeoBlacklightDockerized
+- ### Dockerized GeoBlacklight  
+	  
+	Developers from Harvard University have created a built instance of GeoBlacklight in a Docker context. This will allow new and existing users to test and develop an instance of GeoBlacklight within the Docker environment.
+  
+	https://github.com/harvard-lts/GeoBlacklightDockerized
 
-- title: OpenGeoMetadata
-  content: GeoBlacklight is built to use the OpenGeoMetadata schema, which is designed for GIS resource discovery and focuses mainly on discovery use cases. Text search, faceted search and refinement, and spatial search and relevancy are among the primary features that the schema enables.
-  url: https://opengeometadata.org
+- ### OpenGeoMetadata
+	  
+	GeoBlacklight is built to use the OpenGeoMetadata schema, which is designed for GIS resource discovery and focuses mainly on discovery use cases. Text search, faceted search and refinement, and spatial search and relevancy are among the primary features that the schema enables.
+	  
+	https://opengeometadata.org
 
-- title: OpenIndexMaps
-  content: A community format for sharing index maps in GeoBlacklight and a repository that hosts community-produced GeoJSON index maps that facilitate discovery within GeoBlacklight portals.
-  url: https://openindexmaps.org/
+- ### OpenIndexMaps
+	  
+	A community format for sharing index maps in GeoBlacklight and a repository that hosts community-produced GeoJSON index maps that facilitate discovery within GeoBlacklight portals.
+	  
+	https://openindexmaps.org/
   
-- title: GeoBlacklight Sidecar images
-  content: This GeoBlacklight plugin captures remote images from geographic web services and saves them locally. 
-  url: https://github.com/geoblacklight/geoblacklight_sidecar_images
+- ### GeoBlacklight Sidecar images
+	  
+	This GeoBlacklight plugin captures remote images from geographic web services and saves them locally. 
+	  
+	https://github.com/geoblacklight/geoblacklight_sidecar_images
   
-- title: Geomonitor
-  content: GeoMonitor is a Ruby on Rails application used to monitor geowebservices. It was built out of the premise that users who are looking for and find data should actually be able to access and use it. The application is setup to periodically monitor WMS web services and log data on a layers availability.
-  url: https://github.com/geoblacklight/geo_monitor
+- ### Geomonitor
+	  
+	GeoMonitor is a Ruby on Rails application used to monitor geowebservices. It was built out of the premise that users who are looking for and find data should actually be able to access and use it. The application is setup to periodically monitor WMS web services and log data on a layers availability.
+	  
+	https://github.com/geoblacklight/geo_monitor
   
-::/cards::
+</div>
 
 ## GeoBlacklight Contributors
 
