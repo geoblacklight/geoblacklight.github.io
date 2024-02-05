@@ -44,6 +44,9 @@ This is custom CSS for geoblacklight.org.  The default text in the Material Them
       font-size: 1.3em;
 }
 
+.md-footer-nav {
+  display: none;
+}
 
 /* BLOG TITLES */
 a.toclink{

@@ -1,6 +1,6 @@
 site_name: GeoBlacklight
 site_url: https://geoblacklight.org
-copyright: GeoBlacklight Community &copy; 2015 - 2023
+copyright: GeoBlacklight Community &copy; 2015 - 2024
 theme:
   name: material
   logo: images/gbl-favicon.png
@@ -16,7 +16,6 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.footer
     - toc.follow
     - toc.integrate
     - tags: {}
@@ -46,8 +45,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   
 plugins:
   - search
@@ -75,13 +74,58 @@ extra:
 
 nav:
 - Home: 'index.md'
-- About: 'about.md'
+- About: 
+      - 'About': 'about.md'
+      - 'Contributing': 'contributing.md'
+
+- How To Guides:
+    - Install:
+        - 'Quick Start': 'documentation/geoblacklight_quick_start.md'
+        - 'Getting Started - Developers Guide': 'documentation/getting_started_developers.md'
+        - 'Tutorials': 'documentation/tutorials.md'
+    - Upgrade:
+        - 'Upgrade to Version 4.0': 'documentation/upgrade_version_4_0.md'
+        - 'Upgrade to Version 2.0': 'documentation/upgrade_version_2_0.md'
+        
+    - Leaflet:
+        - 'Add Centroid Clusters': 'documentation/homepage_map_centroid_clusters.md'
+        - 'Add Leaflet Controls': 'documentation/adding_leaflet_controls.md'
+        - 'Configure Leaflet for Retina Displays': 'documentation/leaflet_retina_configuration.md'
+        - 'Switch Default Basemap': 'documentation/default_basemap.md'
+        - 'Dynamic Basemap Switching': 'documentation/dynamic_basemap_switching.md'
+        
+    - Images and Icons:
+        - 'Add Mirador IIIF Viewer': 'documentation/adding_mirador_viewer.md'
+        - 'Add Thumbnail Images': 'documentation/item_images.md'
+        - 'Add SVG Icons': 'documentation/adding_svg_icons.md'
+        
+    - Metadata Display:
+        - 'Add Data Relations Widget': 'documentation/data_relations_widget.md'
+        - 'Render HTML in Metadata Fields': 'documentation/rendering_html_from_description.md'
+      
+- Reference:
+      - General:
+            - 'Glossary': 'documentation/glossary.md'
+            - 'Metadata': 'documentation/metadata.md'
+            - 'Software Releases': 'documentation/releases.md'
+      - Application Files:
+            - 'Settings': 'documentation/settings.md'
+            - 'Catalog Controller': 'documentation/catalog_controller.md'
+      - Running in Production:
+            - 'Hardware Recommendations': 'documentation/hardware_recommendations.md'
+            - 'Implementation Recommendations': 'documentation/implementation_recommendations.md'
+            - 'Periodic Maintenance': 'documentation/periodic_maintenance.md'
+      - Object Formats:
+            - 'Index Maps': 'documentation/index_maps.md'
+            - 'GeoPackages': 'documentation/geopackages.md'
+            - 'JSONs and GeoJSONs': 'documentation/json-geojson.md'
+
 - Showcase: 
       - showcase/index.md
 - Connect: 'connect.md'
 - Blog:
       - blog/index.md
-- Documentation: 'https://geoblacklight.org/docs'
+     
 
 
 
