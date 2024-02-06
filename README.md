@@ -44,7 +44,6 @@ This is the working branch containing the content for the site using Markdown.
 	      *    `index.md`: all the GeoBlacklight instances listed on the showpage
 	*   `/stylesheets`
 		*   `extra.css` : a CSS file that can define colors, fonts, and other customizations for the site
-		*   `neoteroi.css`: a CSS file just for the content displayed in grids (boxes)
 
 
 
@@ -120,11 +119,6 @@ This command will install all the necessary modules for the mkdocs platform and 
 
 1. Accept Pull Request and merge changes to the main branch
 2. GitHub Actions will automatically push the changes to the gh-pages branch
-
-
-### Differences from local server previews and public view
-
-As of September 2023, the geoblacklight.github.io site is being published via the free version of Material for MkDocs. This is a change from the first iteration, which used a sponsored version known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This change happened because the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/) is now included in the free version.  
 
 
 Questions about this repository or other elements of GeoBlacklight?
