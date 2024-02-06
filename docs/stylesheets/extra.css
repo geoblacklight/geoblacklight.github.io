@@ -114,4 +114,8 @@ div.cell {
     transition:border .25s, box-shadow .25s
 }
 
+/* wraps text for embedded long code lines */
+code {
+  white-space : pre-wrap !important;
+}
 

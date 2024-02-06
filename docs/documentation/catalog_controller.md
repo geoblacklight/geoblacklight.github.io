@@ -1,4 +1,4 @@
-## Updating the Catalog Controller
+# Update the Catalog Controller
 
 A number of other configurations you may need to update are handled in your `app/controllers/catalog_controller.rb` file. This file has plenty of code comments to help you out with the details, so the following is just a brief summary of the main configurations you can make within it.
 

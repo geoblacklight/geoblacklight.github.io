@@ -1,4 +1,4 @@
-## Guide to Settings
+# Congifure the Settings
 
 A lot of configuration for your GeoBlacklight instance will be handled in the [settings.yml](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/settings.yml) file.
 

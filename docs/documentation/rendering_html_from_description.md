@@ -1,5 +1,3 @@
-## Rendering line breaks or HTML from the Description field
-
 Blacklight includes a helper_method argument for catalog_controller.rb field configuration. You can use that helpful technique to output whatever you need from the solr field value.
 
 An example for adding line breaks and even HTML to a dc_description_s field would work like this:
@@ -24,9 +22,10 @@ config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itempro
 
 3) Example description value with line breaks ("\n\n") and some HTML markup, too:
 
-```text
-  "dc_description_s": "This table shows all 911 police emergency response and officer-initiated calls for service in the City of Detroit since September 20, 2016. Emergency response calls are the result of people calling 911 to request police services.\n\n Officer-initiated calls include traffic stops, street investigations and other policing activities (such as observing crimes in progress) where police officers initiate the response. The table includes all calls taken, dispatch, travel, and total response times for those calls serviced by a police agency. The data also include the responding agency, unit, call type and category of each call. Should you have questions about this dataset, you may contact the Commanding Officer of the Detroit Police Department's Crime Intelligence Unit at 313-596-2250 or <a href=\"mailto:CrimeIntelligenceBureau@detroitmi.gov\">CrimeIntelligenceBureau@detroitmi.gov</a>. ",
+```JSON
+  "dc_description_s": "This table shows all 911 police emergency response and officer-initiated calls for service in the City of Detroit since September 20, 2016. Emergency response calls are the result of people calling 911 to request police services. \n\n Officer-initiated calls include traffic stops, street investigations and other policing activities (such as observing crimes in progress) where police officers initiate the response. The table includes all calls taken, dispatch, travel, and total response times for those calls serviced by a police agency. The data also include the responding agency, unit, call type and category of each call. Should you have questions about this dataset, you may contact the Commanding Officer of the Detroit Police Department's Crime Intelligence Unit at 313-596-2250 or <a href= "mailto:CrimeIntelligenceBureau@detroitmi.gov\">CrimeIntelligenceBureau@detroitmi.gov</a>. ",
 ```
+
 
 4) Now the show page will render like this
 
