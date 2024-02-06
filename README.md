@@ -44,7 +44,6 @@ This is the working branch containing the content for the site using Markdown.
 	      *    `index.md`: all the GeoBlacklight instances listed on the showpage
 	*   `/stylesheets`
 		*   `extra.css` : a CSS file that can define colors, fonts, and other customizations for the site
-		*   `neoteroi.css`: a CSS file just for the content displayed in grids (boxes)
 
 
 
@@ -73,12 +72,6 @@ To get started, follow the steps below.  It may also be helpful to visit the Mat
 
 This command will install all the necessary modules for the mkdocs platform and the Material theme together.
 
-
-2. Next, install the [Neoteroi Cards](https://www.neoteroi.dev/mkdocs-plugins/cards/) plugin:
-
-`pip install neoteroi-mkdocs`
-
-This plugin groups text and images into grids or boxes based on simplified input files. We use this plugin to create the Showcase page and to make it easy for community members to contribute new instances. [See the Submit page for more instructions on adding to the Showcase page.](https://geoblacklight.org/showcase/submit)
 
 ### Edit the website
 
@@ -126,11 +119,6 @@ This plugin groups text and images into grids or boxes based on simplified input
 
 1. Accept Pull Request and merge changes to the main branch
 2. GitHub Actions will automatically push the changes to the gh-pages branch
-
-
-### Differences from local server previews and public view
-
-As of September 2023, the geoblacklight.github.io site is being published via the free version of Material for MkDocs. This is a change from the first iteration, which used a sponsored version known as "[Insiders](https://squidfunk.github.io/mkdocs-material/insiders/)." This change happened because the [blog plugin](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/) is now included in the free version.  
 
 
 Questions about this repository or other elements of GeoBlacklight?
