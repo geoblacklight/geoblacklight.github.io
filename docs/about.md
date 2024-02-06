@@ -3,74 +3,56 @@ hide:
 
 ---
 
-GeoBlacklight is an open-source [Ruby on Rails](https://rubyonrails.org/) software application for discovering geospatial content, including GIS datasets, web services, and digitized paper maps. Based on the open source software project [Blacklight](https://projectblacklight.org/), GeoBlacklight began in 2014 as a collaboration by MIT, Princeton, and Stanford. As of 2021, over 25 academic libraries and cultural heritage institutions have adopted GeoBlacklight.
+GeoBlacklight is an open-source software application for discovering geospatial content, including GIS datasets, web services, and digitized paper maps.
 
-Discovery services and metadata are key challenges for organizations who provide geospatial data. GeoBlacklight connects expertise from the digital library and geospatial communities to provide a better experience for users to find geospatial data.
+## The GeoBlacklight Ecosystem
 
-## Our Community
+### Technical Core Stack
 
-Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.
+- GeoBlacklight: A [Ruby on Rails](https://rubyonrails.org/) engine 
+- [Blacklight](https://projectblacklight.org/): A widely-used open-source discovery framework 
+- [Apache Solr](https://solr.apache.org): Search index to make geospatial metadata searchable. 
+- SQL database: For production uses, GeoBlacklight installations require an SQL database such as MySQL, MariaDB, or PostgreSQL. 
 
-Anyone interested in spatial data infrastructures, libraries, GIS, maps, data curation, open source software, and related topics, is welcome to join us. Depending on their skills and interests, participants contribute to the community in any number of ways (for instance, by attending meetings, writing documentation, developing metadata best practices, engaging in outreach, and writing code). Participating in the community is especially beneficial to those who are implementing or maintaining GeoBlacklight as a spatial data discovery interface within their own home institutions.
+### External Services
 
-Visit the [Connect](https://geoblacklight.org/connect.html) page to join our online community.
+One of GeoBlacklight's strengths is its ability to serve as a bridge to geospatial content hosted on various platforms, simplifying the way users find and interact with data. Instead of storing data directly, GeoBlacklight focuses on integrating with existing data repositories and web services.GeoBlacklight does this through providing useful preview, download, and exports of open standards-based services, including Web Mapping Services (WMS), Web Feature Services (WFS), ArcGIS Rest API, and International Image Interoperability Framework (IIIF). There is also support for externally referenced metadata viewing and file download support.
 
-### Events
+This includes offering previews, downloads, and access to data through web standards such as Web Mapping Services (WMS), Web Feature Services (WFS), the ArcGIS Rest API, and the International Image Interoperability Framework (IIIF). Additionally, GeoBlacklight enables supplemental metadata views and downloads.
 
-- **Every month:** [Zoom meetings](https://z.umn.edu/gbl-meetings) to share project updates and to discuss topical issues.
+Examples of technology providing external services:
 
-- **2x per year:** Community Sprints are similar to a traditional code sprint but also incorporate activities around documentation, metadata, governance, and more.
+- GeoServer:  previews and generated downloads via OGC Web Services
+- ArcGIS Platforms:  previews via ArcGIS REST Services
+- Various IIIF Servers:  previews and generated downloads of scanned images
+- Digital Repositories: direct downloads of datasets and related files
 
-- **Annually:** [Geo4LibCamp](https://geo4libcamp.org/) is a hands-on meeting to bring together those building repository services for geospatial data. The main focus is to share best-practices, solve common problems, and address technical issues with integrating geospatial data into a repository and associated services.
+### Metadata
 
-### Roles
+GeoBlacklight uses the OpenGeoMetadata Aardvark Metadata Schema by default, which has been designed to privilege discovery use cases. It supports text searching, faceted searching and refinement, and spatial searching to improve relevance and findability of data.  [Visit OpenGeoMetadata for more information and full documentation.](https://opengeometadata.org) 
 
-- **Community Coordinator** (Karen Majewicz)
+	
+## Key  Features
 
-	- facilitates community monthly meetings and sets agendas
-	- stages project boards for community sprints and coordinates stand-up meetings
+* Text and spatial search with ranking
+* Facet by institution, year, publisher, data type, access, format
+* Facet by place, subject
+* Results list view with icons, snippets, and map view of bounding boxes
+* Spatial search on map in result list
+* Detail map view for WMS features with feature inspection
+* IIIF scanned map viewer
+* Download the original file (Shapefile, GeoTIFF, GeoJSON, Esri Geodatabase, GeoPackage, or other SQLite database)
+* Download generated Shapefile/GeoTIFF/KML/GeoJSON
+* Built-in sample Solr 8.3+ index
+* Built on top of [Blacklight platform](https://projectblacklight.org)
+  * Search history
+  * Bookmark layers
+  * Share link via email
+  * Sort by relevance, year, title
+  * Customizable skin and facets
+  
 
-- **Code of Conduct team**
-
-	- responsible for responding to [Code of Conduct](https://github.com/geoblacklight/geoblacklight/blob/main/CODE_OF_CONDUCT.md) reports.
-
-
-## Our Development Practices
-
-
-- **Open source model**: GeoBlacklight is an open source software project licensed using the Apache License, version 2.0. Our development practices have been codified in a [contribution guide](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md) since December 2015 and we use [semantic versioning](https://semver.org/) to release the Ruby on Rails engine to RubyGems. Changes are made to the codebase using pull requests to the GitHub source code repository.
-
-- **Connected frameworks**: Many of the development practices for the GeoBlacklight project have foundations in other open source software communities. A strategic design decision was made to build on existing pools of expertise in organizations with [Blacklight](https://projectblacklight.org/) and [Samvera](https://samvera.org/) rather than build a completely custom system. The project also relies heavily on configuration and extensibility as useful patterns for adopters making customizations.
-
-- **Decision-making**: Much of the technical decision-making is driven from the original [GeoBlacklight Concept Design document](/pdfs/GeoBlacklight-Concept-Design.pdf) and has been further distilled into our [GeoBlacklight Technical Values](#geoblacklight-technical-values). Major and minor decisions are made using informal consensus.
-
-- **Testing**: GeoBlacklight has Continuous Integration Testing, and tests are expected to be written with code contributions to the project. The project also implements both Ruby and JavaScript style guides to ensure a stylistically similar codebase.
-
-- **Funding**: There is no funding model for GeoBlacklight, and most development comes through volunteered or assigned time from contributing organizations. Some projects have received grants or dedicated funds to build their GeoBlacklight applications. Our community also includes private vendors and independent freelancers that have contributed to the project through contracted work.
-
-
-
-
-## Application Features
-
-- **Technical Stack**: GeoBlacklight is a Ruby on Rails engine designed as a plugin for the popular open source discovery framework, [Blacklight](https://projectblacklight.org/). GeoBlacklight has direct software dependencies to Blacklight and Ruby on Rails. It also requires searchable metadata through the Apache Solr project. For production uses, GeoBlacklight installations often require a SQL database such as MySQL, MariaDB, or PostgreSQL. 
-
-- **External service integration**: GeoBlacklight provides a discovery layer for content that is oftentimes hosted elsewhere. Rather than try to provide a repository to the data itself and navigate the complexities of different adopters existing systems, GeoBlacklight relies on providing integration for existing datastores and web services. GeoBlacklight does this through providing useful preview, download, and exports of open standards-based services, including Web Mapping Services (WMS), Web Feature Services (WFS), ArcGIS Rest API, and International Image Interoperability Framework (IIIF). There is also support for externally referenced metadata viewing and file download support.
-
-- **Metadata**: The GeoBlacklight Metadata Schema has been designed to privilege discovery use cases. Text search, faceted search & refinement, and spatial search & relevancy are among the primary features that the schema enables. [Visit OpenGeoMetadata for more information and full documentation.](https://opengeometadata.org) Metadata schema features:
-
-	- based on Dublin Core, with custom elements added for spatial values
-
-	- designed for discovery - to help users find items
-
-	- _not_ designed for complete technical documentation, such as a GIS dataset's processing history
-
-	- includes elements for external links, such as downloads, web services, or supplemental metadata
-
-	- interoperable for the [OpenGeoMetadata](https://opengeometadata.org) federated metadata sharing community
-
-
-## GeoBlacklight Technical Values
+##  Technical Values
 
 
 - Our core focus is **geospatial discovery**. This focus initially was limited to discretely catalogued data objects, but has expanded over time to include a wider range of information sources.

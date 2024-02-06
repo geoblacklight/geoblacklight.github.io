@@ -54,6 +54,7 @@ markdown_extensions:
   
 plugins:
   - search
+  - table-reader
   - blog:
       blog_dir: blog
 #       blog_toc: true
@@ -78,57 +79,46 @@ extra:
 
 nav:
 - Home: 'index.md'
-- About: 
-      - 'About': 'about.md'
-      - 'Contributing': 'contributing.md'
-
-- How To Guides:
-    - Install:
-        - 'Quick Start': 'documentation/geoblacklight_quick_start.md'
-        - 'Getting Started - Developers Guide': 'documentation/getting_started_developers.md'
-        - 'Tutorials': 'documentation/tutorials.md'
-    - Upgrade:
-        - 'Upgrade to Version 4.0': 'documentation/upgrade_version_4_0.md'
-        - 'Upgrade to Version 2.0': 'documentation/upgrade_version_2_0.md'
-        
-    - Leaflet:
-        - 'Add Centroid Clusters': 'documentation/homepage_map_centroid_clusters.md'
-        - 'Add Leaflet Controls': 'documentation/adding_leaflet_controls.md'
-        - 'Configure Leaflet for Retina Displays': 'documentation/leaflet_retina_configuration.md'
-        - 'Switch Default Basemap': 'documentation/default_basemap.md'
-        - 'Dynamic Basemap Switching': 'documentation/dynamic_basemap_switching.md'
-        
-    - Images and Icons:
-        - 'Add Mirador IIIF Viewer': 'documentation/adding_mirador_viewer.md'
-        - 'Add Thumbnail Images': 'documentation/item_images.md'
-        - 'Add SVG Icons': 'documentation/adding_svg_icons.md'
-        
-    - Metadata Display:
-        - 'Add Data Relations Widget': 'documentation/data_relations_widget.md'
-        - 'Render HTML in Metadata Fields': 'documentation/rendering_html_from_description.md'
+- About: 'about.md'
+- Community: 'community.md'
+- Showcase: 
+      - showcase/index.md
+- Blog:
+      - blog/index.md
       
-- Reference:
-      - General:
-            - 'Glossary': 'documentation/glossary.md'
-            - 'Metadata': 'documentation/metadata.md'
-            - 'Software Releases': 'documentation/releases.md'
-      - Application Files:
+- Documentation:
+      - Install:
+            - 'Quick Start': 'documentation/geoblacklight_quick_start.md'
+            - 'Getting Started - Developers Guide': 'documentation/getting_started_developers.md'
+            - 'Tutorials': 'documentation/tutorials.md'
+      
+      - Upgrade:
+            - 'Upgrade to Version 4.0': 'documentation/upgrade_version_4_0.md'
+            - 'Upgrade to Version 2.0': 'documentation/upgrade_version_2_0.md'
+      
+      - Customization:
             - 'Configure the Settings': 'documentation/settings.md'
-            - 'Update the Catalog Controller': 'documentation/catalog_controller.md'
+            - 'Update the Catalog Controller': 'documentation/catalog_controller.md'  
+            - 'Customize Leaflet': 'documentation/leaflet.md'
+            - 'Add Mirador IIIF Viewer': 'documentation/adding_mirador_viewer.md'
+            - 'Add Thumbnail Images': 'documentation/item_images.md'
+            - 'Add SVG Icons': 'documentation/adding_svg_icons.md'
+            - 'Add Data Relations Widget': 'documentation/data_relations_widget.md'
+            - 'Render HTML in Metadata Fields': 'documentation/rendering_html_from_description.md'
+            
       - Running in Production:
             - 'Hardware Recommendations': 'documentation/hardware_recommendations.md'
             - 'Implementation Recommendations': 'documentation/implementation_recommendations.md'
             - 'Periodic Maintenance': 'documentation/periodic_maintenance.md'
-      - Object Formats:
+      - Reference:
+            - 'Glossary': 'documentation/glossary.md'
+            - 'Settings.yml fields': 'documentation/settings-yml.md'
+            - 'Metadata Fields': 'documentation/metadata.md'
+            - 'Software Releases': 'documentation/releases.md'    
             - 'Index Maps': 'documentation/index_maps.md'
             - 'GeoPackages': 'documentation/geopackages.md'
             - 'JSONs and GeoJSONs': 'documentation/json-geojson.md'
 
-- Showcase: 
-      - showcase/index.md
-- Connect: 'connect.md'
-- Blog:
-      - blog/index.md
      
 
 
