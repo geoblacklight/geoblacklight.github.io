@@ -1,7 +1,4 @@
-##  Index Maps in GeoBlacklight
-
-
-### Index Maps: Introduction
+## Index Maps: Introduction
 
 The 2020 Geo4LibCamp featured a [workshop](https://kgjenkins.github.io/openindexmaps-workshop/) on index maps that provides useful information if you are new to index maps and want a basic primer. Many of the links below will lead you to relevant parts of this workshop.
 
@@ -9,7 +6,7 @@ For a conceptual introduction to index maps (i.e. what are index maps anyway?), 
 
 Here are examples of "live" index maps hosted within the GeoBlacklight instances of [Cornell](https://cugir.library.cornell.edu/catalog/cugir-008187) and [Stanford](https://earthworks.stanford.edu/catalog/stanford-qb865wf0229).  
 
-### Making Index Maps
+## Making Index Maps
 
 Before making index maps for use in GeoBlacklight, it is important to be familiar with OpenIndexMaps, a specific index map standard that is used by the GeoBlacklight community. For an introduction to this standard, see [here](https://kgjenkins.github.io/openindexmaps-workshop/openindexmaps). For more detailed information on making index maps according to the OpenIndexMaps standard, see [here](https://openindexmaps.org/).
 
@@ -20,7 +17,7 @@ When working with GeoJSON, it is recommended to use QGIS. For a quick overview o
 The following tutorials cover how to [make a polygon index map from an existing shapefile](https://kgjenkins.github.io/openindexmaps-workshop/exercise1), [how to make a point index map from a spreadsheet containing coordinates](https://kgjenkins.github.io/openindexmaps-workshop/exercise2), [how to create a grid index map from scratch](https://kgjenkins.github.io/openindexmaps-workshop/exercise3), and [how to create a polygon index map using virtual layer magic](https://kgjenkins.github.io/openindexmaps-workshop/exercise4).  
 
 
-### Adding, Customizing, and Displaying Index Maps
+## Adding, Customizing, and Displaying Index Maps
 
 [#588](https://github.com/geoblacklight/geoblacklight/pull/588) added index map discovery
 and preview to GeoBlacklight. Index map preview can be added to a layer by adding an accessible url to a GeoJSON file in a layer's `dct_references_s` section:
@@ -35,7 +32,7 @@ The index map preview can be customized by overriding the Handlebars template `i
 
 [#759](https://github.com/geoblacklight/geoblacklight/pull/759) added selection styling for GeoJSON index map features and adjusted where style customizations are set. Styling for index map features can be customized in `settings.yml`. Any style that is set in the `DEFAULT` section will be applied to all feature states unless overwritten within each specific state. Style options follow the [Leaflet Path Options](https://leafletjs.com/reference-1.4.0.html#path), so any new style added should be from those available.
 
-### Metadata for Index Maps
+## Metadata for Index Maps
 
 Here are some recommendations to keep in mind when generating metadata for index maps:
 
@@ -45,7 +42,7 @@ Here are some recommendations to keep in mind when generating metadata for index
 
 * The Source field (`dc_source_sm` or `dct_source_sm`) in the metadata records of the underlying data should should reference the index map, since the index map can be seen as a "source dataset" that offers a guide to the broader collection.
 
-### Committing GeoBlacklight Index Maps to the OpenIndexMaps Github repository
+## Committing GeoBlacklight Index Maps to the OpenIndexMaps Github repository
 
 Once you have generated your index map and its associated metadata, the index map must go "live" on the web. There are different ways to pursue the task of making an index map go "live", but the recommended approach is to commit the map/GeoJSON to OpenIndexMaps' [Github Repository](https://github.com/OpenIndexMaps), which facilitates the discovery and sharing of index maps across institutions.
 
