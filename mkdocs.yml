@@ -85,7 +85,7 @@ nav:
 - How To Guides:
     - Install:
         - 'Quick Start': 'documentation/geoblacklight_quick_start.md'
-        - 'Getting Started - Developers Guide': 'documentation/getting_started_developers.md'
+        - 'For Developers': 'documentation/developers.md'
         - 'Tutorials': 'documentation/tutorials.md'
     - Upgrade:
         - 'Upgrade to Version 4.0': 'documentation/upgrade_version_4_0.md'
