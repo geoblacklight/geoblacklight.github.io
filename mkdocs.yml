@@ -118,6 +118,7 @@ nav:
       - Running in Production:
             - 'Hardware Recommendations': 'documentation/hardware_recommendations.md'
             - 'Implementation Recommendations': 'documentation/implementation_recommendations.md'
+            - 'Using an External Solr Instance': 'documentation/external_solr.md'
             - 'Periodic Maintenance': 'documentation/periodic_maintenance.md'
       - Object Formats:
             - 'Index Maps': 'documentation/index_maps.md'
