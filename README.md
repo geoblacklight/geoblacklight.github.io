@@ -126,3 +126,15 @@ Questions about this repository or other elements of GeoBlacklight?
 Submit application related issues here: https://github.com/geoblacklight/geoblacklight/issues
 
 Report bugs and typos on the website itself here:  https://github.com/geoblacklight/geoblacklight.github.io/issues
+
+### Updating d2 diagrams
+
+For any diagrams created with [terrastruct/d2](https://github.com/terrastruct/d2), you can edit the appropriate .d2 file and then generate the diagram image with the following command:
+
+```
+d2 geoblacklight-structure.d2 geoblacklight-structure.png --sketch --pad=50
+```
+
+Add the `-w` flag to open a preview and automatically re-generate the diagram as you workon the .d2 file.
+
+For more info, see the [d2 documentation](https://d2lang.com/tour/intro/).
