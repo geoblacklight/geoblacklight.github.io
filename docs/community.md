@@ -1,0 +1,162 @@
+Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.
+
+Discovery services and metadata are key challenges for organizations who provide geospatial data. GeoBlacklight connects expertise from the digital library and geospatial communities to provide a better experience for users to find geospatial data.
+
+Anyone interested in spatial data infrastructures, libraries, GIS, maps, data curation, open source software, and related topics, is welcome to join us. Depending on their skills and interests, participants contribute to the community in any number of ways (for instance, by attending meetings, writing documentation, developing metadata best practices, engaging in outreach, and writing code). Participating in the community is especially beneficial to those who are implementing or maintaining GeoBlacklight as a spatial data discovery interface within their own home institutions.
+
+Visit the [Connect](https://geoblacklight.org/connect.html) page to join our online community.
+
+
+## Our Development Practices
+
+### 
+
+- **Open source model**: GeoBlacklight is an open source software project licensed using the Apache License, version 2.0. Our development practices have been codified in a [contribution guide](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md) since December 2015 and we use [semantic versioning](https://semver.org/) to release the Ruby on Rails engine to RubyGems. Changes are made to the codebase using pull requests to the GitHub source code repository.
+
+- **Connected frameworks**: Many of the development practices for the GeoBlacklight project have foundations in other open source software communities. A strategic design decision was made to build on existing pools of expertise in organizations with [Blacklight](https://projectblacklight.org/) and [Samvera](https://samvera.org/) rather than build a completely custom system. The project also relies heavily on configuration and extensibility as useful patterns for adopters making customizations.
+
+- **Decision-making**: Much of the technical decision-making is driven from the original [GeoBlacklight Concept Design document](/pdfs/GeoBlacklight-Concept-Design.pdf) and has been further distilled into our [GeoBlacklight Technical Values](#geoblacklight-technical-values). Major and minor decisions are made using informal consensus.
+
+- **Testing**: GeoBlacklight has Continuous Integration Testing, and tests are expected to be written with code contributions to the project. The project also implements both Ruby and JavaScript style guides to ensure a stylistically similar codebase.
+
+- **Funding**: There is no funding model for GeoBlacklight, and most development comes through volunteered or assigned time from contributing organizations. Some projects have received grants or dedicated funds to build their GeoBlacklight applications. Our community also includes private vendors and independent freelancers that have contributed to the project through contracted work.
+
+- **Events**:
+
+      - **Every month:** [Zoom meetings](https://z.umn.edu/gbl-meetings) to share project updates and to discuss topical issues.
+      
+      - **2x per year:** Community Sprints are similar to a traditional code sprint but also incorporate activities around documentation, metadata, governance, and more.
+      
+      - **Annually:** [Geo4LibCamp](https://geo4libcamp.org/) is a hands-on meeting to bring together those building repository services for geospatial data. The main focus is to share best-practices, solve common problems, and address technical issues with integrating geospatial data into a repository and associated services.
+
+- **Roles**:
+
+      - **Community Coordinator** (Karen Majewicz)
+            - facilitates community monthly meetings and sets agendas
+            - stages project boards for community sprints and coordinates stand-up meetings
+      
+      - **Code of Conduct team**
+            - responsible for responding to [Code of Conduct](https://github.com/geoblacklight/geoblacklight/blob/main/CODE_OF_CONDUCT.md) reports.
+
+
+
+## GeoBlacklight Contributors
+
+GeoBlacklight has been collaboratively developed by affiliates of the following institutions:
+
+* Auraria Library
+* Big Ten Academic Alliance
+* Cornell University
+* MIT Libraries
+* Harvard University Library
+* Johns Hopkins University
+* New York University Libraries
+* Princeton University Library
+* Stanford University Libraries
+* University of California San Diego
+* University of California Berkeley
+* University of California Santa Barbara
+* University of Illinois at Urbana-Champaign
+* University of Massachusetts Amherst
+* University of Minnesota Libraries
+* University of Pennsylvania Libraries
+* The University of Texas at Austin
+* University of Wisconsin-Milwaukee
+
+!!! tip "Feedback"
+
+	Did we miss your institution? Have a suggestion for this website? Create an issue on the [GeoBlacklight Website Github page here](https://github.com/geoblacklight/geoblacklight.github.io/issues).
+
+## How to Contribute
+GeoBlacklight is a collaborative open source project and contributions are welcome. This contributing guide is borrowed in part from the [Samvera Contributing Guide](https://github.com/samvera/hydra/blob/master/CONTRIBUTING.md) and the [Blacklight Contributing Wiki](https://github.com/projectblacklight/blacklight/wiki/Contributing-to-Blacklight).
+
+### Who can contribute?
+**Anyone** is welcome to contribute to GeoBlacklight. We follow a set of contribution practices to maintain a technically sustainable and stable software project for everyone.
+
+### Reporting issues
+Did you find a bug in GeoBlacklight or interested in a new feature? Report it by creating an issue on our [GitHub Issue Tracker](https://github.com/geoblacklight/geoblacklight/issues).
+
+ - You will need to have a [GitHub account](https://github.com/signup/free)
+ - For bugs, please include the following information:
+    - Provide a descriptive summary
+    - Explain the expected behavior
+    - Explain the actual behavior
+    - Provide steps to reproduce the actual behavior
+
+### GeoBlacklight Software Versioning
+GeoBlacklight follows the practice of [Semantic Versioning](https://semver.org/) for software releases. The declared semantically versioned public API includes:
+ 
+ - the [public GeoBlacklight Ruby codebase classes](https://www.rubydoc.info/gems/geoblacklight)
+ - the GeoBlacklight JavaScript interface
+ - the GeoBlacklight view interface
+
+### Contributing code or documentation
+GeoBlacklight welcomes code and documentation contributions from anyone. We follow the [pull request](https://help.github.com/articles/using-pull-requests/) model for contributing on GitHub. GeoBlacklight uses a suite of tests to express its features and protect from bugs.
+
+When proposing major new features that may introduce a breaking change, please make sure to communicate with the [community](http://geoblacklight.org/connect) so the full implications can be evaluated. Others may be able to help make these changes backwards-compatible with existing versions.
+
+#### Pull request overview
+1. Fork it ( http://github.com/my-github-username/geoblacklight/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+#### Merging Changes
+
+- Committers are discouraged from merging their own pull requests.
+- Please take the time to review the changes and get a sense of what is being changed. Things to consider:
+  - Does the commit message explain what is going on?
+  - Does the code changes have tests? _Not all changes need new tests, some changes are refactorings_
+  - Do all new methods, modules, and classes have comments? Do changed methods, modules, and classes have comments?
+  - Does the commit contain more than it should? Are two separate concerns being addressed in one commit?
+  - Did the Travis tests complete successfully?
+- If you are uncertain, bring other contributors into the conversation by creating a comment that includes their @username.
+- If you like the pull request, but want others to chime in, create a +1 comment and tag a user.
+
+
+## How to Connect
+
+<div class="grid cards" markdown>
+
+- ### Join the Google Group
+		
+	Follow general project discussions and feature announcements.
+		
+	https://groups.google.com/forum/#!forum/geoblacklight-working-group
+    
+- ### Chat on Slack
+		
+	Chat with others in the community and to work through technical questions. 
+		
+	[Join GeoBlacklight Slack](https://geoblacklight.slack.com/join/shared_invite/zt-1p7dcay40-Ye_WTt5_iCqU8rDjzhkoWw#/shared-invite/email)
+
+- ### Attend a Monthly Community Meeting
+		    
+	The GeoBlacklight Community Meeting takes place on the second Wednesday of every month. The meetings are open to anyone interested in hearing more about the status of the GeoBlacklight software and associated projects.
+		
+	https://z.umn.edu/gbl-meetings
+  
+- ### Participate in a Community Sprint
+		   
+	The GeoBlacklight Community collaborates on a 2-week sprint every Winter and Summer. Participation in the sprint is open to anyone interested in working on GeoBlacklight. While similar to a traditional code sprint, the GeoBlacklight Community Sprints also include tackling issues around documentation, metadata, community governance, and more. 
+		
+	[Read about our sprints](../blog/category/sprints/)
+
+  
+- ### Discuss on GitHub
+		  
+	Find a bug you want to report? Is documentation missing or unclear? Would you like to suggest a new feature? Anyone can create an issue on GeoBlacklight's GitHub issue tracker.
+		
+	https://github.com/geoblacklight/geoblacklight
+
+- ### Share Metadata
+	
+	GeoBlacklight gets even better when organizations share metadata. Contribute your metadata to OpenGeoMetadata or use it to populate your own GeoBlacklight installation.
+		
+	https://opengeometadata.org
+
+
+</div>
+
+
