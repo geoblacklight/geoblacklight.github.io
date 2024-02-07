@@ -12,12 +12,12 @@ theme:
     
   features:
     - content.code.copy
+    - content.code.annotate
     - navigation.expand
     - navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.footer
     - toc.follow
     - toc.integrate
     - tags: {}
@@ -40,7 +40,7 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.magiclink
   - toc:
-      toc_depth: 3
+      toc_depth: 2
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
@@ -49,11 +49,12 @@ markdown_extensions:
         kwds:
           case: lower
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   
 plugins:
   - search
+  - table-reader
   - blog:
       blog_dir: blog
 #       blog_toc: true
@@ -79,12 +80,46 @@ extra:
 nav:
 - Home: 'index.md'
 - About: 'about.md'
+- Community: 'community.md'
 - Showcase: 
       - showcase/index.md
-- Connect: 'connect.md'
 - Blog:
       - blog/index.md
-- Documentation: 'https://geoblacklight.org/docs'
+      
+- Documentation:
+      - Install:
+            - 'Quick Start': 'documentation/geoblacklight_quick_start.md'
+            - 'Getting Started - Developers Guide': 'documentation/getting_started_developers.md'
+            - 'Tutorials': 'documentation/tutorials.md'
+      
+      - Upgrade:
+            - 'Upgrade to Version 4.0': 'documentation/upgrade_version_4_0.md'
+            - 'Upgrade to Version 2.0': 'documentation/upgrade_version_2_0.md'
+      
+      - Customization:
+            - 'Configure the Settings': 'documentation/settings.md'
+            - 'Update the Catalog Controller': 'documentation/catalog_controller.md'  
+            - 'Customize Leaflet': 'documentation/leaflet.md'
+            - 'Add Mirador IIIF Viewer': 'documentation/adding_mirador_viewer.md'
+            - 'Add Thumbnail Images': 'documentation/item_images.md'
+            - 'Add SVG Icons': 'documentation/adding_svg_icons.md'
+            - 'Add Data Relations Widget': 'documentation/data_relations_widget.md'
+            - 'Render HTML in Metadata Fields': 'documentation/rendering_html_from_description.md'
+            
+      - Running in Production:
+            - 'Hardware Recommendations': 'documentation/hardware_recommendations.md'
+            - 'Implementation Recommendations': 'documentation/implementation_recommendations.md'
+            - 'Periodic Maintenance': 'documentation/periodic_maintenance.md'
+      - Reference:
+            - 'Glossary': 'documentation/glossary.md'
+            - 'Settings.yml fields': 'documentation/settings-yml.md'
+            - 'Metadata Fields': 'documentation/metadata.md'
+            - 'Software Releases': 'documentation/releases.md'    
+            - 'Index Maps': 'documentation/index_maps.md'
+            - 'GeoPackages': 'documentation/geopackages.md'
+            - 'JSONs and GeoJSONs': 'documentation/json-geojson.md'
+
+     
 
 
 

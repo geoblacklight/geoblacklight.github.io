@@ -44,6 +44,9 @@ This is custom CSS for geoblacklight.org.  The default text in the Material Them
       font-size: 1.3em;
 }
 
+.md-footer-nav {
+  display: none;
+}
 
 /* BLOG TITLES */
 a.toclink{
@@ -109,6 +112,45 @@ div.cell {
     margin: 0;
     padding: .8rem;
     transition:border .25s, box-shadow .25s
+}
+
+/* wraps text for embedded long code lines */
+code {
+  white-space : pre-wrap !important;
+}
+
+/* SPAN MULTIPLE COLUMNS */
+.spancol {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+th, td {
+    border: 1px solid var(--md-typeset-table-color);
+    border-spacing: 0;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+}
+
+.md-typeset__table {
+    line-height: 1.5;
+}
+
+.md-typeset__table table:not([class]) {
+    font-size: .74rem;
+    border-right: none;
+    font-family: monospace;
+}
+
+.md-typeset__table table:not([class]) td,
+.md-typeset__table table:not([class]) th {
+    padding: 9px;
+}
+
+/* light mode alternating table bg colors */
+.md-typeset__table tr:nth-child(2n) {
+    background-color: #f8f8f8;
 }
 
 
