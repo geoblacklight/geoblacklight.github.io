@@ -85,11 +85,10 @@ nav:
       - showcase/index.md
 - Blog:
       - blog/index.md
-      
 - Documentation:
       - Install:
             - 'Quick Start': 'documentation/geoblacklight_quick_start.md'
-            - 'Getting Started - Developers Guide': 'documentation/getting_started_developers.md'
+            - 'For Developers': 'documentation/developers.md'
             - 'Tutorials': 'documentation/tutorials.md'
       
       - Upgrade:
@@ -107,8 +106,10 @@ nav:
             - 'Render HTML in Metadata Fields': 'documentation/rendering_html_from_description.md'
             
       - Running in Production:
+            - 'User Authentication': 'documentation/user_authentication.md'
             - 'Hardware Recommendations': 'documentation/hardware_recommendations.md'
             - 'Implementation Recommendations': 'documentation/implementation_recommendations.md'
+            - 'Using an External Solr Instance': 'documentation/external_solr.md'
             - 'Periodic Maintenance': 'documentation/periodic_maintenance.md'
       - Reference:
             - 'Glossary': 'documentation/glossary.md'

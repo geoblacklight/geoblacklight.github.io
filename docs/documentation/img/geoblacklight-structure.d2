@@ -1,0 +1,24 @@
+direction: down
+
+bl: Blacklight
+
+gbl: GeoBlacklight\n(inherits from Blacklight)
+solr: Solr\nSearch index and records database
+db: Database\nHolds user accounts, bookmarks, and history
+
+app: ""
+app.text: |md
+## My Application
+
+- Rails app inherits from Blacklight &rarr; GeoBlacklight
+- Connects to Solr via environment variable `SOLR_URL`
+- Connects to database via config in `database.yml`
+- Customize catalog, settings, locale strings, etc.
+|
+
+bl -- gbl
+gbl -- app
+
+app -> solr: Rake tasks index\nJSON records into Solr
+solr -> app: The web client queries\n Solr for records
+app <> db
