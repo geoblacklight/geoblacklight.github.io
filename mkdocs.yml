@@ -116,6 +116,7 @@ nav:
             - 'Configure the Settings': 'documentation/settings.md'
             - 'Update the Catalog Controller': 'documentation/catalog_controller.md'
       - Running in Production:
+            - 'User Authentication': 'documentation/user_authentication.md'
             - 'Hardware Recommendations': 'documentation/hardware_recommendations.md'
             - 'Implementation Recommendations': 'documentation/implementation_recommendations.md'
             - 'Using an External Solr Instance': 'documentation/external_solr.md'
