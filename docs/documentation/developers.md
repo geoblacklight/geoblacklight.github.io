@@ -1,42 +1,68 @@
 
-# Getting Started for Developers
-This guide covers: 
+# For Developers
 
-1. How to install a local instance of GeoBlacklight for Development purposes.  
-2. How to make small changes to the application.  
-3. How to see how those changes look in a browser.  
+This page is for software developers looking to build GeoBlacklight from source, especially to contribute code to the core application.
 
+!!! tip "Creating a custom application"
+
+    If you are looking to start a new, branded and customized GeoBlacklight application for your institution, follow the [Quick Start](/documentation/geoblacklight_quick_start) instructions. The application you create will inherit from the latest stable GeoBlacklight release. See the architecture diagram below for more context.
 
 ---------
 
 ## Dependencies
 
-Software you should have installed on your development computer  
+You should have the following installed before beginning:
+
 <ul>
     <li>Ruby > 3.0.0</li>
-    <li>Git > 2 </li>
     <li>Java > JRE version 11 or higher</li>
 </ul>
 ---------
 
-## Installation for Development
+## Build the Application
 
-To set up a working space, navigate to where you'd like to put your test GeoBlacklight app and then clone the repository:
+Clone the code base from the official GeoBlacklight repository or from your own fork if you plan to make upstream pull requests.
+
 ```
 $ git clone git@github.com:geoblacklight/geoblacklight.git
 ```
-Once the files are downloaded, run
+
+Once cloned, enter the repository and install dependencies:
+
 ```
 $ cd geoblacklight
+$ bundle install
+```
+
+Now initialize and start the application:
+
+```
 $ bundle exec rake geoblacklight:server
 ```
 
-This command executes everything needed to run a local version of GeoBlacklight. In order to see the version you have running, open a web browser and go to [http://localhost:3000/](http://localhost:3000/). You should be able to navigate around the site. Remember that your Rails server is running locally, so to stop it, run ^C (ctrl + c).
+This command will executes all of the following steps and leave you with a running a local instance of GeoBlacklight:
+
+- Download, configure, and start a local Solr instance
+    - Located in `tmp/solr`
+- Seed this Solr instance with test fixtures
+    - JSON file fixtures located in `spec/fixtures/solr_documents/`
+- Create a test application
+    - Located in `.internal_test_app/`
+- Create a development database within the test application
+    - Located at `.internal_test_app/storage/development.sqlite3`
+    - Database connection defined in `.internal_test_app/config/database.yml`
+    - ActiveRecord supports PostgreSQL, SQLite, and MySQL ([learn more](https://guides.rubyonrails.org/configuring.html#configuring-a-database))
+- Run the Rails server
 
 !!! tip "Troubleshooting"
 
     If you run into issues running this rake task, try removing your `Gemfile.lock` file and removing the test app with `rm -R .internal_test_app`. Then run `bundle install` before running the above command again.
 
+You should now be able to visit [http://localhost:3000/](http://localhost:3000/) in a web browser and see the test application. If you modify content in the test application, these changes will be reflected on browser refresh. This may be a good time to learn more about the GeoBlacklights's structure:
+
+![./img/geoblacklight-structure.png](./img/geoblacklight-structure.png)
+
+In the diagram above, "My Application" is actually the local test application, `.internal_test_app`, and it is analogous to the standalone Rails application that you would create through the [Quick Start](/documentation/geoblacklight_quick_start) instructions.
 
 ### Running Solr and Rails server separately
 
@@ -50,37 +76,9 @@ $ rake engine_cart:server
 ```
 Once the server is running, you can open a web browser and visit the URL it prompts, usually [http://localhost:8983/solr/#/blacklight-core](http://localhost:8983/solr/#/blacklight-core) to see the admin interface of your test instance of Solr. As before, remember that ^C (ctrl + c) stops the server.
 
-### Using an External SOLR Instance
+You may also want to use an external Solr instance, especially in production. You can read more about that [here](/documentation/external_solr).
 
-In some cases you may need to install SOLR through a different method than described above, or link your GeoBlacklight installation to an existing SOLR installation. You can learn more about installing SOLR in the [Apache documentation](https://solr.apache.org/guide/solr/latest/deployment-guide/installing-solr.html).
-
-#### Configure the SOLR Core
-
-Once you have SOLR installed, you will need to create a new core and configure it for GeoBlacklight. How you create the core may depend on your installation method, but will likely be something like
-
-```bash
-$ bin/solr -c blacklight-core
-```
-
-Now rename/remove the core's `conf` directory and replace it with the `solr/conf` directory from GeoBlacklight: [github.com/geoblacklight/geoblacklight/tree/main/solr/conf](https://github.com/geoblacklight/geoblacklight/tree/main/solr/conf.
-
-You can alter the core's configuration here as well, generally in the `schema.xml` file.
-
-You can find the installation location of your SOLR instance through the web admin interface: http://yourdomain.com:8983/solr/
-
-#### Set `SOLR_URL` Environment Variable
-
-GeoBlacklight will use the `SOLR_URL` environment variable (if present) to look for SOLR. For example, assuming your core is named `blacklight-core`:
-
-```bash
-$ export SOLR_URL=http://yourdomain.com:8983/solr/blacklight-core
-```
-
-Now run the rails server and your external SOLR will be used
-
-```bash
-$ rake engine_cart:server
-```
+---------
 
 ## Unit Testing
 
@@ -100,6 +98,7 @@ Then, in another terminal window:
 $ rspec spec/
 ```
 *Note:* It is not necessary to run tests after every change you make. You can, for instance, change the name of a facet field, save your file, and then refresh your browser to see the change. However, if you add a new fixture metadata record, you will have to stop the servers and then restart them so the new file will be indexed.
+---------
 
 ## Browser Testing
 
