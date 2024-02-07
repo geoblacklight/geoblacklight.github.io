@@ -61,11 +61,11 @@ hide:
 
 - ![](bpl.jpg)
 
-	#### [Norman B. Leventhal Map Center - Collections](https://collections.leventhalmap.org/search?utf8=%E2%9C%93&q=)
+	#### [Norman B. Leventhal Map Center - Collections](https://collections.leventhalmap.org/search)
 	  
 	The Norman B. Leventhal Map Center at the Boston Public Library offers a customized discovery experience for its map collection. This unique application combines GeoBlacklight with the ability to georeference maps and create custom map sets for instruction.
 	
-	:octicons-link-external-16: https://collections.leventhalmap.org/search?utf8=%E2%9C%93&q=
+	:octicons-link-external-16: https://collections.leventhalmap.org/search
 
 - ![](nyu.jpg)
 
