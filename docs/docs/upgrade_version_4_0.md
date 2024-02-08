@@ -424,6 +424,20 @@ GBL installer now includes a `before_action` method to permit GBL application pa
   end
 ```
 
+### SearchBuilder
+
+`app/models/search_builder.rb`
+
+GBL's default search builder concerns have changed. We've added `Geoblacklight::SuppressedRecordsSearchBehavior`. You'll need this code in your application's `search_builder.rb` class:
+
+```ruby
+# frozen_string_literal: true
+class SearchBuilder < Blacklight::SearchBuilder
+  include Blacklight::Solr::SearchBuilderBehavior
+  include Geoblacklight::SuppressedRecordsSearchBehavior
+
+```
+
 ### Stylesheets 
 
 `app/assets/stylesheets/application.scss`
