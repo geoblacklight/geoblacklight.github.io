@@ -1,5 +1,6 @@
 site_name: GeoBlacklight
 site_url: https://geoblacklight.org
+docs_dir: pages
 copyright: GeoBlacklight Community &copy; 2015 - 2024
 theme:
   name: material
@@ -87,35 +88,35 @@ nav:
       - blog/index.md
 - Documentation:
       - Install:
-            - 'Quick Start': 'documentation/geoblacklight_quick_start.md'
-            - 'For Developers': 'documentation/developers.md'
-            - 'Tutorials': 'documentation/tutorials.md'
+            - 'Quick Start': 'docs/geoblacklight_quick_start.md'
+            - 'For Developers': 'docs/developers.md'
+            - 'Tutorials': 'docs/tutorials.md'
       - Running in Production:
-            - 'Hardware Recommendations': 'documentation/hardware_recommendations.md'
-            - 'Implementation Recommendations': 'documentation/implementation_recommendations.md'
-            - 'User Authentication': 'documentation/user_authentication.md'
-            - 'Using an External Solr Instance': 'documentation/external_solr.md'
-            - 'Periodic Maintenance': 'documentation/periodic_maintenance.md'
+            - 'Hardware Recommendations': 'docs/hardware_recommendations.md'
+            - 'Implementation Recommendations': 'docs/implementation_recommendations.md'
+            - 'User Authentication': 'docs/user_authentication.md'
+            - 'Using an External Solr Instance': 'docs/external_solr.md'
+            - 'Periodic Maintenance': 'docs/periodic_maintenance.md'
       - Customization:
-            - 'Configure the Settings': 'documentation/settings.md'
-            - 'Update the Catalog Controller': 'documentation/catalog_controller.md'  
-            - 'Customize Leaflet': 'documentation/leaflet.md'
-            - 'Add Mirador IIIF Viewer': 'documentation/adding_mirador_viewer.md'
-            - 'Add Thumbnail Images': 'documentation/item_images.md'
-            - 'Add SVG Icons': 'documentation/adding_svg_icons.md'
-            - 'Add Data Relations Widget': 'documentation/data_relations_widget.md'
-            - 'Render HTML in Metadata Fields': 'documentation/rendering_html_from_description.md'
+            - 'Configure the Settings': 'docs/settings.md'
+            - 'Update the Catalog Controller': 'docs/catalog_controller.md'  
+            - 'Customize Leaflet': 'docs/leaflet.md'
+            - 'Add Mirador IIIF Viewer': 'docs/adding_mirador_viewer.md'
+            - 'Add Thumbnail Images': 'docs/item_images.md'
+            - 'Add SVG Icons': 'docs/adding_svg_icons.md'
+            - 'Add Data Relations Widget': 'docs/data_relations_widget.md'
+            - 'Render HTML in Metadata Fields': 'docs/rendering_html_from_description.md'
       - Upgrade:
-            - 'Upgrade to Version 4.0': 'documentation/upgrade_version_4_0.md'
-            - 'Upgrade to Version 2.0': 'documentation/upgrade_version_2_0.md'       
+            - 'Upgrade to Version 4.0': 'docs/upgrade_version_4_0.md'
+            - 'Upgrade to Version 2.0': 'docs/upgrade_version_2_0.md'       
       - Reference:
-            - 'Glossary': 'documentation/glossary.md'
-            - 'Settings.yml fields': 'documentation/settings-yml.md'
-            - 'Metadata Fields': 'documentation/metadata.md'
-            - 'Software Releases': 'documentation/releases.md'    
-            - 'Index Maps': 'documentation/index_maps.md'
-            - 'GeoPackages': 'documentation/geopackages.md'
-            - 'JSONs and GeoJSONs': 'documentation/json-geojson.md'
+            - 'Glossary': 'docs/glossary.md'
+            - 'Settings.yml fields': 'docs/settings-yml.md'
+            - 'Metadata Fields': 'docs/metadata.md'
+            - 'Software Releases': 'docs/releases.md'    
+            - 'Index Maps': 'docs/index_maps.md'
+            - 'GeoPackages': 'docs/geopackages.md'
+            - 'JSONs and GeoJSONs': 'docs/json-geojson.md'
 
      
 
