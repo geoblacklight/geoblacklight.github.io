@@ -26,4 +26,4 @@ Metadata schema features:
 !!! inline Tip "Hover over the column headers for sorting options."
 	
 
-{{ read_csv('docs/documentation/metadata-functions.csv') }}
+{{ read_csv('docs/docs/metadata-functions.csv') }}
