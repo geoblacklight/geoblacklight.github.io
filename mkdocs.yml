@@ -1,6 +1,5 @@
 site_name: GeoBlacklight
 site_url: https://geoblacklight.org
-docs_dir: pages
 copyright: GeoBlacklight Community &copy; 2015 - 2024
 theme:
   name: material
