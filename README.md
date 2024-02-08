@@ -45,6 +45,7 @@ This is the working branch containing the content for the site using Markdown.
 	*   `/stylesheets`
 		*   `extra.css` : a CSS file that can define colors, fonts, and other customizations for the site
 
+     * `/docs`: technical documentation pages. **Note that this has the same name as the root folder for all the pages!** We use this name so that the documentation pages will appear in a subdirectory in the public site, i.e. geoblacklight.org/docs/metadata
 
 
 ### gh-pages branch
