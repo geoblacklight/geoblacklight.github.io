@@ -5,7 +5,7 @@ This page is for software developers looking to build GeoBlacklight from source,
 
 !!! tip "Creating a custom application"
 
-    If you are looking to start a new, branded and customized GeoBlacklight application for your institution, follow the [Quick Start](/documentation/geoblacklight_quick_start) instructions. The application you create will inherit from the latest stable GeoBlacklight release. See the architecture diagram below for more context.
+    If you are looking to start a new, branded and customized GeoBlacklight application for your institution, follow the [Quick Start](geoblacklight_quick_start.md) instructions. The application you create will inherit from the latest stable GeoBlacklight release. See the architecture diagram below for more context.
 
 ---------
 

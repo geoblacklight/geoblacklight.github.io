@@ -1,9 +1,5 @@
 # SVG Icons
 
-!!! warning
-
-	This page may be out of date
-
 
 ## Add new SVGs to GeoBlacklight or your local GBL application:
 

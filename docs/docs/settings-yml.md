@@ -164,10 +164,7 @@ Default values:
 
 GeoBlacklight uses Leaflet to power its web map interfaces. This setting contains many default configuration values for how these maps appear and behave.
 
-A few common customizations of GeoBlacklight involve updates to this setting:
-
-- [Adding Leaflet Controls](adding_leaflet_controls.md)
-- [Configuring Leaflet for Retina Displays](leaflet_retina_configuration.md)
+A few common customizations of GeoBlacklight involve updates to this setting. See the [Customizing Leaflet page.](leaflet.md)
 
 ### `HELP_TEXT`
 
