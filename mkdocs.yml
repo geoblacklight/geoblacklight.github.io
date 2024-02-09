@@ -86,6 +86,7 @@ nav:
 - Blog:
       - blog/index.md
 - Documentation:
+      - 'docs/index.md'
       - Install:
             - 'Quick Start': 'docs/geoblacklight_quick_start.md'
             - 'For Developers': 'docs/developers.md'
