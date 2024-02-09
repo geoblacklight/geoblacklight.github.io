@@ -13,4 +13,4 @@ Configurations you can alter include:
 - Default Search Behavior
     - Alter search ranking, sorting, and filtering.
 - Basemap Style
-    - See [Switching the default basemap](default_basemap.md)
+    - See [Switching the default basemap](../leaflet/#switching-the-default-basemap)

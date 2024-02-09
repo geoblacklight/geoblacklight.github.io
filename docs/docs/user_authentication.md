@@ -5,7 +5,7 @@ GeoBlacklight facilitates the creation of user accounts and stores these in the 
 These capabilities are all inherited directly from Blacklight, which uses the [devise](https://github.com/heartcombo/devise) and [devise-guests](https://github.com/cbeer/devise-guests) gems to handle user accounts. For more about customizing this aspect of GeoBlacklight, see the relevant [Blacklight documentation](https://github.com/projectblacklight/blacklight/wiki/User-Authentication).
 
 !!! tip "Cleaning up guests"
-    By default, the [devise-guests](https://github.com/cbeer/devise-guests) gem will automatically create user records every time an anonymous user visits GeoBlacklight, so it is advisable to schedule a regular cleanup task. See "Useful Cron Tasks" in [Implementation Recommendations](/documentation/implementation_recommendations) for more information.
+    By default, the [devise-guests](https://github.com/cbeer/devise-guests) gem will automatically create user records every time an anonymous user visits GeoBlacklight, so it is advisable to schedule a regular cleanup task. See "Useful Cron Tasks" in [Implementation Recommendations](implementation_recommendations.md) for more information.
 
 ### Using Institutional Authentication Backends
 

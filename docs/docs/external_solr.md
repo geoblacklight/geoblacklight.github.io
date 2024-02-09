@@ -10,7 +10,7 @@ Once you have Solr installed, you will need to create a new core and configure i
 $ bin/solr -c blacklight-core
 ```
 
-Now rename/remove the core's `conf` directory and replace it with the `solr/conf` directory from GeoBlacklight: [github.com/geoblacklight/geoblacklight/tree/main/solr/conf](https://github.com/geoblacklight/geoblacklight/tree/main/solr/conf.
+Now rename/remove the core's `conf` directory and replace it with the `solr/conf` directory from GeoBlacklight: [github.com/geoblacklight/geoblacklight/tree/main/solr/conf](https://github.com/geoblacklight/geoblacklight/tree/main/solr/conf).
 
 You can alter the core's configuration here as well, generally in the `schema.xml` file.
 

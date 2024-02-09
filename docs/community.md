@@ -4,9 +4,6 @@ Discovery services and metadata are key challenges for organizations who provide
 
 Anyone interested in spatial data infrastructures, libraries, GIS, maps, data curation, open source software, and related topics, is welcome to join us. Depending on their skills and interests, participants contribute to the community in any number of ways (for instance, by attending meetings, writing documentation, developing metadata best practices, engaging in outreach, and writing code). Participating in the community is especially beneficial to those who are implementing or maintaining GeoBlacklight as a spatial data discovery interface within their own home institutions.
 
-Visit the [Connect](https://geoblacklight.org/connect.html) page to join our online community.
-
-
 ## Our Development Practices
 
 ### 
@@ -93,7 +90,7 @@ GeoBlacklight follows the practice of [Semantic Versioning](https://semver.org/)
 ### Contributing code or documentation
 GeoBlacklight welcomes code and documentation contributions from anyone. We follow the [pull request](https://help.github.com/articles/using-pull-requests/) model for contributing on GitHub. GeoBlacklight uses a suite of tests to express its features and protect from bugs.
 
-When proposing major new features that may introduce a breaking change, please make sure to communicate with the [community](http://geoblacklight.org/connect) so the full implications can be evaluated. Others may be able to help make these changes backwards-compatible with existing versions.
+When proposing major new features that may introduce a breaking change, please make sure to communicate with the community so the full implications can be evaluated. Others may be able to help make these changes backwards-compatible with existing versions.
 
 #### Pull request overview
 1. Fork it ( http://github.com/my-github-username/geoblacklight/fork )
