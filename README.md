@@ -77,6 +77,8 @@ This command will install all the necessary modules for the mkdocs platform and 
 
 `pip install mkdocs-table-reader-plugin`
 
+`pip install mkdocs-git-revision-date-localized-plugin`
+
 
 
 ### Edit the website

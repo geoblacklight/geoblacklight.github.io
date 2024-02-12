@@ -57,6 +57,7 @@ markdown_extensions:
 plugins:
   - search
   - table-reader
+  - git-revision-date-localized
   - blog:
       blog_dir: blog
 #       blog_toc: true
@@ -69,6 +70,7 @@ plugins:
       post_slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+
   
 extra:
       social:
@@ -96,6 +98,7 @@ nav:
       - Running in Production:
             - 'Hardware Recommendations': 'docs/hardware_recommendations.md'
             - 'Implementation Recommendations': 'docs/implementation_recommendations.md'
+            - 'Framework Recommendations': 'docs/framework-recommendations.md'
             - 'User Authentication': 'docs/user_authentication.md'
             - 'Using an External Solr Instance': 'docs/external_solr.md'
             - 'Periodic Maintenance': 'docs/periodic_maintenance.md'
