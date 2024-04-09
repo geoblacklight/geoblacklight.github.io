@@ -28,19 +28,17 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 
 ## Roles
 
-### Admin Roles
+### Administrative Roles
 
 **Meeting Facilitators**: Karen Majewicz + ==1 vacancy==
 
-* 2 people 
 * Manage Google calendar
-* set up and host monthly meetings 
-* set up and host sprint standups
-* prepare agendas
+* Set up and host monthly meetings 
+* Set up and host sprint standups
+* Prepare agendas
 
 **Platform Management Team**: ==2 vacancies==
 
-* 2-3 people
 * Manage GitHub users and roles
 * Manage Google group permissions, roles, etc.
 * Manage Google Drive members
@@ -50,13 +48,11 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 
 **Public Content Manager**: ==1 vacancy==
 
-* 1 person 
-* Keep the public website(s) up to date ==vacancy==
+* Keep the public website(s) up to date
 * Write periodic blog posts, including sprint wrap-up posts
 
 **Technical Writing Lead**: ==1 vacancy==
 
-* 1 person 
 * Keep track of what code, metadata, and tutorials need updating
 * Manage GitHub issues related to documentation
 * Coordinate volunteers to update documentation as necessary
@@ -65,24 +61,19 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 
 **Designated Code Mergers**: [see GitHub Teams](https://github.com/orgs/geoblacklight/teams)
 
-* many people
-* Anyone on the GeoBlacklight Developers team in GitHub
-* “Teams” allow tagging a whole group of people
-* members can assign appropriate mergers based upon their related experience with the new code
+* Members of the GeoBlacklight Developers team in GitHub
+* Review pull requests on behalf of the team, or assign individual code reviewers based on expertise  
 
 **Release Coordinators**: ==2 vacancies==
 
-* 1-2 people
-* Cut tags and releases
-* Write release notes for the GitHub repo
-* Publish Ruby gem
-* Publish Javascript to npm 
+* Cut tags and releases in the GitHub repository, and write release notes
+* Publish the GeoBlacklight [Ruby gem])(https://rubygems.org/gems/geoblacklight)
+* Publish Javascript to [npm](https://www.npmjs.com/package/@geoblacklight/frontend) 
 
 **Issue Triage Working Group**: Open membership
 
-* many people
-* Meets regularly to review and prioritize GitHub issues related to code
-* Maintain [GitHub Ongoing Project Board](https://github.com/orgs/geoblacklight/projects/2)
+* Meet regularly to review and prioritize GitHub issues related to code
+* Maintain the [Ongoing Project Board](https://github.com/orgs/geoblacklight/projects/2) in GitHub
 
 
 
