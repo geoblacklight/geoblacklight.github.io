@@ -26,14 +26,63 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
       
       - **Annually:** [Geo4LibCamp](https://geo4libcamp.org/) is a hands-on meeting to bring together those building repository services for geospatial data. The main focus is to share best-practices, solve common problems, and address technical issues with integrating geospatial data into a repository and associated services.
 
-- **Roles**:
+## Roles
 
-      - **Community Coordinator** (Karen Majewicz)
-            - facilitates community monthly meetings and sets agendas
-            - stages project boards for community sprints and coordinates stand-up meetings
-      
-      - **Code of Conduct team**
-            - responsible for responding to [Code of Conduct](https://github.com/geoblacklight/geoblacklight/blob/main/CODE_OF_CONDUCT.md) reports.
+### Admin Roles
+
+**Meeting Facilitators**: Karen Majewicz + ==1 vacancy==
+
+* 2 people 
+* Manage Google calendar
+* set up and host monthly meetings 
+* set up and host sprint standups
+* prepare agendas
+
+**Platform Management Team**: ==2 vacancies==
+
+* 2-3 people
+* Manage GitHub users and roles
+* Manage Google group permissions, roles, etc.
+* Manage Google Drive members
+* Maintain Slack 
+
+### Documentation Roles
+
+**Public Content Manager**: ==1 vacancy==
+
+* 1 person 
+* Keep the public website(s) up to date ==vacancy==
+* Write periodic blog posts, including sprint wrap-up posts
+
+**Technical Writing Lead**: ==1 vacancy==
+
+* 1 person 
+* Keep track of what code, metadata, and tutorials need updating
+* Manage GitHub issues related to documentation
+* Coordinate volunteers to update documentation as necessary
+
+### Technical Roles
+
+**Designated Code Mergers**: [see GitHub Teams](https://github.com/orgs/geoblacklight/teams)
+
+* many people
+* Anyone on the GeoBlacklight Developers team in GitHub
+* “Teams” allow tagging a whole group of people
+* members can assign appropriate mergers based upon their related experience with the new code
+
+**Release Coordinators**: ==2 vacancies==
+
+* 1-2 people
+* Cut tags and releases
+* Write release notes for the GitHub repo
+* Publish Ruby gem
+* Publish Javascript to npm 
+
+**Issue Triage Working Group**: Open membership
+
+* many people
+* Meets regularly to review and prioritize GitHub issues related to code
+* Maintain [GitHub Ongoing Project Board](https://github.com/orgs/geoblacklight/projects/2)
 
 
 
