@@ -71,7 +71,6 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 
 * Manage Google calendar
 * Set up and host monthly meetings 
-* Set up and host sprint standups
 * Prepare agendas
 
 **Platform Management Team**: ==2 vacancies==
@@ -101,7 +100,7 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 * Members of the GeoBlacklight Developers team in GitHub
 * Review pull requests on behalf of the team, or assign individual code reviewers based on expertise  
 
-**Release Coordinators**: ==2 vacancies==
+**Release Coordinators**: Eric Larson + ==1 vacancy==
 
 * Cut tags and releases in the GitHub repository, and write release notes
 * Publish the GeoBlacklight [Ruby gem](https://rubygems.org/gems/geoblacklight)
