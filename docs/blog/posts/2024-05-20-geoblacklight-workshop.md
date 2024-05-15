@@ -38,28 +38,12 @@ Eric and Eliot are both core contributors/maintainers of the GeoBlacklight proje
 ### GeoBlacklight Overview
 
 * What is GeoBlacklight?
-* GeoBlacklight Community
 * GeoBlacklight Features
+* GeoBlacklight Community
 
 #### What is GeoBlacklight?
 
 GeoBlacklight is a [Ruby](https://www.ruby-lang.org/en/) on [Rails](https://rubyonrails.org/) [engine](https://guides.rubyonrails.org/engines.html), based on the popular open-source project [Blacklight](https://projectblacklight.org/). The aim of the project is to provide a simple, effective open-source application for discovery of geospatial data. Many institutions are using GeoBlacklight to provide a search engine across a federated catalog of geospatial data — [GeoBlacklight project showcase](https://geoblacklight.org/showcase/).
-
-#### GeoBlacklight - Community
-
-Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.
-
-##### Get Involved
-
-* Volunteer for a Community Role
-* Join a Workgroup or Interest Group
-* Follow our Google Group
-* Chat on Slack
-* Attend a Monthly Meeting
-* Participate in a Community Sprint
-* Share Metadata
-
-[GeoBlacklight Community](https://geoblacklight.org/community/)
 
 #### GeoBlacklight - Key Features
 
@@ -83,6 +67,22 @@ GeoBlacklight extends the functionality of Blacklight by providing the following
 * Customizable skin and facets
 
 [GeoBlacklight Key Features](https://geoblacklight.org/about/#key-features)
+
+#### GeoBlacklight - Community
+
+Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.
+
+##### Get Involved
+
+* Volunteer for a Community Role
+* Join a Workgroup or Interest Group
+* Follow our Google Group
+* Chat on Slack
+* Attend a Monthly Meeting
+* Participate in a Community Sprint
+* Share Metadata
+
+[GeoBlacklight Community](https://geoblacklight.org/community/)
 
 ### Setting Up a GeoBlacklight Environment
 
