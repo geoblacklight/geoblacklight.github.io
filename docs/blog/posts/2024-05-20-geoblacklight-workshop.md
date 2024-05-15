@@ -31,6 +31,10 @@ Eric and Eliot are both core contributors/maintainers of the GeoBlacklight proje
 * Create a GeoBlacklight Application (10 minutes)
 * Index Solr Documents (10 minutes)
 
+#### Screenshot - Geoblacklight Website
+
+![Screenshot](blog-images/geoblacklight_website.png)
+
 ### GeoBlacklight Overview
 
 * What is GeoBlacklight?
