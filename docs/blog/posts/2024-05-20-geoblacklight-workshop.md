@@ -6,6 +6,7 @@ authors:
 - Eric Larson
 - Eliot Jordan
 - GeoBlacklight Community
+draft: true
 ---
 
 # Geo4LibCamp 2024 / GeoBlacklight Workshop
@@ -16,6 +17,8 @@ Workshop date: May 20, 2024
 
 * Eric Larson — Big Ten Academic Alliance
 * Eliot Jordan — Princeton University
+
+With many thanks to all the GeoBlacklight community members who help keep our website and project documentation up to date.
 
 ## Part 1: Introductions and Attendee Goals (5 minutes)
 
@@ -104,6 +107,14 @@ bundle exec rake geoblacklight:server
 * Visit your GeoBlacklight application at: http://localhost:3000
 * Visit the Solr admin panel at: http://localhost:8983/solr/#/blacklight-core
 
+#### Screenshot - GeoBlacklight Homepage
+
+![Screenshot](blog-images/gbl_homepage.png)
+
+#### Screenshot - Solr Admin Panel
+
+![Screenshot](blog-images/solr_admin_panel.png)
+
 ### Index Solr Documents
 
 Time to add some data to our application. GeoBlacklight uses OpenGeoMetadata's Aardvark metadata schema.
@@ -134,7 +145,7 @@ Example harvest from a single repository
 bundle exec rake geocombine:clone\[edu.umn\]
 ```
 
-Index your GeoCombine data. Here we're setting a our schema version to Aardvark, which is the GBL v4.0+ metadata schema.
+Index your GeoCombine data. Here we're setting our schema version to Aardvark, which is the GBL v4.0+ metadata schema.
 
 ```bash
 SCHEMA_VERSION="Aardvark" bundle exec rake geocombine:index
@@ -184,9 +195,9 @@ Within this file, you'll find options to define/set:
 * Show Page > Define your displayed metadata fields (config.add_show_field)
 * Show Page > Define Sidebar Tool options (config.add_show_tools_partial)
 
-### Plugin: Blacklight::Allmaps (10 minutes)
+### Plugin: Blacklight::Allmaps
 
-Let's add support for [Allmaps](https://allmaps.org/) georeferenced maps to our example application — we had two morning's lighting talks on Allmaps this morning (Allmaps | [Blacklight::Allmaps](https://docs.google.com/presentation/d/1Pn81E1JS0CLn10lZWCpv-hwWcYYwtJkpxiiU6To61P0/edit?usp=sharing))
+Let's add support for [Allmaps](https://allmaps.org/) georeferenced maps to our example application — we had two lighting talks on Allmaps this morning: Open-Source Georeferencing and Curating with Allmaps | [Blacklight::Allmaps](https://docs.google.com/presentation/d/1Pn81E1JS0CLn10lZWCpv-hwWcYYwtJkpxiiU6To61P0/edit?usp=sharing) (slidedeck).
 
 #### Install
 
@@ -236,17 +247,23 @@ We expose the georeferenced items in the Blacklight user interface via a Georefe
 bundle exec rake blacklight_allmaps:index:georeferenced_facet
 ```
 
+#### Screenshot - Item Show Page
+
+![Screenshot](blog-images/blam_show_page.png)
+
+[Example](http://localhost:3000/catalog/p16022coll230:4038)
+
 ### Plugin: GeoBlacklight Sidecar Images
 
-This plugin adds thumbnails to search results. Let's follow the installation steps to add this feature to our example application.
+This plugin adds thumbnails to search results. Let's follow the [installation steps](https://github.com/geoblacklight/geoblacklight_sidecar_images?tab=readme-ov-file#installation) to add this feature to our example application.
 
 #### Install
 
-Add the gem.
+Add this gem to our Gemfile.
 
 ```ruby
 # Gemfile
-# Pinning this gem to a branch here, as my PR has yet to be merged.
+# Pinning to a branch here, as my Rails 7.1 PR has yet to be merged.
 gem "geoblacklight_sidecar_images", git: "https://github.com/geoblacklight/geoblacklight_sidecar_images.git", branch: "feature/rails-7.1"
 ```
 
@@ -268,7 +285,7 @@ Run the database migration.
 bin/rails db:migrate
 ```
 
-Set your variant processor to `:vips` in `config/application.rb`
+Set your variant processor to `:vips` in `config/application.rb`. This will use [libvips](https://www.libvips.org/) to generate our thumbnails.
 
 ```bash
     # Image Processing
@@ -277,11 +294,17 @@ Set your variant processor to `:vips` in `config/application.rb`
 
 #### Harvest Thumbnails
 
-Spawns background jobs to harvest images for all documents in your Solr index.
+Spawn some background jobs to harvest images for all the documents in our Solr index. In development mode, these will run "inline". In a production environment, you'd want to use 
 
 ```bash
 bundle exec rake gblsci:images:harvest_all
 ```
+
+#### Screenshot - Item Show Page
+
+![Screenshot](blog-images/gblsci_search_results.png)
+
+[Example](http://localhost:3000/catalog/p16022coll230:4038)
 
 ### Plugin: GeoBlacklight Admin
 
