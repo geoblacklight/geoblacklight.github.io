@@ -6,7 +6,6 @@ authors:
 - Eric Larson
 - Eliot Jordan
 - GeoBlacklight Community
-draft: true
 ---
 
 # Geo4LibCamp 2024 / GeoBlacklight Workshop
