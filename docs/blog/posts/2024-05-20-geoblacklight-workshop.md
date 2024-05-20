@@ -267,8 +267,7 @@ Add this gem to our Gemfile.
 
 ```ruby
 # Gemfile
-# Pinning to a branch here, as my Rails 7.1 PR has yet to be merged.
-gem "geoblacklight_sidecar_images", git: "https://github.com/geoblacklight/geoblacklight_sidecar_images.git", branch: "feature/rails-7.1"
+gem "geoblacklight_sidecar_images", "~> 1.0"
 ```
 
 Bundle.
@@ -312,7 +311,27 @@ bundle exec rake gblsci:images:harvest_all
 
 ### Plugin: GeoBlacklight Admin
 
-Notice: This is going to be a full pivot from our current example codebase we've been building here.
+Notice: This is going to be a full pivot from our current example codebase we've been building.
 
-[GeoBlacklight Admin](https://github.com/geobtaa/geoblacklight_admin) is a GeoBlacklight plugin, built on [Kithe](https://github.com/sciencehistory/kithe), that provides a CSV-based import/export workflow for OpenGeoMetadata's Aardvark schema, rich web-forms for editing documents, and tools for publishing data. GBL Admin is the Big Ten Academic Alliance's production workflow tool.
+[GeoBlacklight Admin](https://github.com/geobtaa/geoblacklight_admin) is a GeoBlacklight plugin, built on [Kithe](https://github.com/sciencehistory/kithe), that provides a CSV-based import/export workflow for OpenGeoMetadata's Aardvark schema, rich web-forms for editing documents, and publication lifecycle tools for working with draft documents or published data. GBL Admin is also the Big Ten Academic Alliance's production workflow tool.
+
+#### Installation
+
+* Create PG database:
+
+```bash
+psql postgres
+CREATE DATABASE geoblacklight_development;
+```
+
+* Run application template install script below:
+
+```bash
+rails _7.1.3.2_ new gbl-admin -m https://raw.githubusercontent.com/geobtaa/geoblacklight_admin/develop/template.rb
+```
+
+Run the Application
+```bash
+bundle exec rake geoblacklight:server
+```
 
