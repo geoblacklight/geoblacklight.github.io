@@ -10,7 +10,7 @@ This guide covers the quickest way to get up and running with GeoBlacklight, inc
   Bootstrap a new GeoBlacklight Ruby on Rails application using the template script:
 
 ```bash
-DISABLE_SPRING=1 rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb
+DISABLE_SPRING=1 rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/v4.4.0/template.rb
 ```
   Then run the `geoblacklight:server` rake task to run the application:
 
