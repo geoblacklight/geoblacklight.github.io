@@ -66,14 +66,27 @@ In the diagram above, "My Application" is actually the local test application, `
 
 ### Running Solr and Rails server separately
 
-You may decide to run either the Solr server or Rails server separately. With Solr, for instance, run
+You may decide to run Solr and the Rails server separately. Solr can be run separately using either Docker or `solr_wrapper`.
+
+To use `solr_wrapper` use the following rake task, which starts Solr and seeds the index with data:
 ```
 $ rake geoblacklight:solr
 ```
-Then, open another Terminal window, navigate to the place where your app is located, and run:
+
+To use docker instead, start the server:
 ```
-$ rake engine_cart:server
+$ docker compose up
 ```
+If using docker to run Solr, you need to manually seed the index with data. This `seed` task must be run after the rails server has been started (see below).
+```
+$ rake geoblacklight:internal:seed
+```
+
+Lastly start the rails server. Open another Terminal window, navigate to the place where your app is located, and run:
+```
+$ rake geoblacklight:server_only
+```
+
 Once the server is running, you can open a web browser and visit the URL it prompts, usually [http://localhost:8983/solr/#/blacklight-core](http://localhost:8983/solr/#/blacklight-core) to see the admin interface of your test instance of Solr. As before, remember that ^C (ctrl + c) stops the server.
 
 You may also want to use an external Solr instance, especially in production. You can read more about that [here](/documentation/external_solr).
