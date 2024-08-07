@@ -24,13 +24,13 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 		
 	Follow general project discussions and feature announcements.
 		
-	[ :material-google: Join the GeoBlacklight Google Group](https://groups.google.com/forum/#!forum/geoblacklight-working-group)
+	[ :material-google: Join the GeoBlacklight Google Group](https://groups.google.com/g/geoblacklight-community)
     
 - ### Chat on Slack
 		
 	Chat with others in the community and to work through technical questions. 
 		
-	[:material-slack:  Join GeoBlacklight Slack](https://geoblacklight.slack.com/join/shared_invite/zt-1p7dcay40-Ye_WTt5_iCqU8rDjzhkoWw#/shared-invite/email)
+	[:material-slack: Join GeoBlacklight Slack](https://geoblacklight.slack.com/join/shared_invite/zt-1p7dcay40-Ye_WTt5_iCqU8rDjzhkoWw#/shared-invite/email)
 
 - ### Attend a Monthly Community Meeting
 		    
@@ -56,21 +56,22 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 
 <div class="grid cards" markdown>
 
-- ### Report a bug or suggestion
+- ### Report an Issue
 		  
-	Anyone can create an issue on GeoBlacklight's GitHub issue tracker.
+	Find a bug you want to report? Have an idea for a new feature? Anyone can create an issue in GeoBlacklight's GitHub repository for the community to address.
 		
 	[:material-github: Browse and submit issues](https://github.com/geoblacklight/geoblacklight/issues)
 	
 - ### Contribute Code
 		  
-	Anyone is welcome to submit code for the community to review.
+	As open-source software, GeoBlacklight depends on contributions from our developer community. Anyone is welcome to code for the community to review.
 	
-	[:material-github: Read our contributing guidelines ](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.m)
+	[:material-github: Read our contributing guidelines](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md)
 		
 - ### Write Documentation
     
-     Help us keep our documentation up-to-date or fix information that is missing or unclear.
+     Help keep our documentation up-to-date or fix information that is missing or unclear.
+
      [:material-github: Read contributing guidelines for our documentation website](https://github.com/geoblacklight/geoblacklight.github.io).
     
 
