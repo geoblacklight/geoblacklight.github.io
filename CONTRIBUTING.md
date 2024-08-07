@@ -45,18 +45,25 @@ If you want to preview changes before committing them, follow the steps below. I
 
 1. Open the Terminal and type the following command to install the MkDocs modules and Material theme.
 
-  `pip install mkdocs-material`
+  ```
+  pip install mkdocs-material
+  ```
 
 1. Install the required plugins:
 
-  `pip install mkdocs-table-reader-plugin`
-  `pip install mkdocs-git-revision-date-localized-plugin`
+  ```
+  pip install mkdocs-table-reader-plugin
+  pip install mkdocs-git-revision-date-localized-plugin
+  ```
+
 
 1. Clone or fork the geoblacklight.github.io repository.
 1. Create a new branch and publish it.
 1. Change into the geoblacklight.github.io directory and type:
 
-  `mkdocs serve`
+  ```
+  mkdocs serve
+  ```
   
   This will start a local server so you can preview the site as you build it. You will see text in the Terminal that looks something like this:
 
@@ -74,7 +81,17 @@ If you want to preview changes before committing them, follow the steps below. I
 1. Open a Pull Request to the Main branch.
 1. Add Geoblacklight-Developers as a requested reviewer.
 
-### Merging a Pull Request
+### Updating d2 diagrams
+
+For any diagrams created with [terrastruct/d2](https://github.com/terrastruct/d2), you can edit the appropriate .d2 file and then generate the diagram image with the following command:
+
+```
+d2 geoblacklight-structure.d2 geoblacklight-structure.png --sketch --pad=50
+```
+
+Add the `-w` flag to open a preview and automatically re-generate the diagram as you workon the .d2 file. For more info, see the [d2 documentation](https://d2lang.com/tour/intro/).
+
+## Merging a Pull Request
 
 - Please do not merge your own Pull Request - this is considered "poor form."
 - If you are uncertain about an element of your Pull Request, you can bring other contributors into the conversation by creating a comment that includes their @username.
