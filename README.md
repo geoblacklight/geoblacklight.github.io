@@ -23,7 +23,7 @@ This site provides the public-facing website for the GeoBlacklight community.
 [GitHub Pages](https://pages.github.com) is a free static site hosting service offered by GitHub. 
 
 
-## GitHub Repository organization:
+## Repository organization
 
 ### Main branch
 
@@ -61,88 +61,4 @@ This is the published branch containing the HTML code for the site. (We do **not
 
 ## Updating the GeoBlacklight website
 
-Since this site is edited with Markdown, the minimum requirement to contribute is to just edit or submit new Markdown files.  However, MkDocs is relatively simple to install and run locally. This allows you to preview changes locally before submitting them.  
-
-To get started, follow the steps below.  It may also be helpful to visit the Material for[ MkDocs Getting Started page](https://squidfunk.github.io/mkdocs-material/getting-started/) and for reference.
-
-### Install Material for MkDocs
-
-1. Open the Terminal and type the following:
-
-`pip install mkdocs-material`
-
-This command will install all the necessary modules for the mkdocs platform and the Material theme together.
-
-2. Install the plugins
-
-`pip install mkdocs-table-reader-plugin`
-
-`pip install mkdocs-git-revision-date-localized-plugin`
-
-
-
-### Edit the website
-
-1. Clone or fork the geoblacklight.github.io repository
-
-2. Make a new branch
-
-3. Change into the geoblacklight.github.io directory and type:
-
-    `mkdocs serve`
-
-    This will start a local server so you can preview the site as you build it. You will see text in the Terminal that looks something like this:
-
-	```
-	INFO     -  Documentation built in 4.15 seconds
-	
-	INFO     -  [14:43:24] Watching paths for changes: 'docs', 'mkdocs.yml'
-	
-	INFO     -  [14:43:24] Serving on http://127.0.0.1:8000/
-	
-	INFO     -  [14:43:31] Browser connected: http://127.0.0.1:8000/
-	```
-4. In a browser, open the locally hosted site at http://127.0.0.1:8000/ (or whatever your Terminal shows)
-
-5. Edit the markdown files and preview them in your browser.
-
-6. When you are ready to publish the changes, commit them locally using GitHub Desktop or a Terminal command.
-
-7. Publish the branch and open a pull request to the Main branch.
-
-
-### Workflow steps overview
-
-**Contributor:**
-
-1. Clone or update your local instance of the geoblacklight.github.io repository
-2. Make a new branch and switch to it
-3. Edit the Markdown files
-4. Preview the site locally using `mkdocs serve`
-5. Commit your changes
-6. Publish your branch
-7. Open a Pull Request to the main branch
-
-**Publisher:**
-
-1. Accept Pull Request and merge changes to the main branch
-2. GitHub Actions will automatically push the changes to the gh-pages branch
-
-
-Questions about this repository or other elements of GeoBlacklight?
-
-Submit application related issues here: https://github.com/geoblacklight/geoblacklight/issues
-
-Report bugs and typos on the website itself here:  https://github.com/geoblacklight/geoblacklight.github.io/issues
-
-### Updating d2 diagrams
-
-For any diagrams created with [terrastruct/d2](https://github.com/terrastruct/d2), you can edit the appropriate .d2 file and then generate the diagram image with the following command:
-
-```
-d2 geoblacklight-structure.d2 geoblacklight-structure.png --sketch --pad=50
-```
-
-Add the `-w` flag to open a preview and automatically re-generate the diagram as you workon the .d2 file.
-
-For more info, see the [d2 documentation](https://d2lang.com/tour/intro/).
+Everyone is welcome to contribute to the GeoBlacklight website and our documentation pages. See our [Contribution Guide](https://github.com/geoblacklight/geoblacklight.github.io/blob/main/CONTRIBUTING.md) for detailed information about how to contribute.
