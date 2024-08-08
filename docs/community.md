@@ -24,13 +24,13 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 		
 	Follow general project discussions and feature announcements.
 		
-	[ :material-google: Join the GeoBlacklight Google Group](https://groups.google.com/forum/#!forum/geoblacklight-working-group)
+	[ :material-google: Join the GeoBlacklight Google Group](https://groups.google.com/g/geoblacklight-community)
     
 - ### Chat on Slack
 		
 	Chat with others in the community and to work through technical questions. 
 		
-	[:material-slack:  Join GeoBlacklight Slack](https://geoblacklight.slack.com/join/shared_invite/zt-1p7dcay40-Ye_WTt5_iCqU8rDjzhkoWw#/shared-invite/email)
+	[:material-slack: Join GeoBlacklight Slack](https://geoblacklight.slack.com/join/shared_invite/zt-1p7dcay40-Ye_WTt5_iCqU8rDjzhkoWw#/shared-invite/email)
 
 - ### Attend a Monthly Community Meeting
 		    
@@ -44,18 +44,36 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 		
 	[:material-run-fast: Read about our sprints](../blog/category/sprints/)
 
-  
-- ### Discuss on GitHub
-		  
-	Find a bug you want to report? Is documentation missing or unclear? Would you like to suggest a new feature? Anyone can create an issue on GeoBlacklight's GitHub issue tracker.
-		
-	[:material-github: Browse the GeoBlacklight Github organization](https://github.com/geoblacklight)
-
 - ### Share Metadata
 	
 	GeoBlacklight gets even better when organizations share metadata. Contribute your metadata to OpenGeoMetadata or use it to populate your own GeoBlacklight installation.
 		
 	[:bootstrap-opengeometadata: Visit OpenGeoMetadata](https://opengeometadata.org)
+
+</div>
+
+## Contribute to the Software
+
+<div class="grid cards" markdown>
+
+- ### Report an Issue
+		  
+	Find a bug you want to report? Have an idea for a new feature? Anyone can create an issue in GeoBlacklight's GitHub repository for the community to address.
+		
+	[:material-github: Browse and submit issues](https://github.com/geoblacklight/geoblacklight/issues)
+	
+- ### Contribute Code
+		  
+	As open-source software, GeoBlacklight depends on contributions from our developer community. Anyone is welcome to code for the community to review.
+	
+	[:material-github: Read our software contribution guide](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md)
+		
+- ### Write Documentation
+    
+     Help keep our documentation up-to-date or fix information that is missing or unclear.
+
+     [:material-github: Read our website contribution guide](https://github.com/geoblacklight/geoblacklight.github.io/blob/main/CONTRIBUTING.md)
+    
 
 </div>
 
@@ -143,30 +161,6 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 
 </div> 
 
-
-
-
-
-## Contributing Code and Documentation
-
-GeoBlacklight is a collaborative open source project and contributions are welcome. This contributing guide is borrowed in part from the [Samvera Contributing Guide](https://github.com/samvera/hydra/blob/master/CONTRIBUTING.md) and the [Blacklight Contributing Wiki](https://github.com/projectblacklight/blacklight/wiki/Contributing-to-Blacklight).
-
-If you would like to contribute to the code base, see [For Developers](./docs/developers.md) for information about setting up a development environment, and read our [contributing guidelines](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md).
-
-To contribute to documentation, go to [this website's repository on GitHub](https://github.com/geoblacklight/geoblacklight.github.io).
-
-### Who can contribute?
-**Anyone** is welcome to contribute to GeoBlacklight. We follow a set of contribution practices to maintain a technically sustainable and stable software project for everyone.
-
-### Reporting issues
-Did you find a bug in GeoBlacklight or interested in a new feature? Report it by creating an issue on our [GitHub Issue Tracker](https://github.com/geoblacklight/geoblacklight/issues).
-
- - You will need to have a [GitHub account](https://github.com/signup/free)
- - For bugs, please include the following information:
-    - Provide a descriptive summary
-    - Explain the expected behavior
-    - Explain the actual behavior
-    - Provide steps to reproduce the actual behavior
 
 
 ## GeoBlacklight Institutional Contributors
