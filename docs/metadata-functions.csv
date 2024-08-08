@@ -1,0 +1,43 @@
+Label</br>Field URI,Required - will cause app to error if missing,Default facet,Search results display,Item show default display,Relation widget,Notes
+**ID**</br>id,==yes==,no,no,no,no,Functions as the slug (end part) of the item's URL
+**Access Rights**</br>dct_accessRights_s,==yes==,no,icon,no,no,"If set to ""Restricted"", a closed padlock icon appears next to the title. Downloads and web service previews will be hidden unless a user logs in using an authentication process. If set to ""Public"", an open padlock icon appears next to the title. Downloads and web services are accessible."
+**Format**</br>dct_format_s,{++conditional++},==yes==,no,==yes==,no,Required if a Download link is included. This value displays on the item show in the button under the download widget.
+**Title**</br>dct_title_s,no (see notes),no,Clickable text,==yes==,no,"If a title is missing, GeoBlacklight will display the ID as the title."
+**Alternative Title**</br>dct_alternative_sm,no,no,no,==yes==,no,-
+**Bounding Box**</br>dcat_bbox,no,no,no,no,no,Rectangular extent required for overlap ratio boosting as part of the overall relevance ranking algorithm.
+**Centroid**</br>dcat_centroid,no,no,no,no,no,Can be leveraged for homepage centroid map. Not used in default GeoBlacklight.
+**Creator**</br>dct_creator_sm,no,==yes==,text on expanded view,==yes==,no,-
+**Date Issued**</br>dct_issued_s,no,no,no,==yes==,no,-
+**Date Range**</br>gbl_dateRange_drsim,no,no,no,==yes==,no,-
+**Description**</br>dct_description_sm,no,no,text on expanded view,==yes==,no,-
+**Display Note**</br>gbl_displayNote_sm,no,no,no,==yes==,no,Text displays within a callout box
+**File Size**</br>gbl_fileSize_s,no,no,no,==yes==,no,-
+**Geometry**</br>locn_geometry,no,no,no,no,no,Required for the map search
+**Georeferenced**</br>gbl_georeferenced_b,no,==yes==,no,==yes==,no,-
+**Identifier**</br>dct_identifier_sm,no,no,no,no,no,-
+**Index Year**</br>gbl_indexYear_im,no,==yes==,text on expanded view,==yes==,no,Can be used with the Date Range plugin
+**Is Part Of**</br>dct_isPartOf_sm,no,no,no,no,==yes==,-
+**Is Replaced By**</br>dct_isReplacedBy_sm,no,no,no,no,no,Not used in GeoBlacklight
+**Is Version Of**</br>dct_isVersionOf_sm,no,no,no,no,==yes==,-
+**Keyword**</br>dcat_keyword_sm,no,no,no,==yes==,no,-
+**Language**</br>dct_language_sm,no,no,no,==yes==,no,3 digit code
+**License**</br>dct_license_sm,no,no,no,==yes==,no,-
+**Member Of**</br>pcdm_memberOf_sm,no,no,no,no,==yes==,-
+**Metadata Version**</br>gbl_mdVersion_s,no,no,no,no,no,May be required by some harvesters in OpenGeoMetadata
+**Provider**</br>schema_provider_s,no,==yes==,icon,==yes==,no,May control which records an authenticated user has access to.
+**Publisher**</br>dct_publisher_sm,no,==yes==,no,==yes==,no,-
+**References**</br>dct_references_s,no,no,no,no,no,See https://opengeometadata.org/reference-uris/ for how different references function in GeoBlacklight
+**Relation**</br>dct_relation_sm,no,no,no,no,==yes==,-
+**Replaces**</br>dct_replaces_sm,no,no,no,no,==yes==,-
+**Resource Class**</br>gbl_resourceClass_sm,no,==yes==,icon,==yes==,no,"GBL will display an icon associated with the value. If multivalued, the first value will be used. Note: there is currently no icon for ""Web services""."
+**Resource Type**</br>gbl_resourceType_sm,no,==yes==,no,==yes==,no,-
+**Rights**</br>dct_rights_sm,no,no,no,==yes==,no,-
+**Rights Holder**</br>dct_rightsHolder_sm,no,no,no,==yes==,no,-
+**Source**</br>dct_source_sm,no,no,no,no,==yes==,-
+**Spatial Coverage**</br>dct_spatial_sm,no,==yes==,no,==yes==,no,-
+**Subject**</br>dct_subject_sm,no,==yes==,no,==yes==,no,-
+**Suppressed**</br>gbl_suppressed_b,no,no,no,no,no,Hides items from search results. Items are only visible as  child or related records in the Relations widgets.
+**Temporal Coverage**</br>dct_temporal_sm,no,no,no,==yes==,no,-
+**Theme**</br>dcat_theme_sm,no,==yes==,no,==yes==,no,-
+**WxS Identifier**</br>gbl_wxsIdentifier_s,no,no,no,no,no,Required if a OCG web service is included
+**Modified**</br>gbl_mdModified_dt,no,no,no,no,no,-
