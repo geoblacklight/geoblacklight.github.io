@@ -66,13 +66,13 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 		  
 	As open-source software, GeoBlacklight depends on contributions from our developer community. Anyone is welcome to code for the community to review.
 	
-	[:material-github: Read our contributing guidelines](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md)
+	[:material-github: Read our software contribution guide](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md)
 		
 - ### Write Documentation
     
      Help keep our documentation up-to-date or fix information that is missing or unclear.
 
-     [:material-github: Read contributing guidelines for our documentation website](https://github.com/geoblacklight/geoblacklight.github.io).
+     [:material-github: Read our website contribution guide](https://github.com/geoblacklight/geoblacklight.github.io/blob/main/CONTRIBUTING.md)
     
 
 </div>
