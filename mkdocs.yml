@@ -108,12 +108,14 @@ nav:
       - Customization:
             - 'Configure the Settings': 'docs/settings.md'
             - 'Update the Catalog Controller': 'docs/catalog_controller.md'  
+            - 'Configure Search Relevancy': 'docs/solr_search_relevancy.md'
             - 'Customize Leaflet': 'docs/leaflet.md'
             - 'Add Mirador IIIF Viewer': 'docs/adding_mirador_viewer.md'
             - 'Add Thumbnail Images': 'docs/item_images.md'
             - 'Add SVG Icons': 'docs/adding_svg_icons.md'
             - 'Add Data Relations Widget': 'docs/data_relations_widget.md'
             - 'Render HTML in Metadata Fields': 'docs/rendering_html_from_description.md'
+
       - Upgrade:
             - 'Upgrade to Version 4.0': 'docs/upgrade_version_4_0.md'
             - 'Upgrade to Version 2.0': 'docs/upgrade_version_2_0.md'       
