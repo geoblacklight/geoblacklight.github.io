@@ -6,9 +6,7 @@ copyright: GeoBlacklight Community &copy; 2015 - 2024
 theme:
   name: material
   logo: images/gbl-favicon.png
-  favicon: images/gbl-favicon.png
-  
-        
+  favicon: images/gbl-favicon.png      
   palette:
     primary: white
     
@@ -56,6 +54,10 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+          
+extra_javascript:
+      - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+      - javascripts/tablesort.js
   
 plugins:
   - search
