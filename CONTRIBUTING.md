@@ -1,7 +1,7 @@
 # GeoBlacklight Website Contribution Guide
 GeoBlacklight is a collaborative open-source project that :sparkles:welcomes:sparkles: community contributions. To contribute to the GeoBlacklight software codebase, see the [GeoBlacklight Contribution Guide](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md).
 
-### Who can contribute?
+## Who can contribute?
 **Anyone** is welcome to contribute to the GeoBlacklight website and documentation. We follow a set of contribution practices to maintain a technically sustainable and stable software project for everyone.
 
 ## Reporting an issue
@@ -43,29 +43,20 @@ Since this website is edited with Markdown, the easiest way to contribute is to 
 
 If you want to preview changes before committing them, follow the steps below. It may also be helpful to visit the [Material for MkDocs Getting Started page](https://squidfunk.github.io/mkdocs-material/getting-started/) for more information.
 
-1. Open the Terminal and type the following command to install the MkDocs modules and Material theme.
-
-   ```
-   pip install mkdocs-material
-   ```
-
-1. Install the required plugins:
-
-   ```
-   pip install mkdocs-table-reader-plugin
-   pip install mkdocs-git-revision-date-localized-plugin
-   ```
-
-
 1. Clone or fork the geoblacklight.github.io repository.
-1. Create a new branch and publish it.
-1. Change into the geoblacklight.github.io directory and type:
+1. Open a terminal in the geoblacklight.github.io directory.
+1. Install python dependencies used to build the site with the following command:
+   ```
+   pip install -r requirements.txt
+   ```
+
+1. Start a local server with the following command:
 
    ```
    mkdocs serve
    ```
   
-   This will start a local server so you can preview the site as you build it. You will see text in the Terminal that looks something like this:
+   This will allow you to preview the site as you edit it. You will see text in the Terminal that looks something like this:
 
    ```
    INFO     -  Documentation built in 4.15 seconds
@@ -75,6 +66,7 @@ If you want to preview changes before committing them, follow the steps below. I
    ```
 
 1. In a browser, open the locally hosted site at http://127.0.0.1:8000/ (or whatever address your Terminal shows).
+1. Create a new branch to track your changes.
 1. Edit the website files and preview them in your browser.
 1. When you are ready to publish the changes, commit them locally using GitHub Desktop or a Terminal command.
 1. Push to the new branch.
