@@ -9,3 +9,4 @@ site/
 _site
 Gemfile.lock
 node_modules
+.python-version
