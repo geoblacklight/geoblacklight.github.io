@@ -16,7 +16,7 @@ GeoBlacklight is an open-source software application for discovering geospatial 
 
 ### External Services
 
-One of GeoBlacklight's strengths is its ability to serve as a bridge to geospatial content hosted on various platforms, simplifying the way users find and interact with data. Instead of storing data directly, GeoBlacklight focuses on integrating with existing data repositories and web services.GeoBlacklight does this through providing useful preview, download, and exports of open standards-based services, including Web Mapping Services (WMS), Web Feature Services (WFS), ArcGIS Rest API, and International Image Interoperability Framework (IIIF). There is also support for externally referenced metadata viewing and file download support.
+One of GeoBlacklight's strengths is its ability to serve as a bridge to geospatial content hosted on various platforms, simplifying the way users find and interact with data. Instead of storing data directly, GeoBlacklight focuses on integrating with existing data repositories and web services.
 
 This includes offering previews, downloads, and access to data through web standards such as Web Mapping Services (WMS), Web Feature Services (WFS), the ArcGIS Rest API, and the International Image Interoperability Framework (IIIF). Additionally, GeoBlacklight enables supplemental metadata views and downloads.
 
@@ -29,7 +29,7 @@ Examples of technology providing external services:
 
 ### Metadata
 
-GeoBlacklight uses the OpenGeoMetadata Aardvark Metadata Schema by default, which has been designed to privilege discovery use cases. It supports text searching, faceted searching and refinement, and spatial searching to improve relevance and findability of data.  [Visit OpenGeoMetadata for more information and full documentation.](https://opengeometadata.org) 
+GeoBlacklight uses the OpenGeoMetadata Aardvark Metadata Profile by default, which has been designed to privilege discovery use cases. It supports text searching, faceted searching and refinement, and spatial searching to improve relevance and findability of data.  [Visit OpenGeoMetadata for more information and full documentation.](https://opengeometadata.org) 
 
 	
 ## Key  Features
