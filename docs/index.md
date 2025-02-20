@@ -26,7 +26,7 @@ hide:
 <div class="cell">
 <h3 style="text-align: center;">Participating institutions</h3>
 <ul>
-<li>GeoBlacklight provides a customizable platform for delivering geospatial information seamlessly to end users</li>
+<li>GeoBlacklight provides a customizable platform for delivering geospatial information to end users</li>
 <li>Participants can connect to other contributors through our active <a href = "community/#how-to-connect">communication channels</a> and learn best practices for software and metadata implementation.</li>
 </ul>
 </div>
