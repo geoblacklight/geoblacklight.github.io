@@ -1,0 +1,2795 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://geoblacklight.org/blog/2015/02/a-hands-on-introduction-to-geoblacklight---geoblacklight-workshop/">
+      
+      
+        <link rel="prev" href="../using-geocombine-to-harvest-and-index-opengeometadata/">
+      
+      
+        <link rel="next" href="../../04/deploying-geoblacklight/">
+      
+      
+      <link rel="icon" href="../../../../images/gbl-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>A hands on introduction to GeoBlacklight - GeoBlacklight Workshop - GeoBlacklight</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-hands-on-introduction-to-geoblacklight-geoblacklight-workshop" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="GeoBlacklight" class="md-header__button md-logo" aria-label="GeoBlacklight" data-md-component="logo">
+      
+  <img src="../../../../images/gbl-favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoBlacklight
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A hands on introduction to GeoBlacklight - GeoBlacklight Workshop
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoblacklight/geoblacklight" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeoBlacklight on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../community/" class="md-tabs__link">
+        
+  
+    
+  
+  Community
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../showcase/" class="md-tabs__link">
+          
+  
+    
+  
+  Showcase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../docs/" class="md-tabs__link">
+          
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="GeoBlacklight" class="md-nav__button md-logo" aria-label="GeoBlacklight" data-md-component="logo">
+      
+  <img src="../../../../images/gbl-favicon.png" alt="logo">
+
+    </a>
+    GeoBlacklight
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoblacklight/geoblacklight" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeoBlacklight on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../showcase/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Showcase
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Showcase
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2016
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2015
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category/releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category/sprints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sprints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category/tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../docs/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Install
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/geoblacklight_quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/developers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Developers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Running in Production
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Running in Production
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/hardware_recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/implementation_recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/framework-recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/user_authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/external_solr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using an External Solr Instance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/periodic_maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Periodic Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Customization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Customization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure the Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/catalog_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update the Catalog Controller
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/solr_search_relevancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Search Relevancy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/leaflet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customize Leaflet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/adding_mirador_viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Mirador IIIF Viewer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/item_images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Thumbnail Images
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/adding_svg_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add SVG Icons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/data_relations_widget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Data Relations Widget
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/rendering_html_from_description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Render HTML in Metadata Fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Upgrade
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Upgrade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/upgrade_version_4_0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade to Version 4.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/upgrade_version_2_0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade to Version 2.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/settings-yml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings.yml fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/metadata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/index_maps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index Maps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/geopackages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GeoPackages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/json-geojson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JSONs and GeoJSONs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/1656824" alt="Jack Reed">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Jack Reed
+                        
+                      </strong>
+                      <br>
+                      Web Developer
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2015-02-09 00:00:00+00:00" class="md-ellipsis">Feb 9, 2015</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../category/tutorials/">tutorials</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              13 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+            
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop Agenda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-geoblacklight-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: GeoBlacklight Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-setting-up-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2. Setting up your environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-create-your-geoblacklight-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Create your GeoBlacklight application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-index-solr-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Index Solr documents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-customizing-your-geoblacklight-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: Customizing your GeoBlacklight Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapping-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wrapping Up
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+  
+  
+
+
+<h1 id="a-hands-on-introduction-to-geoblacklight-geoblacklight-workshop">A hands on introduction to GeoBlacklight - GeoBlacklight Workshop</h1>
+<p>Welcome to the workshop, "A hands on introduction to GeoBlacklight"!</p>
+<!-- more -->
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This tutorial was designed for GeoBlacklight versions before 4.0 and may be outdated. Please refer to the <a href="https://geoblacklight.org/docs">Documentation pages</a> for up to date instructions.</p>
+</div>
+<p>Workshop Dates:</p>
+<ul>
+<li><a href="http://wiki.code4lib.org/2015_Preconference_Proposals#A_hands-on_introduction_to_GeoBlacklight">Code4Lib 2015</a>  - February 9, 2015</li>
+<li><a href="https://www.conftool.com/or2015/index.php?page=browseSessions&amp;form_session=20&amp;metadata=show&amp;presentations=show">Open Repositories 2015</a> - June 8, 2015</li>
+<li><a href="https://dlfforum2015.sched.org/event/4ALf/a-hands-on-introduction-to-geoblacklight">DLF Forum</a> - October 28, 2015</li>
+<li><a href="https://wiki.duraspace.org/display/hydra/Geo4LibCamp+2016">Geo4Lib Camp</a> - January 25, 2016</li>
+</ul>
+<p>Workshop facilitators:</p>
+<p><strong>Stanford University</strong></p>
+<ul>
+<li>Jack Reed</li>
+<li>Darren Hardy</li>
+</ul>
+<p><strong>Princeton University</strong></p>
+<ul>
+<li>Eliot Jordan</li>
+</ul>
+<hr>
+
+<h2 id="workshop-agenda">Workshop Agenda</h2>
+<p>This workshop will focus primarily on getting a working development version of GeoBlacklight up and going for you. This will be broken down into the following sessions.</p>
+<ul>
+<li>Part 1: GeoBlacklight Overview (20 minutes)</li>
+<li>Part 2: Setting up your environment (45 minutes)</li>
+<li>Part 3: Create your GeoBlacklight application (45 minutes)</li>
+<li>Part 4: Index Solr Documents (20 minutes)</li>
+<li>Part 5: Customize your application (extra credit)</li>
+</ul>
+<h2 id="part-1-geoblacklight-overview">Part 1: GeoBlacklight Overview</h2>
+<ul>
+<li>Why and what is GeoBlacklight?</li>
+<li>Software projects overview and technology</li>
+<li>GeoBlacklight feature set</li>
+</ul>
+<h3 id="why-and-what-is-geoblacklight">Why and what is GeoBlacklight?</h3>
+<p>GeoBlacklight is a <a href="http://rubyonrails.org">Ruby on Rails</a> engine, based on the popular open-source project <a href="http://projectblacklight.org/">Blacklight</a>. The aim of the project is to provide a simple, effective open-source application for discovery of geospatial data. Many institutions are using GeoBlacklight to provide a search engine across a federated catalog of geospatial data.</p>
+<p>Discovery services and metadata have been key challenges for many organizations who provide geospatial data. GeoBlacklight hopes to build on the successes of projects like <a href="http://opengeoportal.org">OpenGeoPortal</a> and <a href="http://projectblacklight.org/">Blacklight</a> by integrating with an ecosystem of plugins and an already active developer community. Bridging the gap between the digital library and geospatial communities, GeoBlacklight aims to bring expertise from both fields to provide a better experience for finding geospatial data.</p>
+<h4 id="what-do-you-mean-by-geospatial-data">What do you mean by geospatial data?</h4>
+<p>We primarily mean Geographic Information Systems (GIS) data which are structured data in specific file formats (Shapefiles, Rasters, etc.). That is, GIS data you would be serving through a spatial data infrastructure (SDI).</p>
+<p>GeoBlacklight is flexible enough, however, to act as a discovery service for a variety of sources, but is designed for GIS data specifically.  Traditionally GIS and SDI software have not done great job at discovery and has always felt like an afterthought, thus the opportunity for GeoBlacklight to advance the state of GIS data discovery.</p>
+<h4 id="but-i-dont-have-a-spatial-data-infrastructure">But I don't have a spatial data infrastructure?</h4>
+<p>That's ok. GIS data indexed into GeoBlacklight becomes progressively more useful based on the services that back them. For example, the minimum required metadata for GeoBlacklight is a bounding box, title, and description, and no references to services that will actually provide that data are required. GeoBlacklight can also help with serving static files available through a URL. Moreover, GeoBlacklight also natively supports <a href="http://iiif.io/">IIIF</a> objects, so organizations who have IIIF servers for scanned maps can start using GeoBlacklight today.</p>
+<p><a href="https://opengeometadata.org/gbl-1.0">The GeoBlacklight Schema, Version 1.0</a> uses a field <code>dct_references_s</code> to define external services and references. See the <a href="https://opengeometadata.org/reference-uris/">Reference URIs</a> section for a list of possible key:value pairs and instructions on how to apply them.</p>
+<h3 id="software-projects-and-communities">Software projects and communities</h3>
+<p>GeoBlacklight (the Ruby on Rails, Blacklight based application) is part of a larger effort to provide library services to geospatial data users. Several additional software augment GeoBlacklight and discovery capabilities.</p>
+<ul>
+<li><del class="critic"><a href="https://github.com/geoblacklight/geoblacklight/blob/master/schema/geoblacklight-schema.md">GeoBlacklight-Schema</a></del> <ins class="critic"><a href="https://opengeometadata.org/reference">OpenGeoMetadata</a></ins> - the metadata schema used in GeoBlacklight</li>
+<li><a href="https://github.com/geoblacklight/geo_monitor">GeoMonitor</a> - a WMS service monitor that provides atomic updates to Solr</li>
+<li><a href="https://github.com/geoblacklight/geoblacklight_sidecar_images">GeoBlacklight Sidecar Images</a> -  Store local copies of remote imagery in GeoBlacklight</li>
+<li><a href="https://openindexmaps.org/">OpenIndexMaps</a> - a community and format for sharing index maps</li>
+</ul>
+<h4 id="metadata-sharing">Metadata Sharing</h4>
+<p>Worth mentioning is a collaborative effort, <a href="https://opengeometadata.org/about-ogm-repositories">OpenGeoMetadata</a>, which aims to share geospatial metadata in an open way. Instead of focusing on building an application that must be deployed at multiple institutions, OpenGeoMetadata uses GitHub as a common, highly available repository. Using GitHub as a platform allows for software development to focus on conversion tools and harvesting tools.</p>
+<p>OpenGeoMetadata builds on the groundwork laid by the <a href="http://opengeoportal.org/working-groups/metadata/">OpenGeoPortal Metadata Working group</a>.</p>
+<h3 id="geoblacklight-feature-set">GeoBlacklight Feature Set</h3>
+<p>GeoBlacklight extends the functionality of Blacklight by providing the following:</p>
+<ul>
+<li>spatial search with a spatial relevancy algorithm</li>
+<li>download functionality for geospatial web services</li>
+<li>map view of search results</li>
+<li>easily customizable</li>
+<li>extendable to new types of data and functionality</li>
+<li>and more...</li>
+</ul>
+<h2 id="part-2-setting-up-your-environment">Part 2. Setting up your environment</h2>
+<ul>
+<li>Development requirements</li>
+<li>Local attendees setup VirtualBox/Vagrant</li>
+</ul>
+<h3 id="development-requirements">Development requirements</h3>
+<p>GeoBlacklight has similar prerequisites to [Blacklight][bldependencies]. It diverges from Blacklight requirements by using a customized Solr schema and configuration, <a href="https://opengeometadata.org/gbl-1.0">Geoblacklight Schema, Version 1.0</a>.</p>
+<h4 id="software-you-should-have-installed-on-your-development-computer">Software you should have installed on your development computer</h4>
+<ul>
+<li>Ruby &gt; 2.6.6</li>
+<li>Rails &gt; 6.0</li>
+<li>Git</li>
+<li>Java &gt; 1.8] (Download JDK for local Solr server)</li>
+<li>Node.js &gt; 14.15 LTS</li>
+<li>Yarn &gt; 1.13</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is recommended to install the latest versions of Ruby, Rails, and Node.js. We strive to keep GeoBlacklight updated with these versions. A great, almost always up-to-date, tutorial on getting a Ruby on Rails development environment is available here: <a href="https://gorails.com/setup">https://gorails.com/setup</a>. If you are not following this tutorial as part of an in person workshop, you can skip to the next section once you have these dependencies installed.</p>
+</div>
+<p>Local attendees of the workshop have the option of just using the pre-created environment on the provided thumb-drive. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can complete this tutorial without Vagrant as long as you already have the above mentioned software on your machine. If you do, you may skip ahead to <a href="{% post_url 2015-02-09-create-your-application %}">Part 3 - Create your application</a></p>
+<p>Also, if you are not at the workshop (or perhaps if you want to prepare your own environment for a workshop you are facilitating), you can create the virtual machine for the workshop, by following <a href="../../../2016/01/using-packer-to-create-a-development-virtual-machine-for-geoblacklight/">this guide</a>.</p>
+</div>
+<h3 id="in-person-attendees-setup-virtualboxvagrant">In-person attendees setup VirtualBox/Vagrant</h3>
+<p>Good news for in-person workshop participants: the process of setting up your environment has already done for you using VirtualBox and Vagrant. On the thumb-drive underneath a directory titled 'geoblacklight_workshop'. Thanks to Justin Coyne and <a href="http://curationexperts.com/">Data Curation Experts</a> for this approach that is used at HydraCamps.</p>
+<p>For those interested in what was installed on this machine and how it was created checkout <a href="https://gist.github.com/mejackreed/727e9cd2e971ca3949a2">this gist</a>.</p>
+<ul>
+<li><a href="#vagrant-for-os-x-and-linux">Vagrant for OS X and Linux</a></li>
+<li><a href="#vagrant-for-windows">Vagrant for Windows</a></li>
+</ul>
+<h4 id="vagrant-quick-tips">Vagrant Quick Tips</h4>
+<p>After you have your virtual machine up and going, you will want to stop it. Here are a few commands that will help out.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>vagrant<span class="w"> </span>halt<span class="w"> </span><span class="c1"># stops the virtual machine</span>
+$<span class="w"> </span>vagrant<span class="w"> </span>destroy<span class="w"> </span><span class="c1"># stops and deletes the virtual machine</span>
+</code></pre></div>
+<h4 id="vagrant-for-os-x-and-linux">Vagrant for OS X and Linux</h4>
+<ol>
+<li>
+<p>Install the Mac (.dmg) version of VirtualBox and Vagrant on your machine. If you are using Linux, please download and install appropriately. <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Downloads</a>, <a href="https://www.vagrantup.com/downloads.html">Vagrant Downloads</a></p>
+</li>
+<li>
+<p>If not already on your Desktop, copy the <code>geoblacklight_workshop</code> directory to your <code>~/Desktop</code> directory</p>
+</li>
+<li>
+<p>Move to your <code>~/Desktop/geoblacklight_workshop</code> directory</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Desktop/geoblacklight_workshop
+</code></pre></div>
+</li>
+<li>
+<p>Start vagrant</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>vagrant<span class="w"> </span>up<span class="w"> </span><span class="c1"># This command creates and configures guest machines according to your Vagrantfile.</span>
+</code></pre></div>
+</li>
+<li>
+<p>SSH to the VM</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>vagrant<span class="w"> </span>ssh<span class="w"> </span><span class="c1"># This will SSH into a running Vagrant machine and give you access to a shell.</span>
+</code></pre></div>
+</li>
+</ol>
+<h4 id="vagrant-for-windows">Vagrant for Windows</h4>
+<p>Thanks to Zach Vowell who contributed this guide for Windows.</p>
+<p>Note: Please install a Windows ssh client installed such as <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"> PuTTY</a>.</p>
+<ol>
+<li>
+<p>Install the Windows (.exe) version of VirtualBox and Vagrant on your machine.</p>
+</li>
+<li>
+<p>If not already on your Desktop, copy the <code>geoblacklight_workshop</code> directory to your Desktop <code>C:\Users\[username]\Desktop</code> (for Windows 7)</p>
+</li>
+<li>
+<p>Open a <a href="http://www.digitalcitizen.life/7-ways-launch-command-prompt-windows-7-windows-8">Windows Command Prompt (cmd)</a></p>
+</li>
+<li>
+<p>Move to the <code>geoblacklight_workshop</code> directory on the Desktop</p>
+<div class="highlight"><pre><span></span><code>C:\Users\[username]&gt; cd Desktop\geoblacklight_workshop
+</code></pre></div>
+</li>
+<li>
+<p>Start Vagrant</p>
+<div class="highlight"><pre><span></span><code>C:\Users\[username]\Desktop\geoblacklight_workshop&gt; vagrant up
+# This command creates and configures guest machines according to your Vagrantfile.
+</code></pre></div>
+</li>
+<li>
+<p>Open up PuTTY</p>
+</li>
+<li>
+<p>SSH into the Vagrant box by entering the following parameters into the "Basic Options for Your PuTTY session" window:</p>
+<ul>
+<li>Host Name (or IP address): 127.0.0.1</li>
+<li>Port: 2222</li>
+</ul>
+</li>
+<li>
+<p>When PuTTY shell prompts for a username and password, enter "vagrant" for both. You should now see a command prompt.</p>
+</li>
+</ol>
+<h2 id="part-3-create-your-geoblacklight-application">Part 3: Create your GeoBlacklight application</h2>
+<p>Before beginning this section, make sure your environment is setup (as shown in Part 2).</p>
+<p>In this section of the tutorial, we will cover the following steps:</p>
+<ol>
+<li><a href="#generating-your-rails-application">Generate your Rails application</a></li>
+<li><a href="#install-geoblacklight">Install GeoBlacklight</a></li>
+<li><a href="#install-rspec">Install RSpec</a></li>
+</ol>
+<hr>
+
+<h3 id="generating-your-rails-application">Generating your Rails application</h3>
+<p>For more information about generating a Rails application see the <a href="http://guides.rubyonrails.org/getting_started.html">Getting Started with Rails</a> guide. Before, make sure you have Rails installed by running the following:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rails<span class="w"> </span>-v
+</code></pre></div>
+If you get an error run:</p>
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>gem<span class="w"> </span>install<span class="w"> </span>rails
+</code></pre></div>
+Now you should have Rails installed on your machine and are ready to proceed.</p>
+<ol>
+<li>
+<p>Create a new Rails application using the GeoBlacklight template, in which <strong>"your_app_name"</strong> can be anything you want to name your app.</p>
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>rails<span class="w"> </span>new<span class="w"> </span>your_app_name
+<span class="c1">## For example, you could also use `rails new mockup_geoblacklight`</span>
+</code></pre></div>
+  1. Switch to its folder</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>your_app_name
+</code></pre></div>
+</li>
+<li>
+<p>Run the rails server.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rails<span class="w"> </span>s<span class="w"> </span>-b<span class="w"> </span><span class="m">0</span>.0.0.0
+</code></pre></div>
+<p class="flash-alert">We are running the Rails server with the "-b" option which is binding the server to the 0.0.0.0 IP address. This is only necessary if your are running the application on your Vagrant virtual machine.</p>
+<p>Now you can visit the Rails application at <a href="http://127.0.0.1:3000">http://127.0.0.1:3000</a>. You should see "Yay! You're on Rails" CTRL + c will stop server.</p>
+<p><img alt="rails_welcome" src="https://guides.rubyonrails.org/images/getting_started/rails_welcome.png" title="Welcome aboard!" /></p>
+</li>
+</ol>
+<p><strong>Note</strong> You will need to leave the Terminal window open while the Rails server is running.</p>
+<ol>
+<li>
+<p><em>Optional</em> Initialize your git repository and commit your changes</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>init
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;initial commit of Rails application&#39;</span>
+</code></pre></div>
+</li>
+</ol>
+<hr>
+
+<h3 id="install-geoblacklight">Install GeoBlacklight</h3>
+<p>Now that we have started our Rails application, we need to install GeoBlacklight.</p>
+<ol>
+<li>
+<p>Add GeoBlacklight to your <code>Gemfile</code>. To do this, navigate to the Gemfile in your application, open it with a text editor, and paste the following in to add it to the list of gems:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># In ./Gemfile</span>
+<span class="n">gem</span><span class="w"> </span><span class="s1">&#39;blacklight&#39;</span>
+<span class="n">gem</span><span class="w"> </span><span class="s1">&#39;geoblacklight&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Install required gems and their dependencies</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span>install
+</code></pre></div>
+</li>
+<li>
+<p>Run Blacklight generator (with devise authentication)</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rails<span class="w"> </span>g<span class="w"> </span>blacklight:install<span class="w"> </span>--devise
+</code></pre></div>
+</li>
+<li>
+<p>Run GeoBlacklight generator (overrides Blacklight default Solr config)</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rails<span class="w"> </span>g<span class="w"> </span>geoblacklight:install<span class="w"> </span>-f
+</code></pre></div>
+<p class="flash-alert">Depending on how your machine is setup you may need to prepend the rails or rake command with <a href="http://bundler.io/man/bundle-exec.1.html">bundle exec</a>.</p>
+</li>
+<li>
+<p>Run database migrations</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>db:migrate
+</code></pre></div>
+<p>Quick tip: All of these tasks (1 - 5) are included as part of template to generate a new GeoBlacklight application.</p>
+<p class="flash-notice">To run that generator just run:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">DISABLE_SPRING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>rails<span class="w"> </span>new<span class="w"> </span>your_app_name<span class="w"> </span>-m<span class="w"> </span>https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb
+</code></pre></div>
+<p class="flash-notice">Remember to <code>cd your_app_name</code> into the directory before starting the server if you are using the template generator.</p>
+</li>
+<li>
+<p>Start the Solr and Rails server.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>geoblacklight:server
+</code></pre></div>
+<p class="flash-notice">Running this command will download and start the <a href="http://127.0.0.1:8983/solr">Solr server</a>. Other commands available to control Solr include:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>solr:clean<span class="w"> </span><span class="c1"># Useful when seeing a &quot;core already exists&quot; error.</span>
+$<span class="w"> </span>rake<span class="w"> </span>solr:start<span class="w"> </span><span class="c1"># Starts Solr independently of the Rails server in the background (without loading core)</span>
+$<span class="w"> </span>rake<span class="w"> </span>solr:stop<span class="w"> </span><span class="c1"># Stops Solr</span>
+$<span class="w"> </span>rake<span class="w"> </span>solr:restart<span class="w"> </span><span class="c1"># Stops and restarts an already running background Solr server</span>
+</code></pre></div>
+</li>
+<li>
+<p>Navigate to <a href="http://127.0.0.1:3000">http://127.0.0.1:3000</a>. You should see the GeoBlacklight homepage. CTRL + c will stop both the Solr and Rails server.</p>
+</li>
+<li>
+<p><em>Optional</em> Commit your work</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;installed Blacklight and GeoBlacklight&#39;</span>
+</code></pre></div>
+<p class="flash-success">Great job for making it this far. You now have a working GeoBlacklight application!</p>
+</li>
+</ol>
+<h3 id="install-rspec">Install RSpec</h3>
+<p><a href="http://rspec.info/">RSpec</a> is a behavior-driven development framework for Ruby. It is the recommended way to test your application and is used by both the Blacklight and GeoBlacklight projects.</p>
+<ol>
+<li>
+<p>Add <code>rspec-rails</code> to both the <code>:development</code> and <code>:test</code> groups in the <code>Gemfile</code>. Again, open the <code>Gemfile</code> with a text editor and paste the line below into the respective groups.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># In ./Gemfile</span>
+group<span class="w"> </span>:development,<span class="w"> </span>:test<span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>gem<span class="w"> </span><span class="s1">&#39;rspec-rails&#39;</span>,<span class="w"> </span><span class="s1">&#39;~&gt; 3.0&#39;</span>
+end
+</code></pre></div>
+</li>
+<li>
+<p>Download and install RSpec</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span>install
+</code></pre></div>
+</li>
+<li>
+<p>Initialize the spec/ directory (where specs will reside) with</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rails<span class="w"> </span>generate<span class="w"> </span>rspec:install
+</code></pre></div>
+</li>
+<li>
+<p>Run your tests (specs) by running</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rspec
+</code></pre></div>
+<p class="flash-notice">Writing tests for your application is outside the scope of this guide, but there are plenty of great examples out there. Check out the <a href="http://robots.thoughtbot.com/how-we-test-rails-applications">Thoughtbot blog</a>.</p>
+</li>
+<li>
+<p><em>Optional</em> Commit your work</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Installed RSpec&#39;</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="next-steps">Next Steps</h3>
+<p>So far you have a working GeoBlacklight application with a test framework installed. One thing missing is an index to have your application search against. The next section focuses on indexing Solr documents.</p>
+<h2 id="part-4-index-solr-documents">Part 4: Index Solr documents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#download-fixture-documents">Download fixture documents</a></li>
+<li><a href="#index-documents">Index documents</a></li>
+</ol>
+<h3 id="overview">Overview</h3>
+<p>GeoBlacklight uses the GeoBlacklight Schema, Version 1.0 as a template for metadata documents indexed by Solr.</p>
+<p>GeoBlacklight provides a rake task to index documents as fixtures for tests. We will use this rake task to index several documents as an example.</p>
+<h3 id="download-fixture-metadata-documents">Download fixture metadata documents</h3>
+<ol>
+<li>
+<p>Assuming that you have already navigated to the directory of your GeoBlacklight app, create a directory for some Solr documents and then move to it:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>spec/fixtures/solr_documents<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>spec/fixtures/solr_documents
+</code></pre></div>
+</li>
+<li>
+<p>Download some metadata documents (in JSON format) to the directory</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span>https://gist.githubusercontent.com/mejackreed/84abc598927c43af665b/raw/geoblacklight-documents.json
+</code></pre></div>
+</li>
+<li>
+<p>Move back to app root directory</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>-<span class="w"> </span><span class="c1"># Or cd ../../../</span>
+</code></pre></div>
+</li>
+<li>
+<p>Make sure your Solr server and Rails application are started.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>geoblacklight:server
+</code></pre></div>
+</li>
+<li>
+<p><em>Optional</em> Commit your work</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Adds in JSON fixtures&#39;</span>
+</code></pre></div>
+</li>
+</ol>
+<p>The fixtures directory is useful for quickly indexing a small number documents in Solr (built specifically for populating Solr for testing). I would caution though in using this task for large scale indexing and committing, as we've developed other best practices for production-scale indexing.</p>
+<p>Now you should see <a href="http://127.0.0.1:3000">facets listed</a> on the lower left hand part of the page. Try a search! You can <a href="http://127.0.0.1:3000/?q=*">search for *</a> to search for everything.</p>
+<p>Want to index some more documents? Check out <a href="2015-02-05-using-geocombine-to-harvest-and-index-opengeometadata.md">this tutorial</a> on how to easily index metadata from OpenGeoMetadata.</p>
+<p>There are many ways to customize your GeoBlacklight application, and unfortunately we can't cover them all with this tutorial. GeoBlacklight tries to stick to similar patterns as Blacklight, so most of the Blacklight customization techniques should hold true.</p>
+<p><a href="https://github.com/projectblacklight/blacklight/wiki#blacklight-customization">Blacklight Customization</a> - from the Project Blacklight Wiki</p>
+<h2 id="part-5-customizing-your-geoblacklight-application">Part 5: Customizing your GeoBlacklight Application</h2>
+<ol>
+<li><a href="#basic-principles">Basic principles</a></li>
+<li><a href="#customize-metadata-shown">Customize metadata shown</a></li>
+<li><a href="#changing-the-style-of-your-application">Changing the style of your application</a></li>
+<li><a href="#overriding-a-partial">Overriding a partial</a></li>
+</ol>
+<h3 id="basic-principles">Basic principles</h3>
+<p>When it comes to customizing your GeoBlacklight application there are some basic principles to keep in mind.</p>
+<ol>
+<li>
+<p>The less you override the easier it is to upgrade.</p>
+<p>Blacklight and GeoBlacklight adhere to some basic principles which all adopters to override helper methods, view partials, and even classes. A lot of things are configurable out of the box. However, there are some best practices around what to override and where to do it to make sure your application can take advantage to improvements to both Blacklight and GeoBlacklight.  Both projects use <a href="http://semver.org/">semantic versioning</a> to make this upgrade path easier for adopters.</p>
+<p><a href="https://github.com/projectblacklight/blacklight/wiki/Providing-your-own-view-templates">Providing your own view templates</a> - Blacklight Wiki (Customizing the User Interface)</p>
+</li>
+<li>
+<p>Reach out and ask for help on the <a href="https://groups.google.com/forum/#!forum/blacklight-development">Blacklight Developers</a> or <a href="https://groups.google.com/forum/#!forum/geoblacklight-working-group">GeoBlacklight</a> Google Groups</p>
+<p>Asking questions, reaching out to others, and getting feedback from experienced developers is a great practice in general. In this particular case its helps foster the community and start conversations that might help others.</p>
+</li>
+</ol>
+<h3 id="customize-metadata-shown">Customize metadata shown</h3>
+<p>In this example we are going to change the way the GeoBlacklight is configured to show certain metadata fields on an items page. This is the same way a Blacklight application would configure these fields.</p>
+<ol>
+<li>
+<p>Make sure your Solr server and Rails application are started.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>geoblacklight:server
+</code></pre></div>
+</li>
+<li>
+<p>Open the <code>app/controllers/catalog_controller.rb</code> file in your text editor.</p>
+<p class="flash-notice">Hint: <code>catalog_controller.rb</code> is located at "app/controllers/catalog_controller.rb" in your application</p>
+</li>
+<li>
+<p>Scroll down to lines 137 - 144</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">...</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">CREATOR</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Author(s)&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;author&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">DESCRIPTION</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Description&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;description&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">helper_method</span><span class="p">:</span><span class="w"> </span><span class="ss">:render_value_as_truncate_abstract</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Publisher&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;publisher&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PART_OF</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Collection&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;isPartOf&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SPATIAL_COVERAGE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Place(s)&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;spatial&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SUBJECT</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Subject(s)&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;keywords&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">TEMPORAL</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;temporal&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PROVENANCE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Held by&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<span class="o">...</span>
+</code></pre></div>
+ These configuration options relate to fields that are indexed in Solr. You can disable a metadata field being shown on an items show page. If you navigate to an <a href="http://127.0.0.1:3000/catalog/stanford-cg357zz0321">items page</a>, it will currently show field called publisher. Maybe you would like to rename that field to "Data publisher".</p>
+</li>
+<li>
+<p>Modify the label in line 139</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># change this</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Publisher&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;publisher&#39;</span>
+<span class="c1"># to this</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Data publisher&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;publisher&#39;</span>
+</code></pre></div>
+<p>Save the file and reload the page. You should see the label change.</p>
+</li>
+<li>
+<p>Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the <code>Settings.FIELDS.CREATOR</code> line (137).</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># config.add_show_field Settings.FIELDS.CREATOR, label: &#39;Author(s)&#39;, itemprop: &#39;author&#39;</span>
+</code></pre></div>
+ Save the file and reload the page. You should no longer see the "Author(s)" field.</p>
+<p>You have now customized a layer's show page!</p>
+</li>
+</ol>
+<h3 id="changing-the-style-of-your-application">Changing the style of your application</h3>
+<p>GeoBlacklight uses <a href="http://getbootstrap.com/">Twitter Bootstrap</a> as a base for UI components and is implemented using the <a href="https://github.com/twbs/bootstrap">bootstrap-sass</a> gem. This approach should make things easier for adopters wanting to customize the look and feel of their application. <a href="https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss">Bootstrap variables</a> can easily be modified which will change how the application looks.</p>
+<ol>
+<li>
+<p>You can update Bootstrap variables in your <code>_customizations.scss</code>!</p>
+<p>Change link color</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// in app/assets/stylesheets/_customizations.scss</span>
+<span class="c1">// Links</span>
+<span class="nv">$link-color</span><span class="o">:</span><span class="w"> </span><span class="ni">green</span><span class="p">;</span>
+</code></pre></div>
+<p>Change default border style</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// in app/assets/stylesheets/bootstrap-variables.scss</span>
+<span class="c1">// Borders</span>
+<span class="nv">$border-width</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="nv">$border-radius</span><span class="o">:</span><span class="w"> </span><span class="mf">.4</span><span class="kt">rem</span><span class="p">;</span>
+</code></pre></div>
+<p class="flash-success">Great job! You can configure a whole host of options using this Bootstrap customization technique. Once again, here is the list of Bootstrap variables you can customize <a href="https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss">https://github.com/twbs/bootstrap/blob/v4.6.0/scss/_variables.scss</a> .</p>
+</li>
+</ol>
+<h3 id="overriding-a-partial">Overriding a partial</h3>
+<p>Lets say you want to override the homepage that is shown in GeoBlacklight that can easily be done by just creating same-named a partial at the same path in your GeoBlacklight application.</p>
+<ol>
+<li>
+<p>Check out home page partial on Github. <a href="https://github.com/geoblacklight/geoblacklight/blob/main/app/views/catalog/_home_text.html.erb">https://github.com/geoblacklight/geoblacklight/blob/main/app/views/catalog/_home_text.html.erb</a></p>
+</li>
+<li>
+<p>This same partial is being overriden from Blacklight <a href="https://github.com/projectblacklight/blacklight/blob/master/app/views/catalog/_home_text.html.erb">https://github.com/projectblacklight/blacklight/blob/master/app/views/catalog/_home_text.html.erb</a></p>
+</li>
+<li>
+<p>Create a file with the same name and path in your application.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>app/views/catalog
+$<span class="w"> </span>touch<span class="w"> </span>app/views/catalog/_home_text.html.erb
+</code></pre></div>
+</li>
+<li>
+<p>Edit this file and add some custom text</p>
+<div class="highlight"><pre><span></span><code><span class="x">This is the home page.</span>
+
+<span class="x">Search bar:</span>
+<span class="cp">&lt;%=</span><span class="w"> </span><span class="n">render_search_bar</span><span class="w"> </span><span class="cp">%&gt;</span>
+</code></pre></div>
+<p class="flash-success">See how easy that was? You even included another partial!</p>
+</li>
+</ol>
+<h3 id="customize-i18n-keys">Customize i18n keys</h3>
+<p>Blacklight and GeoBlacklight use <a href="http://guides.rubyonrails.org/i18n.html">i18n</a> for internationalization support. These keys provide a quick way to customize your app without having to override partials.</p>
+<ol>
+<li>
+<p>Open up file <code>config/locales/blacklight.en.yml</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">blacklight</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">application_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Blacklight&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Edit the file, adding a customization to the search form label</p>
+<div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">blacklight</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">application_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Geo</span><span class="nv"> </span><span class="s">App&#39;</span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">form</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">submit</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Search</span><span class="nv"> </span><span class="s">this&#39;</span>
+</code></pre></div>
+<p class="flash-success">Refresh your home page and you should see the submit button text changed. If you inspect the html you will notice the HTML title attribute changed.</p>
+<p class="flash-notice">More configurable keys are available, check out what you can customize using this approach:
+  - <a href='https://github.com/projectblacklight/blacklight/blob/master/config/locales/blacklight.en.yml'>Blacklight Configurable Keys</a>
+  - <a href='https://github.com/geoblacklight/geoblacklight/blob/main/config/locales/geoblacklight.en.yml'>GeoBlacklight Configurable Keys</a></p>
+</li>
+</ol>
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>Thanks for attending this workshop. You can contribute feedback about this workshop by filling out a <a href="https://docs.google.com/a/stanford.edu/forms/d/1odzYIFFJjBL7-0Y1ZlWPS-pBzW1EbyFaStA9VD3r_Zg/viewform">quick survey</a>.</p>
+<p>This workshop is open source, and you can <a href="https://github.com/geoblacklight/geoblacklight.github.io">contribute back to it</a>.</p>
+<p>Don't forget to stop your virtual machine.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>vagrant<span class="w"> </span>halt<span class="w"> </span><span class="c1"># stops the virtual machine</span>
+</code></pre></div>
+<div class='license-block'>
+  <div>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+  </div>
+</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GeoBlacklight Community &copy; 2015 - 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GeoBlacklight" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://geoblacklight.slack.com" target="_blank" rel="noopener" title="geoblacklight.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://groups.google.com/g/geoblacklight-working-group" target="_blank" rel="noopener" title="groups.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2583 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://geoblacklight.org/docs/upgrade_version_4_0/">
+      
+      
+        <link rel="prev" href="../rendering_html_from_description/">
+      
+      
+        <link rel="next" href="../upgrade_version_2_0/">
+      
+      
+      <link rel="icon" href="../../images/gbl-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Upgrade to Version 4.0 - GeoBlacklight</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#upgrading-to-geoblacklight-40" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GeoBlacklight" class="md-header__button md-logo" aria-label="GeoBlacklight" data-md-component="logo">
+      
+  <img src="../../images/gbl-favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoBlacklight
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Upgrade to Version 4.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoblacklight/geoblacklight" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeoBlacklight on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../community/" class="md-tabs__link">
+        
+  
+    
+  
+  Community
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../showcase/" class="md-tabs__link">
+          
+  
+    
+  
+  Showcase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GeoBlacklight" class="md-nav__button md-logo" aria-label="GeoBlacklight" data-md-component="logo">
+      
+  <img src="../../images/gbl-favicon.png" alt="logo">
+
+    </a>
+    GeoBlacklight
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoblacklight/geoblacklight" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeoBlacklight on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../showcase/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Showcase
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Showcase
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2016
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2015
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/sprints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sprints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Install
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geoblacklight_quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Developers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Running in Production
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Running in Production
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware_recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation_recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework-recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external_solr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using an External Solr Instance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../periodic_maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Periodic Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Customization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Customization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure the Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update the Catalog Controller
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solr_search_relevancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Search Relevancy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaflet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customize Leaflet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding_mirador_viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Mirador IIIF Viewer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Thumbnail Images
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding_svg_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add SVG Icons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_relations_widget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Data Relations Widget
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rendering_html_from_description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Render HTML in Metadata Fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Upgrade
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Upgrade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Upgrade to Version 4.0
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade to Version 4.0
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gemfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Gemfile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-apache-solr" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Apache Solr
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Data Migration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Application Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-application-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Application Changes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade_version_2_0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade to Version 2.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings-yml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings.yml fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_maps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index Maps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geopackages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GeoPackages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json-geojson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JSONs and GeoJSONs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="upgrading-to-geoblacklight-40">Upgrading to GeoBlacklight 4.0</h1>
+<p>There are several steps to complete this major release upgrade. Detailed notes follow for each of the following upgrade steps:</p>
+<ol>
+<li>Gemfile</li>
+<li>Apache Solr</li>
+<li>Data Migration</li>
+<li>Application Configuration</li>
+<li>Application Changes</li>
+</ol>
+<h2 id="1-gemfile">1. Gemfile</h2>
+<p>Update your <code>Gemfile</code> to GBL v4:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">gem</span><span class="w"> </span><span class="s1">&#39;geoblacklight&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;~&gt; 4.0&#39;</span>
+</code></pre></div>
+<h2 id="2-apache-solr">2. Apache Solr</h2>
+<p><strong>GeoBlacklight now requires Solr 8.3 or higher.</strong></p>
+<p>GBL's Solr configuration files are updated to reflect the Aardvark metadata element list and support new complex geometries features. See the default versions of schema.xml and solrconfig.xml and update your local files as necessary.</p>
+<ul>
+<li>solr/config/schema.xml</li>
+<li>solr/config/solrconfig.xml</li>
+</ul>
+<h2 id="3-data-migration">3. Data Migration</h2>
+<p>Migrate your Solr documents from the GBL v1.0 metadata standard to OGM Aardvark. GBL community documentation and migration tools are listed below:</p>
+<ul>
+<li><a href="https://opengeometadata.org/upgrade-metadata/">OGM's Guide for Upgrading Metadata</a></li>
+<li><a href="https://opengeometadata.org/aardvark-gbl-1-crosswalk/">Full GBL 1.0 to OGM Aardvark Crosswalk</a></li>
+<li><a href="https://opengeometadata.org/scripts/">Tools and Techniques for Upgrading</a></li>
+<li><a href="https://kgjenkins.github.io/gbl2aardvark/">gbl2aardvark: convert GeoBlacklight 1.0 json files to Aardvark
+</a></li>
+</ul>
+<h2 id="4-application-configuration">4. Application Configuration</h2>
+<p>Review the configuration files for your GBL instance. You will need to update your <code>settings.yml</code> file and <code>catalog_controller.rb</code> file to use the new Aardvark field mappings. See the default versions of these files in GeoBlacklight v4 and alter your files as necessary:</p>
+<p>You will also need to search your local application code for any old <code>Settings.FIELDS.(X)</code> mappings and update them as necessary.</p>
+<h3 id="settings">Settings</h3>
+<p><code>config/settings.yml</code></p>
+<p>Many GBLv4 configuration changes take place in the <code>settings.yml</code> file.</p>
+<p>List of GBLv4 <a href="https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/settings.yml">settings.yml</a> changes:</p>
+<ul>
+<li>Solr field mappings: Settings.FIELDS</li>
+<li>GeoBlacklight Params: Settings.GBL_PARAMS</li>
+<li>Relationships to display: Settings.RELATIONSHIPS_SHOWN</li>
+<li>Parent/Child SVG Icon titles</li>
+</ul>
+<h4 id="solr-field-mappings-settingsfields">Solr field mappings: Settings.FIELDS</h4>
+<p>With the adoption of the OGM Aardvark metadata schema, we need to update all the <code>Settings.FIELDS</code> values for Aardvark. Here are the default GBLv4 values. If you have additional local customizations here, you'll need carry those over, too.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Solr field mappings</span>
+<span class="nt">FIELDS</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">:ACCESS_RIGHTS</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_accessRights_s&#39;</span>
+<span class="w">  </span><span class="nt">:ALTERNATIVE_TITLE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_alternative_sm&#39;</span>
+<span class="w">  </span><span class="nt">:CENTROID</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dcat_centroid&#39;</span>
+<span class="w">  </span><span class="nt">:CREATOR</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_creator_sm&#39;</span>
+<span class="w">  </span><span class="nt">:DATE_ISSUED</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_issued_s&#39;</span>
+<span class="w">  </span><span class="nt">:DATE_RANGE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_dateRange_drsim&#39;</span>
+<span class="w">  </span><span class="nt">:DESCRIPTION</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_description_sm&#39;</span>
+<span class="w">  </span><span class="nt">:FORMAT</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_format_s&#39;</span>
+<span class="w">  </span><span class="nt">:FILE_SIZE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_fileSize_s&#39;</span>
+<span class="w">  </span><span class="nt">:GEOREFERENCED</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_georeferenced_b&#39;</span>
+<span class="w">  </span><span class="nt">:ID</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;id&#39;</span>
+<span class="w">  </span><span class="nt">:IDENTIFIER</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_identifier_sm&#39;</span>
+<span class="w">  </span><span class="nt">:INDEX_YEAR</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_indexYear_im&#39;</span>
+<span class="w">  </span><span class="nt">:IS_PART_OF</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_isPartOf_sm&#39;</span>
+<span class="w">  </span><span class="nt">:IS_REPLACED_BY</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_isReplacedBy_sm&#39;</span>
+<span class="w">  </span><span class="nt">:THEME</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dcat_theme_sm&#39;</span>
+<span class="w">  </span><span class="nt">:KEYWORD</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dcat_keyword_sm&#39;</span>
+<span class="w">  </span><span class="nt">:LANGUAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_language_sm&#39;</span>
+<span class="w">  </span><span class="nt">:LAYER_MODIFIED</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_mdModified_dt&#39;</span>
+<span class="w">  </span><span class="nt">:LICENSE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_license_sm&#39;</span>
+<span class="w">  </span><span class="nt">:MEMBER_OF</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;pcdm_memberOf_sm&#39;</span>
+<span class="w">  </span><span class="nt">:METADATA_VERSION</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_mdVersion_s&#39;</span>
+<span class="w">  </span><span class="nt">:MODIFIED</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_mdModified_dt&#39;</span>
+<span class="w">  </span><span class="nt">:OVERLAP_FIELD</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;solr_bboxtype&#39;</span>
+<span class="w">  </span><span class="nt">:PUBLISHER</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_publisher_sm&#39;</span>
+<span class="w">  </span><span class="nt">:PROVIDER</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;schema_provider_s&#39;</span>
+<span class="w">  </span><span class="nt">:REFERENCES</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_references_s&#39;</span>
+<span class="w">  </span><span class="nt">:RELATION</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_relation_sm&#39;</span>
+<span class="w">  </span><span class="nt">:REPLACES</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_replaces_sm&#39;</span>
+<span class="w">  </span><span class="nt">:RESOURCE_CLASS</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_resourceClass_sm&#39;</span>
+<span class="w">  </span><span class="nt">:RESOURCE_TYPE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_resourceType_sm&#39;</span>
+<span class="w">  </span><span class="nt">:RIGHTS</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_rights_sm&#39;</span>
+<span class="w">  </span><span class="nt">:RIGHTS_HOLDER</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_rightsHolder_sm&#39;</span>
+<span class="w">  </span><span class="nt">:SOURCE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_source_sm&#39;</span>
+<span class="w">  </span><span class="nt">:SPATIAL_COVERAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_spatial_sm&#39;</span>
+<span class="w">  </span><span class="nt">:GEOMETRY</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;locn_geometry&#39;</span>
+<span class="w">  </span><span class="nt">:SUBJECT</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_subject_sm&#39;</span>
+<span class="w">  </span><span class="nt">:SUPPRESSED</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_suppressed_b&#39;</span>
+<span class="w">  </span><span class="nt">:TEMPORAL_COVERAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_temporal_sm&#39;</span>
+<span class="w">  </span><span class="nt">:TITLE</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_title_s&#39;</span>
+<span class="w">  </span><span class="nt">:VERSION</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;dct_isVersionOf_sm&#39;</span>
+<span class="w">  </span><span class="nt">:WXS_IDENTIFIER</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gbl_wxsIdentifier_s&#39;</span>
+</code></pre></div>
+<h4 id="geoblacklight-params">GeoBlacklight Params</h4>
+<p><code>Settings.GBL_PARAMS</code></p>
+<p>Add the <strong>GBL_PARAMS</strong> array to <code>settings.yml</code> to whitelist the GBL application params so they are appended to controller methods and search builder queries.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Non-search-field GeoBlacklight application permitted params</span>
+<span class="nt">GBL_PARAMS</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:bbox</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:email</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:file</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:format</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:id</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:logo</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:provider</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:type</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:BBOX</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:HEIGHT</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:LAYERS</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:QUERY_LAYERS</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:URL</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:WIDTH</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:X</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:Y</span>
+</code></pre></div>
+<h4 id="relationships-to-display">Relationships to display</h4>
+<p><code>Settings.RELATIONSHIPS_SHOWN</code></p>
+<p>The number of item/parent/collection relationships supported within GBLv4 has grown considerably. Add these default values to support the new relationships. You can also add additional relationship keys, fields, and query_types to support local customizations.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Relationships to display</span>
+<span class="nt">RELATIONSHIPS_SHOWN</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MEMBER_OF</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pcdm_memberOf_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ancestors</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nil</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.member_of</span>
+<span class="w">  </span><span class="nt">PART_OF_ANCESTORS</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_isPartOf_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ancestors</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nil</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.part_of_ancestors</span>
+<span class="w">  </span><span class="nt">PART_OF_DESCENDANTS</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_isPartOf_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">descendants</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child-item</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.part_of_descendants</span>
+<span class="w">  </span><span class="nt">RELATION</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_relation_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ancestors</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nil</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.relation</span>
+<span class="w">  </span><span class="nt">REPLACES</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_replaces_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ancestors</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nil</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.replaces</span>
+<span class="w">  </span><span class="nt">REPLACED_BY</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_isReplacedBy_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">descendants</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nil</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.replaced_by</span>
+<span class="w">  </span><span class="nt">SOURCE_ANCESTORS</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_source_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ancestors</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parent-item</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.ancestor</span>
+<span class="w">  </span><span class="nt">SOURCE_DESCENDANTS</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_source_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">descendants</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child-item</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.descendant</span>
+<span class="w">  </span><span class="nt">VERSION_OF</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dct_isVersionOf_sm</span>
+<span class="w">    </span><span class="nt">query_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">descendants</span>
+<span class="w">    </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nil</span>
+<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">geoblacklight.relations.version_of</span>
+</code></pre></div>
+<h4 id="parentchild-svg-icon-titles">Parent/Child SVG Icon titles</h4>
+<p>Replace these relationship icon file names.</p>
+<div class="highlight"><pre><span></span><code>SOURCE_ANCESTORS:
+<span class="w"> </span> field: dct_source_sm
+<span class="w"> </span> query_type: ancestors
+<span class="gd">- icon: pagelines-brands</span>
+<span class="gi">+ icon: parent-item</span>
+<span class="w"> </span> label: geoblacklight.relations.ancestor
+SOURCE_DESCENDANTS:
+<span class="w"> </span> field: dct_source_sm
+<span class="w"> </span> query_type: descendants
+<span class="gd">- icon: leaf</span>
+<span class="gi">+ icon: child-item</span>
+<span class="w"> </span> label: geoblacklight.relations.descendant
+VERSION_OF:
+<span class="w"> </span> field: dct_isVersionOf_sm
+</code></pre></div>
+<h4 id="viewer-controls">Viewer Controls</h4>
+<p><code>Settings.LEAFLET.VIEWERS.*.CONTROLS</code></p>
+<p>GBLv4 includes native support for the <code>Leaflet.fullscreen</code> plugin. Update your Leaflet configuration to include the <code>Fullscreen</code> viewer option.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Settings for leaflet</span>
+<span class="nt">LEAFLET</span><span class="p">:</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">VIEWERS</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="nt">DYNAMICMAPLAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Opacity&#39;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Fullscreen&#39;</span>
+<span class="w">    </span><span class="nt">FEATURELAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Opacity&#39;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Fullscreen&#39;</span>
+<span class="w">    </span><span class="nt">IIIF</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Fullscreen&#39;</span>
+<span class="w">    </span><span class="nt">IMAGEMAPLAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Opacity&#39;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Fullscreen&#39;</span>
+<span class="w">    </span><span class="nt">INDEXMAP</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Fullscreen&#39;</span>
+<span class="w">    </span><span class="nt">TILEDMAPLAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Opacity&#39;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Fullscreen&#39;</span>
+<span class="w">    </span><span class="nt">WMS</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Opacity&#39;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Fullscreen&#39;</span>
+</code></pre></div>
+<h3 id="catalogcontroller">CatalogController</h3>
+<p><code>app/controllers/catalog_controller.rb</code></p>
+<p>Besides the <code>settings.yml</code> configuration changes above, the <code>catalog_controller.rb</code> file holds a great deal of application configuration and it needs to be updated for the new <code>Settings.FIELD</code> values.</p>
+<p>It may be helpful to review the diff of changes to catalog_controller.rb from <a href="https://github.com/geoblacklight/geoblacklight/compare/v3.8.0...v4.0.0#diff-9e99abd5b848670740a1015f4d03aeaa747a747f0ae3cc3177d152975c017e81">v3.8.0 to v4.0.0</a></p>
+<p>Here is a list of GBL v4 <a href="https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/catalog_controller.rb">catalog_controller.rb</a> changes:</p>
+<h4 id="default-solr-params">Default Solr Params</h4>
+<p><code>config.default_document_solr_params</code></p>
+<p>This uses the Settings.FIELDS.ID field now.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1">## Default parameters to send on single-document requests to Solr...</span>
+<span class="w">  </span><span class="n">config</span><span class="o">.</span><span class="n">default_document_solr_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="ss">:qt</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;document&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">:q</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;{!raw f=</span><span class="si">#{</span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">ID</span><span class="si">}</span><span class="s2"> v=$id}&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<h4 id="view-defaults">View Defaults</h4>
+<p><code>config.view</code> defaults</p>
+<p>Adds the "map" split view for catalog#index</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># GeoBlacklight Defaults</span>
+<span class="w">    </span><span class="c1"># * Adds the &quot;map&quot; split view for catalog#index</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="ss">partials</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s1">&#39;index&#39;</span><span class="o">]</span><span class="p">)</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">delete_field</span><span class="p">(</span><span class="s1">&#39;list&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="facet-fields">Facet Fields</h4>
+<p><code>config.add_facet_field(s)</code></p>
+<p>These are all now mapped to Aardvark fields. Note: 'icon_facet' partials are now replaced by the <code>item_component: Geoblacklight::IconFacetItemComponent</code></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># FACETS</span>
+
+<span class="w">    </span><span class="c1"># DEFAULT FACETS</span>
+<span class="w">    </span><span class="c1"># to add additional facets, use the keys defined in the settings.yml file</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">INDEX_YEAR</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SPATIAL_COVERAGE</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Place&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">ACCESS_RIGHTS</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Access&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">limit</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">item_component</span><span class="p">:</span><span class="w"> </span><span class="no">Geoblacklight</span><span class="o">::</span><span class="no">IconFacetItemComponent</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">RESOURCE_CLASS</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Resource Class&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">RESOURCE_TYPE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Resource Type&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">FORMAT</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Format&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SUBJECT</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Subject&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">THEME</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Theme&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">CREATOR</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Creator&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Publisher&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PROVIDER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Provider&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">limit</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">item_component</span><span class="p">:</span><span class="w"> </span><span class="no">Geoblacklight</span><span class="o">::</span><span class="no">IconFacetItemComponent</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">GEOREFERENCED</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Georeferenced&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:limit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">3</span>
+</code></pre></div>
+<h4 id="gbl-application-facets">GBL Application Facets</h4>
+<p>Our map-based search feature is now run via a series of (Geo)Blacklight class extensions which require this configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># GEOBLACKLIGHT APPLICATION FACETS</span>
+
+<span class="w">    </span><span class="c1"># Map-Based &quot;Search Here&quot; Feature</span>
+<span class="w">    </span><span class="c1"># item_presenter       - Defines how the facet appears in the GBL UI</span>
+<span class="w">    </span><span class="c1"># filter_query_builder - Defines the query generated for Solr</span>
+<span class="w">    </span><span class="c1"># filter_class         - Defines how to add/remove facet from query</span>
+<span class="w">    </span><span class="c1"># label                - Defines the label used in contstraints container</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">GEOMETRY</span><span class="p">,</span><span class="w"> </span><span class="ss">item_presenter</span><span class="p">:</span><span class="w"> </span><span class="no">Geoblacklight</span><span class="o">::</span><span class="no">BboxItemPresenter</span><span class="p">,</span><span class="w"> </span><span class="ss">filter_class</span><span class="p">:</span><span class="w"> </span><span class="no">Geoblacklight</span><span class="o">::</span><span class="no">BboxFilterField</span><span class="p">,</span><span class="w"> </span><span class="ss">filter_query_builder</span><span class="p">:</span><span class="w"> </span><span class="no">Geoblacklight</span><span class="o">::</span><span class="no">BboxFilterQuery</span><span class="p">,</span><span class="w"> </span><span class="ss">within_boost</span><span class="p">:</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">BBOX_WITHIN_BOOST</span><span class="p">,</span><span class="w"> </span><span class="ss">overlap_boost</span><span class="p">:</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">OVERLAP_RATIO_BOOST</span><span class="p">,</span><span class="w"> </span><span class="ss">overlap_field</span><span class="p">:</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">OVERLAP_FIELD</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Bounding Box&#39;</span>
+</code></pre></div>
+<h4 id="item-relationship-facets">Item Relationship Facets</h4>
+<p>To display item-to-item relationships, add this block below:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># Item Relationship Facets</span>
+<span class="w">    </span><span class="c1"># * Not displayed to end user (show: false)</span>
+<span class="w">    </span><span class="c1"># * Must be present for relationship &quot;Browse all 4 records&quot; links to work</span>
+<span class="w">    </span><span class="c1"># * Label value becomes the search contraint filter name</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">MEMBER_OF</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Member Of&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">show</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">IS_PART_OF</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Is Part Of&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">show</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">RELATION</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Related&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">show</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">REPLACES</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replaces&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">show</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">IS_REPLACED_BY</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Is Replaced By&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">show</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SOURCE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Source&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">show</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_facet_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">VERSION</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Is Version Of&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">show</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span>
+</code></pre></div>
+<h4 id="index-fields">Index Fields</h4>
+<p><code>config.add_index_field(s)</code></p>
+<p>The "Index Fields" are the values that appear on search results lists. These have been mapped to Aardvark fields.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_index_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">INDEX_YEAR</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_index_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">CREATOR</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_index_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">DESCRIPTION</span><span class="p">,</span><span class="w"> </span><span class="ss">helper_method</span><span class="p">:</span><span class="w"> </span><span class="ss">:snippit</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_index_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span>
+</code></pre></div>
+<h4 id="show-fields">Show Fields</h4>
+<p><code>config.add_show_field(s)</code></p>
+<p>The "Show Fields" are the values that appear on an item detail page. These have been mapped to Aardvark fields, and many non-activated optional fields have been added to the default <code>catalog_controller.rb</code> file, too.</p>
+<p><a href="https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/catalog_controller.rb#L153-L218">View "Show Field" configuration online</a></p>
+<h4 id="sort-fields">Sort Fields</h4>
+<p><code>config.add_sort_field(s)</code></p>
+<p>The GBLv4 default sort fields options have been expanded. Here is the new default value for sorting:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_sort_field</span><span class="w"> </span><span class="s1">&#39;score desc, dct_title_sort asc&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Relevance&#39;</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_sort_field</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">INDEX_YEAR</span><span class="si">}</span><span class="s2"> desc, dct_title_sort asc&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Year (Newest first)&#39;</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_sort_field</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">INDEX_YEAR</span><span class="si">}</span><span class="s2"> asc, dct_title_sort asc&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Year (Oldest first)&#39;</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_sort_field</span><span class="w"> </span><span class="s1">&#39;dct_title_sort asc&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Title (A-Z)&#39;</span>
+<span class="w">    </span><span class="n">config</span><span class="o">.</span><span class="n">add_sort_field</span><span class="w"> </span><span class="s1">&#39;dct_title_sort desc&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">:label</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Title (Z-A)&#39;</span>
+</code></pre></div>
+<h4 id="web-services-changes">Web Services Changes</h4>
+<p>Our web_services method is no longer a show tool partial. Migrating from GBLv3 to GBLv4, you will need to remove your <code>config.add_show_tools_partial :web_services...</code> line and add the new <code>def web_services</code> method:</p>
+<p><a href="https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/catalog_controller.rb#L341-L350">View new method online</a></p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span> # Custom tools for GeoBlacklight
+<span class="gd">- config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] &amp;&amp; (Settings.WEBSERVICES_SHOWN &amp; options[:document].references.refs.map(&amp;:type).map(&amp;:to_s)).any? }</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">web_services</span>
+<span class="w">    </span><span class="vi">@response</span><span class="p">,</span><span class="w"> </span><span class="vi">@documents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">action_documents</span>
+
+<span class="w">    </span><span class="n">respond_to</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+<span class="w">      </span><span class="nb">format</span><span class="o">.</span><span class="n">html</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">render</span><span class="w"> </span><span class="ss">layout</span><span class="p">:</span><span class="w"> </span><span class="kp">false</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">request</span><span class="o">.</span><span class="n">xhr?</span>
+<span class="w">        </span><span class="c1"># Otherwise draw the full page</span>
+<span class="w">      </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">  </span><span class="k">end</span>
+</code></pre></div>
+<h4 id="locales">Locales</h4>
+<p><code>config/locales/geoblacklight.en.yml</code></p>
+<p>We have added additional relations entries for GBLv4 <a href="https://github.com/geoblacklight/geoblacklight/blob/main/config/locales/geoblacklight.en.yml">config/locales/geoblacklight.en.yml</a>.</p>
+<p>If you have local overrides or customizations to this file, please include the new relations entries locally.</p>
+<h2 id="5-application-changes">5. Application Changes</h2>
+<h3 id="applicationcontroller">ApplicationController</h3>
+<p><code>app/controllers/application_controller.rb</code></p>
+<p>GBL installer now includes a <code>before_action</code> method to permit GBL application params. You'll need to add this code to your application_controller.rb file:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">before_action</span><span class="w"> </span><span class="ss">:allow_geoblacklight_params</span>
+
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">allow_geoblacklight_params</span>
+<span class="w">    </span><span class="c1"># Blacklight::Parameters will pass these to params.permit</span>
+<span class="w">    </span><span class="n">blacklight_config</span><span class="o">.</span><span class="n">search_state_fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="no">Settings</span><span class="o">.</span><span class="n">GBL_PARAMS</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+</code></pre></div>
+<h3 id="searchbuilder">SearchBuilder</h3>
+<p><code>app/models/search_builder.rb</code></p>
+<p>GBL's default search builder concerns have changed. We've added <code>Geoblacklight::SuppressedRecordsSearchBehavior</code>. You'll need this code in your application's <code>search_builder.rb</code> class:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># frozen_string_literal: true</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchBuilder</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Blacklight</span><span class="o">::</span><span class="no">SearchBuilder</span>
+<span class="w">  </span><span class="kp">include</span><span class="w"> </span><span class="no">Blacklight</span><span class="o">::</span><span class="no">Solr</span><span class="o">::</span><span class="no">SearchBuilderBehavior</span>
+<span class="w">  </span><span class="kp">include</span><span class="w"> </span><span class="no">Geoblacklight</span><span class="o">::</span><span class="no">SuppressedRecordsSearchBehavior</span>
+</code></pre></div>
+<h3 id="stylesheets">Stylesheets</h3>
+<p><code>app/assets/stylesheets/application.scss</code></p>
+<p>GBL v4 no longer vendorizes the <code>leaflet-label</code> stylesheet. Check your local stylesheet files and remove any <code>*= require leaflet-label</code> or <code>@import 'leaflet-label';</code> lines.</p>
+<div class="highlight"><pre><span></span><code><span class="gd">- /*</span>
+<span class="gd">- *= require leaflet-label</span>
+<span class="gd">- */</span>
+</code></pre></div>
+<h3 id="javascripts">JavaScripts</h3>
+<p><code>app/assets/javascript/</code></p>
+<p>GBL v4 adds a new Leaflet control: <a href="https://github.com/Leaflet/Leaflet.fullscreen">Leaflet.fullzoom</a>. If you previously added this feature to your local GBL instance, you'll want to remove your custom implementation. This control can be added to your maps via the <code>settings.yml</code> file (see documentation above).</p>
+<h3 id="homepage">Homepage</h3>
+<p>The <code>_homepage_text.html.erb</code> view partial has been updated to use a view component for rendering the featured facets feature. You should update any local customizations to this file to use the components.</p>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;col-sm&#39;</span><span class="p">&gt;</span>
+      <span class="err">&lt;</span>%= content_tag :h3, t(&#39;geoblacklight.home.category_heading&#39;) %&gt;
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;row&#39;</span><span class="p">&gt;</span>
+        <span class="err">&lt;</span>%= render(Geoblacklight::HomepageFeatureFacetComponent.new(icon: &#39;home&#39;, label: &#39;geoblacklight.home.institution&#39;, facet_field: Settings.FIELDS.PROVIDER, response: @response)) %&gt;
+
+        <span class="err">&lt;</span>%= render(Geoblacklight::HomepageFeatureFacetComponent.new(icon: &#39;arrow-circle-down&#39;, label: &#39;geoblacklight.home.data_type&#39;, facet_field: Settings.FIELDS.RESOURCE_TYPE, response: @response)) %&gt;
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;row&#39;</span><span class="p">&gt;</span>
+        <span class="err">&lt;</span>%= render(Geoblacklight::HomepageFeatureFacetComponent.new(icon: &#39;globe&#39;, label: &#39;geoblacklight.home.placename&#39;, facet_field: Settings.FIELDS.SPATIAL_COVERAGE, response: @response)) %&gt;
+
+        <span class="err">&lt;</span>%= render(Geoblacklight::HomepageFeatureFacetComponent.new(icon: &#39;tags&#39;, label: &#39;geoblacklight.home.subject&#39;, facet_field: Settings.FIELDS.SUBJECT, response: @response)) %&gt;
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GeoBlacklight Community &copy; 2015 - 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GeoBlacklight" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://geoblacklight.slack.com" target="_blank" rel="noopener" title="geoblacklight.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://groups.google.com/g/geoblacklight-working-group" target="_blank" rel="noopener" title="groups.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

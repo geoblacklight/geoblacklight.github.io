@@ -1,0 +1,2772 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://geoblacklight.org/docs/leaflet/">
+      
+      
+        <link rel="prev" href="../solr_search_relevancy/">
+      
+      
+        <link rel="next" href="../adding_mirador_viewer/">
+      
+      
+      <link rel="icon" href="../../images/gbl-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Customize Leaflet - GeoBlacklight</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#customizing-leaflet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GeoBlacklight" class="md-header__button md-logo" aria-label="GeoBlacklight" data-md-component="logo">
+      
+  <img src="../../images/gbl-favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoBlacklight
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Customize Leaflet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoblacklight/geoblacklight" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeoBlacklight on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../community/" class="md-tabs__link">
+        
+  
+    
+  
+  Community
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../showcase/" class="md-tabs__link">
+          
+  
+    
+  
+  Showcase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GeoBlacklight" class="md-nav__button md-logo" aria-label="GeoBlacklight" data-md-component="logo">
+      
+  <img src="../../images/gbl-favicon.png" alt="logo">
+
+    </a>
+    GeoBlacklight
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoblacklight/geoblacklight" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GeoBlacklight on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../showcase/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Showcase
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Showcase
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2019/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2018/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2016
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2015/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2015
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/sprints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sprints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/category/tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Install
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geoblacklight_quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Developers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Running in Production
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Running in Production
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware_recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation_recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementation Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework-recommendations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external_solr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using an External Solr Instance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../periodic_maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Periodic Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Customization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Customization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure the Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update the Catalog Controller
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solr_search_relevancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure Search Relevancy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Customize Leaflet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Customize Leaflet
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-leaflet-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Leaflet controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-the-default-basemap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching the default basemap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-basemap-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Basemap Switching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homepage-map-centroid-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homepage Map Centroid Clusters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-leaflet-for-retina-displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Leaflet for retina displays
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding_mirador_viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Mirador IIIF Viewer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Thumbnail Images
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding_svg_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add SVG Icons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_relations_widget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Data Relations Widget
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rendering_html_from_description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Render HTML in Metadata Fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Upgrade
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Upgrade
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade_version_4_0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade to Version 4.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrade_version_2_0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade to Version 2.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings-yml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings.yml fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_maps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index Maps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geopackages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GeoPackages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json-geojson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JSONs and GeoJSONs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="customizing-leaflet">Customizing Leaflet</h1>
+<h2 id="adding-leaflet-controls">Adding Leaflet controls</h2>
+<p>GeoBlacklight supports adding customized Leaflet plugin controls to the maps. This can useful for adding a <a href="http://leafletjs.com/plugins#geocoding">geocoding</a> or <a href="http://leafletjs.com/plugins#fullscreen-controls">fullscreen</a>. This guide will walkthrough adding the <a href="https://github.com/Leaflet/Leaflet.fullscreen">Leaflet.fullscreen</a> control plugin.</p>
+<h3 id="add-required-javascript-and-css">Add required Javascript and CSS</h3>
+<p>To add a custom control, first make sure that you require the needed JavaScript and/or CSS styles in your GeoBlacklight application.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// In your applications&#39;s app/assets/javascripts/geoblacklight.js</span>
+
+<span class="c1">//= require geoblacklight/geoblacklight</span>
+<span class="c1">//= require geoblacklight/basemaps</span>
+<span class="c1">//= require geoblacklight/controls</span>
+<span class="c1">//= require geoblacklight/viewers</span>
+<span class="c1">//= require geoblacklight/modules</span>
+<span class="c1">//= require geoblacklight/downloaders</span>
+<span class="c1">//= require leaflet-iiif</span>
+<span class="c1">//= require esri-leaflet</span>
+<span class="c1">//= require readmore.min</span>
+
+<span class="c1">//= require Leaflet.fullscreen.js</span>
+</code></pre></div>
+<p>You should do something similar for vendor css files and images. GeoBlacklight uses the <a href="http://guides.rubyonrails.org/asset_pipeline.html">Rails asset pipeline</a> for asset management. Vendor maintained files should usually be added under <code>./vendor/assets</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// In your applications&#39;s app/assets/stylesheets/geoblacklight.css.scss</span>
+<span class="cm">/*</span>
+<span class="cm">*= require geoblacklight/application</span>
+<span class="cm">*= require leaflet.fullscreen</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<h3 id="configure-your-settings">Configure your settings</h3>
+<p>Next, you need to configure your settings to tell the viewers to load your control. Your application's <code>lib/generators/geoblacklight/templates/settings.yml</code> should look something like this:</p>
+<div class="highlight"><pre><span></span><code>...
+OPACITY_CONTROL: &amp;opacity_control
+  CONTROLS:
+    - &#39;Opacity&#39;
+
+LEAFLET:
+  MAP:
+  LAYERS:
+  VIEWERS:
+    WMS:
+      &lt;&lt;: *opacity_control
+    TILEDMAPLAYER:
+      &lt;&lt;: *opacity_control
+    FEATURELAYER:
+      &lt;&lt;: *opacity_control
+    DYNAMICMAPLAYER:
+      &lt;&lt;: *opacity_control
+    IMAGEMAPLAYER:
+      &lt;&lt;: *opacity_control
+...
+</code></pre></div>
+<p>Let's say you want to add the fullscreen control for just your WMS viewer. You will need to update your <code>WMS</code> viewer controls to add it like so:</p>
+<div class="highlight"><pre><span></span><code>...
+  VIEWERS:
+      WMS:
+        CONTROLS:
+          - &#39;Opacity&#39;
+          - &#39;Fullscreen&#39;
+...
+</code></pre></div>
+<h3 id="initialize-your-plugin">Initialize your plugin</h3>
+<p>Finally you need to initialize your controls like this. You can initialize the plugin with additional options.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// In your applications&#39;s app/assets/javascripts/geoblacklight/geoblacklight.js</span>
+<span class="p">...</span>
+<span class="c1">//= require Leaflet.fullscreen.js</span>
+
+<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">Fullscreen</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;topright&#39;</span>
+<span class="w">  </span><span class="p">}));</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>You should now have a working fullscreen button in your application!</p>
+<p><img alt="GeoBlacklight WMS viewer with Fullscreen plugin" src="https://cloud.githubusercontent.com/assets/1656824/14321740/5270d6f4-fbcf-11e5-92f5-dbfe00a7d5a4.png" /></p>
+<h3 id="adding-a-search-control">Adding a Search Control</h3>
+<p>Customizing Leaflet has certain limitations which can fortunately be overcome through the usage of plugins developed by third parties.  Leaflet provides the following listing of plugins for the library: <a href="https://leafletjs.com/plugins.html#search--popups">https://leafletjs.com/plugins.html#search--popups</a></p>
+<h4 id="downloading-leaflet-plugins">Downloading Leaflet Plugins</h4>
+<p>Firstly, in order to integrate a plugin, the JavaScript source file(s) are downloaded into the <code>vendor/assets/javascripts</code> directory, where names are all in the lower case, with whitespace being replaced by dash characters (e. g. <code>vendor/assets/javascripts/esri-leaflet.js</code>)</p>
+<h4 id="downloading-javascript-source-files">Downloading JavaScript Source Files</h4>
+<p><strong>Using <code>wget</code></strong>
+<div class="highlight"><pre><span></span><code>$ wget -O vendor/assets/javascripts/leaflet-search.js https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.src.js
+</code></pre></div>
+<strong>Using <code>curl</code></strong>
+<div class="highlight"><pre><span></span><code>$ curl -o vendor/assets/javascripts/leaflet-search.js https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.src.js
+</code></pre></div>
+<strong>For Production Builds</strong>
+<div class="highlight"><pre><span></span><code>$ wget -O vendor/assets/javascripts/leaflet-search.js https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.min.js
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>$ curl -o vendor/assets/javascripts/leaflet-search.js https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.min.js
+</code></pre></div></p>
+<h4 id="downloading-css-files">Downloading CSS Files</h4>
+<p><strong><code>wget</code></strong>
+<div class="highlight"><pre><span></span><code>$ wget -O vendor/assets/stylesheets/leaflet-search.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.src.css
+
+$ wget -O vendor/assets/stylesheets/leaflet-search.mobile.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.mobile.src.css
+</code></pre></div>
+<strong><code>curl</code></strong>
+<div class="highlight"><pre><span></span><code>$ curl -o vendor/assets/stylesheets/leaflet-search.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.src.css
+
+$ curl -o vendor/assets/stylesheets/leaflet-search.mobile.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.mobile.src.css
+</code></pre></div>
+<strong>Production Builds</strong>
+<div class="highlight"><pre><span></span><code>$ wget -O vendor/assets/stylesheets/leaflet-search.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.min.css
+
+$ wget -O vendor/assets/stylesheets/leaflet-search.mobile.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.mobile.min.css
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>$ curl -o vendor/assets/stylesheets/leaflet-search.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.min.css
+
+$ curl -o vendor/assets/stylesheets/leaflet-search.mobile.css https://raw.githubusercontent.com/stefanocudini/leaflet-search/master/dist/leaflet-search.mobile.min.css
+</code></pre></div></p>
+<h4 id="downloading-image-files">Downloading Image Files</h4>
+<p><div class="highlight"><pre><span></span><code>$ wget -O app/assets/images/loader.gif https://github.com/stefanocudini/leaflet-search/raw/master/images/loader.gif
+$ wget -O app/assets/images/search-icon-mobile.png https://github.com/stefanocudini/leaflet-search/raw/master/images/search-icon-mobile.png
+$ wget -O app/assets/images/search-icon.png https://github.com/stefanocudini/leaflet-search/raw/master/images/search-icon.png
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>$ curl -o app/assets/images/loader.gif https://github.com/stefanocudini/leaflet-search/raw/master/images/loader.gif
+$ curl -o app/assets/images/search-icon-mobile.png https://github.com/stefanocudini/leaflet-search/raw/master/images/search-icon-mobile.png
+$ curl -o app/assets/images/search-icon.png https://github.com/stefanocudini/leaflet-search/raw/master/images/search-icon.png
+</code></pre></div></p>
+<h3 id="integrating-plugins-into-leaflet">Integrating Plugins into Leaflet</h3>
+<p>Integrating a plugin varies depending upon precisely what is being used, but the general approach seems to often follow a pattern such as the following:
+<div class="highlight"><pre><span></span><code>var searchLayer = L.layerGroup().addTo(map);
+//... adding data in searchLayer ...
+map.addControl( new L.Control.Search({layer: searchLayer}) );
+</code></pre></div>
+...where the <code>map</code> Object invokes <code>addControl</code> using the search <code>L.Control</code> Object as an argument.</p>
+<h4 id="configuring-geoblacklight">Configuring GeoBlacklight</h4>
+<p>When integrating this GeoBlacklight, the approach above could modified by extending the previous example:</p>
+<div class="highlight"><pre><span></span><code>...
+  VIEWERS:
+      WMS:
+        CONTROLS:
+          - &#39;Opacity&#39;
+          - &#39;Fullscreen&#39;
+          - &#39;Search&#39;
+...
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// In the application app/assets/javascripts/geoblacklight.js
+...
+//= require
+//= require leaflet-search
+
+GeoBlacklight.Controls.Search = function() {
+  this.map.addControl(new L.control.search({
+    url: &#39;http://nominatim.openstreetmap.org/search?format=json&amp;q={s}&#39;,
+        jsonpParam: &#39;json_callback&#39;,
+        propertyName: &#39;display_name&#39;,
+        propertyLoc: [&#39;lat&#39;,&#39;lon&#39;],
+        marker: L.circleMarker([0,0], { radius: 30 }),
+        autoCollapse: true,
+        autoType: false,
+        minLength: 2
+  }));
+};
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>// In the application app/assets/stylesheets/geoblacklight.scss
+/*
+*= require geoblacklight/application
+*= require leaflet-label
+*= require leaflet-search
+*= require leaflet-search.mobile
+*/
+
+// SCSS overrides for the default styles properties
+.leaflet-container {
+  .leaflet-control-search {
+    margin-top: 3.2rem;
+
+    .search-button {
+      background-image: image-url(&#39;search-icon-mobile&#39;);
+
+      &amp;:hover {
+        background-image: image-url(&#39;search-icon-mobile&#39;);
+      }
+    }
+  }
+}
+</code></pre></div>
+After refreshing your web browser, the map viewer should now have a search control integrated:</p>
+<p><img width="893" alt="geoblacklight_issues_528_screenshot_0" src="https://user-images.githubusercontent.com/1443986/43652664-d5958160-9713-11e8-845f-445f322a8eea.png"></p>
+<h2 id="switching-the-default-basemap">Switching the default basemap</h2>
+<p>GeoBlacklight comes with a default open-source basemap, Carto's Positron, but it is possible to switch to one of the <a href="http://bl.ocks.org/Xatpy/raw/854297419bd7eb3421d0/">seven baselayers supported within the GeoBlacklight application</a>. They are:</p>
+<ul>
+<li>Dark Matter</li>
+<li>Positron</li>
+<li>Positron Lite</li>
+<li>World Antique</li>
+<li>World Eco</li>
+<li>Flat Blue</li>
+<li>Midnight Commander</li>
+</ul>
+<p>In order to toggle between them, all you need to do is go to the <a href="https://github.com/geoblacklight/geoblacklight/blob/master/lib/generators/geoblacklight/templates/catalog_controller.rb">catalog_controller.rb</a> file in your application and replace the config.basemap_provider value. The valid values are in the comments above this line as a helpful reminder.</p>
+<h2 id="dynamic-basemap-switching">Dynamic Basemap Switching</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This kind of customization may potentially make your future GeoBlacklight upgrades more difficult. If you choose to implement this feature, you will need to be extra vigilant when GBL JavaScript files change in future releases.</p>
+</div>
+<p>Need a dynamic basemap switcher? You can customize GeoBlacklight to add support for Leaflet's basemap switching:</p>
+<p><img width="500" alt="basemap-switcher" src="https://user-images.githubusercontent.com/69827/189993636-e2bfb61a-0ddd-439e-b4a5-44088edb9079.gif"/></p>
+<h3 id="1-add-javascript-cookie-to-your-application">1. Add JavaScript Cookie to your application</h3>
+<p>Use yarn to install <a href="https://github.com/js-cookie/js-cookie">js-cookie</a>:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>yarn<span class="w"> </span>add<span class="w"> </span>js-cookie
+</code></pre></div>
+<p>Add the node_modules directory to your asset path:</p>
+<p><code>/config/initializers/assets.rb</code></p>
+<div class="highlight"><pre><span></span><code><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">paths</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;node_modules&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Add js-cookie to your geoblacklight.js file:</p>
+<p><code>/app/assets/javascript/geoblacklight.js</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">//= require handlebars.runtime</span>
+<span class="c1">//= require geoblacklight/geoblacklight</span>
+<span class="c1">//= require geoblacklight/basemaps</span>
+<span class="c1">//= require geoblacklight/controls</span>
+<span class="c1">//= require geoblacklight/viewers</span>
+<span class="c1">//= require geoblacklight/modules</span>
+<span class="c1">//= require geoblacklight/downloaders</span>
+<span class="c1">//= require leaflet-iiif</span>
+<span class="c1">//= require esri-leaflet</span>
+
+<span class="c1">// Local Customizations</span>
+<span class="c1">//= require js-cookie/dist/js.cookie.js</span>
+<span class="c1">//= require ./local/viewers/map</span>
+</code></pre></div>
+<h3 id="2-add-basemap-options">2. Add Basemap options</h3>
+<p>Configure the additional basemap options in your geoblacklight.js file:</p>
+<p><code>/app/assets/javascript/geoblacklight.js</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">...</span>
+
+<span class="c1">// Local Customizations</span>
+<span class="c1">//= require js-cookie/dist/js.cookie.js</span>
+<span class="c1">//= require ./local/viewers/map</span>
+
+<span class="c1">// LOCAL Namespace</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nb">window</span><span class="p">.</span><span class="nx">LOCAL</span><span class="p">){</span><span class="w"> </span><span class="nx">LOCAL</span><span class="o">=</span><span class="p">{};</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// Basemap select - Text: Value</span>
+<span class="nx">LOCAL</span><span class="p">.</span><span class="nx">baseLayerMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;Default (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;esri&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;OpenStreetMaps&quot;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;openstreetmapStandard&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;World Imagery (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;esri_world_imagery&#39;</span>
+<span class="p">}</span>
+
+<span class="c1">// Additional leaflet base layers</span>
+<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">detectRetina</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">noWrap</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">});</span>
+
+<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri_world_imagery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">detectRetina</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">noWrap</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="3-modify-geoblacklights-mapjs-file">3. Modify GeoBlacklight's map.js file</h3>
+<p>Copy and move GeoBlacklight's <code>map.js</code> file to your local application.</p>
+<p>Copy from GeoBlacklight:
+<code>app/assets/javascripts/geoblacklight/viewers/map.js</code></p>
+<p>Move to your local application here:
+<code>app/assets/javascripts/local/viewers/map.js</code></p>
+<p>Add a call to this.addBasemapSwitcher(); in the load block.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//= require geoblacklight/viewers/viewer</span>
+
+<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">.</span><span class="nb">Map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">    * Initial bounds of map</span>
+<span class="cm">    * @type {L.LatLngBounds}</span>
+<span class="cm">    */</span>
+<span class="w">    </span><span class="nx">bbox</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="o">-</span><span class="mf">82</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">144</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">77</span><span class="p">,</span><span class="w"> </span><span class="mf">161</span><span class="p">]],</span>
+<span class="w">    </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="mf">0.75</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nx">overlay</span><span class="o">:</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">layerGroup</span><span class="p">(),</span>
+
+<span class="w">  </span><span class="nx">load</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">mapGeom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">geoJSONToBounds</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">mapGeom</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">).</span><span class="nx">fitBounds</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">bbox</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">selectBasemap</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Add initial bbox to map element for easier testing</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">().</span><span class="nx">isValid</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-js-map-render-bbox&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">().</span><span class="nx">toBBoxString</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">overlay</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;index&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">addBoundsOverlay</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">bbox</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Local Customizations</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">addBasemapSwitcher</span><span class="p">();</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="p">...</span>
+</code></pre></div>
+<p>Now add the functions to switch basemaps and store the current basemap in JS Cookie:</p>
+<div class="highlight"><pre><span></span><code><span class="p">...</span>
+
+<span class="cm">/**</span>
+<span class="cm">* Selects basemap if specified in 1) cookie, 2) data options, 3) if not return mapquest</span>
+<span class="cm">*/</span>
+<span class="nx">selectBasemap</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Selecting basemap&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Cookie: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">));</span>
+
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">_this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">[</span><span class="nx">LOCAL</span><span class="p">.</span><span class="nx">baseLayerMap</span><span class="p">[</span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">)]];</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">_this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">basemap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">[</span><span class="nx">_this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">basemap</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">_this</span><span class="p">.</span><span class="nx">basemap</span><span class="p">.</span><span class="nx">mapquest</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">},</span>
+
+<span class="nx">addBasemapSwitcher</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// basemaps control</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Control: Base Layer&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">baseLayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Default (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;OpenStreetMaps&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">openstreetmapStandard</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;World Imagery (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri_world_imagery</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">layers</span><span class="p">(</span><span class="nx">baseLayers</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottomleft&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Event listener for layer switcher</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;baselayerchange&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+</code></pre></div>
+<h3 id="4-add-leaflets-css-file-to-the-asset-pipeline">4. Add Leaflet's CSS file to the asset pipeline</h3>
+<p>Unfortunately, Rails' asset pipeline cannot find Leaflet's Layer Group icon/images without some additional help.</p>
+<p>Download a copy of Leaflet and copy the leaflet.css file into your local project here:</p>
+<p><code>app/assets/stylesheets/leaflet/leaflet.css.erb</code></p>
+<p>Add an import statement to <code>application.scss</code> for this new file:</p>
+<div class="highlight"><pre><span></span><code>...
+
+// Customizations
+@import &#39;leaflet/leaflet&#39;;
+</code></pre></div>
+<p>We'll need to modify this CSS file slightly to reference the images we need in the application.</p>
+<p>At the top of this file add these lines:</p>
+<div class="highlight"><pre><span></span><code><span class="o">//=</span><span class="w"> </span><span class="nt">depend_on_asset</span><span class="w"> </span><span class="s1">&#39;layer.png&#39;</span>
+<span class="o">//=</span><span class="w"> </span><span class="nt">depend_on_asset</span><span class="w"> </span><span class="s1">&#39;layers-2x.png&#39;</span>
+</code></pre></div>
+<p>Farther down the file, we'll need to edit this block too:</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* layers control */</span>
+
+<span class="p">.</span><span class="nc">leaflet-control-layers</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.4</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">leaflet-control-layers-toggle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">&lt;%= asset_url &#39;layers.png&#39; %&gt;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">.</span><span class="nc">leaflet-retina</span><span class="w"> </span><span class="p">.</span><span class="nc">leaflet-control-layers-toggle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">&lt;%= asset_url &#39;layers-2x.png&#39; %&gt;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="kt">px</span><span class="w"> </span><span class="mi">26</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>We need the background-image paths to use Rails' asset_url helper so these images are fingerprinted correctly.</p>
+<p>Lastly, from your Leaflet download copy the <code>layers.png</code> and <code>layers-2x.png</code> files into your local application here:</p>
+<ul>
+<li><code>app/assets/images/layers.png</code></li>
+<li><code>app/assets/images/layers-2x.png</code></li>
+</ul>
+<h2 id="homepage-map-centroid-clusters">Homepage Map Centroid Clusters</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This kind of customization may potentially make your future GeoBlacklight upgrades more difficult. If you choose to implement this feature, you will need to be extra vigilant when GBL JavaScript files change in future releases.</p>
+</div>
+<p>Want your homepage map to display centroid clusters? You can customize GeoBlacklight to add support for that:</p>
+<p><img alt="homepage-centroid-visualization" src="https://user-images.githubusercontent.com/69827/190460417-861da2f8-9580-4903-8215-4dc10d7166cf.png"/></p>
+<h3 id="1-add-a-rake-task-to-generate-a-centroidsjson-file">1. Add a rake task to generate a centroids.json file</h3>
+<p>Create a new rake file here:
+<code>/lib/tasks/generate_centroids_json.rake</code></p>
+<p>This rake task will write a <code>centroids.json</code> file to your application's public directory. Add these lines to the file:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;rsolr&#39;</span>
+
+<span class="n">namespace</span><span class="w"> </span><span class="ss">:geoportal</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">desc</span><span class="w"> </span><span class="s1">&#39;Generate homepage centroids for map clustering&#39;</span>
+<span class="w">  </span><span class="n">task</span><span class="w"> </span><span class="ss">generate_centroids_json</span><span class="p">:</span><span class="w"> </span><span class="ss">:environment</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Blacklight</span><span class="o">.</span><span class="n">default_index</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;select&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">params</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">q</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*:*&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">rows</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span>
+<span class="w">    </span><span class="n">response</span><span class="o">[</span><span class="s2">&quot;response&quot;</span><span class="o">][</span><span class="s2">&quot;docs&quot;</span><span class="o">].</span><span class="n">each_with_index</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="o">|</span>
+<span class="w">      </span><span class="k">begin</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">doc</span><span class="o">.</span><span class="n">key?</span><span class="p">(</span><span class="s1">&#39;dcat_centroid&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;dcat_centroid&#39;</span><span class="o">].</span><span class="n">empty?</span>
+<span class="w">          </span><span class="n">entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">&#39;l&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;id&#39;</span><span class="o">]</span>
+<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">&#39;t&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">helpers</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;dct_title_s&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="ss">length</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+<span class="w">          </span><span class="n">lat</span><span class="p">,</span><span class="n">lng</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;dcat_centroid&#39;</span><span class="o">].</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="w">          </span><span class="n">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="o">.</span><span class="n">to_f</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1"># Truncate long values</span>
+<span class="w">          </span><span class="n">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lng</span><span class="o">.</span><span class="n">to_f</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1"># Truncate long values</span>
+<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">&#39;c&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">lat</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">lng</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">          </span><span class="n">docs</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">entry</span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">      </span><span class="k">rescue</span><span class="w"> </span><span class="no">Exception</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span>
+<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Caught </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;BBox or centroid no good - </span><span class="si">#{</span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;id&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">      </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="n">centroids_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">/public/centroids.json&quot;</span>
+<span class="w">    </span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">centroids_file</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;w&quot;</span><span class="p">){</span><span class="w"> </span><span class="o">|</span><span class="n">f</span><span class="o">|</span><span class="w"> </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="no">JSON</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">docs</span><span class="p">))</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Run this rake task via this command: <code>bundle exec rake geoportal:generate_centroids_json</code></p>
+<h3 id="2-install-javascript-dependencies">2. Install JavaScript Dependencies</h3>
+<ul>
+<li>Oboe - Oboe.js reads json, giving you the objects as they are found without waiting for the stream to finish</li>
+<li>PruneCluster - Fast and realtime marker clustering for Leaflet</li>
+</ul>
+<p>Use yarn to add these two new dependencies to the project:</p>
+<p><code>yarn add oboe</code>
+<code>yarn add @sintef/prune-cluster</code></p>
+<p>Add the node_modules directory to your asset path:</p>
+<p><code>/config/initializers/assets.rb</code></p>
+<div class="highlight"><pre><span></span><code><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">paths</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;node_modules&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="3-add-our-javascript-changes-for-the-homepage-map">3. Add our JavaScript changes for the Homepage Map</h3>
+<p>We need to override the GeoBlacklight <code>app/assets/javascripts/geoblacklight/modules/home.js</code> file to add our customization.</p>
+<p>To override a Rails Engine's javascript (GeoBlacklight), we need to update our asset pipeline calls to require specific files from the GeoBlacklight modules directory instead of globbing all of the file from <code>/modules/</code>.</p>
+<p>Change your local <code>geoblacklight.js</code> file to look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//= require handlebars.runtime</span>
+<span class="c1">//= require geoblacklight/geoblacklight</span>
+<span class="c1">//= require geoblacklight/basemaps</span>
+<span class="c1">//= require geoblacklight/controls</span>
+<span class="c1">//= require geoblacklight/viewers</span>
+
+<span class="c1">// Local Customization - Start</span>
+<span class="c1">//= require geoblacklight/modules/bookmarks</span>
+<span class="c1">//= require geoblacklight/modules/download</span>
+<span class="c1">//= require geoblacklight/modules/geosearch</span>
+<span class="c1">//= require geoblacklight/modules/help_text</span>
+<span class="c1">//= require ./geoportal/modules/home</span>
+<span class="c1">//= require geoblacklight/modules/item</span>
+<span class="c1">//= require geoblacklight/modules/layer_opacity</span>
+<span class="c1">//= require geoblacklight/modules/metadata_download_button</span>
+<span class="c1">//= require geoblacklight/modules/metadata</span>
+<span class="c1">//= require geoblacklight/modules/relations</span>
+<span class="c1">//= require geoblacklight/modules/results</span>
+<span class="c1">//= require geoblacklight/modules/svg_tooltips</span>
+<span class="c1">//= require geoblacklight/modules/util</span>
+<span class="c1">// Local Customization - End</span>
+
+<span class="c1">//= require geoblacklight/downloaders</span>
+<span class="c1">//= require leaflet-iiif</span>
+<span class="c1">//= require esri-leaflet</span>
+</code></pre></div>
+<p>As included in the code snippet above, add a file named <code>app/assets/javascripts/geoportal/modules/home.js</code> to your application.</p>
+<p>Inside that file write these lines:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Blacklight</span><span class="p">.</span><span class="nx">onLoad</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-map=&quot;home&quot;]&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">geoblacklight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">.</span><span class="nb">Map</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">();</span>
+
+<span class="w">    </span><span class="nx">geoblacklight</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">geosearch</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">baseUrl</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">catalogPath</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">dynamic</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">searcher</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getSearchUrl</span><span class="p">();</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">staticButton</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Search here&lt;/a&gt;&#39;</span>
+<span class="w">    </span><span class="p">}));</span>
+
+<span class="w">    </span><span class="c1">// Local Customization - Start</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">pruneCluster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PruneClusterForLeaflet</span><span class="p">();</span>
+
+<span class="w">    </span><span class="nx">oboe</span><span class="p">(</span><span class="s1">&#39;/centroids.json&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="w"> </span><span class="nx">doc</span><span class="w"> </span><span class="p">){</span>
+<span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">c</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">){</span>
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">latlng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PruneCluster</span><span class="p">.</span><span class="nx">Marker</span><span class="p">(</span><span class="nx">latlng</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="nx">latlng</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="nx">popup</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;a href=&#39;/catalog/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&#39;&gt;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&lt;/a&gt;&quot;</span><span class="p">});</span>
+<span class="w">            </span><span class="nx">pruneCluster</span><span class="p">.</span><span class="nx">RegisterMarker</span><span class="p">(</span><span class="nx">marker</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<span class="w">        </span><span class="nx">geoblacklight</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">pruneCluster</span><span class="p">)</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">    </span><span class="c1">// Local Customization - End</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="4-add-our-stylesheet-changes-for-the-homepage-map">4. Add our Stylesheet changes for the Homepage Map</h3>
+<p>All that is missing now are is the CSS changes to style our clusters. Update your <code>application.scss</code> file to include the missing stylesheet:</p>
+<div class="highlight"><pre><span></span><code><span class="k">@import</span><span class="w"> </span><span class="s1">&#39;customizations&#39;</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;bootstrap&#39;</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;blacklight&#39;</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;geoblacklight&#39;</span><span class="p">;</span>
+
+<span class="c1">// Local Customization</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;@sintef/prune-cluster/dist/LeafletStyleSheet&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Reload your homepage and you should see something like this:</p>
+<p><img alt='homepage-result-clusters' src='https://user-images.githubusercontent.com/69827/190491281-b320babf-4d6a-45c2-a2e2-a2f6c1fdb5d1.png'/></p>
+<h2 id="configure-leaflet-for-retina-displays">Configure Leaflet for retina displays</h2>
+<p>GeoBlacklight allows implementers to configure the way in which basemaps and tile layers (WMS) are displayed on high pixel density 'retina' screens. When retina detection settings are enabled, Leaflet will request larger tiles to take advantage of the increased resolution.</p>
+<h3 id="tile-layers">Tile layers</h3>
+<p>In your application's settings.yml, find <code>DETECT_RETINA</code> and set it to <code>true</code> or <code>false</code>.</p>
+<div class="highlight"><pre><span></span><code>...
+LEAFLET:
+  MAP:
+  LAYERS:
+    DETECT_RETINA: true
+...
+</code></pre></div>
+<p>When set to <code>true</code>, Leaflet will load 512 pixel tiles on retina displays.</p>
+<p><img width="681" alt="retina-layer" src="https://cloud.githubusercontent.com/assets/784196/17187497/1966c73c-53ff-11e6-9b57-2d53ca1b1bc4.png"></p>
+<h3 id="basemaps">Basemaps</h3>
+<p>To configure the stock CartoDB basemaps for higher resolution display you will have to override the <code>GeoBlacklight.Basemaps</code> javascript module. In your application, create a <code>geoblacklight</code> directory in <code>app/assets/javascripts/</code> and then create a new file called <code>basemaps.js</code> in that directory.</p>
+<p><img width="195" alt="basemap" src="https://cloud.githubusercontent.com/assets/784196/17187370/9343a206-53fe-11e6-9239-0500564d831b.png"></p>
+<p>Now copy the contents of the <a href="https://raw.githubusercontent.com/geoblacklight/geoblacklight/master/app/assets/javascripts/geoblacklight/basemaps.js">Geoblacklight basemaps.js file</a> into your new file. On any basemaps that you want to enable retina, set <code>detectRetina</code> to <code>true</code>. Your file should look something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// basemaps</span>
+
+<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">darkMatter</span><span class="o">:</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}{retina}.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &amp;copy; &lt;a href=&quot;http://cartodb.com/attributions&quot;&gt;CartoDB&lt;/a&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">retina</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;@2x&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">detectRetina</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="w">  </span><span class="nx">positron</span><span class="o">:</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &amp;copy; &lt;a href=&quot;http://cartodb.com/attributions&quot;&gt;CartoDB&lt;/a&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">retina</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;@2x&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">detectRetina</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      GeoBlacklight Community &copy; 2015 - 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GeoBlacklight" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://geoblacklight.slack.com" target="_blank" rel="noopener" title="geoblacklight.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://groups.google.com/g/geoblacklight-working-group" target="_blank" rel="noopener" title="groups.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
