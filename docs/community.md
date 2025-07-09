@@ -85,7 +85,7 @@ Anyone interested in spatial data infrastructures, libraries, GIS, maps, data cu
 
 ### Administrative Roles
 
-**Meeting Facilitators**: Karen Majewicz + ==1 vacancy==
+**Meeting Facilitators**: Becky Seifried (July 2025–July 2026)
 
 * Manage Google calendar
 * Set up and host monthly meetings 
