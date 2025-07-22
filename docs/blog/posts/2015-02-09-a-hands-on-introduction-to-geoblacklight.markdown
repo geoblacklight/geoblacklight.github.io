@@ -444,7 +444,7 @@ The fixtures directory is useful for quickly indexing a small number documents i
 Now you should see <a href="http://127.0.0.1:3000">facets listed</a> on the lower left hand part of the page. Try a search! You can <a href="http://127.0.0.1:3000/?q=*">search for *</a> to search for everything.
 
 
-Want to index some more documents? Check out [this tutorial](2015-02-05-using-geocombine-to-harvest-and-index-opengeometadata.md) on how to easily index metadata from OpenGeoMetadata.
+Want to index some more documents? Check out [this tutorial](2015-02-05-using-geocombine-to-harvest-and-index-opengeometadata.markdown) on how to easily index metadata from OpenGeoMetadata.
 
 There are many ways to customize your GeoBlacklight application, and unfortunately we can't cover them all with this tutorial. GeoBlacklight tries to stick to similar patterns as Blacklight, so most of the Blacklight customization techniques should hold true.
 
