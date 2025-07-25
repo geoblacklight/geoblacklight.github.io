@@ -1,6 +1,6 @@
 Label</br>Field URI,Required - will cause app to error if missing,Default facet,Search results display,Item show default display,Relation widget,Notes
 **ID**</br>id,==yes==,no,no,no,no,Functions as the slug (end part) of the item's URL
-**Access Rights**</br>dct_accessRights_s,==yes==,no,icon,no,no,"If set to ""Restricted"", a closed padlock icon appears next to the title. Downloads and web service previews will be hidden unless a user logs in using an authentication process. If set to ""Public"", an open padlock icon appears next to the title. Downloads and web services are accessible."
+**Access Rights**</br>dct_accessRights_s,==yes==,==yes==,icon,no,no,"If set to ""Restricted"", a closed padlock icon appears next to the title. Downloads and web service previews will be hidden unless a user logs in using an authentication process. If set to ""Public"", an open padlock icon appears next to the title. Downloads and web services are accessible."
 **Format**</br>dct_format_s,{++conditional++},==yes==,no,==yes==,no,Required if a Download link is included. This value displays on the item show in the button under the download widget.
 **Title**</br>dct_title_s,no (see notes),no,Clickable text,==yes==,no,"If a title is missing, GeoBlacklight will display the ID as the title."
 **Alternative Title**</br>dct_alternative_sm,no,no,no,==yes==,no,-
@@ -39,5 +39,5 @@ Label</br>Field URI,Required - will cause app to error if missing,Default facet,
 **Suppressed**</br>gbl_suppressed_b,no,no,no,no,no,Hides items from search results. Items are only visible as  child or related records in the Relations widgets.
 **Temporal Coverage**</br>dct_temporal_sm,no,no,no,==yes==,no,-
 **Theme**</br>dcat_theme_sm,no,==yes==,no,==yes==,no,-
-**WxS Identifier**</br>gbl_wxsIdentifier_s,no,no,no,no,no,Required if a OCG web service is included
+**WxS Identifier**</br>gbl_wxsIdentifier_s,{++conditional++},no,no,no,no,Required if a OCG web service is included
 **Modified**</br>gbl_mdModified_dt,no,no,no,no,no,-

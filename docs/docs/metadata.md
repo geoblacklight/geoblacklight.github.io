@@ -23,7 +23,6 @@ Metadata schema features:
 
 ## Metadata functionality in GeoBlacklight 4.x
 
-!!! inline Tip "Hover over the column headers for sorting options."
-	
+!!! Tip "Hover over the column headers for sorting options."
 
 {{ read_csv('docs/docs/metadata-functions.csv') }}
