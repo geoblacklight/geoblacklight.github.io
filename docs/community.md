@@ -1,17 +1,10 @@
-## Join the Geo4Lib Community
 
-GeoBlacklight is part of the [Geo4Lib Community](https://geo4lib.org), a community of practice for building tools, metadata, and platforms that improve access to geospatial resources in libraries. Visit [geo4lib.org](https://geo4lib.org) to:
+## Join the Conversation
 
-- Connect via [communication channels](https://geo4lib.org/get-involved/)
-- Find out how to join and participate in [meetings, sprints, and conferences](https://geo4lib.org/events/)
-- Volunteer for a [community role](https://geo4lib.org/roles/)
+Have a question about GeoBlacklight or want to connect with other users and developers?
 
-## Who Uses GeoBlacklight
-
-GeoBlacklight is used by a wide range of organizations, including universities, academic and public libraries, nonprofit research groups, and collaborative networks of multiple institutions.
-
-Check out the [Project Showcase page](../showcase) to view active installations of GeoBlacklight.
-
+- Slack: [Join the Geo4Lib Slack](https://join.slack.com/t/geo4lib/shared_invite/zt-3baz35i9x-gLVsSGz8MCDlkGePjk7Ejw) - look for the #geoblacklight channel
+- Email List: Join the [Geo4Lib Google Group](https://groups.google.com/g/geo4lib-community) — receive announcements and participate in discussions
 
 ## Contribute to the Software
 
@@ -45,15 +38,23 @@ We welcome contributions from developers, metadata specialists, designers, and a
 
 </div>
 
+## Join the Geo4Lib Community
+
+GeoBlacklight is part of the [Geo4Lib Community](https://geo4lib.org), a community of practice for building tools, metadata, and platforms that improve access to geospatial resources in libraries. Visit [geo4lib.org](https://geo4lib.org) to:
+
+- Connect via [communication channels](https://geo4lib.org/get-involved/)
+- Find out how to join and participate in [meetings, sprints, and conferences](https://geo4lib.org/events/)
+- Volunteer for a [community role](https://geo4lib.org/roles/)
+
 
 ## GeoBlacklight Project Maintainers
 
-**Designated Code Mergers**: Nick Budak + [see GitHub Teams](https://github.com/orgs/geoblacklight/teams)
+**Designated Code Mergers**: Nick Budak
 
 * Review pull requests
 * Assign individual code reviewers based on expertise  
 
-**Release Coordinators**: Eric Larson
+**Release Coordinators**: Eric Larson + ==1 vacancy==
 
 * Cut tags and releases in the GitHub repository, and write release notes
 * Publish the GeoBlacklight [Ruby gem](https://rubygems.org/gems/geoblacklight)
@@ -61,7 +62,7 @@ We welcome contributions from developers, metadata specialists, designers, and a
 
 **Technical Writing Lead**: ==1 vacancy==
 
-* Keep track of what code, metadata, and tutorials
+* Keep track of code, metadata, and tutorials
 * Manage GitHub issues related to documentation
 * Coordinate volunteers to update documentation as needed
 
