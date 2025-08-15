@@ -49,7 +49,7 @@ GeoBlacklight is part of the [Geo4Lib Community](https://geo4lib.org), a communi
 
 ## GeoBlacklight Project Maintainers
 
-**Designated Code Mergers**: Nick Budak
+**Designated Code Mergers**: [GeoBlacklight Developers Team](https://github.com/orgs/geoblacklight/teams/geoblacklight-developers)
 
 * Review pull requests
 * Assign individual code reviewers based on expertise  
