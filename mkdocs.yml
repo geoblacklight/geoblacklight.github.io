@@ -82,9 +82,9 @@ extra:
           - icon: fontawesome/brands/github 
             link: https://github.com/GeoBlacklight
           - icon: fontawesome/brands/slack
-            link: https://geoblacklight.slack.com
+            link: https://geo4lib.slack.com
           - icon: fontawesome/solid/paper-plane
-            link: https://groups.google.com/g/geoblacklight-working-group
+            link: https://groups.google.com/g/geo4lib-community
 
 nav:
 - Home: 'index.md'
