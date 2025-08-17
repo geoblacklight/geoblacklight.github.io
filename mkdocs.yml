@@ -2,7 +2,7 @@ site_name: GeoBlacklight
 site_url: https://geoblacklight.org
 repo_url: https://github.com/geoblacklight/geoblacklight
 repo_name: GeoBlacklight on GitHub
-copyright: GeoBlacklight Community &copy; 2015 - 2024
+copyright: GeoBlacklight Community &copy; 2015 - 2025
 theme:
   name: material
   logo: images/gbl-favicon.png
