@@ -14,29 +14,42 @@ This guide covers the quickest way to get up and running with GeoBlacklight, inc
 
 ## Creating a new GeoBlacklight application
 
-Bootstrap a new GeoBlacklight application using the template script, replacing `app-name` with the name of your new application:
+To create a new application, you can use the `template.rb` file. The options provided at the time you invoke `rails new` depend on your asset management choices.
 
-```bash
-rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb -a propshaft --css bootstrap --js rollup
+!!! warning "Choosing an asset pipeline"
+    It's not trivial to switch your app from one asset strategy to another after creation, so choose based on your needs. For more information on using a bundler vs. importmaps, check out the [Rails docs on choosing an asset pipeline](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#choosing-between-import-maps-and-a-javascript-bundler).
+
+### Using Vite for assets
+
+This approach uses [vite-rails](https://vite-ruby.netlify.app/guide/rails.html) to bundle all of the app's javascript and styles. Presuming you want your app to be in a directory `app-name`, you initialize a new app with:
+
+```
+ASSET_PIPELINE=vite rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb -a propshaft --css bootstrap --js rollup
 ```
 
-Then run the `geoblacklight:server` rake task to run the application:
+### Using importmaps and dartsass-rails for assets
+
+This approach uses Rails's default of [import maps](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#import-maps) for javascript and dart sass for compiling SCSS.
+
+Presuming you want your app to be in a directory `app-name`, you initialize a new app with:
+
+```bash
+ASSET_PIPELINE=importmap rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb -a propshaft --css bootstrap --js importmap
+```
+
+## Running the application
+
+You can run the `geoblacklight:server` rake task to run the application:
 
 ```bash
 cd app-name # replace with your app's name
 bundle exec rake geoblacklight:server
 ```
 
+This will also spin up a solr instance for you via Docker and seed it with example fixture data.
+
 - Visit your GeoBlacklight application at: [http://localhost:3000](http://localhost:3000)
 - Visit the Solr admin panel at: [http://localhost:8983/solr/#/blacklight-core](http://localhost:8983/solr/#/blacklight-core)
-
-!!! info "Using importmaps for JavaScript"
-
-    The default GeoBlacklight template uses [Vite](https://vite-ruby.netlify.app/guide/rails.html) to bundle the application's JavaScript. If you would prefer to use Rails's default of [importmaps](https://github.com/rails/importmap-rails), you can set `--js importmap` when generating your application:
-
-    ```bash
-    rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb -a propshaft --css bootstrap --js importmap
-    ```
 
 ## Index Example Data
 
