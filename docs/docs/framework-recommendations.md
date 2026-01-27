@@ -1,25 +1,24 @@
-This page lists the recommended languages and frameworks to use with your installation of GeoBlacklight
+This page lists the recommended languages and frameworks to use with your installation of GeoBlacklight.
 
 ### Metadata
-* __Aardvark (Recommended)__
-* GBL 1.0 (Deprecated)
+* __Aardvark (Required for GeoBlacklight v5+)__
+* GBL 1.0 (Deprecated; functions in GeoBlacklight v4 and earlier)
 
 ### Ruby
-* __3.2 (Recommended)__
-* 2.7 / Support Ends 31 Mar 2023
+* __3.4 (Recommended)__
+* 3.3 / Support Ends March 31, 2027
+* 3.2 / Support Ends March 31, 2026
 
 ### Ruby on Rails
-* __7.0+ (Recommended)__
-* 6.1
-* 6.0 / Support Ends June 1, 2023
+* __8.0+ (Recommended)__
+* 7.2 (Required for GeoBlacklight v5+) / Support Ends August 9, 2026
 
 ### Blacklight
-* __v7+ (Recommended)__
-* v8 / Will be supported in GBL v5+
+* __v8 (Required for GeoBlacklight v5)__
+* v9 (Unsupported, but will be required for GeoBlacklight v6)
 
 ### Bootstrap
-* __v4 (Recommended)__
-* v5 / Will be supported in GBL v5+
+* __v5 (Required for GeoBlacklight v5)__
 
 ### ViewComponents
 * __GBL v5 (Required)__
@@ -31,7 +30,7 @@ This page lists the recommended languages and frameworks to use with your instal
 
 ### Map Library
 * __Leaflet (Recommended)__
-* TBD / GBL v5+
+* [ogm-viewer](https://github.com/OpenGeoMetadata/ogm-viewer) (TBD; may be used in GeoBlacklight v6)
 
 ### Apache Solr
 * __v9+ (Recommended)__
