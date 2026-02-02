@@ -56,7 +56,7 @@ If you want to preview changes before committing them, follow the steps below. I
 1. Start a local server with the following command:
 
    ```
-   mkdocs serve
+   mike serve
    ```
   
    This will allow you to preview the site as you edit it. You will see text in the Terminal that looks something like this:
