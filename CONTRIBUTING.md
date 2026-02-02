@@ -1,8 +1,11 @@
 # GeoBlacklight Website Contribution Guide
 GeoBlacklight is a collaborative open-source project that :sparkles:welcomes:sparkles: community contributions. To contribute to the GeoBlacklight software codebase, see the [GeoBlacklight Contribution Guide](https://github.com/geoblacklight/geoblacklight/blob/main/CONTRIBUTING.md).
 
-## Who can contribute?
+### Who can contribute?
 **Anyone** is welcome to contribute to the GeoBlacklight website and documentation. We follow a set of contribution practices to maintain a technically sustainable and stable software project for everyone.
+
+### How to contact us
+See the [community page](https://geoblacklight.org/community/) on our website for information about our community calendar, volunteer opportunities, and more. This page links to our Slack and Google Group so you can reach us if you have questions or want to get more involved.
 
 ## Reporting an issue
 Did you find an error on the GeoBlacklight website or documentation pages? You can add an issue for it in the [issue tracker](https://github.com/geoblacklight/geoblacklight.github.io/issues).
@@ -88,5 +91,3 @@ Add the `-w` flag to open a preview and automatically re-generate the diagram as
 - Please do not merge your own Pull Request - this is considered "poor form."
 - If you are uncertain about an element of your Pull Request, you can bring other contributors into the conversation by creating a comment that includes their @username.
 - If you like the Pull Request but want others to chime in, create a +1 comment and tag a user.
-
-If you have questions or want to get more involved, join [GeoBlacklight Slack](https://geoblacklight.slack.com/join/shared_invite/zt-1p7dcay40-Ye_WTt5_iCqU8rDjzhkoWw#/shared-invite/email) or email the [GeoBlacklight Community](https://groups.google.com/g/geoblacklight-community) at geoblacklight-community@googlegroups.com.
