@@ -52,7 +52,31 @@ This is the working branch containing the content for the site using Markdown.
 
 This is the published branch containing the HTML code for the site. (We do **not** edit this branch directly).
 
-* `index.html`: an HTML file containing the information in the `index.md` file in your Main branch
+Note that as of [this pull request](https://github.com/geoblacklight/geoblacklight.github.io/pull/294) the docs are separated by GeoBlacklight version. The `mike` library is used to manage the deployment of docs for each version, instead of `mkdocs`. The [`mkdocs` documentation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/) is useful for understanding how to integrate with `mike`, as well as [this blog post](https://blog.lx862.com/blog/2025-06-10-versioning-with-material-mkdocs/).
+
+Each version is kept in a separate directory named after the version number, e.g. `4.x`, `5.x`, etc. Versions also have "aliases", which are names that point to specific versions. These are implemented as symlinks that point to a particular version directory. Currently, we only use the `latest` alias.
+
+To publish a new version of whatever the `latest` alias currently points to, on the `main` branch, you would run:
+
+```sh
+mike deploy --push latest
+```
+
+If a new version is being created and it should become the new `latest`, on the `main` branch, you would instead run:
+
+```sh
+mike deploy --push <new_version> --update-aliases latest
+```
+
+To update the docs for a previous version, you need to be on the branch corresponding to that version (e.g. `4.x` branch for version `4.x`), and then run:
+
+```sh
+mike deploy --push <version>
+```
+
+Each version directory contains an entirely separate copy of the following:
+
+* `index.html`: an HTML file containing the information in the `index.md` file at the time the version was published
 * The rest of your markdown content pages with be in separate directories. The directory name is the name of the markdown file and it contains an HTML file called `index.html`
 * `/images` and `/stylesheets` : same as the Main branch
 * `/assets` : contains **subdirectories** for `/images`, `/javascripts`, and `/stylesheets`.  These subdirectories contain the favicon and compiled code.
