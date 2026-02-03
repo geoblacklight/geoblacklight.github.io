@@ -2029,8 +2029,9 @@
 <tr>
 <th></th>
 <th>GBL v3 LTS</th>
-<th>GBL v4 • Current Major Release</th>
-<th>GBL v5 • Next Major Release</th>
+<th>GBL v4</th>
+<th>GBL v5 • Current Major Release</th>
+<th>GBL v6 • Next Major Release</th>
 </tr>
 </thead>
 <tbody>
@@ -2038,11 +2039,13 @@
 <td>Support Status</td>
 <td>Released 2020; Ends 2025</td>
 <td>Released 2022; Ends 2026</td>
-<td>ETA 2024/2025</td>
+<td>Released 2025</td>
+<td>ETA 2026</td>
 </tr>
 <tr>
 <td><a href="https://opengeometadata.org/">Metadata</a></td>
 <td><a href="https://opengeometadata.org/gbl-1.0">GBL 1.0</a></td>
+<td><a href="https://opengeometadata.org/ogm-aardvark">Aardvark</a></td>
 <td><a href="https://opengeometadata.org/ogm-aardvark">Aardvark</a></td>
 <td><a href="https://opengeometadata.org/ogm-aardvark">Aardvark</a></td>
 </tr>
@@ -2051,11 +2054,13 @@
 <td>v3+</td>
 <td>v3+</td>
 <td>v3.3+</td>
+<td>v4</td>
 </tr>
 <tr>
 <td><a href="https://rubyonrails.org/">Ruby on Rails</a></td>
 <td>v6-v7</td>
 <td>v6-v7</td>
+<td>v8+</td>
 <td>v8+</td>
 </tr>
 <tr>
@@ -2063,11 +2068,13 @@
 <td>v7</td>
 <td>v7</td>
 <td>v8+</td>
+<td>v9</td>
 </tr>
 <tr>
 <td><a href="https://getbootstrap.com/">Bootstrap</a></td>
 <td><a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/">v4</a></td>
 <td><a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/">v4</a></td>
+<td><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">v5</a></td>
 <td><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">v5</a></td>
 </tr>
 <tr>
@@ -2075,29 +2082,34 @@
 <td>Few</td>
 <td>Few</td>
 <td>Many</td>
+<td>Many</td>
 </tr>
 <tr>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> (JS)</td>
 <td><a href="https://jquery.com/">jQuery</a> / ES5</td>
 <td><a href="https://jquery.com/">jQuery</a> / ES5</td>
 <td>ES6 (Modern JavaScript) Published to <a href="https://www.npmjs.com/">NPM</a></td>
+<td>ES6 delivered via <a href="https://github.com/rails/importmap-rails">Importmaps</a></td>
 </tr>
 <tr>
 <td>JS Map Library</td>
 <td><a href="https://leafletjs.com/">Leaflet</a></td>
 <td><a href="https://leafletjs.com/">Leaflet</a></td>
-<td>TBD</td>
+<td><a href="https://leafletjs.com/">Leaflet</a> and <a href="https://openlayers.org/">OpenLayers</a></td>
+<td><a href="https://github.com/OpenGeoMetadata/ogm-viewer">ogm-viewer</a></td>
 </tr>
 <tr>
 <td><a href="https://guides.rubyonrails.org/asset_pipeline.html">Asset Management</a></td>
 <td>Sprockets</td>
 <td>Sprockets</td>
 <td>Vite Ruby / Import Maps + Bundling</td>
+<td>Importmaps + pure CSS via <a href="https://github.com/rails/propshaft">Propshaft</a></td>
 </tr>
 <tr>
 <td><a href="https://solr.apache.org/">Apache Solr</a></td>
 <td>&lt;= v8</td>
 <td>v8-v9+</td>
+<td>v9+</td>
 <td>v9+</td>
 </tr>
 <tr>
@@ -2105,15 +2117,18 @@
 <td>N/A</td>
 <td>N/A</td>
 <td>Recommended <a href="https://www.postgresql.org/">PostgreSQL</a></td>
+<td>Recommended <a href="https://www.postgresql.org/">PostgreSQL</a></td>
 </tr>
 <tr>
 <td><a href="https://guides.rubyonrails.org/active_job_basics.html">Background Queue</a></td>
 <td>N/A</td>
 <td>N/A</td>
 <td>Solid Queue</td>
+<td>Solid Queue</td>
 </tr>
 <tr>
 <td><a href="https://geoserver.org/">GeoServer</a></td>
+<td>Optional</td>
 <td>Optional</td>
 <td>Optional</td>
 <td>Optional</td>
@@ -2140,7 +2155,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2026</span>
   </span>
 
     
