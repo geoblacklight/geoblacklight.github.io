@@ -56,10 +56,10 @@ Note that as of [this pull request](https://github.com/geoblacklight/geoblacklig
 
 Each version is kept in a separate directory named after the version number, e.g. `4.x`, `5.x`, etc. Versions also have "aliases", which are names that point to specific versions. These are implemented as symlinks that point to a particular version directory. Currently, we only use the `latest` alias.
 
-To publish a new version of whatever the `latest` alias currently points to, on the `main` branch, you would run:
+To publish a new version of the docs for version 5, on the `main` branch, you would run:
 
 ```sh
-mike deploy --push latest
+mike deploy --push 5.x
 ```
 
 If a new version is being created and it should become the new `latest`, on the `main` branch, you would instead run:
@@ -71,7 +71,7 @@ mike deploy --push <new_version> --update-aliases latest
 To update the docs for a previous version, you need to be on the branch corresponding to that version (e.g. `4.x` branch for version `4.x`), and then run:
 
 ```sh
-mike deploy --push <version>
+mike deploy --push <old_version>
 ```
 
 Each version directory contains an entirely separate copy of the following:
