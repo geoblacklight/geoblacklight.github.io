@@ -14,7 +14,7 @@
         <link rel="prev" href="../sprints/">
       
       
-        <link rel="next" href="../../archive/2024/">
+        <link rel="next" href="../../archive/2026/">
       
       
       <link rel="icon" href="../../../images/gbl-favicon.png">
@@ -567,6 +567,8 @@
       
         
       
+        
+      
     
     
       
@@ -605,6 +607,30 @@
             Archive
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2053,217 +2079,13 @@
 <li>Eliot Jordan — Princeton University</li>
 </ul>
 <p>With many thanks to all the GeoBlacklight community members who help keep our website and project documentation up to date.</p>
-<h3 id="part-1-introductions-and-attendee-goals-5-minutes"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#part-1-introductions-and-attendee-goals-5-minutes">Part 1: Introductions and Attendee Goals (5 minutes)</a></h3>
-<p>Eric and Eliot are both core contributors/maintainers of the GeoBlacklight project's source code. Let's all get to know one another and hear what each attendee wants to learn in this session.</p>
-<h3 id="part-2-geoblacklight-for-beginners-30-minutes"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#part-2-geoblacklight-for-beginners-30-minutes">Part 2: GeoBlacklight for Beginners (30 minutes)</a></h3>
-<ul>
-<li>GeoBlacklight Overview (5 minutes)</li>
-<li>Setting up a GeoBlacklight Environment (5 minutes)</li>
-<li>Create a GeoBlacklight Application (10 minutes)</li>
-<li>Index Solr Documents (10 minutes)</li>
-</ul>
-<h5 id="screenshot-geoblacklight-website"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#screenshot-geoblacklight-website">Screenshot - Geoblacklight Website</a></h5>
-<p><img alt="Screenshot" src="../../blog-images/geoblacklight_website.png" /></p>
-<h4 id="geoblacklight-overview"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#geoblacklight-overview">GeoBlacklight Overview</a></h4>
-<ul>
-<li>What is GeoBlacklight?</li>
-<li>GeoBlacklight Features</li>
-<li>GeoBlacklight Community</li>
-</ul>
-<h5 id="what-is-geoblacklight"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#what-is-geoblacklight">What is GeoBlacklight?</a></h5>
-<p>GeoBlacklight is a <a href="https://www.ruby-lang.org/en/">Ruby</a> on <a href="https://rubyonrails.org/">Rails</a> <a href="https://guides.rubyonrails.org/engines.html">engine</a>, based on the popular open-source project <a href="https://projectblacklight.org/">Blacklight</a>. The aim of the project is to provide a simple, effective open-source application for discovery of geospatial data. Many institutions are using GeoBlacklight to provide a search engine across a federated catalog of geospatial data — <a href="https://geoblacklight.org/showcase/">GeoBlacklight project showcase</a>.</p>
-<h5 id="geoblacklight-key-features"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#geoblacklight-key-features">GeoBlacklight - Key Features</a></h5>
-<p>GeoBlacklight extends the functionality of Blacklight by providing the following:</p>
-<ul>
-<li>Text and spatial search with ranking</li>
-<li>Facet by institution, year, publisher, data type, access, format</li>
-<li>Facet by place, subject</li>
-<li>Results list view with icons, snippets, and map view of bounding boxes</li>
-<li>Spatial search on map in result list</li>
-<li>Detail map view for WMS features with feature inspection</li>
-<li>IIIF scanned map viewer</li>
-<li>Download the original file (Shapefile, GeoTIFF, GeoJSON, Esri Geodatabase, GeoPackage, or other SQLite database)</li>
-<li>Download generated Shapefile/GeoTIFF/KML/GeoJSON</li>
-<li>Built-in sample Solr index</li>
-<li>Built on top of Blacklight platform</li>
-<li>Search history</li>
-<li>Bookmark layers</li>
-<li>Share link via email</li>
-<li>Sort by relevance, year, title</li>
-<li>Customizable skin and facets</li>
-</ul>
-<p><a href="https://geoblacklight.org/about/#key-features">GeoBlacklight Key Features</a></p>
-<h5 id="geoblacklight-community"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#geoblacklight-community">GeoBlacklight - Community</a></h5>
-<p>Participants in the GeoBlacklight community come from a variety of professional and intellectual backgrounds (including librarians, software developers, metadata specialists, applied researchers, and others), but we share a common interest in making reliable and high-quality geospatial data easily accessible to members of the research community and the broader public. Many of us work in libraries and other cultural heritage institutions that deploy (or are planning to deploy) GeoBlacklight instances to disseminate and publicize their spatial data collections.</p>
-<h6 id="get-involved"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#get-involved">Get Involved</a></h6>
-<ul>
-<li>Volunteer for a Community Role</li>
-<li>Join a Workgroup or Interest Group</li>
-<li>Follow our Google Group</li>
-<li>Chat on Slack</li>
-<li>Attend a Monthly Meeting</li>
-<li>Participate in a Community Sprint</li>
-<li>Share Metadata</li>
-</ul>
-<p><a href="https://geoblacklight.org/community/">GeoBlacklight Community</a></p>
-<h4 id="setting-up-a-geoblacklight-environment"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#setting-up-a-geoblacklight-environment">Setting Up a GeoBlacklight Environment</a></h4>
-<p>You should have the following installed before beginning:</p>
-<ul>
-<li>Ruby — For Ruby on Rails</li>
-<li>Java - Apache Solr runs on Java 11 or greater.</li>
-</ul>
-<p>Follow the <a href="https://gorails.com/setup">GoRails Setup</a> steps to install a Ruby on Rails environment. <a href="https://brew.sh/">Homebrew</a> can help you install Java on macOS or Windows Subsystem for Linux.</p>
-<h4 id="create-a-geoblacklight-application"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#create-a-geoblacklight-application">Create a GeoBlacklight Application</a></h4>
-<p>Bootstrap a new GeoBlacklight Ruby on Rails application using the template script:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">DISABLE_SPRING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>rails<span class="w"> </span>new<span class="w"> </span>gbl-app<span class="w"> </span>-m<span class="w"> </span>https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb
-</code></pre></div>
-<p>Then run the geoblacklight:server rake task to run the application:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>gbl-app
-bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>geoblacklight:server
-</code></pre></div>
-<ul>
-<li>Visit your GeoBlacklight application at: <a href="http://localhost:3000">http://localhost:3000</a></li>
-<li>Visit the Solr admin panel at: <a href="http://localhost:8983/solr/#/blacklight-core">http://localhost:8983/solr/#/blacklight-core</a></li>
-</ul>
-<h5 id="screenshot-geoblacklight-homepage"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#screenshot-geoblacklight-homepage">Screenshot - GeoBlacklight Homepage</a></h5>
-<p><img alt="Screenshot" src="../../blog-images/gbl_homepage.png" /></p>
-<h5 id="screenshot-solr-admin-panel"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#screenshot-solr-admin-panel">Screenshot - Solr Admin Panel</a></h5>
-<p><img alt="Screenshot" src="../../blog-images/solr_admin_panel.png" /></p>
-<h4 id="index-solr-documents"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#index-solr-documents">Index Solr Documents</a></h4>
-<p>Time to add some data to our application. GeoBlacklight uses OpenGeoMetadata's Aardvark metadata schema.</p>
-<h5 id="opengeometadata-aardvark"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#opengeometadata-aardvark">OpenGeoMetadata / Aardvark</a></h5>
-<p><a href="https://opengeometadata.org/">OpenGeoMetadata</a> (OGM) is a discovery metadata schema for geospatial resources and an open platform for sharing metadata files.</p>
-<p><a href="https://opengeometadata.org/ogm-aardvark/">OGM Aardvark</a> is a discovery metadata schema for geospatial resources. It was intentionally developed with cross-application in mind and can be used to describe geospatial assets of all kinds. It is also the newest metadata application profile schema for GeoBlacklight. Launched in 2021, it replaces the GeoBlacklight metadata schema version 1.0 (GBL 1.0). Compared to GBL 1.0, Aardvark incorporates additional fields for better descriptions of a wider range of resources, as well as syntactical updates in order to improve interoperability between institutions and between schemas.</p>
-<h5 id="rake-tasks"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#rake-tasks">Rake Tasks</a></h5>
-<p>With your Solr server and Rails server already running (via the geoblacklight:server rake task above), open a new terminal window and index the GeoBlacklight project's test fixtures (OGM Aardvark JSON files) via the rake task below:</p>
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span><span class="s2">&quot;geoblacklight:index:seed[:remote]&quot;</span>
-</code></pre></div>
-<h5 id="geocombine"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#geocombine">GeoCombine</a></h5>
-<p>Another option for indexing data is <a href="https://github.com/OpenGeoMetadata/GeoCombine">GeoCombine</a>. GeoCombine is a Ruby toolkit for managing geospatial metadata, including:</p>
-<ul>
-<li>Tasks for cloning, updating, and indexing OpenGeoMetadata metadata</li>
-<li>Library for converting metadata between standards</li>
-</ul>
-<p>Example harvest from a single repository
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>geocombine:clone<span class="se">\[</span>edu.umn<span class="se">\]</span>
-</code></pre></div></p>
-<p>Index your GeoCombine data. Here we're setting our schema version to Aardvark, which is the GBL v4.0+ metadata schema.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">SCHEMA_VERSION</span><span class="o">=</span><span class="s2">&quot;Aardvark&quot;</span><span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>geocombine:index
-</code></pre></div>
-<h3 id="break-and-qa-session-10-minutes"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#break-and-qa-session-10-minutes">BREAK and Q&amp;A Session (10 minutes)</a></h3>
-<p>Eric will return to this tutorial to list the attendee questions and discussion topics from this break (I promise).</p>
-<h3 id="part-2-advanced-geoblacklight-40-minutes"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#part-2-advanced-geoblacklight-40-minutes">Part 2: Advanced GeoBlacklight (40 minutes)</a></h3>
-<p>Using local configuration options and adding community plugins to customize your GeoBlacklight instance. </p>
-<ul>
-<li>Local config: settings.yml (5 minutes)</li>
-<li>Local config: catalog_controller.rb (5 minutes)</li>
-<li>Plugin: Blacklight::Allmaps (10 minutes)</li>
-<li>Plugin: GeoBlacklight Sidecar Images (10 minutes)</li>
-<li>Plugin: GeoBlacklight Admin (10 minutes)</li>
-</ul>
-<h4 id="local-config-settingsyml-5-minutes"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#local-config-settingsyml-5-minutes">Local config: settings.yml (5 minutes)</a></h4>
-<p>In your local GeoBlacklight application, the first file that provides considerable customization and configuration options is <code>settings.yml</code>. This file is specific to GeoBlacklight and it sets constant variables for the application to use, including:</p>
-<ul>
-<li>APPLICATION_LOGO_URL</li>
-<li>BBOX_WITHIN_BOOST</li>
-<li>HOMEPAGE_MAP_GEOM</li>
-<li>FIELDS</li>
-<li>WEBSERVICES_SHOWN</li>
-<li>DISPLAY_NOTES_SHOWN</li>
-<li>RELATIONSHIPS_SHOWN</li>
-<li>and more...</li>
-</ul>
-<p>This file is loaded into the application via the Ruby <a href="https://github.com/rubyconfig/config">config</a> gem.</p>
-<h4 id="local-config-catalog_controllerrb"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#local-config-catalog_controllerrb">Local config: catalog_controller.rb</a></h4>
-<p>The next significant place where customizations and configuration options occur is within the <code>app/controllers/catalog_controller.rb</code> file.</p>
-<p>Within this file, you'll find options to define/set:</p>
-<ul>
-<li>Maps &gt; Default Leaflet basemap (config.basemap_provider)</li>
-<li>Solr &gt; Default solr params (config.default_solr_params)</li>
-<li>Search Results &gt; Per Page option (config.default_per_page)</li>
-<li>Search Results &gt; Sort options (config.add_sort_field)</li>
-<li>Search Results &gt; Define your list of facets (config.add_facet_field)</li>
-<li>Search Results &gt; Define your displayed metadata fields (config.add_index_field)</li>
-<li>Show Page &gt; Define your displayed metadata fields (config.add_show_field)</li>
-<li>Show Page &gt; Define Sidebar Tool options (config.add_show_tools_partial)</li>
-</ul>
-<h4 id="plugin-blacklightallmaps"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#plugin-blacklightallmaps">Plugin: Blacklight::Allmaps</a></h4>
-<p>Let's add support for <a href="https://allmaps.org/">Allmaps</a> georeferenced maps to our example application — we had two lighting talks on Allmaps this morning: Open-Source Georeferencing and Curating with Allmaps | <a href="https://docs.google.com/presentation/d/1Pn81E1JS0CLn10lZWCpv-hwWcYYwtJkpxiiU6To61P0/edit?usp=sharing">Blacklight::Allmaps</a> (slidedeck).</p>
-<h5 id="install"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#install">Install</a></h5>
-<p>Follow the <a href="https://github.com/bplmaps/blacklight-allmaps?tab=readme-ov-file#installation">blacklight_allmaps</a> installation steps to add this plugin to our Gemfile.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Gemfile</span>
-<span class="n">gem</span><span class="w"> </span><span class="s2">&quot;blacklight_allmaps&quot;</span>
-</code></pre></div>
-<p>And then execute:
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>install
-</code></pre></div></p>
-<p>Run the generator script:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># For GeoBlacklight</span>
-<span class="nv">LIGHT</span><span class="o">=</span>geoblacklight<span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rails<span class="w"> </span>generate<span class="w"> </span>blacklight:allmaps:install
-</code></pre></div>
-<h5 id="seed-fixtures"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#seed-fixtures">Seed Fixtures</a></h5>
-<p>To populate Solr with some example data, you can run these tasks</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># For GeoBlacklight...</span>
-<span class="nv">LIGHT</span><span class="o">=</span>geoblacklight<span class="w"> </span>rake<span class="w"> </span>blacklight_allmaps:index:gbl_fixtures
-</code></pre></div>
-<h5 id="harvest-allmaps-iiif-annotation-data"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#harvest-allmaps-iiif-annotation-data">Harvest Allmaps IIIF Annotation Data</a></h5>
-<p>We harvest and store Allmaps IIIF Annotation data locally. The rake task here kicks off a background harvest process that walks through your Solr index documents (using CursorMark) and checks each document for <code>georeferenceable?</code> - the presence of a IIIF Manifest. If the document is indeed georeferenceable? (true) we ping the Allmaps API to determine if the map/item has already been georeferenced in Allmaps.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># For Blacklight or GeoBlacklight</span>
-bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>blacklight_allmaps:sidecars:harvest:allmaps
-</code></pre></div>
-<h5 id="populate-the-georeferenced-facet"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#populate-the-georeferenced-facet">Populate the Georeferenced Facet</a></h5>
-<p>We expose the georeferenced items in the Blacklight user interface via a Georeferenced facet:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># For Blacklight or GeoBlacklight</span>
-bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>blacklight_allmaps:index:georeferenced_facet
-</code></pre></div>
-<h5 id="screenshot-item-show-page"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#screenshot-item-show-page">Screenshot - Item Show Page</a></h5>
-<p><img alt="Screenshot" src="../../blog-images/blam_show_page.png" /></p>
-<p><a href="http://localhost:3000/catalog/p16022coll230:4038">Example</a></p>
-<h4 id="plugin-geoblacklight-sidecar-images"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#plugin-geoblacklight-sidecar-images">Plugin: GeoBlacklight Sidecar Images</a></h4>
-<p>This plugin adds thumbnails to search results. Let's follow the <a href="https://github.com/geoblacklight/geoblacklight_sidecar_images?tab=readme-ov-file#installation">installation steps</a> to add this feature to our example application.</p>
-<h5 id="install_1"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#install_1">Install</a></h5>
-<p>Add this gem to our Gemfile.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Gemfile</span>
-<span class="n">gem</span><span class="w"> </span><span class="s2">&quot;geoblacklight_sidecar_images&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;~&gt; 1.0&quot;</span>
-</code></pre></div>
-<p>Bundle.</p>
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>install
-</code></pre></div>
-<p>Run the generator.</p>
-<div class="highlight"><pre><span></span><code>bin/rails<span class="w"> </span>generate<span class="w"> </span>geoblacklight_sidecar_images:install
-</code></pre></div>
-<p>Run the database migration.</p>
-<div class="highlight"><pre><span></span><code>bin/rails<span class="w"> </span>db:migrate
-</code></pre></div>
-<p>Set your variant processor to <code>:vips</code> in <code>config/application.rb</code>. This will use <a href="https://www.libvips.org/">libvips</a> to generate our thumbnails.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># Image Processing</span>
-<span class="w">    </span>config.active_storage.variant_processor<span class="w"> </span><span class="o">=</span><span class="w"> </span>:vips
-</code></pre></div>
-<h5 id="harvest-thumbnails"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#harvest-thumbnails">Harvest Thumbnails</a></h5>
-<p>Spawn some background jobs to harvest images for all the documents in our Solr index. In development mode, these will run "inline". In a production environment, you'd want to use </p>
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>gblsci:images:harvest_all
-</code></pre></div>
-<h5 id="screenshot-item-show-page_1"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#screenshot-item-show-page_1">Screenshot - Item Show Page</a></h5>
-<p><img alt="Screenshot" src="../../blog-images/gblsci_search_results.png" /></p>
-<p><a href="http://localhost:3000/catalog/p16022coll230:4038">Example</a></p>
-<h4 id="plugin-geoblacklight-admin"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#plugin-geoblacklight-admin">Plugin: GeoBlacklight Admin</a></h4>
-<p>Notice: This is going to be a full pivot from our current example codebase we've been building.</p>
-<p><a href="https://github.com/geobtaa/geoblacklight_admin">GeoBlacklight Admin</a> is a GeoBlacklight plugin, built on <a href="https://github.com/sciencehistory/kithe">Kithe</a>, that provides a CSV-based import/export workflow for OpenGeoMetadata's Aardvark schema, rich web-forms for editing documents, and publication lifecycle tools for working with draft documents or published data. GBL Admin is also the Big Ten Academic Alliance's production workflow tool.</p>
-<h5 id="installation"><a class="toclink" href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/#installation">Installation</a></h5>
-<ul>
-<li>Create PG database:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>psql<span class="w"> </span>postgres
-CREATE<span class="w"> </span>DATABASE<span class="w"> </span>geoblacklight_development<span class="p">;</span>
-</code></pre></div>
-<ul>
-<li>Run application template install script below:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>rails<span class="w"> </span>_7.1.3.2_<span class="w"> </span>new<span class="w"> </span>gbl-admin<span class="w"> </span>-m<span class="w"> </span>https://raw.githubusercontent.com/geobtaa/geoblacklight_admin/develop/template.rb
-</code></pre></div>
-<p>Run the Application
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>geoblacklight:server
-</code></pre></div></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2024/05/geo4libcamp-2024--geoblacklight-workshop/">
+          Continue reading
+        </a>
+      </nav>
     
   </div>
 </article>
