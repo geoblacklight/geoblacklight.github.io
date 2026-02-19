@@ -19,6 +19,8 @@ Workshop date: May 20, 2024
 
 With many thanks to all the GeoBlacklight community members who help keep our website and project documentation up to date.
 
+<!-- more -->
+
 ## Part 1: Introductions and Attendee Goals (5 minutes)
 
 Eric and Eliot are both core contributors/maintainers of the GeoBlacklight project's source code. Let's all get to know one another and hear what each attendee wants to learn in this session.
