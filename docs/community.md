@@ -3,7 +3,7 @@
 
 Have a question about GeoBlacklight or want to connect with other users and developers?
 
-- Join the [**Geo4Lib Slack**](https://join.slack.com/t/geo4lib/shared_invite/zt-3baz35i9x-gLVsSGz8MCDlkGePjk7Ejw) and look for the #geoblacklight channel
+- Join the **Geo4Lib Slack** and look for the #geoblacklight channel
 - Join the [**Geo4Lib Google Group**](https://groups.google.com/g/geo4lib-community) to receive announcements and participate in discussions
 
 ## Contribute to the Software
