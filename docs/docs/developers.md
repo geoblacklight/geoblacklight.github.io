@@ -13,10 +13,10 @@ This page is for software developers looking to build GeoBlacklight from source,
 
 You should have the following installed before beginning:
 
-<ul>
-    <li>Ruby (check the minimum required version on <a href="https://rubygems.org/gems/geoblacklight">GeoBlacklight's rubygems page</a>)</li>
-    <li><a href="https://docs.docker.com/get-started/get-docker/">Docker Desktop</a> for your operating system</li>
-</ul>
+- Ruby (check the minimum required version on [GeoBlacklight's rubygems page](https://rubygems.org/gems/geoblacklight))
+- [Docker Desktop](https://docs.docker.com/get-started/get-docker/) for your operating system
+- A currently supported version of [node.js](https://nodejs.org/en) and the [yarn](https://yarnpkg.com/) package manager
+
 ---------
 
 ## Build the Application
