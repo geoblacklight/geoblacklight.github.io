@@ -19,14 +19,6 @@ To create a new application, you can use the `template.rb` file. The options pro
 !!! warning "Choosing an asset pipeline"
     It's not trivial to switch your app from one asset strategy to another after creation, so choose based on your needs. For more information on using a bundler vs. importmaps, check out the [Rails docs on choosing an asset pipeline](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#choosing-between-import-maps-and-a-javascript-bundler).
 
-### Using Vite for assets
-
-This approach uses [vite-rails](https://vite-ruby.netlify.app/guide/rails.html) to bundle all of the app's javascript and styles. Presuming you want your app to be in a directory `app-name`, you initialize a new app with:
-
-```
-ASSET_PIPELINE=vite rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/refs/heads/release-5.x/template.rb -a propshaft --css bootstrap --js rollup
-```
-
 ### Using importmaps and dartsass-rails for assets
 
 This approach uses Rails's default of [import maps](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#import-maps) for javascript and dart sass for compiling SCSS.
@@ -35,6 +27,17 @@ Presuming you want your app to be in a directory `app-name`, you initialize a ne
 
 ```bash
 ASSET_PIPELINE=importmap rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/refs/heads/release-5.x/template.rb -a propshaft --css bootstrap --js importmap
+```
+
+### Using Vite for assets
+
+!!! warning "Vite is deprecated"
+    The Vite asset pipeline is deprecated and will be removed in Geoblacklight 6. We recommend using the importmaps approach for new applications.
+
+This approach uses [vite-rails](https://vite-ruby.netlify.app/guide/rails.html) to bundle all of the app's javascript and styles. Presuming you want your app to be in a directory `app-name`, you initialize a new app with:
+
+```
+ASSET_PIPELINE=vite rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/refs/heads/release-5.x/template.rb -a propshaft --css bootstrap --js rollup
 ```
 
 ## Running the application
