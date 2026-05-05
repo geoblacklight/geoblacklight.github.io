@@ -24,7 +24,7 @@ To create a new application, you can use the `template.rb` file. The options pro
 This approach uses [vite-rails](https://vite-ruby.netlify.app/guide/rails.html) to bundle all of the app's javascript and styles. Presuming you want your app to be in a directory `app-name`, you initialize a new app with:
 
 ```
-ASSET_PIPELINE=vite rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb -a propshaft --css bootstrap --js rollup
+ASSET_PIPELINE=vite rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/refs/heads/release-5.x/template.rb -a propshaft --css bootstrap --js rollup
 ```
 
 ### Using importmaps and dartsass-rails for assets
@@ -34,7 +34,7 @@ This approach uses Rails's default of [import maps](https://guides.rubyonrails.o
 Presuming you want your app to be in a directory `app-name`, you initialize a new app with:
 
 ```bash
-ASSET_PIPELINE=importmap rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/main/template.rb -a propshaft --css bootstrap --js importmap
+ASSET_PIPELINE=importmap rails new app-name -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/refs/heads/release-5.x/template.rb -a propshaft --css bootstrap --js importmap
 ```
 
 ## Running the application
