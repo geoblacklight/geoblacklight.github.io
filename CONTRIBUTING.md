@@ -50,7 +50,7 @@ If you want to preview changes before committing them, follow the steps below. I
 1. Open a terminal in the geoblacklight.github.io directory.
 1. Install python dependencies used to build the site with the following command:
    ```
-   pip install -r requirements.txt
+   pip install .
    ```
 
 1. Start a local server with the following command:

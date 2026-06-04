@@ -1,7 +1,0 @@
-mkdocs
-mkdocs-material
-mkdocs-material-extensions
-mkdocs-table-reader-plugin
-mkdocs-git-revision-date-localized-plugin
-pymdown-extensions
-mike
