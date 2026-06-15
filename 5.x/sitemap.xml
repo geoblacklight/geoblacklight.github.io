@@ -2,310 +2,310 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://geoblacklight.org/5.x/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/about/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/community/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2015/01/introducing-geoblacklight/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2015/02/using-geocombine-to-harvest-and-index-opengeometadata/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2015/02/a-hands-on-introduction-to-geoblacklight---geoblacklight-workshop/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2015/04/deploying-geoblacklight/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2015/11/open-in-cartodb-now-in-geoblacklight/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2016/01/using-packer-to-create-a-development-virtual-machine-for-geoblacklight/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2016/01/geoblacklight-at-nyu-a-blog-series-by-andrew-battista/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2016/02/vecnet-digital-library-redesign-and-geospatial-search-using-geoblacklight/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2016/08/geoblacklight-version-10-released/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2016/09/big-ten-academic-alliance-geoportal-launches/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2017/08/summer-code-concludes-and-geoblacklight-version-160-released/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2018/03/geoblacklight-winter-code-2018--new-release-18/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2018/08/2018-summer-code-for-geoblacklight/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2019/02/geoblacklight-20-is-here/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2020/09/geoblacklight-30-is-here/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2021/02/announcing-the-geoblacklight-community-winter-2021-sprint/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2021/09/new-releases-after-the-geoblacklight-community-summer-2021-sprint/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2022/02/announcing-the-geoblacklight-community-winter-2022-sprint/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2022/03/geoblacklight-community-sprint-recap-winter-2022/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2022/08/announcing-the-geoblacklight-community-summer-2022-sprint/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2022/09/the-wait-is-over---geoblacklight-40-is-here/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2023/03/winter-sprint-2023/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2023/06/geoblacklight-v41-released-along-with-new-documentation-pages/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2024/02/winter-2024-sprint-wrap-up---geoblacklight-v42/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2024/05/geo4libcamp-2024--geoblacklight-workshop/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/2026/02/winter-2026-sprint-recap--geoblacklight-v52/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/adding_mirador_viewer/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/adding_svg_icons/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/catalog_controller/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/data_relations_widget/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/developers/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/external_solr/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/framework-recommendations/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/geoblacklight_quick_start/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/geopackages/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/glossary/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/hardware_recommendations/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/implementation_recommendations/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/index_maps/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/item_images/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/json-geojson/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/leaflet/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/metadata/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/periodic_maintenance/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/releases/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/rendering_html_from_description/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/settings-yml/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/settings/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/solr_search_relevancy/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/tutorials/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/upgrade_version_2_0/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/upgrade_version_4_0/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/docs/user_authentication/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/showcase/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/showcase/submit/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2026/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2024/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2023/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2022/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2021/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2020/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2019/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2018/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2017/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2016/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/archive/2015/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/category/sprints/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/category/releases/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/category/tutorials/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/page/2/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/page/3/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
     <url>
          <loc>https://geoblacklight.org/5.x/blog/category/sprints/page/2/</loc>
-         <lastmod>2026-05-05</lastmod>
+         <lastmod>2026-06-15</lastmod>
     </url>
 </urlset>
