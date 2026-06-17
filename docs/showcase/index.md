@@ -8,16 +8,6 @@ hide:
 
 <div class="grid cards" markdown>
 
--   ![](btaa-geoportal.png)
-
-	#### [Big Ten Academic Alliance Geoportal](https://geo.btaa.org)
-	
-	The Big Ten Academic Alliance Geoportal aggregates metadata from 12 different institutions providing a single place to find and use aerial imagery, geospatial data, and scanned maps from multiple GIS data clearinghouses and library catalogs.
-	  
-	:octicons-link-external-16: https://geo.btaa.org
-	  
-	:simple-github: https://github.com/geobtaa/geoportal
-
 -   ![](Colorado.png)
 
 	#### [Colorado GeoLibrary](https://geo.colorado.edu/)
