@@ -1,5 +1,6 @@
 [project]
 name = "geoblacklight.github.io"
+requires-python = ">=3.11"
 dynamic = ["version"]
 dependencies = [
     "mike>=2.2.0",
@@ -10,3 +11,10 @@ dependencies = [
     "mkdocs-table-reader-plugin>=3.1.0",
     "pymdown-extensions>=10.21.2",
 ]
+
+[tool.setuptools]
+packages = []
+py-modules = []
+
+[tool.uv]
+package = false
