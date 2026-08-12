@@ -16,7 +16,8 @@ jobs:
         with:
           python-version: 3.x
           cache: pip
-      - run: pip install .
+      - uses: astral-sh/setup-uv@v3
+      - run: uv pip install --system .
       - run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
