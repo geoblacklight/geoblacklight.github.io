@@ -53,13 +53,21 @@ If you want to preview changes before committing them, follow the steps below. I
    pip install .
    ```
 
-1. Start a local server with the following command:
+1. Start a local server for the part of the site you're editing:
 
-   ```
-   mike serve
-   ```
-  
-   This will allow you to preview the site as you edit it. You will see text in the Terminal that looks something like this:
+   * Editing the main site (Home, About, Community, Showcase, Blog, Release Calendar)? Run:
+
+     ```
+     mkdocs serve --config-file mkdocs.yml
+     ```
+
+   * Editing the versioned technical documentation (under `documentation/`)? Run:
+
+     ```
+     mkdocs serve --config-file mkdocs-docs.yml
+     ```
+
+   Either command will allow you to preview the site as you edit it. You will see text in the Terminal that looks something like this:
 
    ```
    INFO     -  Documentation built in 4.15 seconds
@@ -67,6 +75,8 @@ If you want to preview changes before committing them, follow the steps below. I
    INFO     -  [14:43:24] Serving on http://127.0.0.1:8000/
    INFO     -  [14:43:31] Browser connected: http://127.0.0.1:8000/
    ```
+
+   If you specifically want to preview the version-switcher dropdown for the documentation, run `mike serve --config-file mkdocs-docs.yml` instead — this isn't needed for ordinary content edits.
 
 1. In a browser, open the locally hosted site at http://127.0.0.1:8000/ (or whatever address your Terminal shows).
 1. Create a new branch to track your changes.
