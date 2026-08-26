@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/gbl-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2448,32 +2448,32 @@
 <span class="n">solr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">RSolr</span><span class="o">.</span><span class="n">connect</span><span class="w"> </span><span class="ss">url</span><span class="p">:</span><span class="w"> </span><span class="no">Blacklight</span><span class="o">.</span><span class="n">connection_config</span><span class="o">[</span><span class="ss">:url</span><span class="o">]</span>
 
 <span class="c1"># Select all the docs from Solr</span>
-<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sol</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;select&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">params</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="ss">q</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;*:*&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">fl</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">rows</span><span class="p">:</span><span class="w"> </span><span class="mi">9999999</span><span class="p">})</span>
+<span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sol</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'select'</span><span class="p">,</span><span class="w"> </span><span class="ss">params</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="ss">q</span><span class="p">:</span><span class="w"> </span><span class="s1">'*:*'</span><span class="p">,</span><span class="w"> </span><span class="ss">fl</span><span class="p">:</span><span class="w"> </span><span class="s1">'id'</span><span class="p">,</span><span class="w"> </span><span class="ss">rows</span><span class="p">:</span><span class="w"> </span><span class="mi">9999999</span><span class="p">})</span>
 
 <span class="c1"># Build a flat sorted array of all document slugs</span>
-<span class="n">slugs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="o">[</span><span class="s1">&#39;response&#39;</span><span class="o">][</span><span class="s1">&#39;docs&#39;</span><span class="o">].</span><span class="n">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">doc</span><span class="o">|</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;id&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">}</span><span class="o">.</span><span class="n">sort</span>
+<span class="n">slugs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="o">[</span><span class="s1">'response'</span><span class="o">][</span><span class="s1">'docs'</span><span class="o">].</span><span class="n">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">doc</span><span class="o">|</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">'id'</span><span class="o">]</span><span class="w"> </span><span class="p">}</span><span class="o">.</span><span class="n">sort</span>
 
 <span class="c1"># Set the host name for URL creation</span>
-<span class="no">SitemapGenerator</span><span class="o">::</span><span class="no">Sitemap</span><span class="o">.</span><span class="n">default_host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://geo.btaa.org&#39;</span>
+<span class="no">SitemapGenerator</span><span class="o">::</span><span class="no">Sitemap</span><span class="o">.</span><span class="n">default_host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'https://geo.btaa.org'</span>
 <span class="no">SitemapGenerator</span><span class="o">::</span><span class="no">Sitemap</span><span class="o">.</span><span class="n">create</span><span class="w"> </span><span class="k">do</span>
 <span class="w">  </span><span class="c1"># Put links creation logic here.</span>
 <span class="w">  </span><span class="c1">#</span>
-<span class="w">  </span><span class="c1"># The root path &#39;/&#39; and sitemap index file are added automatically for you.</span>
+<span class="w">  </span><span class="c1"># The root path '/' and sitemap index file are added automatically for you.</span>
 <span class="w">  </span><span class="c1"># Links are added to the Sitemap in the order they are specified.</span>
 <span class="w">  </span><span class="c1">#</span>
 <span class="w">  </span><span class="c1"># Usage: add(path, options={})</span>
-<span class="w">  </span><span class="c1">#        (default options are used if you don&#39;t specify)</span>
+<span class="w">  </span><span class="c1">#        (default options are used if you don't specify)</span>
 <span class="w">  </span><span class="c1">#</span>
-<span class="w">  </span><span class="c1"># Defaults: :priority =&gt; 0.5, :changefreq =&gt; &#39;weekly&#39;,</span>
+<span class="w">  </span><span class="c1"># Defaults: :priority =&gt; 0.5, :changefreq =&gt; 'weekly',</span>
 <span class="w">  </span><span class="c1">#           :lastmod =&gt; Time.now, :host =&gt; default_host</span>
 <span class="w">  </span><span class="c1">#</span>
 
-<span class="w">  </span><span class="n">slugs</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">slug</span><span class="o">|</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="s2">&quot;/catalog/</span><span class="si">#{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="n">slugs</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">slug</span><span class="o">|</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="s2">"/catalog/</span><span class="si">#{</span><span class="n">slug</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">}</span>
 <span class="k">end</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># whenever gem</span>
-<span class="n">every</span><span class="w"> </span><span class="ss">:day</span><span class="p">,</span><span class="w"> </span><span class="ss">at</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;12:30am&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">roles</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:app</span><span class="o">]</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="n">rake</span><span class="w"> </span><span class="s1">&#39;sitemap:refresh&#39;</span>
+<span class="n">every</span><span class="w"> </span><span class="ss">:day</span><span class="p">,</span><span class="w"> </span><span class="ss">at</span><span class="p">:</span><span class="w"> </span><span class="s1">'12:30am'</span><span class="p">,</span><span class="w"> </span><span class="ss">roles</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:app</span><span class="o">]</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">rake</span><span class="w"> </span><span class="s1">'sitemap:refresh'</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>You'll likely want to disallow any code paths that hit Solr with a search query:</p>
@@ -2531,14 +2531,14 @@ Disallow: /
 <p>A few cronjobs will help keep your database lean. These examples use the popular <a href="https://github.com/javan/whenever">whenever</a> rubygem.</p>
 <h5 id="delete-old-searches">Delete Old Searches</h5>
 <div class="highlight"><pre><span></span><code><span class="c1"># Clean up recent anonymous search records</span>
-<span class="n">every</span><span class="w"> </span><span class="ss">:day</span><span class="p">,</span><span class="w"> </span><span class="ss">at</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2:30am&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">roles</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:app</span><span class="o">]</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="n">rake</span><span class="w"> </span><span class="s1">&#39;blacklight:delete_old_searches[7]&#39;</span>
+<span class="n">every</span><span class="w"> </span><span class="ss">:day</span><span class="p">,</span><span class="w"> </span><span class="ss">at</span><span class="p">:</span><span class="w"> </span><span class="s1">'2:30am'</span><span class="p">,</span><span class="w"> </span><span class="ss">roles</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:app</span><span class="o">]</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">rake</span><span class="w"> </span><span class="s1">'blacklight:delete_old_searches[7]'</span>
 <span class="k">end</span>
 </code></pre></div>
 <h5 id="delete-old-guest-users">Delete Old Guest Users</h5>
 <div class="highlight"><pre><span></span><code><span class="c1"># Cleans up anonymous user accounts created by search sessions</span>
-<span class="n">every</span><span class="w"> </span><span class="ss">:day</span><span class="p">,</span><span class="w"> </span><span class="ss">at</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;1:30am&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">roles</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:app</span><span class="o">]</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="n">rake</span><span class="w"> </span><span class="s1">&#39;devise_guests:delete_old_guest_users[2]&#39;</span>
+<span class="n">every</span><span class="w"> </span><span class="ss">:day</span><span class="p">,</span><span class="w"> </span><span class="ss">at</span><span class="p">:</span><span class="w"> </span><span class="s1">'1:30am'</span><span class="p">,</span><span class="w"> </span><span class="ss">roles</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="ss">:app</span><span class="o">]</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">rake</span><span class="w"> </span><span class="s1">'devise_guests:delete_old_guest_users[2]'</span>
 <span class="k">end</span>
 </code></pre></div>
 
@@ -2656,7 +2656,7 @@ Disallow: /
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

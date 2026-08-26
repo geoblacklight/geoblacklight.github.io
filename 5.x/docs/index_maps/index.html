@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/gbl-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2539,7 +2539,7 @@
 <h2 id="adding-customizing-and-displaying-index-maps">Adding, Customizing, and Displaying Index Maps</h2>
 <p><a href="https://github.com/geoblacklight/geoblacklight/pull/588">#588</a> added index map discovery
 and preview to GeoBlacklight. Index map preview can be added to a layer by adding an accessible url to a GeoJSON file in a layer's <code>dct_references_s</code> section:</p>
-<div class="highlight"><pre><span></span><code>&quot;dct_references_s&quot;: &quot;{\&quot;https://openindexmaps.org\&quot;: \&quot;https://gist.githubusercontent.com/mejackreed/4a44f1f7cc4fbb926068738e903a9e96/raw/fedfb0e599d647920f084627b7dca8f88a358757/stanford-fb897vt9938.geojson\&quot;}&quot;,
+<div class="highlight"><pre><span></span><code>"dct_references_s": "{\"https://openindexmaps.org\": \"https://gist.githubusercontent.com/mejackreed/4a44f1f7cc4fbb926068738e903a9e96/raw/fedfb0e599d647920f084627b7dca8f88a358757/stanford-fb897vt9938.geojson\"}",
 </code></pre></div>
 <p>As noted above, index maps should be created using the <a href="https://openindexmaps.org/">OpenIndexMaps</a> specification. In GeoBlacklight, the <code>label</code> property will be used for the tooltip that appears when the user hovers over a feature on the index map.</p>
 <p>The index map preview can be customized by overriding the Handlebars template <code>index_map_info.hbs</code> and/or overriding the <code>GeoBlacklight.Util.indexMapTemplate</code> method.</p>
@@ -2678,7 +2678,7 @@ and preview to GeoBlacklight. Index map preview can be added to a layer by addin
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

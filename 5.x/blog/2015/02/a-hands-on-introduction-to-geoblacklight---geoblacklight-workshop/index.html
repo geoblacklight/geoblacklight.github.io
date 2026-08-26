@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../images/gbl-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2816,7 +2816,7 @@ Now you should have Rails installed on your machine and are ready to proceed.</p
 <p><em>Optional</em> Initialize your git repository and commit your changes</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>init
 $<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;initial commit of Rails application&#39;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'initial commit of Rails application'</span>
 </code></pre></div>
 </li>
 </ol>
@@ -2828,8 +2828,8 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 <li>
 <p>Add GeoBlacklight to your <code>Gemfile</code>. To do this, navigate to the Gemfile in your application, open it with a text editor, and paste the following in to add it to the list of gems:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># In ./Gemfile</span>
-<span class="n">gem</span><span class="w"> </span><span class="s1">&#39;blacklight&#39;</span>
-<span class="n">gem</span><span class="w"> </span><span class="s1">&#39;geoblacklight&#39;</span>
+<span class="n">gem</span><span class="w"> </span><span class="s1">'blacklight'</span>
+<span class="n">gem</span><span class="w"> </span><span class="s1">'geoblacklight'</span>
 </code></pre></div>
 </li>
 <li>
@@ -2863,7 +2863,7 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>geoblacklight:server
 </code></pre></div>
 <p class="flash-notice">Running this command will download and start the <a href="http://127.0.0.1:8983/solr">Solr server</a>. Other commands available to control Solr include:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>solr:clean<span class="w"> </span><span class="c1"># Useful when seeing a &quot;core already exists&quot; error.</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rake<span class="w"> </span>solr:clean<span class="w"> </span><span class="c1"># Useful when seeing a "core already exists" error.</span>
 $<span class="w"> </span>rake<span class="w"> </span>solr:start<span class="w"> </span><span class="c1"># Starts Solr independently of the Rails server in the background (without loading core)</span>
 $<span class="w"> </span>rake<span class="w"> </span>solr:stop<span class="w"> </span><span class="c1"># Stops Solr</span>
 $<span class="w"> </span>rake<span class="w"> </span>solr:restart<span class="w"> </span><span class="c1"># Stops and restarts an already running background Solr server</span>
@@ -2875,7 +2875,7 @@ $<span class="w"> </span>rake<span class="w"> </span>solr:restart<span class="w"
 <li>
 <p><em>Optional</em> Commit your work</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;installed Blacklight and GeoBlacklight&#39;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'installed Blacklight and GeoBlacklight'</span>
 </code></pre></div>
 <p class="flash-success">Great job for making it this far. You now have a working GeoBlacklight application!</p>
 </li>
@@ -2887,7 +2887,7 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 <p>Add <code>rspec-rails</code> to both the <code>:development</code> and <code>:test</code> groups in the <code>Gemfile</code>. Again, open the <code>Gemfile</code> with a text editor and paste the line below into the respective groups.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># In ./Gemfile</span>
 group<span class="w"> </span>:development,<span class="w"> </span>:test<span class="w"> </span><span class="k">do</span>
-<span class="w">  </span>gem<span class="w"> </span><span class="s1">&#39;rspec-rails&#39;</span>,<span class="w"> </span><span class="s1">&#39;~&gt; 3.0&#39;</span>
+<span class="w">  </span>gem<span class="w"> </span><span class="s1">'rspec-rails'</span>,<span class="w"> </span><span class="s1">'~&gt; 3.0'</span>
 end
 </code></pre></div>
 </li>
@@ -2910,7 +2910,7 @@ end
 <li>
 <p><em>Optional</em> Commit your work</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Installed RSpec&#39;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Installed RSpec'</span>
 </code></pre></div>
 </li>
 </ol>
@@ -2950,7 +2950,7 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 <li>
 <p><em>Optional</em> Commit your work</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Adds in JSON fixtures&#39;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Adds in JSON fixtures'</span>
 </code></pre></div>
 </li>
 </ol>
@@ -2994,14 +2994,14 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 <li>
 <p>Scroll down to lines 137 - 144</p>
 <p><div class="highlight"><pre><span></span><code><span class="o">...</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">CREATOR</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Author(s)&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;author&#39;</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">DESCRIPTION</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Description&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;description&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">helper_method</span><span class="p">:</span><span class="w"> </span><span class="ss">:render_value_as_truncate_abstract</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Publisher&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;publisher&#39;</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PART_OF</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Collection&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;isPartOf&#39;</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SPATIAL_COVERAGE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Place(s)&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;spatial&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SUBJECT</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Subject(s)&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;keywords&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">TEMPORAL</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;temporal&#39;</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PROVENANCE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Held by&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">CREATOR</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Author(s)'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'author'</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">DESCRIPTION</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Description'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'description'</span><span class="p">,</span><span class="w"> </span><span class="ss">helper_method</span><span class="p">:</span><span class="w"> </span><span class="ss">:render_value_as_truncate_abstract</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Publisher'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'publisher'</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PART_OF</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Collection'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'isPartOf'</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SPATIAL_COVERAGE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Place(s)'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'spatial'</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">SUBJECT</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Subject(s)'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'keywords'</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">TEMPORAL</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Year'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'temporal'</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PROVENANCE</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Held by'</span><span class="p">,</span><span class="w"> </span><span class="ss">link_to_facet</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
 <span class="o">...</span>
 </code></pre></div>
  These configuration options relate to fields that are indexed in Solr. You can disable a metadata field being shown on an items show page. If you navigate to an <a href="http://127.0.0.1:3000/catalog/stanford-cg357zz0321">items page</a>, it will currently show field called publisher. Maybe you would like to rename that field to "Data publisher".</p>
@@ -3009,15 +3009,15 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 <li>
 <p>Modify the label in line 139</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># change this</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Publisher&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;publisher&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Publisher'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'publisher'</span>
 <span class="c1"># to this</span>
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Data publisher&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;publisher&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">PUBLISHER</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Data publisher'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'publisher'</span>
 </code></pre></div>
 <p>Save the file and reload the page. You should see the label change.</p>
 </li>
 <li>
 <p>Next we will remove the "Author(s)" metadata field from being shown. Comment out or remove the <code>Settings.FIELDS.CREATOR</code> line (137).</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># config.add_show_field Settings.FIELDS.CREATOR, label: &#39;Author(s)&#39;, itemprop: &#39;author&#39;</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'</span>
 </code></pre></div>
  Save the file and reload the page. You should no longer see the "Author(s)" field.</p>
 <p>You have now customized a layer's show page!</p>
@@ -3074,17 +3074,17 @@ $<span class="w"> </span>touch<span class="w"> </span>app/views/catalog/_home_te
 <p>Open up file <code>config/locales/blacklight.en.yml</code></p>
 <div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">blacklight</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">application_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Blacklight&#39;</span>
+<span class="w">    </span><span class="nt">application_name</span><span class="p">:</span><span class="w"> </span><span class="s">'Blacklight'</span>
 </code></pre></div>
 </li>
 <li>
 <p>Edit the file, adding a customization to the search form label</p>
 <div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">blacklight</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">application_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Your</span><span class="nv"> </span><span class="s">Geo</span><span class="nv"> </span><span class="s">App&#39;</span>
+<span class="w">    </span><span class="nt">application_name</span><span class="p">:</span><span class="w"> </span><span class="s">'Your</span><span class="nv"> </span><span class="s">Geo</span><span class="nv"> </span><span class="s">App'</span>
 <span class="w">    </span><span class="nt">search</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">form</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">submit</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Search</span><span class="nv"> </span><span class="s">this&#39;</span>
+<span class="w">        </span><span class="nt">submit</span><span class="p">:</span><span class="w"> </span><span class="s">'Search</span><span class="nv"> </span><span class="s">this'</span>
 </code></pre></div>
 <p class="flash-success">Refresh your home page and you should see the submit button text changed. If you inspect the html you will notice the HTML title attribute changed.</p>
 <p class="flash-notice">More configurable keys are available, check out what you can customize using this approach:
@@ -3220,7 +3220,7 @@ $<span class="w"> </span>touch<span class="w"> </span>app/views/catalog/_home_te
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

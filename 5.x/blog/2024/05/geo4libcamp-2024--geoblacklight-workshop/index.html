@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../images/gbl-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2702,7 +2702,7 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <p><a href="https://opengeometadata.org/ogm-aardvark/">OGM Aardvark</a> is a discovery metadata schema for geospatial resources. It was intentionally developed with cross-application in mind and can be used to describe geospatial assets of all kinds. It is also the newest metadata application profile schema for GeoBlacklight. Launched in 2021, it replaces the GeoBlacklight metadata schema version 1.0 (GBL 1.0). Compared to GBL 1.0, Aardvark incorporates additional fields for better descriptions of a wider range of resources, as well as syntactical updates in order to improve interoperability between institutions and between schemas.</p>
 <h4 id="rake-tasks">Rake Tasks</h4>
 <p>With your Solr server and Rails server already running (via the geoblacklight:server rake task above), open a new terminal window and index the GeoBlacklight project's test fixtures (OGM Aardvark JSON files) via the rake task below:</p>
-<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span><span class="s2">&quot;geoblacklight:index:seed[:remote]&quot;</span>
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span><span class="s2">"geoblacklight:index:seed[:remote]"</span>
 </code></pre></div>
 <h4 id="geocombine">GeoCombine</h4>
 <p>Another option for indexing data is <a href="https://github.com/OpenGeoMetadata/GeoCombine">GeoCombine</a>. GeoCombine is a Ruby toolkit for managing geospatial metadata, including:</p>
@@ -2714,7 +2714,7 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>geocombine:clone<span class="se">\[</span>edu.umn<span class="se">\]</span>
 </code></pre></div></p>
 <p>Index your GeoCombine data. Here we're setting our schema version to Aardvark, which is the GBL v4.0+ metadata schema.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">SCHEMA_VERSION</span><span class="o">=</span><span class="s2">&quot;Aardvark&quot;</span><span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>geocombine:index
+<div class="highlight"><pre><span></span><code><span class="nv">SCHEMA_VERSION</span><span class="o">=</span><span class="s2">"Aardvark"</span><span class="w"> </span>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rake<span class="w"> </span>geocombine:index
 </code></pre></div>
 <h2 id="break-and-qa-session-10-minutes">BREAK and Q&amp;A Session (10 minutes)</h2>
 <p>Eric will return to this tutorial to list the attendee questions and discussion topics from this break (I promise).</p>
@@ -2758,7 +2758,7 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <h4 id="install">Install</h4>
 <p>Follow the <a href="https://github.com/bplmaps/blacklight-allmaps?tab=readme-ov-file#installation">blacklight_allmaps</a> installation steps to add this plugin to our Gemfile.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Gemfile</span>
-<span class="n">gem</span><span class="w"> </span><span class="s2">&quot;blacklight_allmaps&quot;</span>
+<span class="n">gem</span><span class="w"> </span><span class="s2">"blacklight_allmaps"</span>
 </code></pre></div>
 <p>And then execute:
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>install
@@ -2790,7 +2790,7 @@ bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <h4 id="install_1">Install</h4>
 <p>Add this gem to our Gemfile.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Gemfile</span>
-<span class="n">gem</span><span class="w"> </span><span class="s2">&quot;geoblacklight_sidecar_images&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;~&gt; 1.0&quot;</span>
+<span class="n">gem</span><span class="w"> </span><span class="s2">"geoblacklight_sidecar_images"</span><span class="p">,</span><span class="w"> </span><span class="s2">"~&gt; 1.0"</span>
 </code></pre></div>
 <p>Bundle.</p>
 <div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>install
@@ -2947,7 +2947,7 @@ CREATE<span class="w"> </span>DATABASE<span class="w"> </span>geoblacklight_deve
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

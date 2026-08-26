@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/gbl-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2534,7 +2534,7 @@
 <p>GeoBlacklight supports adding customized Leaflet plugin controls to the maps. This can useful for adding a <a href="http://leafletjs.com/plugins#geocoding">geocoding</a> or <a href="http://leafletjs.com/plugins#fullscreen-controls">fullscreen</a>. This guide will walkthrough adding the <a href="https://github.com/Leaflet/Leaflet.fullscreen">Leaflet.fullscreen</a> control plugin.</p>
 <h3 id="add-required-javascript-and-css">Add required Javascript and CSS</h3>
 <p>To add a custom control, first make sure that you require the needed JavaScript and/or CSS styles in your GeoBlacklight application.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// In your applications&#39;s app/assets/javascripts/geoblacklight.js</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// In your applications's app/assets/javascripts/geoblacklight.js</span>
 
 <span class="c1">//= require geoblacklight/geoblacklight</span>
 <span class="c1">//= require geoblacklight/basemaps</span>
@@ -2549,7 +2549,7 @@
 <span class="c1">//= require Leaflet.fullscreen.js</span>
 </code></pre></div>
 <p>You should do something similar for vendor css files and images. GeoBlacklight uses the <a href="http://guides.rubyonrails.org/asset_pipeline.html">Rails asset pipeline</a> for asset management. Vendor maintained files should usually be added under <code>./vendor/assets</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// In your applications&#39;s app/assets/stylesheets/geoblacklight.css.scss</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// In your applications's app/assets/stylesheets/geoblacklight.css.scss</span>
 <span class="cm">/*</span>
 <span class="cm">*= require geoblacklight/application</span>
 <span class="cm">*= require leaflet.fullscreen</span>
@@ -2557,45 +2557,45 @@
 </code></pre></div>
 <h3 id="configure-your-settings">Configure your settings</h3>
 <p>Next, you need to configure your settings to tell the viewers to load your control. Your application's <code>lib/generators/geoblacklight/templates/settings.yml</code> should look something like this:</p>
-<div class="highlight"><pre><span></span><code>...
-OPACITY_CONTROL: &amp;opacity_control
-  CONTROLS:
-    - &#39;Opacity&#39;
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+<span class="nt">OPACITY_CONTROL</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;opacity_control</span>
+<span class="w">  </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Opacity'</span>
 
-LEAFLET:
-  MAP:
-  LAYERS:
-  VIEWERS:
-    WMS:
-      &lt;&lt;: *opacity_control
-    TILEDMAPLAYER:
-      &lt;&lt;: *opacity_control
-    FEATURELAYER:
-      &lt;&lt;: *opacity_control
-    DYNAMICMAPLAYER:
-      &lt;&lt;: *opacity_control
-    IMAGEMAPLAYER:
-      &lt;&lt;: *opacity_control
-...
+<span class="nt">LEAFLET</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MAP</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">LAYERS</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">VIEWERS</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">WMS</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*opacity_control</span>
+<span class="w">    </span><span class="nt">TILEDMAPLAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*opacity_control</span>
+<span class="w">    </span><span class="nt">FEATURELAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*opacity_control</span>
+<span class="w">    </span><span class="nt">DYNAMICMAPLAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*opacity_control</span>
+<span class="w">    </span><span class="nt">IMAGEMAPLAYER</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*opacity_control</span>
+<span class="nn">...</span>
 </code></pre></div>
 <p>Let's say you want to add the fullscreen control for just your WMS viewer. You will need to update your <code>WMS</code> viewer controls to add it like so:</p>
-<div class="highlight"><pre><span></span><code>...
-  VIEWERS:
-      WMS:
-        CONTROLS:
-          - &#39;Opacity&#39;
-          - &#39;Fullscreen&#39;
-...
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+<span class="w">  </span><span class="nt">VIEWERS</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">WMS</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">CONTROLS</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Opacity'</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'Fullscreen'</span>
+<span class="nn">...</span>
 </code></pre></div>
 <h3 id="initialize-your-plugin">Initialize your plugin</h3>
 <p>Finally you need to initialize your controls like this. You can initialize the plugin with additional options.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// In your applications&#39;s app/assets/javascripts/geoblacklight/geoblacklight.js</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// In your applications's app/assets/javascripts/geoblacklight/geoblacklight.js</span>
 <span class="p">...</span>
 <span class="c1">//= require Leaflet.fullscreen.js</span>
 
 <span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">Fullscreen</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;topright&#39;</span>
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">'topright'</span>
 <span class="w">  </span><span class="p">}));</span>
 <span class="p">};</span>
 </code></pre></div>
@@ -2662,9 +2662,9 @@ map.addControl( new L.Control.Search({layer: searchLayer}) );
   VIEWERS:
       WMS:
         CONTROLS:
-          - &#39;Opacity&#39;
-          - &#39;Fullscreen&#39;
-          - &#39;Search&#39;
+          - 'Opacity'
+          - 'Fullscreen'
+          - 'Search'
 ...
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>// In the application app/assets/javascripts/geoblacklight.js
@@ -2674,10 +2674,10 @@ map.addControl( new L.Control.Search({layer: searchLayer}) );
 
 GeoBlacklight.Controls.Search = function() {
   this.map.addControl(new L.control.search({
-    url: &#39;http://nominatim.openstreetmap.org/search?format=json&amp;q={s}&#39;,
-        jsonpParam: &#39;json_callback&#39;,
-        propertyName: &#39;display_name&#39;,
-        propertyLoc: [&#39;lat&#39;,&#39;lon&#39;],
+    url: 'http://nominatim.openstreetmap.org/search?format=json&amp;q={s}',
+        jsonpParam: 'json_callback',
+        propertyName: 'display_name',
+        propertyLoc: ['lat','lon'],
         marker: L.circleMarker([0,0], { radius: 30 }),
         autoCollapse: true,
         autoType: false,
@@ -2699,10 +2699,10 @@ GeoBlacklight.Controls.Search = function() {
     margin-top: 3.2rem;
 
     .search-button {
-      background-image: image-url(&#39;search-icon-mobile&#39;);
+      background-image: image-url('search-icon-mobile');
 
       &amp;:hover {
-        background-image: image-url(&#39;search-icon-mobile&#39;);
+        background-image: image-url('search-icon-mobile');
       }
     }
   }
@@ -2735,7 +2735,7 @@ After refreshing your web browser, the map viewer should now have a search contr
 </code></pre></div>
 <p>Add the node_modules directory to your asset path:</p>
 <p><code>/config/initializers/assets.rb</code></p>
-<div class="highlight"><pre><span></span><code><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">paths</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;node_modules&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">paths</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'node_modules'</span><span class="p">)</span>
 </code></pre></div>
 <p>Add js-cookie to your geoblacklight.js file:</p>
 <p><code>/app/assets/javascript/geoblacklight.js</code></p>
@@ -2767,13 +2767,13 @@ After refreshing your web browser, the map viewer should now have a search contr
 
 <span class="c1">// Basemap select - Text: Value</span>
 <span class="nx">LOCAL</span><span class="p">.</span><span class="nx">baseLayerMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="s2">&quot;Default (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;esri&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;OpenStreetMaps&quot;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;openstreetmapStandard&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;World Imagery (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;esri_world_imagery&#39;</span>
+<span class="w">  </span><span class="s2">"Default (Esri)"</span><span class="o">:</span><span class="w"> </span><span class="s1">'esri'</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"OpenStreetMaps"</span><span class="o">:</span><span class="w"> </span><span class="s1">'openstreetmapStandard'</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"World Imagery (Esri)"</span><span class="o">:</span><span class="w"> </span><span class="s1">'esri_world_imagery'</span>
 <span class="p">}</span>
 
 <span class="c1">// Additional leaflet base layers</span>
-<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
@@ -2781,7 +2781,7 @@ After refreshing your web browser, the map viewer should now have a search contr
 <span class="w">  </span><span class="nx">noWrap</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">});</span>
 
-<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri_world_imagery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri_world_imagery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
@@ -2820,11 +2820,11 @@ After refreshing your web browser, the map viewer should now have a search contr
 
 <span class="w">    </span><span class="c1">// Add initial bbox to map element for easier testing</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">().</span><span class="nx">isValid</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-js-map-render-bbox&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">().</span><span class="nx">toBBoxString</span><span class="p">());</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-js-map-render-bbox'</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">().</span><span class="nx">toBBoxString</span><span class="p">());</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">overlay</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;index&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">'index'</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">addBoundsOverlay</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">bbox</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -2841,12 +2841,12 @@ After refreshing your web browser, the map viewer should now have a search contr
 <span class="cm">* Selects basemap if specified in 1) cookie, 2) data options, 3) if not return mapquest</span>
 <span class="cm">*/</span>
 <span class="nx">selectBasemap</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Selecting basemap&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Cookie: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">));</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Selecting basemap"</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Cookie: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'basemap'</span><span class="p">));</span>
 
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">_this</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">[</span><span class="nx">LOCAL</span><span class="p">.</span><span class="nx">baseLayerMap</span><span class="p">[</span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">)]];</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'basemap'</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">[</span><span class="nx">LOCAL</span><span class="p">.</span><span class="nx">baseLayerMap</span><span class="p">[</span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'basemap'</span><span class="p">)]];</span>
 <span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">_this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">basemap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">[</span><span class="nx">_this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">basemap</span><span class="p">];</span>
 <span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
@@ -2856,18 +2856,18 @@ After refreshing your web browser, the map viewer should now have a search contr
 
 <span class="nx">addBasemapSwitcher</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="c1">// basemaps control</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Control: Base Layer&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Control: Base Layer'</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">baseLayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;Default (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;OpenStreetMaps&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">openstreetmapStandard</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;World Imagery (Esri)&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri_world_imagery</span>
+<span class="w">    </span><span class="s2">"Default (Esri)"</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"OpenStreetMaps"</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">openstreetmapStandard</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"World Imagery (Esri)"</span><span class="o">:</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="p">.</span><span class="nx">esri_world_imagery</span>
 <span class="w">  </span><span class="p">};</span>
 
-<span class="w">  </span><span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">layers</span><span class="p">(</span><span class="nx">baseLayers</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottomleft&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">layers</span><span class="p">(</span><span class="nx">baseLayers</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">'bottomleft'</span><span class="w"> </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">);</span>
 
 <span class="w">  </span><span class="c1">// Event listener for layer switcher</span>
-<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;baselayerchange&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;basemap&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'baselayerchange'</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'basemap'</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
 
@@ -2881,12 +2881,12 @@ After refreshing your web browser, the map viewer should now have a search contr
 <div class="highlight"><pre><span></span><code>...
 
 // Customizations
-@import &#39;leaflet/leaflet&#39;;
+@import 'leaflet/leaflet';
 </code></pre></div>
 <p>We'll need to modify this CSS file slightly to reference the images we need in the application.</p>
 <p>At the top of this file add these lines:</p>
-<div class="highlight"><pre><span></span><code><span class="o">//=</span><span class="w"> </span><span class="nt">depend_on_asset</span><span class="w"> </span><span class="s1">&#39;layer.png&#39;</span>
-<span class="o">//=</span><span class="w"> </span><span class="nt">depend_on_asset</span><span class="w"> </span><span class="s1">&#39;layers-2x.png&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="o">//=</span><span class="w"> </span><span class="nt">depend_on_asset</span><span class="w"> </span><span class="s1">'layer.png'</span>
+<span class="o">//=</span><span class="w"> </span><span class="nt">depend_on_asset</span><span class="w"> </span><span class="s1">'layers-2x.png'</span>
 </code></pre></div>
 <p>Farther down the file, we'll need to edit this block too:</p>
 <div class="highlight"><pre><span></span><code><span class="c">/* layers control */</span>
@@ -2897,12 +2897,12 @@ After refreshing your web browser, the map viewer should now have a search contr
 <span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">.</span><span class="nc">leaflet-control-layers-toggle</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">&lt;%= asset_url &#39;layers.png&#39; %&gt;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">&lt;%= asset_url 'layers.png' %&gt;</span><span class="p">);</span>
 <span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">.</span><span class="nc">leaflet-retina</span><span class="w"> </span><span class="p">.</span><span class="nc">leaflet-control-layers-toggle</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">&lt;%= asset_url &#39;layers-2x.png&#39; %&gt;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">&lt;%= asset_url 'layers-2x.png' %&gt;</span><span class="p">);</span>
 <span class="w">    </span><span class="k">background-size</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="kt">px</span><span class="w"> </span><span class="mi">26</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
@@ -2923,34 +2923,34 @@ After refreshing your web browser, the map viewer should now have a search contr
 <p>Create a new rake file here:
 <code>/lib/tasks/generate_centroids_json.rake</code></p>
 <p>This rake task will write a <code>centroids.json</code> file to your application's public directory. Add these lines to the file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="w"> </span><span class="s1">&#39;rsolr&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="w"> </span><span class="s1">'rsolr'</span>
 
 <span class="n">namespace</span><span class="w"> </span><span class="ss">:geoportal</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="n">desc</span><span class="w"> </span><span class="s1">&#39;Generate homepage centroids for map clustering&#39;</span>
+<span class="w">  </span><span class="n">desc</span><span class="w"> </span><span class="s1">'Generate homepage centroids for map clustering'</span>
 <span class="w">  </span><span class="n">task</span><span class="w"> </span><span class="ss">generate_centroids_json</span><span class="p">:</span><span class="w"> </span><span class="ss">:environment</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Blacklight</span><span class="o">.</span><span class="n">default_index</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">get</span><span class="w"> </span><span class="s1">&#39;select&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">params</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">q</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*:*&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">rows</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Blacklight</span><span class="o">.</span><span class="n">default_index</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">get</span><span class="w"> </span><span class="s1">'select'</span><span class="p">,</span><span class="w"> </span><span class="ss">params</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">q</span><span class="p">:</span><span class="w"> </span><span class="s2">"*:*"</span><span class="p">,</span><span class="w"> </span><span class="ss">rows</span><span class="p">:</span><span class="w"> </span><span class="s1">'1000000'</span><span class="w"> </span><span class="p">}</span>
 
 <span class="w">    </span><span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span>
-<span class="w">    </span><span class="n">response</span><span class="o">[</span><span class="s2">&quot;response&quot;</span><span class="o">][</span><span class="s2">&quot;docs&quot;</span><span class="o">].</span><span class="n">each_with_index</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="o">|</span>
+<span class="w">    </span><span class="n">response</span><span class="o">[</span><span class="s2">"response"</span><span class="o">][</span><span class="s2">"docs"</span><span class="o">].</span><span class="n">each_with_index</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">doc</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="o">|</span>
 <span class="w">      </span><span class="k">begin</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">doc</span><span class="o">.</span><span class="n">key?</span><span class="p">(</span><span class="s1">&#39;dcat_centroid&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;dcat_centroid&#39;</span><span class="o">].</span><span class="n">empty?</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">doc</span><span class="o">.</span><span class="n">key?</span><span class="p">(</span><span class="s1">'dcat_centroid'</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">doc</span><span class="o">[</span><span class="s1">'dcat_centroid'</span><span class="o">].</span><span class="n">empty?</span>
 <span class="w">          </span><span class="n">entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
-<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">&#39;l&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;id&#39;</span><span class="o">]</span>
-<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">&#39;t&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">helpers</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;dct_title_s&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="ss">length</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
-<span class="w">          </span><span class="n">lat</span><span class="p">,</span><span class="n">lng</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;dcat_centroid&#39;</span><span class="o">].</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">'l'</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">'id'</span><span class="o">]</span>
+<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">'t'</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">helpers</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">doc</span><span class="o">[</span><span class="s1">'dct_title_s'</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="ss">length</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+<span class="w">          </span><span class="n">lat</span><span class="p">,</span><span class="n">lng</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="o">[</span><span class="s1">'dcat_centroid'</span><span class="o">].</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
 <span class="w">          </span><span class="n">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="o">.</span><span class="n">to_f</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1"># Truncate long values</span>
 <span class="w">          </span><span class="n">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lng</span><span class="o">.</span><span class="n">to_f</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1"># Truncate long values</span>
-<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">&#39;c&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">lat</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">lng</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">          </span><span class="n">entry</span><span class="o">[</span><span class="s1">'c'</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="n">lat</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">lng</span><span class="si">}</span><span class="s2">"</span>
 <span class="w">          </span><span class="n">docs</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">entry</span>
 <span class="w">        </span><span class="k">end</span>
 <span class="w">      </span><span class="k">rescue</span><span class="w"> </span><span class="no">Exception</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span>
-<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Caught </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;BBox or centroid no good - </span><span class="si">#{</span><span class="n">doc</span><span class="o">[</span><span class="s1">&#39;id&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"Caught </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">        </span><span class="nb">puts</span><span class="w"> </span><span class="s2">"BBox or centroid no good - </span><span class="si">#{</span><span class="n">doc</span><span class="o">[</span><span class="s1">'id'</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
 <span class="w">      </span><span class="k">end</span>
 <span class="w">    </span><span class="k">end</span>
 
-<span class="w">    </span><span class="n">centroids_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">/public/centroids.json&quot;</span>
-<span class="w">    </span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">centroids_file</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;w&quot;</span><span class="p">){</span><span class="w"> </span><span class="o">|</span><span class="n">f</span><span class="o">|</span><span class="w"> </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="no">JSON</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">docs</span><span class="p">))</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">centroids_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">/public/centroids.json"</span>
+<span class="w">    </span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">centroids_file</span><span class="p">,</span><span class="w"> </span><span class="s2">"w"</span><span class="p">){</span><span class="w"> </span><span class="o">|</span><span class="n">f</span><span class="o">|</span><span class="w"> </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="no">JSON</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">docs</span><span class="p">))</span><span class="w"> </span><span class="p">}</span>
 <span class="w">  </span><span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
@@ -2965,7 +2965,7 @@ After refreshing your web browser, the map viewer should now have a search contr
 <code>yarn add @sintef/prune-cluster</code></p>
 <p>Add the node_modules directory to your asset path:</p>
 <p><code>/config/initializers/assets.rb</code></p>
-<div class="highlight"><pre><span></span><code><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">paths</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;node_modules&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">paths</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'node_modules'</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="3-add-our-javascript-changes-for-the-homepage-map">3. Add our JavaScript changes for the Homepage Map</h3>
 <p>We need to override the GeoBlacklight <code>app/assets/javascripts/geoblacklight/modules/home.js</code> file to add our customization.</p>
@@ -3000,7 +3000,7 @@ After refreshing your web browser, the map viewer should now have a search contr
 <p>As included in the code snippet above, add a file named <code>app/assets/javascripts/geoportal/modules/home.js</code> to your application.</p>
 <p>Inside that file write these lines:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">Blacklight</span><span class="p">.</span><span class="nx">onLoad</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-map=&quot;home&quot;]&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">'[data-map="home"]'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">element</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">geoblacklight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Viewer</span><span class="p">.</span><span class="nb">Map</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">();</span>
 
@@ -3010,18 +3010,18 @@ After refreshing your web browser, the map viewer should now have a search contr
 <span class="w">      </span><span class="nx">searcher</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getSearchUrl</span><span class="p">();</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nx">staticButton</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Search here&lt;/a&gt;&#39;</span>
+<span class="w">      </span><span class="nx">staticButton</span><span class="o">:</span><span class="w"> </span><span class="s1">'&lt;a href="#" class="btn btn-primary"&gt;Search here&lt;/a&gt;'</span>
 <span class="w">    </span><span class="p">}));</span>
 
 <span class="w">    </span><span class="c1">// Local Customization - Start</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">pruneCluster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PruneClusterForLeaflet</span><span class="p">();</span>
 
-<span class="w">    </span><span class="nx">oboe</span><span class="p">(</span><span class="s1">&#39;/centroids.json&#39;</span><span class="p">)</span>
-<span class="w">      </span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="w"> </span><span class="nx">doc</span><span class="w"> </span><span class="p">){</span>
-<span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">c</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">){</span>
-<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">latlng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">oboe</span><span class="p">(</span><span class="s1">'/centroids.json'</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">node</span><span class="p">(</span><span class="s1">'*'</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="w"> </span><span class="nx">doc</span><span class="w"> </span><span class="p">){</span>
+<span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">c</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">'undefined'</span><span class="p">){</span>
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">latlng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">c</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
 
-<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PruneCluster</span><span class="p">.</span><span class="nx">Marker</span><span class="p">(</span><span class="nx">latlng</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="nx">latlng</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="nx">popup</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;a href=&#39;/catalog/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&#39;&gt;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&lt;/a&gt;&quot;</span><span class="p">});</span>
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PruneCluster</span><span class="p">.</span><span class="nx">Marker</span><span class="p">(</span><span class="nx">latlng</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="nx">latlng</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="nx">popup</span><span class="o">:</span><span class="w"> </span><span class="s2">"&lt;a href='/catalog/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"'&gt;"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"&lt;/a&gt;"</span><span class="p">});</span>
 <span class="w">            </span><span class="nx">pruneCluster</span><span class="p">.</span><span class="nx">RegisterMarker</span><span class="p">(</span><span class="nx">marker</span><span class="p">);</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
@@ -3035,13 +3035,13 @@ After refreshing your web browser, the map viewer should now have a search contr
 </code></pre></div>
 <h3 id="4-add-our-stylesheet-changes-for-the-homepage-map">4. Add our Stylesheet changes for the Homepage Map</h3>
 <p>All that is missing now are is the CSS changes to style our clusters. Update your <code>application.scss</code> file to include the missing stylesheet:</p>
-<div class="highlight"><pre><span></span><code><span class="k">@import</span><span class="w"> </span><span class="s1">&#39;customizations&#39;</span><span class="p">;</span>
-<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;bootstrap&#39;</span><span class="p">;</span>
-<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;blacklight&#39;</span><span class="p">;</span>
-<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;geoblacklight&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">@import</span><span class="w"> </span><span class="s1">'customizations'</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">'bootstrap'</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">'blacklight'</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">'geoblacklight'</span><span class="p">;</span>
 
 <span class="c1">// Local Customization</span>
-<span class="k">@import</span><span class="w"> </span><span class="s1">&#39;@sintef/prune-cluster/dist/LeafletStyleSheet&#39;</span><span class="p">;</span>
+<span class="k">@import</span><span class="w"> </span><span class="s1">'@sintef/prune-cluster/dist/LeafletStyleSheet'</span><span class="p">;</span>
 </code></pre></div>
 <p>Reload your homepage and you should see something like this:</p>
 <p><img alt='homepage-result-clusters' src='https://user-images.githubusercontent.com/69827/190491281-b320babf-4d6a-45c2-a2e2-a2f6c1fdb5d1.png'/></p>
@@ -3066,20 +3066,20 @@ LEAFLET:
 
 <span class="nx">GeoBlacklight</span><span class="p">.</span><span class="nx">Basemaps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">darkMatter</span><span class="o">:</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span>
-<span class="w">    </span><span class="s1">&#39;https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}{retina}.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &amp;copy; &lt;a href=&quot;http://cartodb.com/attributions&quot;&gt;CartoDB&lt;/a&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}{retina}.png'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">'&amp;copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, &amp;copy; &lt;a href="http://cartodb.com/attributions"&gt;CartoDB&lt;/a&gt;'</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">retina</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;@2x&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">retina</span><span class="o">:</span><span class="w"> </span><span class="s1">'@2x'</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">detectRetina</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">),</span>
 <span class="w">  </span><span class="nx">positron</span><span class="o">:</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span>
-<span class="w">    </span><span class="s1">&#39;https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &amp;copy; &lt;a href=&quot;http://cartodb.com/attributions&quot;&gt;CartoDB&lt;/a&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">attribution</span><span class="o">:</span><span class="w"> </span><span class="s1">'&amp;copy; &lt;a href="http://www.openstreetmap.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors, &amp;copy; &lt;a href="http://cartodb.com/attributions"&gt;CartoDB&lt;/a&gt;'</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">maxZoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">worldCopyJump</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">retina</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;@2x&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">retina</span><span class="o">:</span><span class="w"> </span><span class="s1">'@2x'</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">detectRetina</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">)</span>
@@ -3200,7 +3200,7 @@ LEAFLET:
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

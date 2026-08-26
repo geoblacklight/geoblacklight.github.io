@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../images/gbl-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2581,8 +2581,8 @@ Our VecNET specific additions included:</p>
 <p>We implemented the changes with vanilla Javascript and Rails templates to minimise the learning curve for future maintenance.</p>
 <h1 id="enhancing-metadata-with-micro-standards">Enhancing metadata with Micro Standards</h1>
 <p>Geoblacklight uses an geospatial schema extended from prior standards, <a href="https://github.com/geoblacklight/geoblacklight-schema">documented here</a>, and <a href="http://journal.code4lib.org/articles/9710">explained best here</a>(imho).  It encodes the metadata and geospatial characteristics of the stored records.  The Ruby on Rails server in GeoBlacklight will embed the data into rendered HTML with a <a href="http://schema.org/">schema.org</a> style which looks the 'div' element in the HTML below:</p>
-<div class="highlight"><pre><span></span><code>    &lt;div class=&quot;document &quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/Dataset&quot;&gt;
-    &lt;div class=&quot;documentHeader row&quot; data-layer-id=&quot;urn:arrowsmith.mit.edu:MIT.000932529&quot; data-bbox=&quot;-83.5 41.5 -79.0 43.0&quot;&gt;
+<div class="highlight"><pre><span></span><code>    &lt;div class="document " itemscope="" itemtype="http://schema.org/Dataset"&gt;
+    &lt;div class="documentHeader row" data-layer-id="urn:arrowsmith.mit.edu:MIT.000932529" data-bbox="-83.5 41.5 -79.0 43.0"&gt;
 </code></pre></div>
 <p>The value, <code>data-bbox</code>, for instance, will be be used by <a href="http://leafletjs.com/">Leaflet.js</a> to manipulate the map or generate a marker.  It is a simplified explanation but you get the idea.</p>
 <p>We want to make searching easy and efficient by displaying the most relevant data. Using the mechanism above, we can extend our digital library to show users important details such as journal, date, author.  The image below is an example of those micro schema values turned into nice UI elements for users.</p>
@@ -2707,7 +2707,7 @@ If you have any feedback, we would love to hear from you. We promise to take cri
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

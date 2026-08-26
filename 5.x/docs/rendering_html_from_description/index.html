@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/gbl-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2438,16 +2438,16 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># ApplicationHelper / application_helper.rb</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">render_html_description</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<span class="w">  </span><span class="n">simple_format</span><span class="p">(</span><span class="nb">Array</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="ss">:value</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+<span class="w">  </span><span class="n">simple_format</span><span class="p">(</span><span class="nb">Array</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="ss">:value</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">))</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>2) Point the show field at your new helper_method</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># CatalogController / catalog_controller.rb</span>
 
-<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">DESCRIPTION</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Description&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;description&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">helper_method</span><span class="p">:</span><span class="w"> </span><span class="ss">:render_html_description</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_show_field</span><span class="w"> </span><span class="no">Settings</span><span class="o">.</span><span class="n">FIELDS</span><span class="o">.</span><span class="n">DESCRIPTION</span><span class="p">,</span><span class="w"> </span><span class="ss">label</span><span class="p">:</span><span class="w"> </span><span class="s1">'Description'</span><span class="p">,</span><span class="w"> </span><span class="ss">itemprop</span><span class="p">:</span><span class="w"> </span><span class="s1">'description'</span><span class="p">,</span><span class="w"> </span><span class="ss">helper_method</span><span class="p">:</span><span class="w"> </span><span class="ss">:render_html_description</span>
 </code></pre></div>
 <p>3) Example description value with line breaks ("\n\n") and some HTML markup, too:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&quot;dc_description_s&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This table shows all 911 police emergency response and officer-initiated calls for service in the City of Detroit since September 20, 2016. Emergency response calls are the result of people calling 911 to request police services. \n\n Officer-initiated calls include traffic stops, street investigations and other policing activities (such as observing crimes in progress) where police officers initiate the response. The table includes all calls taken, dispatch, travel, and total response times for those calls serviced by a police agency. The data also include the responding agency, unit, call type and category of each call. Should you have questions about this dataset, you may contact the Commanding Officer of the Detroit Police Department&#39;s Crime Intelligence Unit at 313-596-2250 or &lt;a href= &quot;</span><span class="err">mail</span><span class="kc">t</span><span class="err">o</span><span class="p">:</span><span class="err">CrimeI</span><span class="kc">ntell</span><span class="err">ige</span><span class="kc">n</span><span class="err">ceBureau@de</span><span class="kc">tr</span><span class="err">oi</span><span class="kc">t</span><span class="err">mi.gov\</span><span class="s2">&quot;&gt;CrimeIntelligenceBureau@detroitmi.gov&lt;/a&gt;. &quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">"dc_description_s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This table shows all 911 police emergency response and officer-initiated calls for service in the City of Detroit since September 20, 2016. Emergency response calls are the result of people calling 911 to request police services. \n\n Officer-initiated calls include traffic stops, street investigations and other policing activities (such as observing crimes in progress) where police officers initiate the response. The table includes all calls taken, dispatch, travel, and total response times for those calls serviced by a police agency. The data also include the responding agency, unit, call type and category of each call. Should you have questions about this dataset, you may contact the Commanding Officer of the Detroit Police Department's Crime Intelligence Unit at 313-596-2250 or &lt;a href= "</span><span class="err">mail</span><span class="kc">t</span><span class="err">o</span><span class="p">:</span><span class="err">CrimeI</span><span class="kc">ntell</span><span class="err">ige</span><span class="kc">n</span><span class="err">ceBureau@de</span><span class="kc">tr</span><span class="err">oi</span><span class="kc">t</span><span class="err">mi.gov\</span><span class="s2">"&gt;CrimeIntelligenceBureau@detroitmi.gov&lt;/a&gt;. "</span><span class="p">,</span>
 </code></pre></div>
 <p>4) Now the show page will render like this</p>
 <p><img width="866" alt="Screen Shot 2020-08-06 at 3 30 38 PM" src="https://user-images.githubusercontent.com/69827/89579682-d47cd200-d7f9-11ea-8032-f77b3cc55a3f.png"></p>
@@ -2566,7 +2566,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.follow", "toc.integrate", {"index_page": "tags.md", "tags": {}}], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
