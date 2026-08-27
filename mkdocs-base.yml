@@ -1,0 +1,59 @@
+site_name: GeoBlacklight
+site_url: https://geoblacklight.org
+repo_url: https://github.com/geoblacklight/geoblacklight
+repo_name: GeoBlacklight on GitHub
+copyright: GeoBlacklight Community &copy; 2015 - 2025
+theme:
+  name: material
+  logo: images/gbl-favicon.png
+  favicon: images/gbl-favicon.png
+  palette:
+    primary: white
+
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - toc.follow
+    - toc.integrate
+    - tags: {}
+      index_page: tags.md
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - def_list
+  - admonition
+  - meta
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.magiclink
+  - toc:
+      toc_depth: 2
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js

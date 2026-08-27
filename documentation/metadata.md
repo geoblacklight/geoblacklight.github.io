@@ -25,4 +25,4 @@ Metadata schema features:
 
 !!! Tip "Hover over the column headers for sorting options."
 
-{{ read_csv('docs/docs/metadata-functions.csv') }}
+{{ read_csv('documentation/metadata-functions.csv') }}

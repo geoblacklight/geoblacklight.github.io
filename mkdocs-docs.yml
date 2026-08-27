@@ -1,0 +1,66 @@
+INHERIT: mkdocs-base.yml
+
+docs_dir: documentation
+site_dir: site-docs
+
+# theme.logo/favicon are resolved relative to docs_dir, which differs from
+# mkdocs-base.yml's assumption (docs/images/...) — MkDocs deep-merges INHERIT
+# dicts, so this only overrides these two keys and keeps the rest of theme:
+# from the base config.
+theme:
+  logo: img/gbl-favicon.png
+  favicon: img/gbl-favicon.png
+
+plugins:
+  - search
+  - table-reader
+  - git-revision-date-localized
+  - mike:
+      deploy_prefix: docs
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GeoBlacklight
+    - icon: fontawesome/brands/slack
+      link: https://geo4lib.slack.com
+    - icon: fontawesome/solid/paper-plane
+      link: https://groups.google.com/g/geo4lib-community
+  version:
+    provider: mike
+    alias: true
+
+nav:
+  - "index.md"
+  - Install:
+      - "Quick Start": "geoblacklight_quick_start.md"
+      - "For Developers": "developers.md"
+      - "Tutorials": "tutorials.md"
+  - Running in Production:
+      - "Hardware Recommendations": "hardware_recommendations.md"
+      - "Implementation Recommendations": "implementation_recommendations.md"
+      - "Framework Recommendations": "framework-recommendations.md"
+      - "User Authentication": "user_authentication.md"
+      - "Using an External Solr Instance": "external_solr.md"
+      - "Periodic Maintenance": "periodic_maintenance.md"
+  - Customization:
+      - "Configure the Settings": "settings.md"
+      - "Update the Catalog Controller": "catalog_controller.md"
+      - "Configure Search Relevancy": "solr_search_relevancy.md"
+      - "Customize Leaflet": "leaflet.md"
+      - "Add Mirador IIIF Viewer": "adding_mirador_viewer.md"
+      - "Add Thumbnail Images": "item_images.md"
+      - "Add SVG Icons": "adding_svg_icons.md"
+      - "Add Data Relations Widget": "data_relations_widget.md"
+      - "Render HTML in Metadata Fields": "rendering_html_from_description.md"
+
+  - Upgrade:
+      - "Upgrade to Version 4.0": "upgrade_version_4_0.md"
+      - "Upgrade to Version 2.0": "upgrade_version_2_0.md"
+  - Reference:
+      - "Glossary": "glossary.md"
+      - "Settings.yml fields": "settings-yml.md"
+      - "Metadata Fields": "metadata.md"
+      - "Index Maps": "index_maps.md"
+      - "GeoPackages": "geopackages.md"
+      - "JSONs and GeoJSONs": "json-geojson.md"

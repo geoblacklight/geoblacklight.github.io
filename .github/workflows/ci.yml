@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - "*.x"
 permissions:
   contents: write
 jobs:
@@ -21,4 +22,24 @@ jobs:
       - run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - run: mike deploy --push 5.x
+
+      - name: Determine docs version identifier
+        id: docs_version
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "version=5.x" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          fi
+      - run: mike deploy --config-file mkdocs-docs.yml --push ${{ steps.docs_version.outputs.version }}
+
+      - name: Build main site
+        if: github.ref == 'refs/heads/main'
+        run: mkdocs build --config-file mkdocs.yml
+      - name: Deploy main site to gh-pages root
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          keep_files: true

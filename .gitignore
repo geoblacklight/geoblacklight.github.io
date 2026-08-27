@@ -1,4 +1,5 @@
 site/
+site-docs/
 *.gem
 .bundle
 .DS_Store
