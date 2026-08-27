@@ -91,6 +91,32 @@ Each version directory (under `docs/` on `gh-pages`) contains an entirely separa
 * `.nojekyll` : The existence of this file tells GitHub that the site is not using Jekyll. [Related GitHub blog post](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/).
 
 
+## Previewing the site locally
+
+Because the site is now built from two separate, independent MkDocs configs (see "Main branch" above), you preview each one with its own `mkdocs serve` command rather than a single command for the whole site. First install the Python dependencies (from `pyproject.toml`):
+
+```sh
+pip install .
+```
+
+To preview the **unversioned main site** (Home, About, Community, Showcase, Blog, Release Calendar):
+
+```sh
+mkdocs serve --config-file mkdocs.yml
+```
+
+This serves at http://127.0.0.1:8000 by default.
+
+To preview the **versioned technical documentation**, in a separate terminal:
+
+```sh
+mkdocs serve --config-file mkdocs-docs.yml --dev-addr localhost:8001
+```
+
+The `--dev-addr` flag puts this on a different port, since both configs default to `127.0.0.1:8000` and you may want to run them side by side. If you specifically want to preview the version-switcher dropdown (rather than just the documentation content), run `mike serve --config-file mkdocs-docs.yml` instead.
+
+**Note on the "Documentation" link:** the main site's nav includes a "Documentation" link, but it points to the published `https://geoblacklight.org/docs/latest/` URL, not to a local address. The two sites are only combined into one domain at deploy time (via `mike`'s `deploy_prefix` setting, which publishes the docs under a `/docs/` path alongside the unversioned pages on the `gh-pages` branch); locally, each config's `mkdocs serve` is its own standalone server with no knowledge of the other. So clicking "Documentation" while previewing `mkdocs.yml` locally will load the live production docs, not whatever you're editing in `mkdocs-docs.yml` — to see local documentation changes, open the `mkdocs-docs.yml` server's own URL directly.
+
 ## Updating the GeoBlacklight website
 
 Everyone is welcome to contribute to the GeoBlacklight website and our documentation pages. See our [Contribution Guide](https://github.com/geoblacklight/geoblacklight.github.io/blob/main/CONTRIBUTING.md) for detailed information about how to contribute.
