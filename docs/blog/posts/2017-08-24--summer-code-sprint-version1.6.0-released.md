@@ -1,11 +1,11 @@
 ---
 date: 2017-08-25
 authors:
-- Karen Majewicz
-- Andrew Battista
+  - Karen Majewicz
+  - Andrew Battista
 categories:
-- sprints
-- releases
+  - sprints
+  - releases
 ---
 
 # Summer Code concludes and GeoBlacklight version 1.6.0 released
@@ -24,7 +24,7 @@ The code and release of version 1.6.0 resulted in a significant new feature, an 
 
 ![ISO19139](blog-images/geoblacklight_metadata_view_ISO19139.png)
 
-The were also a number of behind the scenes minor code changes, including updates to fixture records, validation of bounding boxes, and a webkit deprecation. To simplify organizational structure, the separate GeoBlacklight Schema repository was deprecated and instead [placed as a folder](https://github.com/geoblacklight/geoblacklight/tree/master/schema) within the main repository.  
+The were also a number of behind the scenes minor code changes, including updates to fixture records, validation of bounding boxes, and a webkit deprecation. To simplify organizational structure, the separate GeoBlacklight Schema repository was deprecated and instead [placed as a folder](https://github.com/geoblacklight/geoblacklight/tree/master/schema) within the main repository.
 
 ### Forthcoming Work: Changes in the Schema
 

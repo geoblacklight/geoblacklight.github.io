@@ -1,5 +1,5 @@
 ---
-date:   2015-01-15
+date: 2015-01-15
 authors:
   - Jack Reed
 ---
@@ -16,9 +16,9 @@ This blog serves as an announcement and engineering blog for developers and the 
 
 ![](./blog-images/geoblacklight-demo.gif)
 
-[geoblacklight]:        http://geoblacklight.org
+[geoblacklight]: http://geoblacklight.org
 [geoblacklightproject]: /projects/geoblacklight
-[rubyonrails]:          http://rubyonrails.org/
-[blacklight]:           http://projectblacklight.org/
-[twitter]:              https://twitter.com/geoblacklight
-[googlegroup]:          mailto:geoblacklight-working-group@googlegroups.com 
+[rubyonrails]: http://rubyonrails.org/
+[blacklight]: http://projectblacklight.org/
+[twitter]: https://twitter.com/geoblacklight
+[googlegroup]: mailto:geoblacklight-working-group@googlegroups.com

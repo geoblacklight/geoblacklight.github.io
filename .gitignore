@@ -11,3 +11,5 @@ Gemfile.lock
 node_modules
 .venv
 uv.lock
+*.egg-info
+.claude
