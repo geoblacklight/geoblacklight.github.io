@@ -35,4 +35,5 @@ nav:
       - showcase/index.md
   - Blog:
       - blog/index.md
+  - Documentation: "https://geoblacklight.org/docs/latest/"
   - Release Calendar: "releases.md"
