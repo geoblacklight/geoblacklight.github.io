@@ -3,6 +3,14 @@ INHERIT: mkdocs-base.yml
 docs_dir: documentation
 site_dir: site-docs
 
+# theme.logo/favicon are resolved relative to docs_dir, which differs from
+# mkdocs-base.yml's assumption (docs/images/...) — MkDocs deep-merges INHERIT
+# dicts, so this only overrides these two keys and keeps the rest of theme:
+# from the base config.
+theme:
+  logo: img/gbl-favicon.png
+  favicon: img/gbl-favicon.png
+
 plugins:
   - search
   - table-reader
