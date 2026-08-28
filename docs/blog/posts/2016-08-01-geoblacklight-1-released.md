@@ -1,7 +1,7 @@
 ---
-date:  2016-08-03
+date: 2016-08-03
 categories:
-- releases
+  - releases
 authors:
   - Jack Reed
 ---
@@ -14,12 +14,12 @@ As part of an ongoing community last week, [GeoBlacklight v1.0](https://github.c
 
 GeoBlacklight v1.0 contains many enhancements including:
 
- - Blacklight 6 compatibility
- - Autocomplete and spelling suggestions on by default
- - Enhanced UI Components
- - Greater ability to customize metadata fields
- - A simplified metadata schema
- - Customizable Leaflet map and plugins
+- Blacklight 6 compatibility
+- Autocomplete and spelling suggestions on by default
+- Enhanced UI Components
+- Greater ability to customize metadata fields
+- A simplified metadata schema
+- Customizable Leaflet map and plugins
 
 GeoBlacklight adopters who are interested in the upgrading to GeoBlacklight v1.0 should read the [update wiki](https://web.archive.org/web/20201027101652/https://github.com/geoblacklight/geoblacklight/wiki/GeoBlacklight-1.0-Upgrade-Guide).
 

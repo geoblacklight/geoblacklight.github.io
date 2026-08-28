@@ -1,11 +1,11 @@
 ---
-date:   2024-05-20
-categories: 
-- tutorials
-authors: 
-- Eric Larson
-- Eliot Jordan
-- GeoBlacklight Community
+date: 2024-05-20
+categories:
+  - tutorials
+authors:
+  - Eric Larson
+  - Eliot Jordan
+  - GeoBlacklight Community
 ---
 
 # Geo4LibCamp 2024 / GeoBlacklight Workshop
@@ -14,8 +14,8 @@ Workshop date: May 20, 2024
 
 ## Facilitators
 
-* Eric Larson — Big Ten Academic Alliance
-* Eliot Jordan — Princeton University
+- Eric Larson — Big Ten Academic Alliance
+- Eliot Jordan — Princeton University
 
 With many thanks to all the GeoBlacklight community members who help keep our website and project documentation up to date.
 
@@ -27,10 +27,10 @@ Eric and Eliot are both core contributors/maintainers of the GeoBlacklight proje
 
 ## Part 2: GeoBlacklight for Beginners (30 minutes)
 
-* GeoBlacklight Overview (5 minutes)
-* Setting up a GeoBlacklight Environment (5 minutes)
-* Create a GeoBlacklight Application (10 minutes)
-* Index Solr Documents (10 minutes)
+- GeoBlacklight Overview (5 minutes)
+- Setting up a GeoBlacklight Environment (5 minutes)
+- Create a GeoBlacklight Application (10 minutes)
+- Index Solr Documents (10 minutes)
 
 #### Screenshot - Geoblacklight Website
 
@@ -38,9 +38,9 @@ Eric and Eliot are both core contributors/maintainers of the GeoBlacklight proje
 
 ### GeoBlacklight Overview
 
-* What is GeoBlacklight?
-* GeoBlacklight Features
-* GeoBlacklight Community
+- What is GeoBlacklight?
+- GeoBlacklight Features
+- GeoBlacklight Community
 
 #### What is GeoBlacklight?
 
@@ -50,22 +50,22 @@ GeoBlacklight is a [Ruby](https://www.ruby-lang.org/en/) on [Rails](https://ruby
 
 GeoBlacklight extends the functionality of Blacklight by providing the following:
 
-* Text and spatial search with ranking
-* Facet by institution, year, publisher, data type, access, format
-* Facet by place, subject
-* Results list view with icons, snippets, and map view of bounding boxes
-* Spatial search on map in result list
-* Detail map view for WMS features with feature inspection
-* IIIF scanned map viewer
-* Download the original file (Shapefile, GeoTIFF, GeoJSON, Esri Geodatabase, GeoPackage, or other SQLite database)
-* Download generated Shapefile/GeoTIFF/KML/GeoJSON
-* Built-in sample Solr index
-* Built on top of Blacklight platform
-* Search history
-* Bookmark layers
-* Share link via email
-* Sort by relevance, year, title
-* Customizable skin and facets
+- Text and spatial search with ranking
+- Facet by institution, year, publisher, data type, access, format
+- Facet by place, subject
+- Results list view with icons, snippets, and map view of bounding boxes
+- Spatial search on map in result list
+- Detail map view for WMS features with feature inspection
+- IIIF scanned map viewer
+- Download the original file (Shapefile, GeoTIFF, GeoJSON, Esri Geodatabase, GeoPackage, or other SQLite database)
+- Download generated Shapefile/GeoTIFF/KML/GeoJSON
+- Built-in sample Solr index
+- Built on top of Blacklight platform
+- Search history
+- Bookmark layers
+- Share link via email
+- Sort by relevance, year, title
+- Customizable skin and facets
 
 [GeoBlacklight Key Features](https://geoblacklight.org/about/#key-features)
 
@@ -75,13 +75,13 @@ Participants in the GeoBlacklight community come from a variety of professional 
 
 ##### Get Involved
 
-* Volunteer for a Community Role
-* Join a Workgroup or Interest Group
-* Follow our Google Group
-* Chat on Slack
-* Attend a Monthly Meeting
-* Participate in a Community Sprint
-* Share Metadata
+- Volunteer for a Community Role
+- Join a Workgroup or Interest Group
+- Follow our Google Group
+- Chat on Slack
+- Attend a Monthly Meeting
+- Participate in a Community Sprint
+- Share Metadata
 
 [GeoBlacklight Community](https://geoblacklight.org/community/)
 
@@ -89,8 +89,8 @@ Participants in the GeoBlacklight community come from a variety of professional 
 
 You should have the following installed before beginning:
 
-* Ruby — For Ruby on Rails
-* Java - Apache Solr runs on Java 11 or greater.
+- Ruby — For Ruby on Rails
+- Java - Apache Solr runs on Java 11 or greater.
 
 Follow the [GoRails Setup](https://gorails.com/setup) steps to install a Ruby on Rails environment. [Homebrew](https://brew.sh/) can help you install Java on macOS or Windows Subsystem for Linux.
 
@@ -109,8 +109,8 @@ cd gbl-app
 bundle exec rake geoblacklight:server
 ```
 
-* Visit your GeoBlacklight application at: http://localhost:3000
-* Visit the Solr admin panel at: http://localhost:8983/solr/#/blacklight-core
+- Visit your GeoBlacklight application at: http://localhost:3000
+- Visit the Solr admin panel at: http://localhost:8983/solr/#/blacklight-core
 
 #### Screenshot - GeoBlacklight Homepage
 
@@ -142,10 +142,11 @@ bundle exec rake "geoblacklight:index:seed[:remote]"
 
 Another option for indexing data is [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine). GeoCombine is a Ruby toolkit for managing geospatial metadata, including:
 
-* Tasks for cloning, updating, and indexing OpenGeoMetadata metadata
-* Library for converting metadata between standards
+- Tasks for cloning, updating, and indexing OpenGeoMetadata metadata
+- Library for converting metadata between standards
 
 Example harvest from a single repository
+
 ```bash
 bundle exec rake geocombine:clone\[edu.umn\]
 ```
@@ -162,26 +163,26 @@ Eric will return to this tutorial to list the attendee questions and discussion 
 
 ## Part 2: Advanced GeoBlacklight (40 minutes)
 
-Using local configuration options and adding community plugins to customize your GeoBlacklight instance. 
+Using local configuration options and adding community plugins to customize your GeoBlacklight instance.
 
-* Local config: settings.yml (5 minutes)
-* Local config: catalog_controller.rb (5 minutes)
-* Plugin: Blacklight::Allmaps (10 minutes)
-* Plugin: GeoBlacklight Sidecar Images (10 minutes)
-* Plugin: GeoBlacklight Admin (10 minutes)
+- Local config: settings.yml (5 minutes)
+- Local config: catalog_controller.rb (5 minutes)
+- Plugin: Blacklight::Allmaps (10 minutes)
+- Plugin: GeoBlacklight Sidecar Images (10 minutes)
+- Plugin: GeoBlacklight Admin (10 minutes)
 
 ### Local config: settings.yml (5 minutes)
 
 In your local GeoBlacklight application, the first file that provides considerable customization and configuration options is `settings.yml`. This file is specific to GeoBlacklight and it sets constant variables for the application to use, including:
 
-* APPLICATION_LOGO_URL
-* BBOX_WITHIN_BOOST
-* HOMEPAGE_MAP_GEOM
-* FIELDS
-* WEBSERVICES_SHOWN
-* DISPLAY_NOTES_SHOWN
-* RELATIONSHIPS_SHOWN
-* and more...
+- APPLICATION_LOGO_URL
+- BBOX_WITHIN_BOOST
+- HOMEPAGE_MAP_GEOM
+- FIELDS
+- WEBSERVICES_SHOWN
+- DISPLAY_NOTES_SHOWN
+- RELATIONSHIPS_SHOWN
+- and more...
 
 This file is loaded into the application via the Ruby [config](https://github.com/rubyconfig/config) gem.
 
@@ -191,14 +192,14 @@ The next significant place where customizations and configuration options occur 
 
 Within this file, you'll find options to define/set:
 
-* Maps > Default Leaflet basemap (config.basemap_provider)
-* Solr > Default solr params (config.default_solr_params)
-* Search Results > Per Page option (config.default_per_page)
-* Search Results > Sort options (config.add_sort_field)
-* Search Results > Define your list of facets (config.add_facet_field)
-* Search Results > Define your displayed metadata fields (config.add_index_field)
-* Show Page > Define your displayed metadata fields (config.add_show_field)
-* Show Page > Define Sidebar Tool options (config.add_show_tools_partial)
+- Maps > Default Leaflet basemap (config.basemap_provider)
+- Solr > Default solr params (config.default_solr_params)
+- Search Results > Per Page option (config.default_per_page)
+- Search Results > Sort options (config.add_sort_field)
+- Search Results > Define your list of facets (config.add_facet_field)
+- Search Results > Define your displayed metadata fields (config.add_index_field)
+- Show Page > Define your displayed metadata fields (config.add_show_field)
+- Show Page > Define Sidebar Tool options (config.add_show_tools_partial)
 
 ### Plugin: Blacklight::Allmaps
 
@@ -214,6 +215,7 @@ gem "blacklight_allmaps"
 ```
 
 And then execute:
+
 ```bash
 bundle install
 ```
@@ -298,7 +300,7 @@ Set your variant processor to `:vips` in `config/application.rb`. This will use 
 
 #### Harvest Thumbnails
 
-Spawn some background jobs to harvest images for all the documents in our Solr index. In development mode, these will run "inline". In a production environment, you'd want to use 
+Spawn some background jobs to harvest images for all the documents in our Solr index. In development mode, these will run "inline". In a production environment, you'd want to use
 
 ```bash
 bundle exec rake gblsci:images:harvest_all
@@ -318,21 +320,21 @@ Notice: This is going to be a full pivot from our current example codebase we've
 
 #### Installation
 
-* Create PG database:
+- Create PG database:
 
 ```bash
 psql postgres
 CREATE DATABASE geoblacklight_development;
 ```
 
-* Run application template install script below:
+- Run application template install script below:
 
 ```bash
 rails _7.1.3.2_ new gbl-admin -m https://raw.githubusercontent.com/geobtaa/geoblacklight_admin/develop/template.rb
 ```
 
 Run the Application
+
 ```bash
 bundle exec rake geoblacklight:server
 ```
-

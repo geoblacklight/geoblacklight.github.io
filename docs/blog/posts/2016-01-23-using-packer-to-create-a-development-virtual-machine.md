@@ -1,9 +1,9 @@
 ---
-date:   2016-01-23
-categories: 
-- tutorials
-authors: 
-- Jack Reed
+date: 2016-01-23
+categories:
+  - tutorials
+authors:
+  - Jack Reed
 ---
 
 # Using Packer to create a development virtual machine for GeoBlacklight
@@ -14,7 +14,7 @@ A tutorial on how we use Packer to create a working virtual machine for the GeoB
 
 !!! warning
 
-	This tutorial may be outdated. Please refer to the [Documentation pages](https://geoblacklight.org/docs) for up to date instructions.
+    This tutorial may be outdated. Please refer to the [Documentation pages](https://geoblacklight.org/documentation) for up to date instructions.
 
 When we run the GeoBlacklight workshop, we provide attendees with a VirtualBox virtual machine (vm) so that they can participate without having download software. Having attendees connect to the internet to download large files doesn't always work in conference environments. To keep up to date with software dependencies we have rebuilt this virtual machine several times. Recently, the process for creating and updating the virtual machine has been automated using [Packer](https://www.packer.io/downloads.html). From Packer's website:
 
@@ -28,10 +28,10 @@ To get started, you will need to install several pieces of software that our Pac
 
 Required software:
 
- - Packer [installation](https://www.packer.io/downloads.html)
- - VirtualBox [download](https://www.virtualbox.org/wiki/Downloads)
- - Vagrant [download](https://www.vagrantup.com/downloads.html)
- 
+- Packer [installation](https://www.packer.io/downloads.html)
+- VirtualBox [download](https://www.virtualbox.org/wiki/Downloads)
+- Vagrant [download](https://www.vagrantup.com/downloads.html)
+
 Once you have installed all of the software, make sure that you have Packer available on your path.
 
 ```sh
@@ -76,15 +76,19 @@ The [`template.json`](https://github.com/mejackreed/packer-templates/blob/geobla
 The major customizations added, were the addition of four scripts that run during creation.
 
 #### [`ruby.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/ruby.sh)
+
 Installs rbenv, Ruby, bundler, and specifies no rdoc documentation.
 
 #### [`rails.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/rails.sh)
+
 Installs nodejs and Ruby on Rails.
 
 #### [`geoblacklight.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/geoblacklight.sh)
+
 Creates a GeoBlacklight application and downloads and configures jetty/solr.
 
 #### [`opengeosuite.sh`](https://github.com/mejackreed/packer-templates/blob/geoblacklight/ubuntu-16.04.3/scripts/opengeosuite.sh)
+
 Installs OpenGeoSuite.
 
 ### Creating the Vagrant box
@@ -97,10 +101,10 @@ $ packer build template.json
 
 This command will take a while so it might be best to go get a coffee. What the command is doing:
 
- - Downloading a fresh copy of Ubuntu
- - Creating a VirtualBox image with that copy of Ubuntu
- - Updating the vm's packages
- - Installing our custom software
+- Downloading a fresh copy of Ubuntu
+- Creating a VirtualBox image with that copy of Ubuntu
+- Updating the vm's packages
+- Installing our custom software
 
 After the command finishes you should have your virtual machine box waiting for you in the same directory.
 

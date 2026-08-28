@@ -1,46 +1,45 @@
 authors:
+  Karen Majewicz:
+    name: Karen Majewicz
+    description: Community Coordinator
+    avatar: https://avatars.githubusercontent.com/u/8245408
 
-      Karen Majewicz:
-        name: Karen Majewicz
-        description: Community Coordinator
-        avatar: https://avatars.githubusercontent.com/u/8245408
-  
-      Jack Reed:
-        name: Jack Reed
-        description: Web Developer
-        avatar: https://avatars.githubusercontent.com/u/1656824
-  
-      Eric Larson:
-        name: Eric Larson
-        description: Web Developer
-        avatar: https://avatars.githubusercontent.com/u/69827
-  
-      Andrew Battista:
-        name: Andrew Battista
-        description: Author
-        avatar: https://avatars.githubusercontent.com/u/8245408
- 
-      Steve Vandervalk:
-        name: Steve Vandervalk
-        description: Author
-        avatar: https://avatars.githubusercontent.com/u/3012945
+  Jack Reed:
+    name: Jack Reed
+    description: Web Developer
+    avatar: https://avatars.githubusercontent.com/u/1656824
 
-      GeoBlacklight Community:
-        name: GeoBlacklight Community
-        description: GBL Folk
-        avatar: https://avatars.githubusercontent.com/u/8245408
+  Eric Larson:
+    name: Eric Larson
+    description: Web Developer
+    avatar: https://avatars.githubusercontent.com/u/69827
 
-      Eliot Jordan:
-        name: Eliot Jordan
-        description: Web Developer
-        avatar: https://avatars.githubusercontent.com/u/784196  
+  Andrew Battista:
+    name: Andrew Battista
+    description: Author
+    avatar: https://avatars.githubusercontent.com/u/8245408
 
-      Becky Seifried:
-        name: Becky Seifried
-        description: Geo4Lib Meeting Facilitator
-        avatar: https://avatars.githubusercontent.com/u/36506059
+  Steve Vandervalk:
+    name: Steve Vandervalk
+    description: Author
+    avatar: https://avatars.githubusercontent.com/u/3012945
 
-      Nick Budak:
-        name: Nick Budak
-        description: Web Developer
-        avatar: https://avatars.githubusercontent.com/u/4924494
+  GeoBlacklight Community:
+    name: GeoBlacklight Community
+    description: GBL Folk
+    avatar: https://avatars.githubusercontent.com/u/8245408
+
+  Eliot Jordan:
+    name: Eliot Jordan
+    description: Web Developer
+    avatar: https://avatars.githubusercontent.com/u/784196
+
+  Becky Seifried:
+    name: Becky Seifried
+    description: Geo4Lib Meeting Facilitator
+    avatar: https://avatars.githubusercontent.com/u/36506059
+
+  Nick Budak:
+    name: Nick Budak
+    description: Web Developer
+    avatar: https://avatars.githubusercontent.com/u/4924494

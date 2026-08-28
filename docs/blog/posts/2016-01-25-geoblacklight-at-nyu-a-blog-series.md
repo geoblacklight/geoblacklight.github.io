@@ -1,5 +1,5 @@
 ---
-date:   2016-01-25
+date: 2016-01-25
 authors:
   - Jack Reed
 ---
@@ -16,10 +16,7 @@ You can read the series at on [Andrew's GitHub pages account](https://andrewbatt
 
 Blog Posts:
 
- - [Post 1 - GeoBlacklight at NYU: A Project Overview](https://andrewbattista.github.io/geoblacklight/2018/01/09/geoblacklight-overview.html)
- - [Post 2 – DSpace and the Institutional Repository: Preservation and the Spatial Data Infrastructure](https://andrewbattista.github.io/geoblacklight/2018/01/10/preservation.html)
- - [Post 3 – Creating GeoBlacklight Metadata Records](https://andrewbattista.github.io/geoblacklight/2018/01/11/creating-geoblacklight-metadata.html)
- - [Post 4 - The Technology Stack: Amazon Web Services Products & Open Source GIS](https://andrewbattista.github.io/geoblacklight/2018/01/12/technology-stack-sdr.html)
- 
- 
- 
+- [Post 1 - GeoBlacklight at NYU: A Project Overview](https://andrewbattista.github.io/geoblacklight/2018/01/09/geoblacklight-overview.html)
+- [Post 2 – DSpace and the Institutional Repository: Preservation and the Spatial Data Infrastructure](https://andrewbattista.github.io/geoblacklight/2018/01/10/preservation.html)
+- [Post 3 – Creating GeoBlacklight Metadata Records](https://andrewbattista.github.io/geoblacklight/2018/01/11/creating-geoblacklight-metadata.html)
+- [Post 4 - The Technology Stack: Amazon Web Services Products & Open Source GIS](https://andrewbattista.github.io/geoblacklight/2018/01/12/technology-stack-sdr.html)
