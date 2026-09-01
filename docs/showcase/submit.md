@@ -26,54 +26,49 @@ hide:
 
 ## Option B: Update files and create a pull request in GitHub ("DIY" option)
 
-1. Follow the instructions in the GitHub readme file on how to install mkdocs and clone this site to your desktop: [https://github.com/geoblacklight/geoblacklight.github.io](https://github.com/geoblacklight/geoblacklight.github.io).
+1. Clone this site to your desktop and install [Zensical](https://zensical.org/) by following the local development instructions in the GitHub readme file: [https://github.com/geoblacklight/geoblacklight.github.io](https://github.com/geoblacklight/geoblacklight.github.io).
 1. Make a new branch.
 1. Navigate to this folder: `docs/showcase/`.
 1. Add your image to the showcase folder (jpg or png).
 1. Open `docs/showcase/index.md`.
 1. Create a new entry by copying and pasting the following template into the index.md file.
 
-   !!! tip "Tips"
+    !!! tip "Tips"
 
         - There is a copy button at the top right of the code block.
-        - Click on the text "example" to see an sample entry.
+        - Click on the text "example" to see a sample entry.
 
-   === "template"
+    === "template"
 
         ``` markdown
+        -   [![TITLE-OF-YOUR-SITE](YOUR-IMAGE-FILE-NAME.JPG or .PNG)](LINK-TO-YOUR-SITE)
 
-        -   ![](YOUR-IMAGE-FILE-NAME.JPG or .PNG)
+            #### [TITLE-OF-YOUR-SITE](LINK-TO-YOUR-SITE)
 
-        #### [TITLE-OF-YOUR-SITE](LINK-TO-YOUR-SITE)
+            DESCRIPTION
 
-        DESCRIPTION
+            :octicons-link-external-16: https://LINK-TO-YOUR-SITE
 
-        :octicons-link-external-16: https://LINK-TO-YOUR-SITE
-
-        :simple-github: https://github.com/LINK-TO-YOUR-CODE-REPO
-
+            :simple-github: https://github.com/LINK-TO-YOUR-CODE-REPO
         ```
 
+    === "example"
 
-   === "example"
+        ``` markdown
+        -   [![Big Ten Academic Alliance Geoportal](btaa-geoportal.png)](https://geo.btaa.org)
 
-        ```markdown
+            #### [Big Ten Academic Alliance Geoportal](https://geo.btaa.org)
 
-        -   ![](btaa-geoportal.png)
+            The Big Ten Academic Alliance Geoportal aggregates metadata from 14 institutions providing a single place to find and use aerial imagery, geospatial data, and scanned maps from multiple GIS data clearinghouses and library catalogs.
 
-        #### [Big Ten Academic Alliance Geoportal](https://geo.btaa.org)
+            :octicons-link-external-16: https://geo.btaa.org
 
-        The Big Ten Academic Alliance Geoportal aggregates metadata from 14 institutions providing a single place to find and use aerial imagery, geospatial data, and scanned maps from multiple GIS data clearinghouses and library catalogs.
-
-        :octicons-link-external-16: https://geo.btaa.org
-
-        :simple-github: https://github.com/geobtaa/geoportal
-
+            :simple-github: https://github.com/geobtaa/geoportal
         ```
 
 1. Replace all of the placeholder text and values with your own. (The text you need to replace in the template is in ALL CAPS so that you can differentiate it. Don't use ALL CAPS for your own text.)
-1. Alphabetize your entry by title so that it appears on the Showcase page in a predicatable location.
-1. Preview your changes locally with the `mkdocs serve` command ([see the readme for instructions)](https://github.com/geoblacklight/geoblacklight.github.io/).
+1. Alphabetize your entry by title so that it appears on the Showcase page in a predictable location.
+1. Preview your changes locally with the `zensical serve` command ([see the readme for instructions](https://github.com/geoblacklight/geoblacklight.github.io/)).
 1. Commit your changes to the GitHub branch.
 1. Publish your branch.
 1. Open a pull request to the Main branch.
