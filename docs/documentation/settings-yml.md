@@ -33,7 +33,7 @@ Leave `null` to default to entire world, or add a stringified GeoJSON object to 
 Explicit list of whitelisted URL params that can be used within the application, enforced via Rails [StrongParameters](https://api.rubyonrails.org/classes/ActionController/StrongParameters.html).
 
 !!! note
-If you are trying to use a new URL param within your app, you will need to register it here. You may see "unpermitted parameters" errors until you update this setting.
+    If you are trying to use a new URL param within your app, you will need to register it here. You may see "unpermitted parameters" errors until you update this setting.
 
 ### `FIELDS`
 
@@ -60,7 +60,7 @@ Enables links for various metadata formats in the tool panel for a record if the
 Use the Geometry Type value from a record to determine what icon to use for its data relations.
 
 !!! warning
-This setting is only applicable for GBL 1.0 metadata and is not compatible with OGM Aardvark.
+    This setting is only applicable for GBL 1.0 metadata and is not compatible with OGM Aardvark.
 
 ### `WEBSERVICES_SHOWN`
 
@@ -110,7 +110,7 @@ DISPLAY_NOTES_SHOWN
 ```
 
 !!! info
-Display Notes will appear in GeoBlacklight in a similar manner to this admonition box.
+    Display Notes will appear in GeoBlacklight in a similar manner to this admonition box.
 
 ### `RELATIONSHIPS_SHOWN`
 
