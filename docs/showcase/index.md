@@ -6,16 +6,16 @@ hide:
 
 # GeoBlacklight Project Showcase
 
-<div class="grid cards" markdown>
+<div class="grid cards showcase" markdown>
 
--   ![](Colorado.png)
+-   [![Colorado GeoLibrary](Colorado.png)](https://geo.colorado.edu/)
 
 	#### [Colorado GeoLibrary](https://geo.colorado.edu/)
 	The Colorado GeoLibrary is a venture of the University of Colorado Boulder Libraries. The GeoLibrary provides geospatial data access to the University of Colorado and beyond. The purpose of the GeoLibrary is to collect and provide access to data from across the State of Colorado in service of our students and researchers, as well as the general public.
 	  
 	:octicons-link-external-16: https://geo.colorado.edu/
 
-- ![](cugir.jpg)
+- [![CUGIR - Cornell University Geospatial Information Repository](cugir.jpg)](https://cugir.library.cornell.edu/)
 
 	#### [CUGIR - Cornell University Geospatial Information Repository](https://cugir.library.cornell.edu/)
 	
@@ -24,7 +24,7 @@ hide:
 	:octicons-link-external-16: https://cugir.library.cornell.edu/
 
 
-- ![](dryad.jpg)
+- [![Dryad](dryad.jpg)](https://datadryad.org/search)
 
 	#### [Dryad](https://datadryad.org/search)
 	
@@ -32,7 +32,7 @@ hide:
 	
 	:octicons-link-external-16: https://datadryad.org/search
 
-- ![](uwgeodata.png)
+- [![GeoData@Wisconsin](uwgeodata.png)](https://geodata.wisc.edu)
 
 	#### [GeoData@Wisconsin](https://geodata.wisc.edu)
 	  
@@ -41,7 +41,7 @@ hide:
 	:octicons-link-external-16: https://geodata.wisc.edu
 
 
-- ![](HarvardGeospatialLibrary.png)
+- [![Harvard Geospatial Library](HarvardGeospatialLibrary.png)](https://hgl.harvard.edu/)
 
 	#### [Harvard Geospatial Library](https://hgl.harvard.edu/)
 
@@ -49,7 +49,7 @@ hide:
 	
 	:octicons-link-external-16: https://hgl.harvard.edu/
 
-- ![](bpl.jpg)
+- [![Norman B. Leventhal Map Center - Collections](bpl.jpg)](https://collections.leventhalmap.org/search)
 
 	#### [Norman B. Leventhal Map Center - Collections](https://collections.leventhalmap.org/search)
 	  
@@ -57,7 +57,7 @@ hide:
 	
 	:octicons-link-external-16: https://collections.leventhalmap.org/search
 
-- ![](nyu.jpg)
+- [![NYU - Spatial Data Repository](nyu.jpg)](https://geo.nyu.edu)
 
 	#### [NYU - Spatial Data Repository](https://geo.nyu.edu)
 	
@@ -65,7 +65,7 @@ hide:
 	
 	:octicons-link-external-16: https://geo.nyu.edu
 
-- ![](princeton.jpg)
+- [![Princeton University - Digital Maps and Geospatial Data](princeton.jpg)](https://maps.princeton.edu)
 
 	#### [Princeton University - Digital Maps and Geospatial Data](https://maps.princeton.edu)
 	  
@@ -75,7 +75,7 @@ hide:
 	
 	:simple-github: https://github.com/pulibrary/pulmap
 
-- ![](earthworks.jpg)
+- [![Stanford University - EarthWorks](earthworks.jpg)](https://earthworks.stanford.edu)
 
 	#### [Stanford University - EarthWorks](https://earthworks.stanford.edu)
 	
@@ -84,7 +84,7 @@ hide:
 	:octicons-link-external-16: https://earthworks.stanford.edu
 
 
-- ![](ucberkeley.png)
+- [![University of California Berkeley – GeoData Portal](ucberkeley.png)](https://geodata.lib.berkeley.edu/)
 
 	#### [University of California Berkeley – GeoData Portal](https://geodata.lib.berkeley.edu/)
 
@@ -92,7 +92,7 @@ hide:
 	
 	:octicons-link-external-16: https://geodata.lib.berkeley.edu/
 
-- ![](umass.png)
+- [![University of Massachusetts Amherst – Portal for Geospatial Data](umass.png)](https://geodata.library.umass.edu/)
 
 	#### [University of Massachusetts Amherst – Portal for Geospatial Data](https://geodata.library.umass.edu/)
 	
@@ -100,7 +100,7 @@ hide:
 	
 	:octicons-link-external-16: https://geodata.library.umass.edu/
 
-- ![](texas_geodata_portal.png)
+- [![University of Texas at Austin - Texas GeoData Portal](texas_geodata_portal.png)](https://geodata.lib.utexas.edu/)
 
 	#### [University of Texas at Austin - Texas GeoData Portal](https://geodata.lib.utexas.edu/)
 	

@@ -1,0 +1,21 @@
+/*
+Styles for the Showcase grid (docs/showcase/index.md).
+
+Scoped to `.showcase` so the grid cards used elsewhere (e.g. blog posts) keep
+the theme's default image sizing.
+
+Note: docs/stylesheets/extra.css is currently not registered in zensical.toml,
+so none of its rules apply. It also contains a `.grid.cards li img` rule that
+would size these thumbnails; if extra.css is ever re-enabled, reconcile the two.
+*/
+
+/* Crop thumbnails to a uniform 4:3, anchored at the top of the image.
+   `display: block` drops the descender space an inline image would otherwise
+   leave beneath it. */
+.md-typeset .grid.cards.showcase li img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+}
