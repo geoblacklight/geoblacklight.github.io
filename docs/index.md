@@ -33,6 +33,14 @@ hide:
   right: 1%;
   bottom: -6%;
 }
+
+.hero-actions {
+  text-align: center;
+  margin: 3em 0;
+}
+.hero-actions .md-button {
+  margin: 0 0.5em;
+}
 </style>
 
 <div style="text-align:center;">
@@ -43,10 +51,17 @@ hide:
 <h2 style="text-align: center;">A multi-institutional open-source collaboration building a </br>better way to find and share geospatial data</h2>
 
 <div class="hero-devices">
+<a href="https://demo.geoblacklight.org/" aria-label="Try the GeoBlacklight demo">
 <img class="hero-laptop" src="./images/laptop-light.png#only-light" alt="GeoBlacklight search interface">
 <img class="hero-laptop" src="./images/laptop-dark.png#only-dark" alt="GeoBlacklight search interface">
 <img class="hero-mobile" src="./images/mobile-light.png#only-light" alt="GeoBlacklight on mobile">
 <img class="hero-mobile" src="./images/mobile-dark.png#only-dark" alt="GeoBlacklight on mobile">
+</a>
+</div>
+
+<div class="hero-actions" markdown>
+[Try the demo](https://demo.geoblacklight.org/){ .md-button .md-button--primary }
+[Get started](documentation/geoblacklight_quick_start.md){ .md-button }
 </div>
 
 <h2 style="text-align: center;">How can the Geoblacklight Community  help you?</h2>

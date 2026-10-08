@@ -33,6 +33,8 @@ GeoBlacklight uses the OpenGeoMetadata Aardvark Metadata Profile by default, whi
 
 ## Key Features
 
+You can try many of these features on the [GeoBlacklight demo](https://demo.geoblacklight.org/), which runs the latest development version of GeoBlacklight.
+
 - Text and spatial search with ranking
 - Facet by institution, year, publisher, data type, access, format
 - Facet by place, subject

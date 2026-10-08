@@ -61,3 +61,6 @@ With your Solr server and Rails server already running (via the `geoblacklight:s
 ```bash
 bundle exec rake "geoblacklight:index:seed[:remote]"
 ```
+
+!!! tip "Compare with the demo"
+    These are the same records shown on the [GeoBlacklight demo](https://demo.geoblacklight.org/), so you can use it to check that your new application looks and works as expected. The demo runs the latest development version of GeoBlacklight, so some features may differ from the release you installed.
