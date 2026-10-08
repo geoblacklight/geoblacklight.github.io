@@ -96,9 +96,9 @@ The GeoBlacklight software stack consists of several open source software projec
 
 - ### Dockerized GeoBlacklight
 
-  Developers from Harvard University have created a built instance of GeoBlacklight in a Docker context. This will allow new and existing users to test and develop an instance of GeoBlacklight within the Docker environment.
+  Developers from lunaris.ca have created a built instance of GeoBlacklight in a Docker context. This will allow new and existing users to test and develop an instance of GeoBlacklight within the Docker environment.
 
-  https://github.com/harvard-lts/GeoBlacklightDockerized
+  https://github.com/Alliance-Lunaris/geoblacklightdockerized
 
 - ### OpenGeoMetadata
 
