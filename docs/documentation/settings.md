@@ -7,4 +7,4 @@ Keep in mind, GeoBlacklight has reasonable defaults for all settings, so you do 
 If you are developing a custom application, look for `config/settings.yml`. If you are working on the core GeoBlacklight codebase, the file is `lib/generators/geoblacklight/templates/settings.yml`.
 
 !!! note
-Settings are implemented with the [config](https://github.com/rubyconfig/config) gem, and are available as properties of the `Settings` object throughout the application.
+    Settings are implemented with the [config](https://github.com/rubyconfig/config) gem, and are available as properties of the `Settings` object throughout the application.
