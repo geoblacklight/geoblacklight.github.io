@@ -16,7 +16,7 @@ once:
 | ------------- | -------------------------------------- | ------------------------------------------- |
 | GeoBlacklight | 4.x                                    | 5.x                                         |
 | Blacklight    | 7.x                                    | 8.x                                         |
-| Bootstrap     | 4.7                                    | 5.3                                         |
+| Bootstrap     | 4.6                                    | 5.3                                         |
 | Assets        | Sprockets, usually with Vite alongside | Propshaft with import maps and CSS bundling |
 
 Although GeoBlacklight 5 technically supports Vite, it is unsupported in v6, and
@@ -63,7 +63,7 @@ Finally, some ordinary but important housekeeping:
 
 ## 1. Upgrade to the latest GeoBlacklight 4 first
 
-GeoBlacklight versions after 4.6 include changes made specifically to help with this
+GeoBlacklight 4.6 and later include changes made specifically to help with this
 upgrade: when your application starts, it inspects your own configuration files and prints a list
 of exactly what needs to change. That list is far more useful than any generic guide, because it
 describes _your_ application.
@@ -84,15 +84,27 @@ bundle install
 
 ### Boot the application and read the warnings
 
-The warnings appear once each time the application starts. You do not need to start a web server
-to see them — this command loads the application, prints the warnings, prints your version, and
-exits without changing anything:
+The warnings appear once each time the application starts. GeoBlacklight sends them through
+Rails' normal deprecation system, so they go wherever your application sends deprecation
+warnings — in a standard Rails 7.1 or newer application, that is `log/development.log`, not
+your terminal. Make them print to the terminal while you work through this guide:
 
-```bash
-bin/rails runner "puts Geoblacklight::VERSION"
+`config/environments/development.rb`
+
+```diff
+- config.active_support.deprecation = :log
++ config.active_support.deprecation = :stderr
 ```
 
-You should see your Geoblacklight version at the end, preceded by several lines that begin with
+You do not need to start a web server to see them. This command loads the application, prints
+the warnings, prints your version, and exits without changing anything. It also saves everything
+it prints to a file called `gbl5-warnings.txt`:
+
+```bash
+bin/rails runner 'puts Geoblacklight::VERSION' 2>&1 | tee gbl5-warnings.txt
+```
+
+You should see your GeoBlacklight version at the end, preceded by several lines that begin with
 `DEPRECATION WARNING:`. A typical one looks like this:
 
 ```
@@ -100,22 +112,25 @@ DEPRECATION WARNING: Settings.TIMEOUT_DOWNLOAD is set to the GeoBlacklight 4 def
 deprecated; GeoBlacklight 5 uses 180 because 16 seconds is too short for many generated downloads
 ```
 
-**Copy all of these lines into a text file.** They are your personal to-do list for the rest of
-this upgrade, and you will want to refer back to them.
+**Keep that file.** It is your personal to-do list for the rest of this upgrade, and you will
+want to refer back to it. Run the command again whenever you want to see what is left.
 
 !!! tip "If you see no warnings at all"
 
-    Your application may be configured to hide them. GeoBlacklight's warnings go through Rails'
-    normal deprecation system, so this makes them print to your terminal:
+    Make sure you are running in development, and that nothing in your `config/` directory sets
+    `config.active_support.report_deprecations = false`. That setting silences every deprecation
+    warning, whatever the line above says. New Rails applications set it in
+    `config/environments/production.rb`.
 
-    ```bash
-    RAILS_ENV=development bin/rails runner "Geoblacklight.deprecation.behavior = :stderr; Geoblacklight::DeprecatedConfiguration.warn!"
-    ```
+Once you are on GeoBlacklight 5, the same command lists what **GeoBlacklight 6** will change, in
+the same way. Expect a new set of warnings after this upgrade — including some about settings this
+guide asks you to add, which GeoBlacklight 6 no longer reads. They are not a sign that anything
+went wrong. If you would rather not see them on every boot, you can silence GeoBlacklight's
+warnings, but you will want them back when you plan the move to 6. The line has to go in an
+initializer; in `config/application.rb` it runs too early, and Rails 7.1 and newer overwrite it
+with your `config.active_support.deprecation` setting.
 
-Once you have upgraded to 5 and finished the work, you can silence GeoBlacklight's warnings with
-this line, but there is no reason to do it before then:
-
-`config/application.rb`
+`config/initializers/geoblacklight.rb`
 
 ```ruby
 Geoblacklight.deprecation.behavior = :silence
@@ -123,7 +138,8 @@ Geoblacklight.deprecation.behavior = :silence
 
 ### What the warnings cover
 
-A typical GeoBlacklight 4.5 application sees about eight lines. They fall into these groups.
+How many lines you get depends on how much your application has been customized — anything from
+a handful to several dozen. They fall into these groups.
 
 **Settings that GeoBlacklight 5 removes** — `Settings.APPLICATION_LOGO_URL`,
 `Settings.CARTO_ONECLICK_LINK`, and `Settings.LEAFLET.VIEWERS`. See [step 7](#7-application-settings).
@@ -144,8 +160,11 @@ deliberately one long line so it does not fill your terminal. See [step 6](#6-th
 `app/views/catalog/_show_downloads.html.erb`, you will be told which component replaces it.
 See [step 5](#5-layouts-and-view-overrides).
 
-**Translations you have customised** that GeoBlacklight 5 no longer looks up, and provider icon
-names that were renamed.
+**Translations you have customized** that GeoBlacklight 5 no longer looks up, and provider icon
+names that were renamed. These are reported one line per key, so this group is often the largest.
+An application with a copy of GeoBlacklight's whole `geoblacklight.en.yml` gets around twenty
+lines from it alone — twelve for renamed icons and six for Harvard Geospatial Library downloads —
+but most of them take moments to fix. See [below](#fix-these-now-while-still-on-4x).
 
 **Methods on `SolrDocument`** that you override from an included module. GeoBlacklight 5 defines
 these directly on the class, which silently wins over a module.
@@ -154,7 +173,7 @@ these directly on the class, which silently wins over a module.
 single `MEMBER_OF` / `RELATION` / `REPLACES` / `REPLACED_BY` / `VERSION_OF` names.
 
 **A jQuery line in your layout**, if the GeoBlacklight 4 installer's `$.fx.off` call is still
-there. See [step 5](#remove-the-jquery-line-from-your-application-layout).
+there. See [step 5](#clean-up-your-application-layout).
 
 ### Fix these now, while still on 4.x
 
@@ -200,7 +219,7 @@ when GeoBlacklight is first installed, an application generated by 4.0 still has
 unless somebody reconciled it by hand, and GeoBlacklight 5 does not read the old names — the
 affected relationships simply stop being displayed. GeoBlacklight 4.7 warns about this. Compare
 your file against
-[the current template](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/settings.yml)
+[the GeoBlacklight 5 template](https://github.com/geoblacklight/geoblacklight/blob/release-5.x/lib/generators/geoblacklight/templates/settings.yml)
 and copy the whole `RELATIONSHIPS_SHOWN` block across.
 
 Finally, if you were warned about a `SolrDocument` method being overridden in a module, move that
@@ -220,6 +239,12 @@ class SolrDocument
 end
 ```
 
+If you were warned about translation keys, look at each one in your locale file. Some applications
+copied GeoBlacklight's whole locale file at some point, so most of these keys usually still hold
+GeoBlacklight's own wording. Delete every key whose wording you never changed — GeoBlacklight 4
+ships the same text, so your site will look exactly the same. Only the keys you really did reword
+need to wait for [step 7](#translations).
+
 ### Write these down for later
 
 Everything else has to wait for the cutover, because the replacements do not exist yet in 4.x.
@@ -229,6 +254,12 @@ goes for the renamed icon translations, which depend on a `Settings.ICON_MAPPING
 not have, and for deleting overridden templates, which are still very much in use on 4.x.
 
 So: keep the list, and work through it during step 5, 6 and 7 below.
+
+!!! note "A good place to pause"
+
+    You now have an updated GeoBlacklight 4 application. If all you wanted was the latest 4.x
+    release, you can stop here and deploy. Everything from step 2 onward is the move to
+    GeoBlacklight 5, and it can wait until you are ready.
 
 ## 2. Upgrade your existing application in place
 
@@ -258,17 +289,25 @@ re-applied only the customizations that were genuinely theirs. Step 5 says which
     Upgrading in place is not wasted effort in the meantime. Almost everything in this guide —
     Bootstrap 5, Propshaft, import maps, Blacklight 8 — is what GeoBlacklight 6 wants too. It
     accepts Blacklight 8, so the hardest part of this upgrade is not redone. The main thing it adds
-    is a Rails 8 floor, where GeoBlacklight 5 still accepts Rails 6.1 and later.
+    is a Rails 8 floor, where the GeoBlacklight 5 setup in this guide works on Rails 7.0 and later.
 
 ## 3. Ruby, Rails, and the Gemfile
 
 `Gemfile`
+
+Remove whichever of these gems your Gemfile has — most applications have only some of them,
+depending on which versions of Rails and GeoBlacklight they started from — and add the new ones.
+Bundler does not care about order, so you can edit the existing lines where they are and add the
+new gems anywhere at the top level of the file, outside any `group` block. For a real example of
+this change, see the `Gemfile` diff in UC Berkeley's
+[upgrade pull request](https://github.com/BerkeleyLibrary/geodata/pull/76/files).
 
 ```diff
 - gem 'blacklight', '~> 7.0'
 - gem 'bootstrap', '~> 4.0'
 - gem 'geoblacklight', '~> 4.7'
 - gem 'jquery-rails'
+- gem 'sass-rails', '>= 6'
 - gem 'sassc-rails', '~> 2.1'
 - gem 'sprockets', '< 4.0'
 - gem 'sprockets-rails'
@@ -276,10 +315,12 @@ re-applied only the customizations that were genuinely theirs. Step 5 says which
 - gem 'webpacker', '~> 5.0'
 + gem 'bootstrap', '~> 5.3'
 + gem 'cssbundling-rails'
-+ gem 'geoblacklight', '~> 5.3'
++ gem 'geoblacklight', '~> 5.4'
 + gem 'importmap-rails'
 + gem 'propshaft'
 + gem 'rsolr', '>= 1.0', '< 3'
++ gem 'stimulus-rails'
++ gem 'turbo-rails'
 ```
 
 Notes on the less obvious lines:
@@ -287,12 +328,22 @@ Notes on the less obvious lines:
 - **Remove `blacklight` entirely.** GeoBlacklight 5 depends on Blacklight 8 and will resolve the
   right version for you. Leaving a `~> 7.0` pin in place is the most common reason
   `bundle install` fails with a confusing conflict.
+- **Remove every Sprockets gem:** `sprockets`, `sprockets-rails`, `sass-rails` and `sassc-rails`.
+  `sass-rails` is the easy one to miss, because its name does not mention Sprockets, but it
+  depends on `sassc-rails`, which loads Sprockets alongside Propshaft. Propshaft's own
+  [upgrade guide](https://github.com/rails/propshaft/blob/main/UPGRADING.md) asks you to remove
+  all of them.
 - **`rsolr` becomes explicit.** In 4.x it arrived indirectly through Blacklight 7.
+- **`stimulus-rails` and `turbo-rails`** may already be there if your application was generated
+  by Rails 7. If not, add them: GeoBlacklight 5's map viewers are Stimulus controllers, and
+  without `stimulus-rails` they never load.
 - **`webpacker` should go** whether or not you were really using it. It is unmaintained, and
   several 4.x applications carry it without noticing.
 - **Remove `handlebars_assets`** if you have it. GeoBlacklight 5 no longer uses Handlebars
   templates.
-- `rails` needs no change unless you are below 6.1.
+- **You need Rails 7.0 or newer.** GeoBlacklight 5 itself accepts Rails 6.1, but Propshaft does
+  not, so a Rails 6.1 application has to upgrade Rails as part of this step. On Rails 7.0 or
+  newer, `rails` needs no change.
 
 Set your Ruby version if it is below 3.2:
 
@@ -322,36 +373,65 @@ CSS.
 
 ### Files to delete
 
+!!! tip "Sort out your own stylesheets first"
+
+    Look through `app/assets/stylesheets/` before you delete anything. **Keep
+    `_customizations.scss`**: the new stylesheet entry point below imports it, and the CSS build
+    fails without it. For anything else you find there:
+
+    - **Copies of GeoBlacklight 4's own stylesheets** can usually go. GeoBlacklight 4 kept its
+      styles in a `modules/` directory, in files such as `_base.scss`, `_styles.scss`,
+      `item.scss`, `results.scss` and `sidebar.scss`, and some applications copied that directory
+      in to override it. GeoBlacklight 5 has its own styles, so check whether these files hold any
+      changes of yours, and delete them once you have rescued those.
+    - **Stylesheets of your own** can stay where they are. Import them at the end of the new
+      entry point, as described [below](#the-new-stylesheet-entry-point).
+    - **Stylesheets that are not ready to move yet** can go into an
+      `app/assets/stylesheets/legacy_files/` directory, without being imported, rather than being
+      deleted. That way the site builds and you can bring rules back one at a time.
+
 These all belong to the old setup and have no equivalent in GeoBlacklight 5. Using `git rm` means
-you can get any of them back later:
+you can get any of them back later. Not every application has every file, and `git rm` removes
+nothing at all if even one of the files it is given is missing, so `--ignore-unmatch` tells it to
+carry on past those:
 
 ```bash
-git rm app/assets/config/manifest.js
-git rm app/assets/javascripts/application.js
-git rm app/assets/javascripts/geoblacklight.js
-git rm app/assets/stylesheets/application.scss
-git rm app/assets/stylesheets/_blacklight.scss
-git rm app/assets/stylesheets/_geoblacklight.scss
+git rm --ignore-unmatch app/assets/config/manifest.js
+git rm --ignore-unmatch app/assets/javascripts/application.js
+git rm --ignore-unmatch app/assets/javascripts/geoblacklight.js
+git rm --ignore-unmatch app/assets/stylesheets/application.scss
+git rm --ignore-unmatch app/assets/stylesheets/_blacklight.scss
+git rm --ignore-unmatch app/assets/stylesheets/_geoblacklight.scss
 ```
 
-If your application uses Vite, these go too:
+If your application uses Vite, these go too. The name of the Vite configuration file depends on
+how Vite was set up, so this lists the common ones:
 
 ```bash
-git rm bin/vite config/vite.json vite.config.ts
-git rm -r app/javascript/entrypoints
+git rm --ignore-unmatch bin/vite config/vite.json vite.config.ts vite.config.mts vite.config.js
+git rm -r --ignore-unmatch app/javascript/entrypoints
 ```
-
-!!! tip "Keep your own stylesheets somewhere safe"
-
-    `app/assets/stylesheets/_customizations.scss` is yours — keep it. If you have other local
-    stylesheets that are not ready to move yet, one practical trick is to move them into a
-    `app/assets/stylesheets/legacy_files/` directory and stop importing them, rather than deleting
-    them. That way the site builds and you can bring rules back one at a time.
 
 Be aware that GeoBlacklight 5 converted its own styles from Sass variables to CSS custom
-properties. If your customizations worked by overriding a Sass variable such as
+properties. If your customizations worked by overriding a GeoBlacklight Sass variable such as
 `$gbl-primary-color`, that override will no longer take effect, and it will fail quietly rather
-than raising an error. Check your rendered site rather than assuming.
+than raising an error. Bootstrap and Blacklight variables, such as `$primary` or `$logo-image`,
+still work when you set them in `_customizations.scss`. Check your rendered site rather than
+assuming.
+
+Your stylesheets are now compiled by plain Sass rather than through Sprockets, which has two
+consequences. Sprockets directives such as `//= require` no longer do anything, so replace them
+with `@import`. And Sprockets' helper functions, such as `image_url()` and `asset_path()`, no
+longer exist; Propshaft looks for plain `url()` references instead, with a leading `/`, and fills
+in the right path for you. The `_customizations.scss` that GeoBlacklight 4 installed uses one of
+these for the logo, so check yours:
+
+`app/assets/stylesheets/_customizations.scss`
+
+```diff
+- $logo-image: image_url('blacklight/logo.svg') !default;
++ $logo-image: url('/blacklight/logo.svg') !default;
+```
 
 ### The new stylesheet entry point
 
@@ -363,11 +443,22 @@ than raising an error. Check your rendered site rather than assuming.
 @import url("https://cdn.jsdelivr.net/npm/leaflet.fullscreen@5.3.0/dist/Control.FullScreen.css");
 @import url("https://cdn.jsdelivr.net/npm/ol@8.1.0/ol.css");
 
+@import "customizations";
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons";
 @import "blacklight-frontend/app/assets/stylesheets/blacklight/blacklight";
 @import "@geoblacklight/frontend/app/assets/stylesheets/geoblacklight/geoblacklight";
-@import "customizations";
+```
+
+This is the same order GeoBlacklight 4 used, and the one a new GeoBlacklight 5 application gets.
+`_customizations.scss` comes first so that the Sass variables it sets — Bootstrap's colours,
+Blacklight's `$logo-image` — are in place before Bootstrap and Blacklight read them. That also
+means the CSS rules in it come _before_ GeoBlacklight's, just as they did in GeoBlacklight 4, so a
+rule of yours can lose to one of GeoBlacklight's with the same selector. Put rules like that, and
+any other stylesheets of your own, in separate files and import them at the very end:
+
+```scss
+@import "local_styles";
 ```
 
 Compiled CSS is written to `app/assets/builds/`, which needs to exist and be committed:
@@ -375,6 +466,18 @@ Compiled CSS is written to `app/assets/builds/`, which needs to exist and be com
 ```bash
 mkdir -p app/assets/builds && touch app/assets/builds/.keep
 ```
+
+Bootstrap Icons' font files are served straight from `node_modules`, so Propshaft needs to be told
+where to find them. This is the same line that new applications get:
+
+`config/initializers/assets.rb`
+
+```ruby
+Rails.application.config.assets.paths << Rails.root.join("node_modules/bootstrap-icons/font")
+```
+
+If the same file adds anything to `config.assets.precompile`, remove that line. Propshaft has no
+precompile list, so the line stops your application from booting.
 
 ### The new JavaScript entry point
 
@@ -389,20 +492,70 @@ import Blacklight from "blacklight";
 import Geoblacklight from "geoblacklight";
 ```
 
-You do not need to pin GeoBlacklight's own JavaScript, or Leaflet, or OpenLayers, in
-`config/importmap.rb`. The gem adds its own import map to your application automatically.
+Each of these imports needs an entry in your import map. You do not need to pin GeoBlacklight's
+own JavaScript, Blacklight's, Leaflet or OpenLayers: the GeoBlacklight and Blacklight gems add
+those to your application automatically. Everything else is up to you. A new application gets
+these lines from installers that only run on an application that boots, which yours will not do
+until step 6, so add them by hand:
+
+`config/importmap.rb`
+
+```ruby
+pin "application"
+pin "@hotwired/turbo-rails", to: "turbo.min.js"
+pin "@hotwired/stimulus", to: "stimulus.min.js"
+pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
+pin_all_from "app/javascript/controllers", under: "controllers"
+
+pin "@github/auto-complete-element", to: "https://cdn.jsdelivr.net/npm/@github/auto-complete-element@3.8.0/+esm"
+pin "@popperjs/core", to: "https://ga.jspm.io/npm:@popperjs/core@2.11.6/dist/esm/popper.js"
+pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.3.8/dist/js/bootstrap.esm.js"
+```
+
+If you already have this file, add whichever of these lines it is missing.
+
+GeoBlacklight's map viewers are Stimulus controllers, and they register themselves with the
+Stimulus application that `import "controllers"` starts. If you do not already have these two
+files, create them — without them, the maps silently never appear:
+
+`app/javascript/controllers/application.js`
+
+```javascript
+import { Application } from "@hotwired/stimulus";
+
+const application = Application.start();
+
+// Configure Stimulus development experience
+application.debug = false;
+window.Stimulus = application;
+
+export { application };
+```
+
+`app/javascript/controllers/index.js`
+
+```javascript
+// Import and register all your controllers from the importmap via controllers/**/*_controller
+import { application } from "controllers/application";
+import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading";
+eagerLoadControllersFrom("controllers", application);
+```
 
 ### Building CSS
+
+With import maps, `package.json` is only used to build your CSS. Replace its `dependencies` and
+`scripts` with these, and delete the Vite packages from `devDependencies` — or the whole section,
+if they were all it held:
 
 `package.json`
 
 ```json
 {
   "dependencies": {
-    "@geoblacklight/frontend": "5.3.0",
+    "@geoblacklight/frontend": "5.4.0",
     "@popperjs/core": "^2.11.8",
     "autoprefixer": "^10.5.0",
-    "blacklight-frontend": "8.12.3",
+    "blacklight-frontend": "8.13.0",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "nodemon": "^3.1.14",
@@ -411,7 +564,7 @@ You do not need to pin GeoBlacklight's own JavaScript, or Leaflet, or OpenLayers
     "sass": "^1.101.0"
   },
   "scripts": {
-    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules --quiet-deps --silence-deprecation=import,color-functions,global-builtin,if-function",
     "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
     "build:css": "yarn build:css:compile && yarn build:css:prefix",
     "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
@@ -421,6 +574,16 @@ You do not need to pin GeoBlacklight's own JavaScript, or Leaflet, or OpenLayers
 
 Match `@geoblacklight/frontend` and `blacklight-frontend` to the gem versions you actually
 installed — check with `bundle list | grep -E 'geoblacklight|blacklight'`.
+
+The `--quiet-deps` and `--silence-deprecation` options hide deprecation warnings about Bootstrap's
+and Blacklight's Sass, and about the `@import` rules in your entry point. Recent versions of Sass
+print several screens of these, and none of them affect the CSS you get.
+
+If you added JavaScript packages of your own to `package.json` — `blacklight-range-limit` and
+`chart.js`, say — they are not loaded from here any more. Pin them in `config/importmap.rb`
+instead, following each package's own instructions for import maps, and keep them in
+`package.json` only if your stylesheets import from them. `@hotwired/turbo-rails` does not belong
+here either: the `turbo-rails` gem provides it.
 
 If you have a `Procfile.dev`, replace the Vite line with the CSS watcher:
 
@@ -497,7 +660,7 @@ Deleting one of your own files feels wrong, but it is correct here. If you had l
 file — a Google Analytics snippet, extra `<meta>` tags, a consortium banner — copy them out first.
 Most of them belong in `app/views/layouts/application.html.erb` or in a `content_for :head` block.
 
-### Remove the jQuery line from your application layout
+### Clean up your application layout
 
 `app/views/layouts/application.html.erb`
 
@@ -509,6 +672,21 @@ layout it finds it in:
 - <%= javascript_tag '$.fx.off = true;' if Rails.env.test? %>
 ```
 
+While you are in this file, remove any tags that load assets through Vite or Sprockets, and load
+the new stylesheet and import map instead, the same way Blacklight's own layout does:
+
+```diff
+- <%= vite_client_tag %>
+- <%= vite_javascript_tag 'application' %>
+- <%= javascript_include_tag 'application' %>
++ <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
++ <%= javascript_importmap_tags %>
+```
+
+Your layout may not have all of these lines, and the Vite ones may name a different entry point
+or include a `vite_stylesheet_tag` as well; remove them all. If you already have a
+`stylesheet_link_tag "application"`, keep it rather than adding a second one.
+
 ### Your site header
 
 `app/views/shared/_header_navbar.html.erb`
@@ -518,7 +696,25 @@ attention. GeoBlacklight 5 no longer renders it — the header is a component no
 does not have a `shared/_header_navbar` template for you to fall back on either. If you leave your
 copy in place it becomes dead code and your header branding vanishes.
 
-Replace it with your own component. Create a subclass:
+Do not paste your old partial into a new component, though: the GeoBlacklight 5 header is built
+differently. It renders Blacklight's top navigation bar, which holds the logo and your user
+links, then the homepage headline, then the search bar. The GeoBlacklight 4 partial built all of
+that by hand, in Bootstrap 4 markup.
+
+Instead, start by finding out what you actually changed: compare your copy with
+[GeoBlacklight 4's original](https://github.com/geoblacklight/geoblacklight/blob/release-4.x/app/views/shared/_header_navbar.html.erb).
+Often the only real changes are a logo and a few links, and most changes like that have a simpler
+home now than a component:
+
+- **A logo:** set `$logo-image` in `_customizations.scss` (see [step 4](#files-to-delete)), along
+  with `$logo-width` and `$logo-height` if your image is not 150 by 50 pixels.
+- **Links or menus beside the logo:** `app/views/shared/_user_util_links.html.erb`, which
+  Blacklight 8 still renders (see below).
+- **The homepage headline:** the `geoblacklight.home.headline` and
+  `geoblacklight.home.search_heading` translations.
+
+Only if a change does not fit any of those do you need to replace the header with your own
+component. To do that, create a subclass:
 
 `app/components/my_header_component.rb`
 
@@ -527,9 +723,9 @@ class MyHeaderComponent < Geoblacklight::HeaderComponent
 end
 ```
 
-Add a template beside it at `app/components/my_header_component.html.erb`, starting from
-[GeoBlacklight's own](https://github.com/geoblacklight/geoblacklight/blob/main/app/components/geoblacklight/header_component.html.erb)
-and re-applying your changes. Then point the configuration at it:
+Add a template beside it at `app/components/my_header_component.html.erb`. Copy
+[GeoBlacklight's own](https://github.com/geoblacklight/geoblacklight/blob/release-5.x/app/components/geoblacklight/header_component.html.erb)
+into it, and make your changes to that copy. Then point the configuration at it:
 
 `app/controllers/catalog_controller.rb`
 
@@ -537,7 +733,7 @@ and re-applying your changes. Then point the configuration at it:
 config.header_component = MyHeaderComponent
 ```
 
-Once it works, remove the old partial:
+Whichever route you took, once your header looks right, remove the old partial:
 
 ```bash
 git rm app/views/shared/_header_navbar.html.erb
@@ -549,32 +745,65 @@ the surrounding Bootstrap 5 markup has changed and they may need visual adjustme
 
 ### Partials that became components
 
-If GeoBlacklight 4.7 warned you about any of these, replace your override with a subclass of the
-listed component, in the same way as the header above.
+This section is about template files in your application's `app/views/` directory. Your catalog
+controller may list some of the same names in `config.show.partials`; that is a separate change,
+covered in [step 6](#6-the-catalog-controller), and there you simply delete those lines.
+`Geoblacklight::DocumentComponent` renders the display note, map viewer and attribute table
+itself.
 
-| GeoBlacklight 4 partial                    | GeoBlacklight 5 replacement                            |
-| ------------------------------------------ | ------------------------------------------------------ |
-| `catalog/_show_downloads`                  | `Geoblacklight::DownloadLinksComponent`                |
-| `catalog/_downloads_collapse`              | `Geoblacklight::DownloadLinksComponent`                |
-| `catalog/_show_sidebar`                    | `Geoblacklight::Document::SidebarComponent`            |
-| `catalog/_show_sidebar_static_map`         | `Geoblacklight::StaticMapComponent`                    |
-| `catalog/_header_icons`                    | `Geoblacklight::HeaderIconsComponent`                  |
-| `catalog/_index_split_default`             | `Geoblacklight::SearchResultComponent`                 |
-| `catalog/_show_default_attribute_table`    | `Geoblacklight::AttributeTableComponent`               |
-| `catalog/_show_default_display_note`       | `Geoblacklight::DisplayNoteComponent`                  |
-| `catalog/_show_default_viewer_container`   | `Geoblacklight::ItemMapViewerComponent`                |
-| `catalog/_show_web_services`               | `Geoblacklight::WebServicesLinkComponent`              |
-| `catalog/_web_services`                    | `Geoblacklight::WebServicesComponent`                  |
-| `catalog/_web_services_default`            | `Geoblacklight::WebServicesDefaultComponent`           |
-| `catalog/_web_services_wfs`                | `Geoblacklight::WebServicesWfsComponent`               |
-| `catalog/_web_services_wms`                | `Geoblacklight::WebServicesWmsComponent`               |
-| `catalog/_arcgis`                          | `Geoblacklight::ArcgisComponent`                       |
-| `catalog/_data_dictionary`                 | `Geoblacklight::DataDictionaryDownloadComponent`       |
-| `relation/_relations`                      | `Geoblacklight::RelationsComponent`                    |
-| `catalog/_show_header_default`             | the `title` slot of `Geoblacklight::DocumentComponent` |
-| `catalog/_show_default_viewer_information` | removed, with no replacement                           |
-| `catalog/_carto`                           | removed, with no replacement                           |
-| `download/hgl`                             | removed, with no replacement                           |
+If GeoBlacklight 4.7 warned you about any of these templates, first decide whether you still need
+the customization. Your copy was written against GeoBlacklight 4's markup, and GeoBlacklight 5's
+default may already do what you wanted. If it does not, how you bring your change back depends on
+the component.
+
+These can be replaced directly. Subclass the component, make your changes in the subclass —
+copying GeoBlacklight's template beside it if you are changing the markup — and point your
+configuration at it, in the same way as the header above:
+
+| GeoBlacklight 4 partial        | GeoBlacklight 5 replacement                            | Configure your subclass with                     |
+| ------------------------------ | ------------------------------------------------------ | ------------------------------------------------ |
+| `catalog/_index_split_default` | `Geoblacklight::SearchResultComponent`                 | `config.index.document_component`                |
+| `catalog/_show_sidebar`        | `Geoblacklight::Document::SidebarComponent`            | `config.show.sidebar_component`                  |
+| `catalog/_show_header_default` | the `title` slot of `Geoblacklight::DocumentComponent` | `config.show.document_component`                 |
+| `catalog/_arcgis`              | `Geoblacklight::ArcgisComponent`                       | `component:` on the `:arcgis` show tool          |
+| `catalog/_data_dictionary`     | `Geoblacklight::DataDictionaryDownloadComponent`       | `component:` on the `:data_dictionary` show tool |
+
+The rest are rendered by name from inside another component or template, so a subclass of one of
+them would never be used. To change one, customize whatever renders it, and have that render your
+version instead. For example, to change the display note, subclass
+`Geoblacklight::DocumentComponent`, copy
+[its template](https://github.com/geoblacklight/geoblacklight/blob/release-5.x/app/components/geoblacklight/document_component.html.erb)
+beside your subclass, and in that copy replace `Geoblacklight::DisplayNoteComponent` with your
+own subclass of it. The last two in this table are rendered by ordinary view templates, which you
+can override just as you would have in GeoBlacklight 4.
+
+| GeoBlacklight 4 partial                  | GeoBlacklight 5 replacement                  | Rendered by                                                                   |
+| ---------------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------- |
+| `catalog/_show_downloads`                | `Geoblacklight::DownloadLinksComponent`      | `Geoblacklight::Document::SidebarComponent`                                   |
+| `catalog/_downloads_collapse`            | `Geoblacklight::DownloadLinksComponent`      | `Geoblacklight::Document::SidebarComponent`                                   |
+| `catalog/_show_sidebar_static_map`       | `Geoblacklight::StaticMapComponent`          | `Geoblacklight::Document::SidebarComponent`                                   |
+| `catalog/_show_web_services`             | `Geoblacklight::WebServicesLinkComponent`    | `Geoblacklight::Document::SidebarComponent`                                   |
+| `catalog/_show_default_display_note`     | `Geoblacklight::DisplayNoteComponent`        | `Geoblacklight::DocumentComponent`                                            |
+| `catalog/_show_default_viewer_container` | `Geoblacklight::ItemMapViewerComponent`      | `Geoblacklight::DocumentComponent`                                            |
+| `catalog/_show_default_attribute_table`  | `Geoblacklight::AttributeTableComponent`     | `Geoblacklight::DocumentComponent`                                            |
+| `catalog/_header_icons`                  | `Geoblacklight::HeaderIconsComponent`        | `Geoblacklight::DocumentComponent` and `Geoblacklight::SearchResultComponent` |
+| `catalog/_web_services_default`          | `Geoblacklight::WebServicesDefaultComponent` | `Geoblacklight::WebServicesComponent`                                         |
+| `catalog/_web_services_wfs`              | `Geoblacklight::WebServicesWfsComponent`     | `Geoblacklight::WebServicesComponent`                                         |
+| `catalog/_web_services_wms`              | `Geoblacklight::WebServicesWmsComponent`     | `Geoblacklight::WebServicesComponent`                                         |
+| `catalog/_web_services`                  | `Geoblacklight::WebServicesComponent`        | the `catalog/web_services` view                                               |
+| `relation/_relations`                    | `Geoblacklight::RelationsComponent`          | the `relation/index` view                                                     |
+
+GeoBlacklight 6 reorganizes the record sidebar, so if you customize
+`Geoblacklight::Document::SidebarComponent`, expect to revisit that when you move to 6.
+
+Finally, a few templates have no component to move to:
+
+| GeoBlacklight 4 partial                    | What to do                                                                   |
+| ------------------------------------------ | ---------------------------------------------------------------------------- |
+| `catalog/_results_pagination`              | GeoBlacklight no longer overrides it; base your copy on Blacklight's instead |
+| `catalog/_show_default_viewer_information` | removed, with no replacement                                                 |
+| `catalog/_carto`                           | removed, with no replacement                                                 |
+| `download/hgl`                             | removed, with no replacement                                                 |
 
 `app/views/catalog/_home_text.html.erb` still exists in GeoBlacklight 5, so overrides of it keep
 working — but its contents were rewritten to use a component for the homepage map, and Bootstrap 5
@@ -658,14 +887,15 @@ Finally, in the `web_services` method, Blacklight 8 changed what `action_documen
 +   @docs = action_documents
 ```
 
-If you set `config.header_component` to your own subclass in
-[step 5](#your-site-header), use that class here instead of `Geoblacklight::HeaderComponent`.
+If you made your own subclass of any of these components in
+[step 5](#5-layouts-and-view-overrides) — the header, say, or the document component — use it
+here instead of GeoBlacklight's.
 
 You may also have a `require 'blacklight/catalog'` line at the top of the file, left over from an
 older GeoBlacklight. It is unnecessary now and can be removed.
 
 If your controller has drifted a long way from the default, comparing against
-[the current template](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/catalog_controller.rb)
+[the GeoBlacklight 5 template](https://github.com/geoblacklight/geoblacklight/blob/release-5.x/lib/generators/geoblacklight/templates/catalog_controller.rb)
 is usually quicker than working line by line.
 
 ## 7. Application settings
@@ -736,7 +966,7 @@ There are also new `LEAFLET` options in 5.x worth knowing about, none of them re
 `SELECTED_COLOR`, per-view `BOUNDSOVERLAY` colours, a `SIDEBAR` option that moves the attribute
 table beside the map, and a `SLEEP` group that stops the map from capturing your scroll wheel
 until you click it. Copy the defaults from
-[the template](https://github.com/geoblacklight/geoblacklight/blob/main/lib/generators/geoblacklight/templates/settings.yml)
+[the GeoBlacklight 5 template](https://github.com/geoblacklight/geoblacklight/blob/release-5.x/lib/generators/geoblacklight/templates/settings.yml)
 and adjust to taste.
 
 ### Translations
@@ -782,7 +1012,7 @@ the Solr 9 default and closes a known security hole:
 ```
 
 Rather than editing by hand, take both files from
-[the current release](https://github.com/geoblacklight/geoblacklight/tree/main/solr/conf) and
+[GeoBlacklight 5](https://github.com/geoblacklight/geoblacklight/tree/release-5.x/solr/conf) and
 re-apply any local changes — for example an extra field, or a different boost. Then upload the
 configuration set to your Solr server and reload the core.
 
@@ -863,7 +1093,9 @@ Then walk through this list:
 - [ ] **Related records** appear on records that have relationships.
 - [ ] **Login** works, if your application has authentication.
 - [ ] Your **footer** and any local pages look right under Bootstrap 5.
-- [ ] The **deprecation warnings are gone** from your boot output.
+- [ ] You have dealt with **every line in `gbl5-warnings.txt`** from
+      [step 1](#boot-the-application-and-read-the-warnings). GeoBlacklight 5 no longer runs those
+      checks, so it cannot tell you this itself — its warnings are about GeoBlacklight 6.
 
 Then reindex, and check relevance ranking on a few searches you know well.
 
